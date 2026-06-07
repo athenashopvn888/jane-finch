@@ -1,0 +1,1225 @@
+[
+  {
+    "sku": "100",
+    "name": "FUNKY RUNTZ Shreds",
+    "slug": "funky-runtz-shreds",
+    "tier": "BUDGET",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "24%",
+    "price3g": null,
+    "price5g": null,
+    "price14g": null,
+    "price28g": {
+      "regular": 40,
+      "sale": null
+    },
+    "image": "https://athena-cannabis-images.vercel.app/products/101-bubba-kush-cannabis-shake.jpg",
+    "promoImage": null
+  },
+  {
+    "sku": "102",
+    "name": "BANANA KUSH Shreds",
+    "slug": "banana-kush-shreds",
+    "tier": "BUDGET",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "24%",
+    "price3g": null,
+    "price5g": null,
+    "price14g": null,
+    "price28g": {
+      "regular": 40,
+      "sale": null
+    },
+    "image": "https://athena-cannabis-images.vercel.app/products/102-Banana-Kush-Shake.jpg",
+    "promoImage": null
+  },
+  {
+    "sku": "104",
+    "name": "NUKEN Shreds",
+    "slug": "nuken-shreds",
+    "tier": "BUDGET",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "24%",
+    "price3g": null,
+    "price5g": null,
+    "price14g": null,
+    "price28g": {
+      "regular": 40,
+      "sale": null
+    },
+    "image": "https://athena-cannabis-images.vercel.app/products/104-Nuken-weed-Shake.jpg",
+    "promoImage": null
+  },
+  {
+    "sku": "112",
+    "name": "PINK BISCUITS SHREDS",
+    "slug": "pink-biscuits-shreds",
+    "tier": "BUDGET",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "24%",
+    "price3g": null,
+    "price5g": null,
+    "price14g": null,
+    "price28g": {
+      "regular": 40,
+      "sale": null
+    },
+    "image": "https://athena-cannabis-images.vercel.app/products/112-Pink-Biscuits-Shake.jpg",
+    "promoImage": "https://kennedyloudcannabis.com/wp-content/uploads/2026/01/ChatGPT-Image-Jan-7-2026-03_04_10-AM.png"
+  },
+  {
+    "sku": "114",
+    "name": "PINK NORTHERN LIGHTS (SHREDS)",
+    "slug": "pink-northern-lights-shreds",
+    "tier": "BUDGET",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "25%",
+    "price3g": null,
+    "price5g": null,
+    "price14g": null,
+    "price28g": {
+      "regular": 40,
+      "sale": null
+    },
+    "image": "https://athena-cannabis-images.vercel.app/products/114-Hell-Fire-Shake.jpg",
+    "promoImage": null
+  },
+  {
+    "sku": "168",
+    "name": "OG KUSH",
+    "slug": "og-kush",
+    "tier": "BUDGET",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "26%",
+    "price3g": {
+      "regular": 10,
+      "sale": null
+    },
+    "price5g": null,
+    "price14g": null,
+    "price28g": {
+      "regular": 55,
+      "sale": null
+    },
+    "image": "https://athena-cannabis-images.vercel.app/products/168-OG-KUSH-2.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "179",
+    "name": "LONDON POUNDCAKE",
+    "slug": "london-poundcake",
+    "tier": "BUDGET",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "26%",
+    "price3g": {
+      "regular": 10,
+      "sale": null
+    },
+    "price5g": null,
+    "price14g": null,
+    "price28g": {
+      "regular": 60,
+      "sale": null
+    },
+    "image": "https://athena-cannabis-images.vercel.app/products/99220-275-LONDON-POUNDCAKE.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "213",
+    "name": "MASTER KUSH",
+    "slug": "master-kush",
+    "tier": "AA",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "27%",
+    "price3g": null,
+    "price5g": {
+      "regular": 20,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 45,
+      "sale": null
+    },
+    "price28g": {
+      "regular": 80,
+      "sale": null
+    },
+    "image": "https://athena-cannabis-images.vercel.app/products/213-Master-Kush.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "261",
+    "name": "DAYDREAM DIESEL",
+    "slug": "daydream-diesel",
+    "tier": "AA",
+    "type": "sativa",
+    "isHot": false,
+    "isSale": false,
+    "thc": "29%",
+    "price3g": null,
+    "price5g": {
+      "regular": 20,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 45,
+      "sale": null
+    },
+    "price28g": {
+      "regular": 80,
+      "sale": null
+    },
+    "image": "https://athena-cannabis-images.vercel.app/products/261-DAYDREAM-DIESEL-99140.jpg",
+    "promoImage": null
+  },
+  {
+    "sku": "269",
+    "name": "OREO COOKIES",
+    "slug": "oreo-cookies",
+    "tier": "AA",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "29%",
+    "price3g": null,
+    "price5g": {
+      "regular": 20,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 40,
+      "sale": null
+    },
+    "price28g": {
+      "regular": 70,
+      "sale": null
+    },
+    "image": "https://athena-cannabis-images.vercel.app/products/99149-OREO-COOKIES.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "271",
+    "name": "DANTE INFERNO",
+    "slug": "dante-inferno",
+    "tier": "AA",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "29%",
+    "price3g": null,
+    "price5g": {
+      "regular": 20,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 40,
+      "sale": null
+    },
+    "price28g": {
+      "regular": 70,
+      "sale": null
+    },
+    "image": "https://athena-cannabis-images.vercel.app/products/99146-271-DANTE-INFERNO.webp",
+    "promoImage": "https://kennedyloudcannabis.com/wp-content/uploads/2026/01/ChatGPT-Image-Jan-7-2026-03_04_10-AM.png"
+  },
+  {
+    "sku": "272",
+    "name": "SKYWALKER KUSH",
+    "slug": "skywalker-kush",
+    "tier": "AA",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "29%",
+    "price3g": null,
+    "price5g": {
+      "regular": 20,
+      "sale": null
+    },
+    "price14g": null,
+    "price28g": {
+      "regular": 80,
+      "sale": null
+    },
+    "image": "https://athena-cannabis-images.vercel.app/products/99151-272-SKYWALKER-KUSH.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "275",
+    "name": "SUGAR COOKIES",
+    "slug": "sugar-cookies",
+    "tier": "AA",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "29%",
+    "price3g": null,
+    "price5g": {
+      "regular": 20,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 40,
+      "sale": null
+    },
+    "price28g": {
+      "regular": 75,
+      "sale": null
+    },
+    "image": "https://athena-cannabis-images.vercel.app/products/99244-275-SUGAR-COOKIES.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "278",
+    "name": "SLURRICANE",
+    "slug": "slurricane",
+    "tier": "AA",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "27%",
+    "price3g": null,
+    "price5g": {
+      "regular": 20,
+      "sale": null
+    },
+    "price14g": null,
+    "price28g": {
+      "regular": 75,
+      "sale": null
+    },
+    "image": "https://athena-cannabis-images.vercel.app/products/278-SLURRICANE.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "288",
+    "name": "FROSTED COOKIES",
+    "slug": "frosted-cookies",
+    "tier": "AA",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "28%",
+    "price3g": null,
+    "price5g": {
+      "regular": 20,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 45,
+      "sale": null
+    },
+    "price28g": {
+      "regular": 75,
+      "sale": null
+    },
+    "image": "https://athena-cannabis-images.vercel.app/products/99243-288-FROSTED-COOKIES.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "289",
+    "name": "JUNGLE JUICE",
+    "slug": "jungle-juice",
+    "tier": "AA",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "28%",
+    "price3g": null,
+    "price5g": null,
+    "price14g": {
+      "regular": 40,
+      "sale": null
+    },
+    "price28g": {
+      "regular": 70,
+      "sale": null
+    },
+    "image": "https://athena-cannabis-images.vercel.app/products/99230-289-JUNGLE-JUICE.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "290",
+    "name": "SWEET KUSH",
+    "slug": "sweet-kush",
+    "tier": "AA",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "28%",
+    "price3g": null,
+    "price5g": {
+      "regular": 20,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 45,
+      "sale": null
+    },
+    "price28g": {
+      "regular": 75,
+      "sale": null
+    },
+    "image": "https://athena-cannabis-images.vercel.app/products/99263-290-SWEET-KUSH.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "291",
+    "name": "DIAMOND OG",
+    "slug": "diamond-og",
+    "tier": "AA",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "29%",
+    "price3g": null,
+    "price5g": {
+      "regular": 20,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 40,
+      "sale": null
+    },
+    "price28g": {
+      "regular": 70,
+      "sale": null
+    },
+    "image": "https://athena-cannabis-images.vercel.app/products/291-DIAMOND-KUSH.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "303",
+    "name": "PINK LOBSTER",
+    "slug": "pink-lobster",
+    "tier": "AAA+",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "30%",
+    "price3g": {
+      "regular": 20,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 30,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 70,
+      "sale": null
+    },
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/99245-303-PINK-LOBSTER.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "315",
+    "name": "GREASE MONKEY",
+    "slug": "grease-monkey",
+    "tier": "AAA+",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "31%",
+    "price3g": {
+      "regular": 20,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 30,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 70,
+      "sale": null
+    },
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/99253-315-GREASE-MONKEY.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "319",
+    "name": "WHITE WALKER OG",
+    "slug": "white-walker-og",
+    "tier": "AAA+",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "31%",
+    "price3g": {
+      "regular": 20,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 30,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 70,
+      "sale": null
+    },
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/99261-319-WHITEWALKEROG.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "321",
+    "name": "MK ULTRA",
+    "slug": "mk-ultra",
+    "tier": "AAA+",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "31%",
+    "price3g": {
+      "regular": 20,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 30,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 70,
+      "sale": null
+    },
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/99269-MK-ULTRA-321.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "327",
+    "name": "PINK HALO OG",
+    "slug": "pink-halo-og",
+    "tier": "AAA+",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "31%",
+    "price3g": {
+      "regular": 20,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 30,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 70,
+      "sale": null
+    },
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/327-PINKHAL-OG99277.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "329",
+    "name": "MUELLER FUEL",
+    "slug": "mueller-fuel",
+    "tier": "AAA+",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "31%",
+    "price3g": {
+      "regular": 20,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 30,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 70,
+      "sale": null
+    },
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/329-MUELLER-FUEL.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "333",
+    "name": "PINK PABLO",
+    "slug": "pink-pablo",
+    "tier": "AAA+",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "31%",
+    "price3g": {
+      "regular": 20,
+      "sale": null
+    },
+    "price5g": null,
+    "price14g": null,
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/333-PINK-PABLO.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "336",
+    "name": "OMFG Sativa",
+    "slug": "omfg-sativa",
+    "tier": "AAA+",
+    "type": "sativa",
+    "isHot": false,
+    "isSale": false,
+    "thc": "31%",
+    "price3g": {
+      "regular": 20,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 30,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 70,
+      "sale": null
+    },
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/336-OMFG-Sativa.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "380",
+    "name": "PEANUTBUTTER BREATHE",
+    "slug": "peanutbutter-breathe",
+    "tier": "AAA+",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "30%",
+    "price3g": {
+      "regular": 20,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 30,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 70,
+      "sale": null
+    },
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/99268-380-PEANUTBUTTER-BREATHE.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "392",
+    "name": "RAINBOW KUSH",
+    "slug": "rainbow-kush",
+    "tier": "AAA+",
+    "type": "indica",
+    "isHot": false,
+    "isSale": true,
+    "thc": "30%",
+    "price3g": {
+      "regular": 20,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 30,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 70,
+      "sale": null
+    },
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/393-PINK-KUSH-99212.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "392",
+    "name": "RAINBOW KUSH AAA+ SALE!",
+    "slug": "rainbow-kush-aaa-sale",
+    "tier": "BUDGET",
+    "type": "indica",
+    "isHot": false,
+    "isSale": true,
+    "thc": "30%",
+    "price3g": {
+      "regular": 10,
+      "sale": null
+    },
+    "price5g": null,
+    "price14g": null,
+    "price28g": {
+      "regular": 55,
+      "sale": null
+    },
+    "image": "https://athena-cannabis-images.vercel.app/products/393-PINK-KUSH-99212.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "396",
+    "name": "KHALIFA KUSH",
+    "slug": "khalifa-kush",
+    "tier": "AAA+",
+    "type": "indica",
+    "isHot": false,
+    "isSale": true,
+    "thc": "31%",
+    "price3g": {
+      "regular": 20,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 30,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 70,
+      "sale": null
+    },
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/396-DURIAN-99219.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "396",
+    "name": "KHALIFA KUSH (AAA+ ON SALE)",
+    "slug": "khalifa-kush-aaa-on-sale",
+    "tier": "BUDGET",
+    "type": "indica",
+    "isHot": false,
+    "isSale": true,
+    "thc": "31%",
+    "price3g": {
+      "regular": 10,
+      "sale": null
+    },
+    "price5g": null,
+    "price14g": null,
+    "price28g": {
+      "regular": 55,
+      "sale": null
+    },
+    "image": "https://athena-cannabis-images.vercel.app/products/396-DURIAN-99219.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "473",
+    "name": "GMO COOKIES",
+    "slug": "gmo-cookies",
+    "tier": "PREMIUM",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "33%",
+    "price3g": {
+      "regular": 30,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 45,
+      "sale": null
+    },
+    "price14g": null,
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/473-GMO-COOKIES.jpg",
+    "promoImage": null
+  },
+  {
+    "sku": "475",
+    "name": "SUPER MARIO KUSH",
+    "slug": "super-mario-kush",
+    "tier": "PREMIUM",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "32%",
+    "price3g": {
+      "regular": 30,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 45,
+      "sale": null
+    },
+    "price14g": null,
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/99225-475-SUPER-MARIO-KUSH.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "477",
+    "name": "PINK ROCK STAR",
+    "slug": "pink-rock-star",
+    "tier": "PREMIUM",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "33%",
+    "price3g": {
+      "regular": 30,
+      "sale": null
+    },
+    "price5g": null,
+    "price14g": null,
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/477-PINK-ROCK-STAR-99208.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "480",
+    "name": "LEMON CHERRY GELATO",
+    "slug": "lemon-cherry-gelato",
+    "tier": "PREMIUM",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "32%",
+    "price3g": {
+      "regular": 30,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 45,
+      "sale": null
+    },
+    "price14g": null,
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/480-Lemon-Cherry-Gelato.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "481",
+    "name": "PINK PANTIES",
+    "slug": "pink-panties",
+    "tier": "PREMIUM",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "31%",
+    "price3g": {
+      "regular": 30,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 45,
+      "sale": null
+    },
+    "price14g": null,
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/99235-481-PINK-PANTIES.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "482",
+    "name": "MENDO BREATHE",
+    "slug": "mendo-breathe",
+    "tier": "PREMIUM",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "32%",
+    "price3g": {
+      "regular": 30,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 45,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 95,
+      "sale": null
+    },
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/99238-482-MENDO-BREATHE.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "484",
+    "name": "PINK CHAPO",
+    "slug": "pink-chapo",
+    "tier": "PREMIUM",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "32%",
+    "price3g": {
+      "regular": 30,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 45,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 95,
+      "sale": null
+    },
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/99246-484-PINK-CHAPO.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "491",
+    "name": "SUPER DRIP",
+    "slug": "super-drip",
+    "tier": "PREMIUM",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "32%",
+    "price3g": {
+      "regular": 30,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 45,
+      "sale": null
+    },
+    "price14g": null,
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/99259-491-SUPER-DRIP.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "492",
+    "name": "PLATINUM TUNA",
+    "slug": "platinum-tuna",
+    "tier": "PREMIUM",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "32%",
+    "price3g": {
+      "regular": 30,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 45,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 95,
+      "sale": null
+    },
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/492-PLATINUM-TUNA.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "504",
+    "name": "PINK BELLAGIO",
+    "slug": "pink-bellagio",
+    "tier": "EXOTIC",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "36%",
+    "price3g": {
+      "regular": 40,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 60,
+      "sale": null
+    },
+    "price14g": null,
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/99205-504PINK-BELLAGIO.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "507",
+    "name": "PINK DEATHSTAR",
+    "slug": "pink-deathstar",
+    "tier": "EXOTIC",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "36%",
+    "price3g": {
+      "regular": 40,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 60,
+      "sale": null
+    },
+    "price14g": null,
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/99216-507PINK-DEATHSTAR.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "513",
+    "name": "PINK TOMFORD",
+    "slug": "pink-tomford",
+    "tier": "EXOTIC",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "38%",
+    "price3g": {
+      "regular": 40,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 60,
+      "sale": null
+    },
+    "price14g": null,
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/99240-513-PINK-TOMFORD.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "514",
+    "name": "PINK PERMANENT MARKER",
+    "slug": "pink-permanent-marker",
+    "tier": "EXOTIC",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "35%",
+    "price3g": {
+      "regular": 40,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 60,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 140,
+      "sale": null
+    },
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/544-PINK-PERMANENT-MARKER.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "538",
+    "name": "PINK TUNA",
+    "slug": "pink-tuna",
+    "tier": "EXOTIC",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "38%",
+    "price3g": {
+      "regular": 40,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 60,
+      "sale": null
+    },
+    "price14g": null,
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/538-PINK-TUNA-99137N.jpg",
+    "promoImage": null
+  },
+  {
+    "sku": "539",
+    "name": "PEANUT BUTTER ROCKSTAR",
+    "slug": "peanut-butter-rockstar",
+    "tier": "EXOTIC",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "38%",
+    "price3g": {
+      "regular": 40,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 60,
+      "sale": null
+    },
+    "price14g": null,
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/99258-539-PEANUT-BUTTER-ROCKSTAR.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "540",
+    "name": "PINK ICKY STICKY",
+    "slug": "pink-icky-sticky",
+    "tier": "EXOTIC",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "38%",
+    "price3g": {
+      "regular": 40,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 60,
+      "sale": null
+    },
+    "price14g": null,
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/99260-540-PINK-ICKY-STICKY.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "543",
+    "name": "PINK SUPREME",
+    "slug": "pink-supreme",
+    "tier": "EXOTIC",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "38%",
+    "price3g": {
+      "regular": 40,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 60,
+      "sale": null
+    },
+    "price14g": null,
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/99257-543-PINK-SUPREME.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "561",
+    "name": "RED CONGOLESE",
+    "slug": "red-congolese",
+    "tier": "EXOTIC",
+    "type": "sativa",
+    "isHot": false,
+    "isSale": true,
+    "thc": "38%",
+    "price3g": {
+      "regular": 40,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 60,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 140,
+      "sale": null
+    },
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/561-RED-CONGOLESE.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "562",
+    "name": "DONNIE BURGER",
+    "slug": "donnie-burger",
+    "tier": "EXOTIC",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "38%",
+    "price3g": {
+      "regular": 40,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 60,
+      "sale": null
+    },
+    "price14g": null,
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/99234-562-DONNIE-BURGER.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "593",
+    "name": "MIKE TYSON KO *SUPER EXOTICS*",
+    "slug": "mike-tyson-ko-super-exotics",
+    "tier": "EXOTIC",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "39%",
+    "price3g": {
+      "regular": 40,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 60,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 140,
+      "sale": null
+    },
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/593-MIKE-TYSON-KO-99138.jpg",
+    "promoImage": "https://kennedyloudcannabis.com/wp-content/uploads/2026/01/ChatGPT-Image-Jan-7-2026-03_04_10-AM.png"
+  },
+  {
+    "sku": "595",
+    "name": "PURPLE SPACE QUEEN",
+    "slug": "purple-space-queen",
+    "tier": "EXOTIC",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "38%",
+    "price3g": {
+      "regular": 40,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 60,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 140,
+      "sale": null
+    },
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/99224-595-PURPLE-SPACE-QUEEN.webp",
+    "promoImage": null
+  },
+  {
+    "sku": "596",
+    "name": "PINK GOOEY FROST",
+    "slug": "pink-gooey-frost",
+    "tier": "EXOTIC",
+    "type": "indica",
+    "isHot": false,
+    "isSale": false,
+    "thc": "39%",
+    "price3g": {
+      "regular": 40,
+      "sale": null
+    },
+    "price5g": {
+      "regular": 60,
+      "sale": null
+    },
+    "price14g": {
+      "regular": 140,
+      "sale": null
+    },
+    "price28g": null,
+    "image": "https://athena-cannabis-images.vercel.app/products/596-PINK-GOEY-FROST2.webp",
+    "promoImage": "https://kennedyloudcannabis.com/wp-content/uploads/2026/01/ChatGPT-Image-Jan-7-2026-03_04_10-AM.png"
+  }
+]
