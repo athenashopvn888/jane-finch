@@ -29,9 +29,9 @@ export async function generateMetadata({
 
   return {
     title: catInfo.config.seoTitle || `${catInfo.config.name} — ${items.length} Products`,
-    description: catInfo.config.seoIntro || `Shop ${items.length} ${catInfo.config.name.toLowerCase()} at Jane Finch Cannabis.`,
+    description: catInfo.config.seoIntro || `Shop ${items.length} ${catInfo.config.name.toLowerCase()} at {{STORE_NAME}}.`,
     alternates: {
-      canonical: `https://janefinchcannabis.ca/items/${catSlug}`,
+      canonical: `https://{{DOMAIN_NAME}}/items/${catSlug}`,
     },
   };
 }
@@ -118,12 +118,12 @@ export default async function ItemsCategoryPage({
 
           {/* Visit CTA */}
           <div className={styles.visitCta}>
-            <h3 className={styles.visitTitle}>Visit Jane Finch Cannabis</h3>
+            <h3 className={styles.visitTitle}>Visit {{STORE_NAME}}</h3>
             <p className={styles.visitText}>
-              2728 Jane St, North York, ON M3L 2G6 · Open 24 Hours
+              {{STREET_ADDRESS}}, {{CITY}}, ON {{POSTAL_CODE}} · Open 24 Hours
             </p>
             <a
-              href="https://maps.google.com/?q=2728+Jane+St,+North+York,+ON+M3L+2G6"
+              href="{{GOOGLE_MAPS_SHARE_URL}}"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.visitBtn}
@@ -144,7 +144,15 @@ function ItemCard({ item, catColor }: { item: ItemProduct; catColor: string }) {
     <Link href={`/item/${item.slug}`} className={styles.card} style={{ "--cat-color": catColor } as React.CSSProperties}>
       <div className={styles.cardMedia}>
         {item.image ? (
-          <img src={item.image} alt={item.name} loading="lazy" className={styles.cardImg} />
+          <img src={item.image} alt={item.name} loading="lazy" className={styles.cardImg} 
+            onError={(e) => {
+              const t = e.currentTarget;
+              if (t.src.indexOf('r2.dev') !== -1 || t.src.indexOf('images.torontodispensaryhub.com') !== -1) {
+                const filename = t.src.split('/').pop();
+                t.src = 'https://athena-cannabis-images.vercel.app/products/' + filename;
+              }
+            }}
+          />
         ) : (
           <div className={styles.cardPlaceholder}>
             {item.name[0]}
