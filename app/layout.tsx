@@ -94,13 +94,21 @@ const jsonLd = {
     longitude: -79.5163,
   },
   openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      opens: "00:00",
-      closes: "23:59",
-    },
-  ],
+  {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "00:00",
+    "closes": "23:59"
+  }
+],
   sameAs: [
     "https://maps.google.com/?q=2728+Jane+St,+North+York,+ON+M3L+2G6",
     "https://maps.google.com/?q=2728+Jane+St,+North+York,+ON+M3L+2G6",

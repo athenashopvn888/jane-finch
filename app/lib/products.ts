@@ -162,11 +162,11 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     name: "Edibles", slug: "edibles", color: "#f97316", icon: "🍬",
     seoTitle: "Cannabis Edibles North York — Gummies, Chocolates & Drinks",
     seoIntro: "Browse the full cannabis edibles menu at Jane Finch Cannabis on North York St, North York. We carry THC gummies, chocolates, drinks, and more from top Canadian brands.",
-    seoDescription: "Looking for cannabis edibles in North York? Jane Finch Cannabis stocks a wide range of THC-infused gummies, chocolates, beverages, and baked goods. Our edibles range from micro-dose options for beginners to high-potency products for experienced consumers. All products are lab-tested and sourced from licensed Canadian producers. Visit us at 2728 Jane St — open daily 24 hours.",
+    seoDescription: "Looking for cannabis edibles in North York? Jane Finch Cannabis stocks a wide range of THC-infused gummies, chocolates, beverages, and baked goods. Our edibles range from micro-dose options for beginners to high-potency products for experienced consumers. All products are lab-tested and sourced from licensed Canadian producers. Visit us at 2728 Jane St — we are Open 24 Hours.",
     faqs: [
       { q: "What cannabis edibles do you carry?", a: "We stock THC gummies, chocolates, beverages, capsules, and baked goods from top Canadian brands. Potencies range from 10mg to 1000mg+ THC." },
       { q: "How long do edibles take to kick in?", a: "Cannabis edibles typically take 30-90 minutes to take effect. Start with a low dose (5-10mg) and wait at least 2 hours before consuming more." },
-      { q: "Can I buy edibles at Jane Finch Cannabis?", a: "Yes! Visit us at 2728 Jane St, North York. We're open daily 24 hours with a full edibles selection in store." },
+      { q: "Can I buy edibles at Jane Finch Cannabis?", a: "Yes! Visit us at 2728 Jane St, North York. We're open 24 hours a day, 7 days a week with a full edibles selection in store." },
     ],
   },
   "VAPE PENS": {
@@ -206,7 +206,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     banner: "/banners/04_Pre_Rolls.webp", name: "Pre-Rolls", slug: "prerolls", color: "#22c55e", icon: "🚬",
     seoTitle: "Pre-Rolls North York — Ready-to-Smoke Cannabis Joints",
     seoIntro: "Pre-rolled cannabis joints at Jane Finch Cannabis, North York. Singles, multi-packs, and infused pre-rolls — ready to light up.",
-    seoDescription: "Skip the rolling and grab a pre-roll from Jane Finch Cannabis in North York. We carry singles, multi-packs, and infused pre-rolls from premium flower. Whether you want a quick smoke or a party pack, our pre-roll selection has something for everyone. Visit us at 2728 Jane St — open daily 24 hours.",
+    seoDescription: "Skip the rolling and grab a pre-roll from Jane Finch Cannabis in North York. We carry singles, multi-packs, and infused pre-rolls from premium flower. Whether you want a quick smoke or a party pack, our pre-roll selection has something for everyone. Visit us at 2728 Jane St — we are Open 24 Hours.",
     faqs: [
       { q: "What pre-rolls do you carry?", a: "We stock singles, 3-packs, and multi-packs in various strains and potencies, including infused pre-rolls with concentrates." },
       { q: "Are your pre-rolls made with quality flower?", a: "Yes! Our pre-rolls are filled with ground flower from our regular menu tiers — not shake or trim." },
@@ -227,11 +227,11 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     name: "Cigarettes", slug: "cigarettes", color: "#78716c", icon: "🏷️",
     seoTitle: "Native Cigarettes North York — Discount Tobacco at Jane Finch Cannabis",
     seoIntro: "Discount native cigarettes at Jane Finch Cannabis, North York. Premium and value brands at the best prices on North York St.",
-    seoDescription: "Jane Finch Cannabis is your go-to source for affordable native cigarettes in North York. We carry a wide selection of premium and value tobacco brands at competitive prices. Located at 2728 Jane St in the heart of ByWard Market, we're open daily 24 hours. Stop by for the best cigarette prices in the neighbourhood.",
+    seoDescription: "Jane Finch Cannabis is your go-to source for affordable native cigarettes in North York. We carry a wide selection of premium and value tobacco brands at competitive prices. Located at 2728 Jane St in the heart of Jane St & Sheppard Ave W, we're Open 24 Hours.",
     faqs: [
       { q: "Do you sell cigarettes at Jane Finch Cannabis?", a: "Yes! We carry a wide selection of native cigarette brands at competitive prices." },
       { q: "What cigarette brands do you carry?", a: "We stock a variety of premium and value native cigarette brands. Visit us to see our full in-store selection." },
-      { q: "Are your cigarette prices competitive?", a: "Absolutely. We offer some of the best cigarette prices in the ByWard Market area of North York." },
+      { q: "Are your cigarette prices competitive?", a: "Absolutely. We offer some of the best cigarette prices in the Jane St & Sheppard Ave W area of North York." },
     ],
   },
   "MAGIC & OTHERS": {

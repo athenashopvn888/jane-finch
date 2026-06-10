@@ -193,7 +193,7 @@ export default function MemoryMatchPage() {
                     </span>
                   </>
                 ) : (
-                  <img src="/storeFavicon.webp" alt="Logo" style={{ height: "32px", width: "32px", objectFit: "contain" }} />
+                  <span style={{ fontSize: 28 }}>🌿</span>
                 )}
               </div>
             </div>

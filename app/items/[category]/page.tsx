@@ -1,8 +1,11 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import fs from "fs";
+import path from "path";
 import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import SafeImage from "../../components/SafeImage";
 import {
   getItemsByCategory,
   getCategoryFromSlug,
@@ -29,9 +32,9 @@ export async function generateMetadata({
 
   return {
     title: catInfo.config.seoTitle || `${catInfo.config.name} — ${items.length} Products`,
-    description: catInfo.config.seoIntro || `Shop ${items.length} ${catInfo.config.name.toLowerCase()} at {{STORE_NAME}}.`,
+    description: catInfo.config.seoIntro || `Shop ${items.length} ${catInfo.config.name.toLowerCase()} at Jane Finch Cannabis.`,
     alternates: {
-      canonical: `https://{{DOMAIN_NAME}}/items/${catSlug}`,
+      canonical: `https://janefinchcannabis.ca/items/${catSlug}`,
     },
   };
 }
@@ -55,13 +58,18 @@ export default async function ItemsCategoryPage({
   }
   const { config } = catInfo;
 
+  // Check if banner file exists in the public folder
+  const bannerExists = config.banner
+    ? fs.existsSync(path.join(process.cwd(), "public", config.banner))
+    : false;
+
   return (
     <main className={styles.main}>
       <Navbar />
 
       {/* Hero Banner */}
       <section style={{ width: "100%", overflow: "hidden", marginTop: "92px", marginBottom: "24px" }}>
-        {config.banner ? (
+        {config.banner && bannerExists ? (
           <img
             src={config.banner}
             alt={config.name}
@@ -118,12 +126,12 @@ export default async function ItemsCategoryPage({
 
           {/* Visit CTA */}
           <div className={styles.visitCta}>
-            <h3 className={styles.visitTitle}>Visit {{STORE_NAME}}</h3>
+            <h3 className={styles.visitTitle}>Visit Jane Finch Cannabis</h3>
             <p className={styles.visitText}>
-              {{STREET_ADDRESS}}, {{CITY}}, ON {{POSTAL_CODE}} · Open 24 Hours
+              2728 Jane St, North York, ON M3L 2G6 · Open 24 Hours
             </p>
             <a
-              href="{{GOOGLE_MAPS_SHARE_URL}}"
+              href="https://maps.google.com/?q=2728+Jane+St,+North+York,+ON+M3L+2G6"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.visitBtn}
@@ -144,15 +152,7 @@ function ItemCard({ item, catColor }: { item: ItemProduct; catColor: string }) {
     <Link href={`/item/${item.slug}`} className={styles.card} style={{ "--cat-color": catColor } as React.CSSProperties}>
       <div className={styles.cardMedia}>
         {item.image ? (
-          <img src={item.image} alt={item.name} loading="lazy" className={styles.cardImg} 
-            onError={(e) => {
-              const t = e.currentTarget;
-              if (t.src.indexOf('r2.dev') !== -1 || t.src.indexOf('images.torontodispensaryhub.com') !== -1) {
-                const filename = t.src.split('/').pop();
-                t.src = 'https://athena-cannabis-images.vercel.app/products/' + filename;
-              }
-            }}
-          />
+          <SafeImage src={item.image} alt={item.name} loading="lazy" className={styles.cardImg} />
         ) : (
           <div className={styles.cardPlaceholder}>
             {item.name[0]}

@@ -14,7 +14,7 @@ export default function Footer() {
             <p className={styles.desc}>
               Your Local Cannabis Dispensary At 2728 Jane St, North York. Visit
               Jane Finch Cannabis For Premium Flower, Edibles, Vapes &amp; More.
-              Open 24 Hours.
+              Open: Open 24 Hours.
             </p>
             <div className={styles.buttons}>
               <a

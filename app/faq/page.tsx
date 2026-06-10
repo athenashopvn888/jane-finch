@@ -17,14 +17,14 @@ const FAQ_CATEGORIES = [
     title: "📍 Location & Hours",
     faqs: [
       { q: "Where is Jane Finch Cannabis located?", a: "We are located at 2728 Jane St, North York, ON M3L 2G6. We're easily accessible by TTC bus routes and close to major highways like the 401." },
-      { q: "What are your hours?", a: "We are open Open 24 Hours a day, 7 days a week, 365 days a year. Walk in anytime — no appointment needed." },
+      { q: "What are your hours?", a: "We are open 24 hours a day, 7 days a week. Walk in anytime — no appointment needed." },
       { q: "Is there parking nearby?", a: "Yes. Free street parking is available nearby on surrounding streets in the evenings. We're also easily accessible by local transit." },
       { q: "How far are you from Mississauga?", a: "We're just 5 minutes from the highways and central transit routes. We are centrally located and easy to reach." },
       { q: "What's the best way to get to Jane Finch Cannabis?", a: "We're easily accessible by car, bus, or foot. We are easily accessible by car, local transit, or bus routes. Free parking is available on surrounding streets." },
     ],
   },
   {
-    title: "🍃 Products & Menu",
+    title: "🌿 Products & Menu",
     faqs: [
       { q: "What products do you carry?", a: "We carry over 200 strains of cannabis flower across 5 quality tiers (Exotic, Premium, AAA+, AA, Budget), plus edibles (gummies, chocolates, baked goods), vape pens, disposable vapes, concentrates (shatter, wax, hash, diamonds, live resin), pre-rolled joints, magic mushrooms, native cigarettes, and accessories." },
       { q: "Do you have a live menu?", a: "Yes! Our online menu at janefinchcannabis.ca updates in real time with current stock, prices, THC levels, and availability. You can check what's in stock before you visit." },
@@ -48,7 +48,7 @@ const FAQ_CATEGORIES = [
   {
     title: "🛒 Shopping & Experience",
     faqs: [
-      { q: "Do I need an appointment?", a: "No! Jane Finch Cannabis is walk-in only. Just show up anytime — we're open Open 24 Hours." },
+      { q: "Do I need an appointment?", a: "No! Jane Finch Cannabis is walk-in only. Just show up anytime — we are open 24 hours a day, 7 days a week." },
       { q: "Can I order online?", a: "Currently, Jane Finch Cannabis is an in-store shopping experience only. You can browse our live menu online to see what's in stock before visiting." },
       { q: "Do you offer delivery?", a: "Delivery is coming soon! Visit our delivery page to sign up for email notifications when we launch our delivery service." },
       { q: "What payment methods do you accept?", a: "We accept cash and debit. No credit cards at this time." },

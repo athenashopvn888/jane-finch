@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import fs from "fs";
+import path from "path";
 import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
@@ -43,12 +45,17 @@ export default async function SeoLandingPage({
 
   const tiers = Object.values(TIER_CONFIG);
 
+  // Check if banner file exists in the public folder
+  const bannerExists = page.banner
+    ? fs.existsSync(path.join(process.cwd(), "public", page.banner))
+    : false;
+
   return (
     <main className={styles.main}>
       <Navbar />
 
       {/* Banner Image */}
-      {page.banner && (
+      {page.banner && bannerExists && (
         <section className={styles.bannerSection}>
           <img
             src={page.banner}

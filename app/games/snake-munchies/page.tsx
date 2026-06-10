@@ -14,7 +14,7 @@ const H = ROWS * CELL;
 type Dir = "UP" | "DOWN" | "LEFT" | "RIGHT";
 interface Pos { x: number; y: number; }
 
-const FOOD_EMOJIS = ["🍪", "🧁", "🍬", "🍫", "🍩", "🍃", "🔥", "💎"];
+const FOOD_EMOJIS = ["🍪", "🧁", "🍬", "🍫", "🍩", "🌿", "🔥", "💎"];
 
 export default function SnakeMunchiesPage() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -26,7 +26,7 @@ export default function SnakeMunchiesPage() {
   const dir = useRef<Dir>("RIGHT");
   const nextDir = useRef<Dir>("RIGHT");
   const food = useRef<Pos>({ x: 15, y: 12 });
-  const foodEmoji = useRef("🍃");
+  const foodEmoji = useRef("🌿");
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const gsRef = useRef("idle");
   const scoreRef = useRef(0);

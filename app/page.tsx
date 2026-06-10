@@ -70,7 +70,7 @@ const EXPLORE_CATEGORIES = [
 const LOCAL_FAQS = [
   {
     q: "What are the hours for Jane Finch Cannabis?",
-    a: "Jane Finch Cannabis at 2728 Jane St, North York is Open 24 Hours a day, 7 days a week. Walk in anytime — no appointment needed.",
+    a: "Jane Finch Cannabis at 2728 Jane St, North York is open 24 hours a day, 7 days a week. Walk in anytime — no appointment needed.",
   },
   {
     q: "What cannabis products do you carry?",
@@ -97,6 +97,9 @@ export default function HomePage() {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [reviewsStats, setReviewsStats] = useState({ total: 14, avg: 5.0 });
   const [reviewsLoading, setReviewsLoading] = useState(true);
+  const [welcomeBannerError, setWelcomeBannerError] = useState(false);
+  const welcomeBannerSrc: string = "/banners/jfc_welcome_banner.webp";
+  const hasWelcomeBanner = welcomeBannerSrc && welcomeBannerSrc !== "/banners/" && !welcomeBannerSrc.includes("HERO_BANNER") && !welcomeBannerSrc.includes("WELCOME_BANNER") && welcomeBannerSrc !== "";
 
   /* ── 1. Fetch Client-Side Google Reviews ── */
   useEffect(() => {
@@ -190,15 +193,18 @@ export default function HomePage() {
       <Navbar />
 
       {/* ── WELCOME BANNER ── */}
-      <section className={styles.welcomeBannerSection}>
-        <div className={styles.welcomeBannerContainer}>
-          <img
-            src="/banners/"
-            alt="Welcome to Jane Finch Cannabis — Premium North York Cannabis Dispensary"
-            className={styles.welcomeBannerImg}
-          />
-        </div>
-      </section>
+      {hasWelcomeBanner && !welcomeBannerError && (
+        <section className={styles.welcomeBannerSection}>
+          <div className={styles.welcomeBannerContainer}>
+            <img
+              src={welcomeBannerSrc}
+              alt="Welcome to Jane Finch Cannabis — Premium North York Cannabis Dispensary"
+              className={styles.welcomeBannerImg}
+              onError={() => setWelcomeBannerError(true)}
+            />
+          </div>
+        </section>
+      )}
 
       {/* ── BENTO MOSAIC HERO ── */}
       <section className={styles.hero}>
@@ -209,7 +215,7 @@ export default function HomePage() {
         <div className={styles.heroContent}>
           {/* Brand branding */}
           <div className={styles.brandBlock}>
-            <img src="/storeFavicon.webp" alt="Jane Finch Cannabis Icon" style={{ height: "64px", width: "64px", objectFit: "contain", borderRadius: "12px", boxShadow: "0 4px 20px rgba(16,185,129,0.2)" }} />
+            <img src="/storeFavicon.webp" alt="Jane Finch Cannabis Icon" style={{ height: "60px", width: "60px", objectFit: "contain", borderRadius: "8px", marginBottom: "8px" }} />
             <h1 className={styles.brandTitle}>JANE FINCH CANNABIS</h1>
             <p className={styles.brandSub}>Premium Cannabis Dispensary</p>
             <div className={styles.brandBadge}>Open 24 Hours</div>
@@ -297,13 +303,13 @@ export default function HomePage() {
           <div className={styles.seoPanel}>
             <h2 className={styles.seoPanelTitle}>Jane St & Sheppard Ave W's Premier Cannabis Dispensary — Open 24 Hours</h2>
             <p className={styles.seoPanelText}>
-              Welcome to <strong>Jane Finch Cannabis</strong>, North York's premier 24-hour cannabis destination at 2728 Jane St. We carry an electrifying selection of top-shelf strains around the clock — from ultra-rare exotics to solid everyday budget picks.
+              Welcome to <strong>Jane Finch Cannabis</strong>, North York's premier cannabis destination at 2728 Jane St. We carry an electrifying selection of top-shelf strains — from ultra-rare exotics to solid everyday budget picks.
             </p>
             <p className={styles.seoPanelText}>
-              Open 24 hours, 7 days a week — Jane Finch Cannabis never closes. Our live menu is constantly refreshed with the freshest drops, premium prerolls, artisan edibles, and everything in between. Whether you're winding down after a late shift or stocking up for the weekend, our knowledgeable staff is always here for you.
+              We are open Open 24 Hours — Jane Finch Cannabis is here to serve you. Our live menu is constantly refreshed with the freshest drops, premium prerolls, artisan edibles, and everything in between. Whether you're winding down or stocking up for the weekend, our knowledgeable staff is always here for you.
             </p>
             <p className={styles.seoPanelText}>
-              Searching for a cannabis dispensary in North York or the surrounding area? Jane Finch Cannabis is your 24-hour destination for premium flower, potent prerolls, and artisan edibles. Our six-tier pricing system means quality cannabis at every budget level — starting from just $3/g.
+              Searching for a cannabis dispensary in North York or the surrounding area? Jane Finch Cannabis is your go-to destination for premium flower, potent prerolls, and artisan edibles. Our six-tier pricing system means quality cannabis at every budget level — starting from just $3/g.
             </p>
           </div>
         </div>

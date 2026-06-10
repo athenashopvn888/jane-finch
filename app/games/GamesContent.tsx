@@ -7,7 +7,7 @@ const GAMES = [
   {
     id: "flappy-bud",
     name: "Flappy Bud",
-    emoji: "🎮",
+    emoji: "🌿",
     description: "Fly a cannabis leaf through bong pipes. Tap to flap!",
     color: "#34d399",
   },

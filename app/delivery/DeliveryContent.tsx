@@ -101,7 +101,7 @@ export default function DeliveryContent() {
         <div className={styles.ctaSection}>
           <p className={styles.ctaText}>
             Can&apos;t wait? Visit us in-store at <strong>2728 Jane St, North York</strong> —
-            open <strong>24 hours</strong>. Call <strong>(548) 323-2728</strong>.
+            we are <strong>Open 24 Hours</strong>. Call <strong>(548) 323-2728</strong>.
           </p>
         </div>
       </div>

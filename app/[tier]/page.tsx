@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import fs from "fs";
+import path from "path";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FlowerCard from "../components/FlowerCard";
@@ -59,18 +61,25 @@ export default async function TierPage({
   const regularFlowers = flowers.filter((f) => !f.isSale);
   const hotFlowers = flowers.filter((f) => f.isHot);
 
+  // Check if banner file exists in the public folder
+  const bannerExists = config.banner
+    ? fs.existsSync(path.join(process.cwd(), "public", config.banner))
+    : false;
+
   return (
     <main className={styles.main}>
       <Navbar />
 
       {/* ── Banner Image (standalone, no overlay text) ── */}
-      <section className={styles.bannerSection}>
-        <img
-          src={config.banner}
-          alt={`${config.name} Cannabis Flower — ${config.tagline}`}
-          className={styles.bannerImg}
-        />
-      </section>
+      {bannerExists && (
+        <section className={styles.bannerSection}>
+          <img
+            src={config.banner}
+            alt={`${config.name} Cannabis Flower — ${config.tagline}`}
+            className={styles.bannerImg}
+          />
+        </section>
+      )}
 
       {/* ── Hero Content BELOW banner ── */}
       <section

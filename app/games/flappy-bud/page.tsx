@@ -228,7 +228,7 @@ export default function FlappyBudPage() {
         ctx.fillStyle = "#fbbf24";
         ctx.font = "bold 32px 'Outfit', sans-serif";
         ctx.textAlign = "center";
-        ctx.fillText("🍃 FLAPPY BUD", CANVAS_W / 2, CANVAS_H / 2 - 30);
+        ctx.fillText("🌿 FLAPPY BUD", CANVAS_W / 2, CANVAS_H / 2 - 30);
         ctx.fillStyle = "rgba(255,255,255,0.6)";
         ctx.font = "16px 'Space Grotesk', sans-serif";
         ctx.fillText("Tap or press Space to fly!", CANVAS_W / 2, CANVAS_H / 2 + 15);
@@ -293,7 +293,7 @@ export default function FlappyBudPage() {
             color: "white",
           }}
         >
-          🍃 Flappy Bud
+          🌿 Flappy Bud
         </h1>
         <p
           style={{
