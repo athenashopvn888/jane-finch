@@ -109,20 +109,9 @@ const jsonLd = {
     "closes": "23:59"
   }
 ],
-  sameAs: [
-    "https://maps.google.com/?q=2728+Jane+St,+North+York,+ON+M3L+2G6",
-    "https://maps.google.com/?q=2728+Jane+St,+North+York,+ON+M3L+2G6",
-  ],
-  hasMap: "https://maps.google.com/?q=2728+Jane+St,+North+York,+ON+M3L+2G6",
   areaServed: {
     "@type": "City",
     name: "North York",
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5.0",
-    reviewCount: "15",
-    bestRating: "5",
   },
 };
 

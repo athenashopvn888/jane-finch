@@ -110,26 +110,8 @@ export default async function SeoLandingPage({
           <div className={styles.section}>
             <h2 className={styles.sectionTitle}>Find Us</h2>
             <div className={styles.mapWrap}>
-              <iframe
-                src="https://maps.google.com/maps?q=2728%20Jane%20St,+North%20York,+ON+M3L%202G6&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                width="100%"
-                height="350"
-                style={{ border: 0, borderRadius: "var(--radius-lg)" }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Jane Finch Cannabis — 2728 Jane St, North York"
-              />
             </div>
             <div className={styles.visitBtns}>
-              <a
-                href="https://maps.google.com/?q=2728+Jane+St,+North+York,+ON+M3L+2G6"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.visitBtn}
-              >
-                📍 Get Directions
-              </a>
             </div>
           </div>
 

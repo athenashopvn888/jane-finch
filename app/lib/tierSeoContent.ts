@@ -98,7 +98,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
 
   BUDGET: {
     seoTitle: "Budget Cannabis North York — Cheap Weed From $3/g",
-    seoIntro: "Cheap weed in North York starting at $3/g. Jane Finch Cannabis Budget tier features shreds and value ounces for cost-conscious smokers. Open daily on North York St.",
+    seoIntro: "Cheap weed in North York starting at $3/g. Jane Finch Cannabis Budget tier features shreds and value ounces for cost-conscious smokers. Check current store hours before visiting Jane Finch Cannabis.",
     sections: [
       {
         heading: "Affordable Cannabis Without Compromise",

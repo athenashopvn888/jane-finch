@@ -306,7 +306,7 @@ export default function HomePage() {
               Welcome to <strong>Jane Finch Cannabis</strong>, North York's premier cannabis destination at 2728 Jane St. We carry an electrifying selection of top-shelf strains — from ultra-rare exotics to solid everyday budget picks.
             </p>
             <p className={styles.seoPanelText}>
-              We are open Open 24 Hours — Jane Finch Cannabis is here to serve you. Our live menu is constantly refreshed with the freshest drops, premium prerolls, artisan edibles, and everything in between. Whether you're winding down or stocking up for the weekend, our knowledgeable staff is always here for you.
+              Open 24 Hours — Jane Finch Cannabis is here to serve you. Our live menu is constantly refreshed with the freshest drops, premium prerolls, artisan edibles, and everything in between. Whether you're winding down or stocking up for the weekend, our knowledgeable staff can help 24 hours a day.
             </p>
             <p className={styles.seoPanelText}>
               Searching for a cannabis dispensary in North York or the surrounding area? Jane Finch Cannabis is your go-to destination for premium flower, potent prerolls, and artisan edibles. Our six-tier pricing system means quality cannabis at every budget level — starting from just $3/g.
@@ -367,14 +367,6 @@ export default function HomePage() {
           </div>
 
           <div className={styles.reviewCtaRow}>
-            <a
-              href="https://maps.google.com/?q=2728+Jane+St,+North+York,+ON+M3L+2G6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.reviewsWrite}
-            >
-              ✍ Write a Google Review
-            </a>
           </div>
         </div>
       </section>
@@ -406,14 +398,6 @@ export default function HomePage() {
                 <br />
                 North York, ON M3L 2G6
                 <br />
-                <a
-                  href="https://maps.google.com/?q=2728+Jane+St,+North+York,+ON+M3L+2G6"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.storeLink}
-                >
-                  Get Directions →
-                </a>
               </p>
             </div>
             <div className={styles.storeCard}>
@@ -438,16 +422,6 @@ export default function HomePage() {
 
           {/* Map wrapper */}
           <div className={styles.mapWrap}>
-            <iframe
-              src="https://maps.google.com/maps?q=2728%20Jane%20St,+North%20York,+ON+M3L%202G6&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              width="100%"
-              height="350"
-              style={{ border: 0, display: "block" }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Jane Finch Cannabis — 2728 Jane St, North York"
-            ></iframe>
           </div>
         </div>
       </section>

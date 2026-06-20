@@ -130,14 +130,6 @@ export default async function ItemsCategoryPage({
             <p className={styles.visitText}>
               2728 Jane St, North York, ON M3L 2G6 · Open 24 Hours
             </p>
-            <a
-              href="https://maps.google.com/?q=2728+Jane+St,+North+York,+ON+M3L+2G6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.visitBtn}
-            >
-              📍 Get Directions
-            </a>
           </div>
         </div>
       </section>

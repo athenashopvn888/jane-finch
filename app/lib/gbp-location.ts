@@ -24,8 +24,8 @@ export const gbpLocation = {
     "Accessories"
   ],
   menuUrl: "/",
-  directionsUrl: "https://maps.google.com/?q=2728+Jane+St,+North+York,+ON+M3L+2G6",
-  mapEmbedUrl: "https://maps.google.com/maps?q=2728%20Jane%20St%2C%20North%20York%2C%20ON%20M3L%202G6&t=&z=15&ie=UTF8&iwloc=&output=embed",
+  directionsUrl: "",
+  mapEmbedUrl: "",
   latitude: "43.7483",
   longitude: "-79.5163",
   hours: ["Open 24 Hours"],
