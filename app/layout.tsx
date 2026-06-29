@@ -5,11 +5,11 @@ import AgeGate from "./components/AgeGate";
 export const metadata: Metadata = {
   metadataBase: new URL("https://janefinchcannabis.ca"),
   title: {
-    default: "Jane Finch Cannabis — Premium Cannabis Dispensary, North York",
+    default: "24 Hour North York Dispensary | Jane Finch Cannabis",
     template: "%s | Jane Finch Cannabis",
   },
   description:
-    "Shop 200+ premium cannabis strains at Jane Finch Cannabis. Exotic, Premium, AAA+, AA & Budget flower from $3/g. North York's uplifting dispensary at 2728 Jane St. Open 24 Hours.",
+    "Jane Finch Cannabis is a North York dispensary on Jane St with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
   keywords: [
     "cannabis dispensary North York",
     "weed store North York",
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
     locale: "en_CA",
     url: "https://janefinchcannabis.ca",
     siteName: "Jane Finch Cannabis",
-    title: "Jane Finch Cannabis — Premium North York Cannabis Dispensary",
+    title: "24 Hour North York Dispensary | Jane Finch Cannabis",
     description:
-      "200+ strains from $3/g. Exotic to Budget. North York's uplifting dispensary at 2728 Jane St. Open 24 Hours.",
+      "Jane Finch Cannabis is a North York dispensary on Jane St with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
     images: [
       {
         url: "https://janefinchcannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg",
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jane Finch Cannabis — North York's Uplifting Dispensary",
-    description: "200+ strains from $3/g. Open 24 Hours at 2728 Jane St, North York.",
+    title: "24 Hour North York Dispensary | Jane Finch Cannabis",
+    description: "Jane Finch Cannabis is a North York dispensary on Jane St with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
     images: ["https://janefinchcannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg"],
   },
   robots: {
