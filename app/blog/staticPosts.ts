@@ -24,7 +24,7 @@ export const STATIC_POSTS: StaticBlogPost[] = [
     metaDescription:
       "Plan a visit to Jane Finch Cannabis in North York with adult 19+ store info, local area context, menu-category notes, and safe pre-visit checks.",
     excerpt: "Jane Finch Cannabis store information for adults 19+.",
-    author: "Athena SEO Team",
+    author: "Jane Finch Cannabis Team",
     date: "2026-07-01",
     category: "Store Guide",
     readTime: "5 min",
