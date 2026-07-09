@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://janefinchcannabis.ca/sitemap.xml",
+    sitemap: "https://www.janefinchcannabis.ca/sitemap.xml",
   };
 }

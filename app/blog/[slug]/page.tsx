@@ -15,7 +15,7 @@ export async function generateMetadata({
       title: staticPost.seoTitle,
       description: staticPost.metaDescription,
       alternates: {
-        canonical: `https://janefinchcannabis.ca/blog/${slug}`,
+        canonical: `https://www.janefinchcannabis.ca/blog/${slug}`,
       },
     };
   }
@@ -29,7 +29,7 @@ export async function generateMetadata({
     title: `${title} - Blog | Jane Finch Cannabis`,
     description: `Read about ${title.toLowerCase()} and other cannabis guides from Jane Finch Cannabis in North York.`,
     alternates: {
-      canonical: `https://janefinchcannabis.ca/blog/${slug}`,
+      canonical: `https://www.janefinchcannabis.ca/blog/${slug}`,
     },
   };
 }

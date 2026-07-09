@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Cannabis Blog & Guides — Jane Finch Cannabis | North York",
   description: "Read the latest strain reviews, dosing guides, and cannabis news from Jane Finch Cannabis in North York.",
   alternates: {
-    canonical: "https://janefinchcannabis.ca/blog",
+    canonical: "https://www.janefinchcannabis.ca/blog",
   },
 };
 
