@@ -59,7 +59,7 @@
   font-weight: 900;
   color: var(--text-primary);
   margin: 0 0 12px;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
   line-height: 1.15;
 }
 
@@ -196,3 +196,5 @@
   font-size: 14px;
   line-height: 1.6;
 }
+
+@media (max-width: 640px) { .content { padding: 118px 22px 56px; } .contentP, .contentList li { font-size: 18px; line-height: 1.85; } .contentH2 { font-size: 26px; } }

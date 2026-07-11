@@ -2,13 +2,18 @@ export interface StaticBlogPost {
   slug: string;
   title: string;
   seoTitle: string;
+  seo_title: string;
   metaDescription: string;
+  meta_description: string;
+  h1: string;
   excerpt: string;
   author: string;
   date: string;
   category: string;
   readTime: string;
   content: string;
+  faq: string;
+  internal_links_used: string;
   relatedLinks: Array<{
     title: string;
     url: string;
@@ -16,274 +21,139 @@ export interface StaticBlogPost {
   }>;
 }
 
+export const STORE_BLOG_CONFIG = {
+  storeCode: "JANE-FINCH",
+  storeName: "Jane Finch Cannabis",
+  city: "North York",
+  domain: "janefinchcannabis.ca",
+  storePath: "/weed-dispensary-north-york",
+};
+
 export const STATIC_POSTS: StaticBlogPost[] = [
   {
-    slug: "jane-finch-cannabis-store-info-guide",
-    title: "Cannabis Store Information Near Jane and Finch for Adults 19+",
-    seoTitle: "Jane Finch Cannabis Store Information | Adult 19+ Guide",
-    metaDescription:
-      "Plan a visit to Jane Finch Cannabis in North York with adult 19+ store info, local area context, menu-category notes, and safe pre-visit checks.",
-    excerpt: "Jane Finch Cannabis store information for adults 19+.",
-    author: "Jane Finch Cannabis Team",
-    date: "2026-07-01",
-    category: "Store Guide",
-    readTime: "5 min",
-    content: `## Jane Finch Cannabis Store Information For Adults 19+
-
-Jane Finch Cannabis serves adults 19+ looking for straightforward store information before visiting in the Jane and Finch area of North York. A useful store guide should help shoppers understand where the store fits locally, which page to use next, and how to plan a smoother visit.
-
-This guide is written for practical visit planning. It gives adult shoppers a clear, local way to prepare before visiting and points them toward the store page, menu categories, and staff help when needed.
-
-## Why Location Context Matters
-
-Jane and Finch is a busy North York area where many shoppers plan errands around transit, local roads, nearby plazas, and other stops. When someone searches for Jane Finch Cannabis or a cannabis store near Jane and Finch, they are often trying to answer a few simple questions: is this the right store, where should I check store details, and what should I know before I go?
-
-The best starting point is the store page. It brings together store-specific details, contact options, menu-category browsing, and any helpful store notes. Blog content supports that page by explaining how to use the information quickly.
-
-## What To Check Before Visiting
-
-Adults 19+ can use the Jane Finch Cannabis store page as the main reference point before a visit. Good pre-visit checks include the store name, location details, phone number, general menu categories, and any store notes that help with in-person shopping. These checks help reduce confusion, especially when there are multiple cannabis stores across North York.
-
-The page may also help shoppers understand broad category language. Flower, pre-rolls, vapes, edibles, concentrates, and accessories are useful category terms that help adults 19+ move toward the right section of the site.
-
-## How To Browse Menu Categories With Confidence
-
-Menu categories are useful because they tell shoppers how the store organizes browsing. A category guide can explain broad browsing groups and help adults 19+ find the right section faster.
-
-For Jane Finch Cannabis, the content stays grounded in local store information, store-specific navigation, and the practical steps that help a North York shopper plan a visit.
-
-## A Practical Visit-Planning Approach
-
-Before heading to Jane Finch Cannabis, an adult shopper can do three simple things. First, confirm they are looking at the correct Jane Finch Cannabis page. Second, review the store page for current store details and category browsing. Third, bring valid government identification, because cannabis retail is for adults 19+.
-
-That kind of practical guidance is helpful, local, and easy to act on. It keeps the visit-planning path simple for adults 19+.
-
-## FAQ
-
-### How can shoppers check current menu details?
-
-Use the Jane Finch Cannabis store page and menu/category links before visiting, then ask staff if you need help comparing options.
-
-### Who is this guide for?
-
-This guide is for adults 19+ who want to understand Jane Finch Cannabis store information before visiting in North York.
-
-### What should shoppers check before heading out?
-
-Confirm the Jane Finch Cannabis store page, bring valid government identification, and use the contact or directions options when planning your visit.
-
-### What makes this guide useful for local shoppers?
-
-It keeps the focus on Jane and Finch visit planning, store-specific navigation, and the next page a shopper should use.`,
-    relatedLinks: [
+    "slug": "jane-finch-cannabis-store-info-guide",
+    "title": "How to Shop the Jane Finch Cannabis Menu Like a Pro",
+    "seoTitle": "Jane Finch Cannabis Menu Guide | North York Cannabis Shopping Tips",
+    "seo_title": "Jane Finch Cannabis Menu Guide | North York Cannabis Shopping Tips",
+    "metaDescription": "A relaxed Jane Finch Cannabis menu guide for shoppers comparing flower, pre-rolls, edibles, THC vapes, concentrates, and value options in North York.",
+    "meta_description": "A relaxed Jane Finch Cannabis menu guide for shoppers comparing flower, pre-rolls, edibles, THC vapes, concentrates, and value options in North York.",
+    "h1": "How to Shop the Jane Finch Cannabis Menu Like a Pro",
+    "excerpt": "A plain-spoken guide to shopping the Jane Finch Cannabis menu without getting lost in every category at once.",
+    "author": "The Jane Finch Cannabis Team",
+    "date": "2026-07-11",
+    "category": "Menu Guide",
+    "readTime": "5 min",
+    "content": "If you searched for a weed dispensary in Jane and Finch / North York, do not make the menu harder than it has to be. Open Jane Finch Cannabis, pick the lane that matches the visit, and compare from there. That is the whole move.\n\nThe menu is not one giant mystery box. Flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarette options all solve different shopping problems. Treat them that way and the page gets easier fast.\n\n## Start With The Store Page\n\nBefore you compare strains or categories, make sure you are on the right Jane Finch Cannabis page. That page is where shoppers should confirm the store name, directions, contact options, listed hours, and the main menu path before heading over.\n\nThis matters because menu pages can change. A blog should help you shop smarter, not pretend it knows what is sitting on the shelf this minute. When timing or one exact product matters, check the current menu or ask staff before leaving.\n\n## Pick One Category First\n\nThe fastest shoppers usually start with one product type. If you want flower, go to flower. If you want pre-rolls, do not get pulled into edibles first. If THC vapes are the mission, compare vape listings and item notes before bouncing around the whole site.\n\nThat simple habit keeps the visit clean. It also helps anyone looking for a cannabis dispensary in North York compare real menu options without turning the whole thing into homework.\n\n## Use The Flower Tiers The Right Way\n\nFlower shoppers should start with the tier that matches the budget and mood of the visit. Exotic flower and premium flower are there when you want the higher shelf lanes first. AAA+, AA, and Budget are there when you want to compare value with less noise.\n\nIf cheap weed, budget weed, or affordable weed is the plan, start in Budget and AA before drifting upward. If you already know you want something louder, start higher and compare the current names, weights, and notes inside that lane.\n\n## Compare What Is Current\n\nOnce you pick the category, compare the details that are actually useful: product name, format, weight or package size, posted price, and item notes. If something is unclear, ask staff. That is faster than guessing and better than memorizing an old example from a blog post.\n\nThe good shopper move is simple: use the guide for the method, use the live menu for the current details, and use staff when the final call needs a human answer. Shoppers comparing Native smokes can also use the resources section for carton-style cigarette notes and brand names like Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, and Canadian Menthol.\n\n## Keep The Visit Easy\n\nJane Finch Cannabis serves shoppers around Jane and Finch / North York, Jane and Finch, North York, Jane Street. If you are looking for a weed store near Jane and Finch / North York, keep the page open while you compare categories, then use the store page when you are ready for directions or contact options.\n\nNo stiff lecture needed. Pick the lane, compare the details, and make the visit clean.",
+    "faq": "",
+    "internal_links_used": "[Jane Finch Cannabis store page](/weed-dispensary-north-york)\n[Jane Finch Cannabis resources](/resources)\n[Flower guide](/resources/flower-guide)\n[Jane Finch Cannabis blog](/blog)",
+    "relatedLinks": [
       {
-        title: "Jane Finch Cannabis North York store page",
-        url: "https://www.janefinchcannabis.ca/weed-dispensary-north-york",
-        description: "Primary store-specific destination after the North York store info guide.",
+        "title": "Jane Finch Cannabis store page",
+        "url": "/weed-dispensary-north-york",
+        "description": "Use this first for directions, contact options, listed hours, and the current menu path."
       },
       {
-        title: "Jane Finch Cannabis homepage",
-        url: "https://www.janefinchcannabis.ca/",
-        description: "Store-scoped general navigation for adults 19+.",
+        "title": "Jane Finch Cannabis resources",
+        "url": "/resources",
+        "description": "Menu-shopping notes, flower tips, value notes, and local visit resources."
       },
       {
-        title: "More Jane Finch Cannabis guides",
-        url: "https://www.janefinchcannabis.ca/blog",
-        description: "Store-scoped blog index for future approved publishing.",
-      },
-    ],
-  },
-  {
-    slug: "jane-finch-cannabis-price-flower-tier-guide",
-    title: "Jane Finch Cannabis Price and Flower Tier Guide",
-    seoTitle: "Jane Finch Cannabis Price Tier Guide",
-    metaDescription: "Jane Finch Cannabis guide to flower tiers, weight choices, unit value, and store visit planning in North York.",
-    excerpt: "A simple guide to Jane Finch Cannabis flower tiers, weights, and unit value.",
-    author: "Jane Finch Cannabis Team",
-    date: "2026-07-09",
-    category: "Price Guide",
-    readTime: "4 min",
-    content: `## Jane Finch Cannabis Price and Flower Tier Guide
-
-Jane Finch Cannabis makes flower shopping easier by organizing the menu into clear tiers. Start with the tier that matches the kind of flower you want, then choose the weight that fits your budget and visit.
-
-The simple idea is: pick the grade, compare the weight, and use the live menu before you head in. Larger weights usually improve unit value, so both the total price and the price per gram are worth checking.
-
-## Start With A Tier
-
-Use these tier pages when you want to compare the menu directly:
-
-- [Exotic flower](/exotic): a top-shelf lane for shoppers who want the highest tier first.
-- [Premium flower](/premium): a strong middle-to-top lane for shoppers balancing quality and value.
-- [AAA+ flower](/aaa): a simple quality lane with easy weight comparisons.
-- [AA flower](/aa): a value-focused lane for straightforward everyday browsing.
-- [Budget flower](/budget): the clearest low-cost lane when price is the main priority.
-
-Once the tier feels right, the live menu helps shoppers compare the current strains and weights inside that tier.
-
-## How The Weight Ladder Helps Value
-
-Moving up in weight usually improves the unit value. That means the shopper can look beyond the total price and see how the price per gram changes as the amount gets larger.
-
-Current tier examples commonly shown across the store menu include:
-
-- Exotic flower: 1g at $20/g; 3g at $40, about $13.33/g; 6g at $60, about $10/g.
-- Premium flower: 1g at $15/g; 3g at $30, about $10/g; 6g at $45, about $7.50/g.
-- AAA+ flower: 1g at $10/g; 3g at $20, about $6.67/g; 6g at $30, about $5/g.
-- AA flower: a simple value tier around $4/g where listed on the menu.
-- Budget flower: a low-cost lane around $3/g or $10/3g where listed on the menu.
-
-That structure keeps the buying path easy: choose the grade, choose the weight, and compare the unit value before visiting.
-
-## Match The Visit To The Budget
-
-If the goal is the smallest spend, start with the smaller weight options. If you already know the tier you like, compare the next weight step and see how much the unit value improves. If you want a stronger flower lane, stay in Premium or Exotic and compare from there.
-
-This is why a tiered menu works well for local storefront shopping. It keeps the decision organized, makes value easier to understand, and gives shoppers better questions to ask staff when they visit.
-
-## Use The Live Menu Before Visiting
-
-For the smoothest visit, open the Jane Finch Cannabis menu before heading out. The live menu is the best place to compare current flower tiers, weights, and store-specific options. The store page is also useful for directions, contact details, and visit planning.
-
-If you are comparing flower tiers in North York, use this page as the simple guide, then use the live menu for the current selection.
-
-## Helpful Next Steps
-
-- Compare [Exotic flower](/exotic), [Premium flower](/premium), [AAA+ flower](/aaa), [AA flower](/aa), and [Budget flower](/budget).
-- Open the Jane Finch Cannabis store page for directions, contact details, and visit planning.
-- Use the blog index for more store-specific guides.
-
-## FAQ
-
-### How do I choose the right flower tier?
-
-Start with the grade that fits the visit, then compare the weight options inside that tier. This makes it easier to balance quality, amount, and budget.
-
-### Why does unit value matter?
-
-Unit value shows the approximate price per gram at different weights. It helps shoppers see how value changes as they move from 1g to larger options like 3g or 6g.
-
-### Why link to each tier page?
-
-Each tier page gives shoppers a faster path to the exact flower lane they want instead of forcing everyone through the full menu first.
-
-### Where should shoppers check current strains?
-
-Use the live menu for current store-specific selection, then use the store page for directions, contact details, and visit planning.`,
-    relatedLinks: [
-      {
-        title: "Exotic flower",
-        url: "https://www.janefinchcannabis.ca/exotic",
-        description: "Top-shelf flower tier for quick comparison."
-      },
-      {
-        title: "Premium flower",
-        url: "https://www.janefinchcannabis.ca/premium",
-        description: "Premium flower tier for quality and value comparison."
-      },
-      {
-        title: "AAA+ flower",
-        url: "https://www.janefinchcannabis.ca/aaa",
-        description: "AAA+ flower tier for easy weight comparisons."
-      },
-      {
-        title: "AA flower",
-        url: "https://www.janefinchcannabis.ca/aa",
-        description: "AA flower tier for straightforward value browsing."
-      },
-      {
-        title: "Budget flower",
-        url: "https://www.janefinchcannabis.ca/budget",
-        description: "Budget flower tier for low-cost browsing."
-      },
-      {
-        title: "Jane Finch Cannabis store page",
-        url: "https://www.janefinchcannabis.ca/weed-dispensary-north-york",
-        description: "Store-specific page for directions, contact details, and visit planning."
+        "title": "Jane Finch Cannabis blog",
+        "url": "/blog",
+        "description": "More store-specific shopper guides written for this location."
       }
     ]
   },
   {
-    slug: "jane-finch-cannabis-local-visit-guide-2026",
-    title: "Jane Finch Cannabis Local Visit Guide for Adults 19+",
-    seoTitle: "Jane Finch Cannabis Local Visit Guide | North York",
-    metaDescription: "Plan a visit to Jane Finch Cannabis in North York with adult 19+ store-page checks, menu-category paths, and local directions context.",
-    excerpt: "Jane Finch Cannabis local visit guide for adults 19+ around Jane St, Finch Ave W, and the Jane and Finch area.",
-    author: "Jane Finch Cannabis Team",
-    date: "2026-07-09",
-    category: "Local Guide",
-    readTime: "4 min",
-    content: `Use this guide to confirm the right Jane Finch Cannabis storefront around Jane St, Finch Ave W, and the Jane and Finch area, understand nearby street context, and choose the most useful store page or menu path before visiting.
-
-For current details, start with the official store page or contact staff before leaving.
-
-## Confirm The Right Storefront
-
-Jane Finch Cannabis is tied to Jane St, Finch Ave W, North York, and nearby transit routes. Local shoppers often compare several map results and store pages at once, so matching the store name, city, and nearby street language matters before making the trip.
-
-If you are checking directions, start with the official store page and confirm the destination there. That keeps the visit focused on the right storefront instead of relying on a copied listing or an old search result.
-
-## Use The Menu Before Visiting
-
-Start with the menu category that matches what you want to compare. Most shoppers move fastest when they check flower tiers, pre-rolls, vapes, edibles, concentrates, and accessories first, then ask staff if they need help choosing between options.
-
-The live menu is the best place for current product details. This guide gives local context and points you toward the pages that are most useful before visiting.
-
-## What To Check Before You Go
-
-- The exact store page and map destination.
-- Current hours, directions, and contact options.
-- Menu categories you want to compare before asking staff.
-- Valid adult 19+ identification for the visit.
-
-## Why The Local Context Matters
-
-Good local store pages should answer real visit-planning questions instead of repeating a city name. Clear store identity, nearby street context, and helpful internal links make it easier for adults 19+ to decide whether they are looking at the right store.
-
-For Jane Finch Cannabis, that means keeping the page focused on Jane St, Finch Ave W, and the Jane and Finch area, practical category browsing, and direct next steps for shoppers who are ready to plan a visit.
-
-## Helpful Next Steps
-
-- Open the Jane Finch Cannabis store page for directions and contact details.
-- Use the homepage if you want the broadest store navigation.
-- Browse the blog for more adult 19+ store guides.
-
-## FAQ
-
-### Is this guide only for Jane Finch Cannabis?
-
-Yes. It is written for Jane Finch Cannabis and its North York local context.
-
-### How can shoppers check current product details?
-
-Use the live menu or contact staff for current store-specific details before visiting.
-
-### What should shoppers check first?
-
-Confirm the store page, then use menu categories and directions to plan the visit.
-
-### Why mention nearby streets and areas?
-
-Nearby street and neighbourhood context helps shoppers confirm they are looking at the right storefront before they leave.`,
-    relatedLinks: [
+    "slug": "jane-finch-cannabis-price-flower-tier-guide",
+    "title": "How to Compare Jane Finch Cannabis Flower Without Guessing",
+    "seoTitle": "Jane Finch Cannabis Flower Guide | Exotic, Premium, Budget Weed",
+    "seo_title": "Jane Finch Cannabis Flower Guide | Exotic, Premium, Budget Weed",
+    "metaDescription": "Compare exotic flower, premium flower, cheap weed, budget weed, and affordable weed at Jane Finch Cannabis with a cleaner shopping method.",
+    "meta_description": "Compare exotic flower, premium flower, cheap weed, budget weed, and affordable weed at Jane Finch Cannabis with a cleaner shopping method.",
+    "h1": "How to Compare Jane Finch Cannabis Flower Without Guessing",
+    "excerpt": "A flower-focused guide for shoppers who want to compare tiers, value, and current menu notes without overthinking it.",
+    "author": "The Jane Finch Cannabis Team",
+    "date": "2026-07-11",
+    "category": "Flower Guide",
+    "readTime": "5 min",
+    "content": "Flower shopping gets messy when every jar looks like it is fighting for the spotlight. The better move at Jane Finch Cannabis is to start with the tier, then compare the current listings inside that lane.\n\nThat works whether you are chasing exotic flower, checking premium flower, or trying to keep the spend low with budget weed. The menu becomes easier when you stop treating every category like the same errand.\n\n## Start With The Lane\n\nUse the flower tiers like a shortcut. Exotic is the higher shelf lane. Premium is for shoppers who want a strong flower option without jumping straight into every top-end listing. AAA+, AA, and Budget give you cleaner ways to compare price and value.\n\nIf you searched for cheap weed in North York, start with Budget and AA. If you searched for a weed dispensary in Jane and Finch / North York because you want something more special, start with Premium or Exotic and compare from there.\n\n## Compare The Details That Matter\n\nInside the tier, look at the posted product name, format, weight, price, and item notes. That is where the decision actually happens. The tier gets you close; the current menu details help you choose.\n\nDo not let an old price example make the decision for you. Menus move. Names rotate. The clean habit is to use this guide for the shopping method and the live menu or staff for what is current today.\n\n## Keep Value In Plain View\n\nAffordable weed does not mean shopping blind. It means knowing which lane to open first. Budget and AA are where value-minded shoppers should start. AAA+ can be a good middle lane when you want to step up without jumping all the way into Exotic.\n\nIf the price looks right but the product notes are thin, ask staff. If the name looks right but the format is not what you wanted, switch lanes. Simple.\n\n## Keep Flower Separate From Everything Else\n\nFlower is flower. Pre-rolls, edibles, THC vapes, concentrates, and accessories each deserve their own comparison. Mixing every format into one decision usually slows the visit down.\n\nStart with flower, finish the flower decision, then move to the next category if you still want to browse. That is how you shop Jane Finch Cannabis without turning a quick stop into a guessing game.\n\n## Best Next Move\n\nOpen the flower tier that fits the visit, compare the current details, and use the Jane Finch Cannabis store page when you are ready for directions or contact options.",
+    "faq": "",
+    "internal_links_used": "[Exotic flower](/exotic)\n[Premium flower](/premium)\n[AAA+ flower](/aaa)\n[AA flower](/aa)\n[Budget flower](/budget)\n[Flower guide](/resources/flower-guide)",
+    "relatedLinks": [
       {
-        title: "Jane Finch Cannabis store page",
-        url: "https://www.janefinchcannabis.ca/weed-dispensary-north-york",
-        description: "Primary store-specific page for directions, contact details, and visit planning."
+        "title": "Exotic flower",
+        "url": "/exotic",
+        "description": "Open the exotic flower lane when you want to compare the highest shelf category first."
       },
       {
-        title: "Jane Finch Cannabis homepage",
-        url: "https://www.janefinchcannabis.ca/",
-        description: "Store-scoped navigation for adults 19+."
+        "title": "Premium flower",
+        "url": "/premium",
+        "description": "Use the premium flower lane when you want a strong middle-to-upper shelf comparison."
       },
       {
-        title: "More Jane Finch Cannabis guides",
-        url: "https://www.janefinchcannabis.ca/blog",
-        description: "Store-scoped blog index for additional visit-planning guides."
+        "title": "AAA+ flower",
+        "url": "/aaa",
+        "description": "Use AAA+ when you want a clear flower tier without starting at the top shelf."
+      },
+      {
+        "title": "AA flower",
+        "url": "/aa",
+        "description": "Use AA for a straight value-minded flower browse."
+      },
+      {
+        "title": "Budget flower",
+        "url": "/budget",
+        "description": "Use Budget when cheap weed or affordable weed is the mission."
+      },
+      {
+        "title": "Flower guide",
+        "url": "/resources/flower-guide",
+        "description": "A cleaner way to compare flower tiers before checking the current menu."
       }
-    ],
+    ]
   },
+  {
+    "slug": "jane-finch-cannabis-local-visit-guide-2026",
+    "title": "Jane Finch Cannabis Local Visit Guide for Jane and Finch / North York",
+    "seoTitle": "Jane Finch Cannabis Local Visit Guide | Weed Store Near Jane and Finch / North York",
+    "seo_title": "Jane Finch Cannabis Local Visit Guide | Weed Store Near Jane and Finch / North York",
+    "metaDescription": "Plan a Jane Finch Cannabis visit around Jane and Finch / North York with practical menu tips for flower, pre-rolls, edibles, THC vapes, concentrates, and Native smokes where listed.",
+    "meta_description": "Plan a Jane Finch Cannabis visit around Jane and Finch / North York with practical menu tips for flower, pre-rolls, edibles, THC vapes, concentrates, and Native smokes where listed.",
+    "h1": "Jane Finch Cannabis Local Visit Guide for Jane and Finch / North York",
+    "excerpt": "A practical local guide for shoppers who want the right store page, the right menu lane, and fewer surprises before visiting.",
+    "author": "The Jane Finch Cannabis Team",
+    "date": "2026-07-11",
+    "category": "Local Guide",
+    "readTime": "5 min",
+    "content": "A good visit starts before you leave. If you are looking for a weed store near Jane and Finch / North York or a cannabis dispensary in North York, start with the Jane Finch Cannabis store page, then open the category that matches the visit.\n\nThat sounds basic, but it saves time. The store page keeps the practical details together. The menu categories help you compare flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and other supported sections without bouncing all over the site.\n\n## Confirm The Store Page First\n\nUse the store page to confirm the right Jane Finch Cannabis listing, directions, contact options, and listed hours. If one item decides the whole trip, check the current menu or ask staff before heading over.\n\nThis is especially useful around Jane and Finch / North York, Jane and Finch, North York, Jane Street, where shoppers may compare more than one local result before choosing where to go. The right page keeps the trip pointed at the right storefront.\n\n## Make The Menu Do Some Work\n\nPick one menu lane before you browse. Flower shoppers should compare flower tiers. Pre-roll shoppers should stay in pre-rolls. Edible shoppers should compare edible names, package details, and posted notes. Vape and concentrate shoppers should use those categories directly.\n\nThat keeps the visit moving. It also lets natural keywords do their job without making the copy sound weird: weed dispensary in Jane and Finch / North York, cannabis dispensary in North York, cheap weed, budget weed, premium flower, pre-rolls, edibles, THC vapes, and concentrates all belong in normal shopping sentences when the page is actually useful.\n\n## Use Staff For The Final Call\n\nBlogs can explain how to shop the menu. Staff and the current menu handle the details that change. If a product note is unclear, if the package size matters, or if you are deciding between two similar listings, ask before choosing.\n\nThat is not overthinking it. That is how real shoppers keep the visit smooth.\n\n## Keep The Local Search Simple\n\nWhen you are ready, open the Jane Finch Cannabis store page. Use it for directions and contact options, then keep the menu open if you are comparing categories on the way.\n\nThe whole point is a cleaner visit: right store, right lane, right question for staff if you need one.",
+    "faq": "",
+    "internal_links_used": "[Jane Finch Cannabis store page](/weed-dispensary-north-york)\n[Menu guide](/resources/menu-guide)\n[Value guide](/resources/value-guide)\n[Jane Finch Cannabis blog](/blog)",
+    "relatedLinks": [
+      {
+        "title": "Jane Finch Cannabis store page",
+        "url": "/weed-dispensary-north-york",
+        "description": "Use this page for directions, contact options, listed hours, and the main store path."
+      },
+      {
+        "title": "Menu guide",
+        "url": "/resources/menu-guide",
+        "description": "Use this resource when you want a cleaner way to choose categories."
+      },
+      {
+        "title": "Value guide",
+        "url": "/resources/value-guide",
+        "description": "Use this when price, budget weed, and affordable weed are part of the visit."
+      },
+      {
+        "title": "Jane Finch Cannabis blog",
+        "url": "/blog",
+        "description": "More local shopper guides for this store."
+      }
+    ]
+  }
 ];
+
 export function getStaticPost(slug: string) {
   return STATIC_POSTS.find((post) => post.slug === slug);
 }

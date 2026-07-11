@@ -1,5 +1,3 @@
-/* ── Geo-targeted SEO landing pages for North York/Weston keywords ── */
-
 export interface SeoPageData {
   slug: string;
   title: string;
@@ -14,194 +12,365 @@ export interface SeoPageData {
 
 export const SEO_PAGES: SeoPageData[] = [
   {
-    slug: "york-weed-dispensary",
-    title: "North York Weed Dispensary — Jane Finch Cannabis | Open 24 Hours | Jane St & Sheppard Ave W",
-    metaDescription: "Jane Finch Cannabis is North York's premier weed dispensary at 2728 Jane St near Weston. 200+ strains, THC up to 39%, edibles, vapes, concentrates & more. We are open 24 hours a day, 7 days a week.",
-    h1: "North York Weed Dispensary — Jane Finch Cannabis",
-    icon: "✨",
-    heroTagline: "Premium Cannabis on Jane St & Sheppard Ave W · Open 24 Hours · Walk-In Welcome",
-    banner: "/banners/jfc_welcome_banner.webp",
-    sections: [
+    "slug": "north-york-weed-dispensary",
+    "title": "Jane Finch Cannabis Weed Dispensary in North York",
+    "metaDescription": "Jane Finch Cannabis is a weed dispensary in North York with flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and shopper resources.",
+    "h1": "Jane Finch Cannabis Weed Dispensary in North York",
+    "icon": "*",
+    "heroTagline": "Menu shopping around Jane and Finch / North York",
+    "sections": [
       {
-        heading: "North York's Premier Cannabis Destination",
-        body: "Jane Finch Cannabis is a premium cannabis dispensary located at 2728 Jane St in the heart of North York's vibrant Jane St & Sheppard Ave W area. We carry over 200 hand-picked cannabis strains across five quality tiers — from ultra-rare Exotic genetics with THC up to 39% to affordable Budget flower starting at just $3/g. Whether you're a connoisseur seeking the rarest strains or a daily smoker looking for reliable value, Jane Finch Cannabis has the perfect flower for you. We're proud to be one of North York's most trusted dispensaries, and we are Open 24 Hours.",
+        "heading": "Shop Jane Finch Cannabis With A Plan",
+        "body": "Jane Finch Cannabis helps adults compare the menu without turning the visit into a maze. Start with the store page, then choose the category that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed."
       },
       {
-        heading: "Five Tiers of Quality Cannabis — Transparent Pricing",
-        body: "Our unique tier system ensures transparent pricing and quality grading so you always know what you're getting. Exotic ($10-$12/g) features top-shelf, ultra-rare genetics with THC levels reaching 35-39% — these are the strains connoisseurs travel across North York to find. Premium ($7-$10/g) offers connoisseur-grade strains at THC 32-34%, balancing quality and value. AAA+ ($5-$6/g) delivers heavy hitters at THC 30-32% — our most popular tier for experienced users. AA ($4/g) provides quality daily drivers at THC 27-29%, perfect for regular consumption. Budget ($3/g) offers value ounces from $40 without sacrificing reliability. Every tier is lab-tested, properly cured, and freshly rotated.",
+        "heading": "Local Menu Notes For Jane and Finch / North York",
+        "body": "If you searched for a weed dispensary in Jane and Finch / North York or a cannabis dispensary in North York, use this page to get oriented. Jane and Finch / North York, Jane and Finch, North York, Jane Street are useful local cues, but the current menu and staff are the right place for details that change."
       },
       {
-        heading: "Beyond Flower — Edibles, Vapes, Concentrates & More",
-        body: "Jane Finch Cannabis is more than just a flower shop. We carry a comprehensive selection of cannabis edibles (gummies, chocolates, baked goods), vape pens and disposable vapes, concentrates (shatter, wax, hash, diamonds, live resin), pre-rolled joints, native cigarettes, rolling papers, and accessories. Our live digital menu at janefinchcannabis.ca updates in real time so you always know exactly what's in stock before you make the trip.",
-      },
-      {
-        heading: "Open 24 Hours on Jane St & Sheppard Ave W",
-        body: "At Jane Finch Cannabis, we make it convenient for you. We are Open 24 Hours, 365 days a year. Whether you're finishing a late shift, heading out for the night, or need an early morning pickup, we are ready to serve you. We're centrally located at 2728 Jane St, near major transit bus routes, close to major highways and central stations. Free street parking is available near the dispensary.",
-      },
-      {
-        heading: "Clear Bundle Pricing on Flower",
-        body: "Every purchase at Jane Finch Cannabis comes with our bundle offers. Our 3g bundle offer applies to every single tier — the 3g total is shown clearly before purchase. Our top three tiers (Exotic, Premium, and AAA+) also qualify for 6g bundle pricing for 6g total. Combined with our already competitive pricing, Jane Finch Cannabis offers some of the best cannabis value in North York, Toronto, and the surrounding area.",
-      },
-      {
-        heading: "Serving North York, Toronto & Mississauga",
-        body: "Jane Finch Cannabis proudly serves customers from across the Greater Toronto Area. Whether you're coming from Weston, Mount Dennis, North North York, Etobicoke, Mississauga, Brampton, or downtown Toronto, we welcome you. Call us at (548) 323-2728 or visit us at 2728 Jane St, North York, ON M3L 2G6.",
-      },
+        "heading": "What To Check Before Visiting",
+        "body": "Confirm the store page, directions, contact options, listed hours, and menu category first. For current products, prices, or availability, use the menu or ask staff before leaving."
+      }
     ],
-    faqs: [
-      { q: "Where is Jane Finch Cannabis located?", a: "We are located at 2728 Jane St, North York, ON M3L 2G6 — in the heart of Jane St & Sheppard Ave W area — one of North York's most accessible areas. We're near major transit bus routes and close to major highways." },
-      { q: "What are the hours for Jane Finch Cannabis?", a: "We are open 24 hours a day, 7 days a week. Walk in anytime — no appointment needed. Whether it's day or night, our staff is here to help." },
-      { q: "What cannabis products does Jane Finch Cannabis carry?", a: "We carry 200+ strains of cannabis flower across 5 quality tiers (Exotic, Premium, AAA+, AA, Budget), plus edibles, vapes, concentrates, pre-rolls, native cigarettes, and accessories. Our menu updates in real time online." },
-      { q: "What is the cheapest weed at Jane Finch Cannabis?", a: "Our Budget tier starts at $3/g with value ounces from $40. Our AA tier is $4/g. Every tier includes our 3g bundle pricing, making our prices even more competitive." },
-      { q: "Does Jane Finch Cannabis have a live menu?", a: "Yes! Our online menu at janefinchcannabis.ca updates in real time with current stock, prices, and availability. You can see exactly what we have before you visit." },
-      { q: "What makes Jane Finch Cannabis different from other North York dispensaries?", a: "Three things set us apart: (1) we are open 24 hours a day, 7 days a week, (2) our transparent 5-tier pricing system means no confusing markups, and (3) every purchase includes our 3g bundle pricing. Plus we carry one of North York's largest selections with over 200 strains." },
-      { q: "Can I check stock before visiting?", a: "Absolutely. Visit janefinchcannabis.ca to see our live menu. All flower, edibles, vapes, and accessories are listed with real-time stock status, THC levels, and pricing." },
-      { q: "Is there parking near Jane Finch Cannabis?", a: "Yes. Free street parking is available nearby and surrounding residential streets. We're also easily accessible via local transit." },
-    ],
+    "faqs": [
+      {
+        "q": "Is Jane Finch Cannabis a cannabis dispensary in North York?",
+        "a": "Yes. Jane Finch Cannabis serves shoppers looking for a cannabis dispensary in North York. Use the store page for directions, contact options, and listed hours."
+      },
+      {
+        "q": "What should I check before visiting Jane Finch Cannabis?",
+        "a": "Start with the store page, then use the current menu to compare product names, formats, prices, and item notes."
+      },
+      {
+        "q": "Does Jane Finch Cannabis carry flower and pre-rolls?",
+        "a": "The site has menu paths for flower tiers and pre-rolls. Check the current menu or ask staff for current details."
+      }
+    ]
   },
-
   {
-    slug: "cheap-weed-york",
-    title: "Cheap Weed North York — Budget Cannabis Deals From $3/g | Jane Finch Cannabis",
-    metaDescription: "Looking for cheap weed in North York? Jane Finch Cannabis has budget flower from $3/g, ounces from $40, and 3g bundle pricing. We are Open 24 Hours at 2728 Jane St.",
-    h1: "Cheap Weed North York — Budget Cannabis Deals",
-    icon: "💰",
-    heroTagline: "Budget Flower From $3/g · Ounces From $40 · Open 24 Hours",
-    banner: "",
-    sections: [
+    "slug": "york-weed-dispensary",
+    "title": "Jane Finch Cannabis Weed Dispensary in North York",
+    "metaDescription": "Jane Finch Cannabis is a weed dispensary in North York with flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and shopper resources.",
+    "h1": "Jane Finch Cannabis Weed Dispensary in North York",
+    "icon": "*",
+    "heroTagline": "Menu shopping around Jane and Finch / North York",
+    "sections": [
       {
-        heading: "North York's Best Prices on Quality Cannabis",
-        body: "Looking for cheap weed in North York without sacrificing quality? Jane Finch Cannabis offers some of the most competitive cannabis prices in the city. Our Budget tier starts at just $3/g with value ounces from $40. Our AA tier ($4/g) and AAA+ tier ($5-$6/g) also deliver incredible value with THC levels from 27% to 32%. We believe great cannabis shouldn't break the bank, and our transparent tier-based pricing ensures you always get exactly what you pay for — no hidden markups, no gimmicks.",
+        "heading": "Shop Jane Finch Cannabis With A Plan",
+        "body": "Jane Finch Cannabis helps adults compare the menu without turning the visit into a maze. Start with the store page, then choose the category that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed."
       },
       {
-        heading: "Flower Bundle Pricing",
-        body: "Every tier at Jane Finch Cannabis comes with our signature 3g bundle pricing — so the total grams and price are shown before purchase. Our top three tiers (Exotic, Premium, AAA+) also offer 6g bundle pricing for 6g total. When you combine our already low prices with these bundle offers, Jane Finch Cannabis delivers the best cannabis value in North York. A $15 AAA+ 3g purchase actually gets you 3g of flower — that's just $5/g for THC 30%+ cannabis.",
+        "heading": "Local Menu Notes For Jane and Finch / North York",
+        "body": "If you searched for a weed dispensary in Jane and Finch / North York or a cannabis dispensary in North York, use this page to get oriented. Jane and Finch / North York, Jane and Finch, North York, Jane Street are useful local cues, but the current menu and staff are the right place for details that change."
       },
       {
-        heading: "Budget Doesn't Mean Low Quality",
-        body: "At Jane Finch Cannabis, cheap doesn't mean low quality. Every strain in our Budget and AA tiers delivers reliable potency (THC 24-29%) from trusted Canadian growers. We rotate our inventory frequently to ensure freshness and maintain our quality standards across all price points. Our Budget strains are perfect for rolling, sessions, or anyone who prefers value over premium aesthetics. Our AA tier is a step up — solid daily drivers with consistent effects.",
-      },
-      {
-        heading: "Compare Our Prices",
-        body: "Budget: $3/g — $40/oz. AA: $4/g — $90/oz. AAA+: $5-$6/g — $100/oz. Premium: $7-$10/g. Exotic: $10-$12/g. Every tier includes 3g bundle pricing. Top tiers include 6g bundle pricing. These are some of the lowest prices you'll find at any dispensary in North York, Jane St & Sheppard Ave W and surrounding areas.",
-      },
+        "heading": "What To Check Before Visiting",
+        "body": "Confirm the store page, directions, contact options, listed hours, and menu category first. For current products, prices, or availability, use the menu or ask staff before leaving."
+      }
     ],
-    faqs: [
-      { q: "What is the cheapest weed at Jane Finch Cannabis?", a: "Our Budget tier starts at $3/g with value ounces from $40. These are quality, properly-cured strains at North York's most competitive prices." },
-      { q: "Do you have ounce deals?", a: "Yes! Budget ounces from $40, AA ounces from $90, AAA+ ounces from $100. All with excellent quality, freshness guaranteed, and 3g bundle pricing on top." },
-      { q: "Is cheap weed still good quality?", a: "Absolutely. Our Budget flower delivers THC 24-27% from trusted Canadian growers. We never sell old, dry, or improperly stored flower. Every product meets our quality standards regardless of price point." },
-      { q: "Where can I buy cheap weed in North York?", a: "Jane Finch Cannabis at 2728 Jane St, North York. We are open 24 hours a day, 7 days a week, walk in anytime, no appointment needed. We're in the heart of Jane St & Sheppard Ave W area." },
-      { q: "What bundle pricing do you offer?", a: "Every tier includes 3g bundle pricing (3g total). Our Exotic, Premium, and AAA+ tiers also offer 6g bundle pricing (6g total). These bundle offers apply on every visit." },
-      { q: "Do you offer bulk discounts?", a: "Yes — our ounce pricing is deeply discounted compared to per-gram rates. Budget ounces are $40, AA ounces $90, and AAA+ ounces $100. The more you buy, the more you save." },
-    ],
+    "faqs": [
+      {
+        "q": "Is Jane Finch Cannabis a cannabis dispensary in North York?",
+        "a": "Yes. Jane Finch Cannabis serves shoppers looking for a cannabis dispensary in North York. Use the store page for directions, contact options, and listed hours."
+      },
+      {
+        "q": "What should I check before visiting Jane Finch Cannabis?",
+        "a": "Start with the store page, then use the current menu to compare product names, formats, prices, and item notes."
+      },
+      {
+        "q": "Does Jane Finch Cannabis carry flower and pre-rolls?",
+        "a": "The site has menu paths for flower tiers and pre-rolls. Check the current menu or ask staff for current details."
+      }
+    ]
   },
-
   {
-    slug: "native-cigarettes-york",
-    title: "Native Cigarettes North York — Discount Tobacco | Jane Finch Cannabis",
-    metaDescription: "Buy native cigarettes in North York at Jane Finch Cannabis. Wide selection of premium and value tobacco brands at the best prices. 2728 Jane St, Jane St & Sheppard Ave W. We are Open 24 Hours.",
-    h1: "Native Cigarettes North York — Discount Tobacco",
-    icon: "🏷️",
-    heroTagline: "Premium & Value Brands · Best Prices in North York · Open 24 Hours",
-    banner: "",
-    sections: [
+    "slug": "cheap-weed-north-york",
+    "title": "Jane Finch Cannabis Cheap Weed and Budget Weed Guide",
+    "metaDescription": "A value-minded Jane Finch Cannabis guide for cheap weed, budget weed, affordable weed, and flower tier shopping in North York.",
+    "h1": "Jane Finch Cannabis Cheap Weed and Budget Weed Guide",
+    "icon": "$",
+    "heroTagline": "Value shopping without the guessing game",
+    "sections": [
       {
-        heading: "North York's Best Selection of Native Cigarettes",
-        body: "Jane Finch Cannabis carries one of the widest selections of native cigarettes in North York. Located at 2728 Jane St near Jane St & Sheppard Ave W, we stock a comprehensive range of both premium and value native cigarette brands at competitive prices. Whether you prefer full-flavour, light, menthol, or specialty blends, our tobacco selection has something for every smoker. We're proud to be one of the few stores in North York that combines a full cannabis dispensary with a comprehensive tobacco counter — one stop for everything you need.",
+        "heading": "Start With Budget And AA",
+        "body": "If cheap weed or affordable weed is the mission, start with the Budget and AA flower lanes before jumping around the rest of the menu. That keeps the comparison clean."
       },
       {
-        heading: "Why North York Smokers Choose Jane Finch Cannabis",
-        body: "There are three reasons North York smokers keep coming back to Jane Finch Cannabis for their cigarettes. First, our prices are among the lowest in the Jane St & Sheppard Ave W area — we buy in volume and pass the savings to our customers. Second, our selection is comprehensive — we carry brands and varieties that many other shops simply don't stock. Third, we are open 24 hours a day, 7 days a week. Need cigarettes? Stop by during our hours: Open 24 Hours. No other tobacco shop in North York offers this level of convenience.",
+        "heading": "Compare The Current Menu",
+        "body": "Look at product name, format, weight, posted price, and item notes. Menus change, so use this page for the shopping method and the live menu or staff for current details."
       },
       {
-        heading: "Convenient Jane St & Sheppard Ave W Location",
-        body: "Our shop at 2728 Jane St is centrally located in North York — easily accessible from Weston Rd, Lawrence Ave W, Highway 401, and all major Peel/Toronto routes. Whether you're walking, driving, or taking the bus, Jane Finch Cannabis is easy to reach. Free evening street parking is available nearby. We serve customers from across North York including Jane St & Sheppard Ave W and surrounding areas.",
-      },
-      {
-        heading: "More Than Just Cigarettes",
-        body: "While you're picking up your cigarettes, browse our full cannabis menu — over 200 strains of flower, plus edibles, vapes, concentrates, pre-rolls, and accessories. Many of our customers appreciate the convenience of getting their cigarettes and cannabis in one trip. Our knowledgeable staff can help you with both sides of our inventory.",
-      },
+        "heading": "Know When To Move Up",
+        "body": "If Budget or AA does not fit the visit, compare AAA+, Premium, or Exotic flower next. A better tier decision starts with the lane, not with random scrolling."
+      }
     ],
-    faqs: [
-      { q: "Does Jane Finch Cannabis sell native cigarettes?", a: "Yes! We carry one of the widest selections of native cigarettes in North York, including premium brands, value brands, full-flavour, light, and menthol varieties." },
-      { q: "What cigarette brands do you carry?", a: "We stock a comprehensive range of native cigarette brands in multiple varieties. Our selection rotates regularly. Visit us at 2728 Jane St to see our full current inventory and pricing." },
-      { q: "Where can I buy cheap cigarettes in North York?", a: "Jane Finch Cannabis at 2728 Jane St offers some of the best cigarette prices in North York's Weston area. We are open 24 hours a day, 7 days a week so you can shop on your own schedule." },
-      { q: "Are you open late for cigarette purchases?", a: "We are open 24 hours a day, 7 days a week. Whether you need cigarettes at noon or late at night, our doors are open." },
-      { q: "Can I buy cigarettes and cannabis at Jane Finch Cannabis?", a: "Absolutely. Jane Finch Cannabis is both a fully-licensed cannabis dispensary and a tobacco retailer. Many customers appreciate the convenience of one stop for both products." },
-      { q: "Where is Jane Finch Cannabis located?", a: "2728 Jane St, North York, ON M3L 2G6 — in Jane St & Sheppard Ave W area. Near transit routes with free street parking available." },
-    ],
+    "faqs": [
+      {
+        "q": "Where should value shoppers start at Jane Finch Cannabis?",
+        "a": "Start with Budget and AA flower, then compare current menu details before choosing."
+      },
+      {
+        "q": "Does affordable weed mean guessing?",
+        "a": "No. Compare the category, product name, format, size, posted price, and item notes. Ask staff if anything is unclear."
+      },
+      {
+        "q": "Where can shoppers confirm current prices?",
+        "a": "Use the current menu or ask staff. A guide should not pretend prices and availability never move."
+      }
+    ]
   },
-
   {
-    slug: "weed-store-near-north-york",
-    title: "Weed Store Near North York — Jane Finch Cannabis",
-    metaDescription: "Looking for a weed store near North York? Jane Finch Cannabis at 2728 Jane St, North York is just minutes away via major highways. 200+ strains, we are Open 24 Hours.",
-    h1: "Weed Store Near North York — Jane Finch Cannabis",
-    icon: "🚗",
-    heroTagline: "Just Minutes From Mississauga via major highways · Open 24 Hours",
-    banner: "/banners/jfc_welcome_banner.webp",
-    sections: [
+    "slug": "cheap-weed-york",
+    "title": "Jane Finch Cannabis Cheap Weed and Budget Weed Guide",
+    "metaDescription": "A value-minded Jane Finch Cannabis guide for cheap weed, budget weed, affordable weed, and flower tier shopping in North York.",
+    "h1": "Jane Finch Cannabis Cheap Weed and Budget Weed Guide",
+    "icon": "$",
+    "heroTagline": "Value shopping without the guessing game",
+    "sections": [
       {
-        heading: "The Closest Quality Dispensary to Mississauga",
-        body: "Jane Finch Cannabis is one of the closest premium cannabis dispensaries to North York. Located at 2728 Jane St in North York — just minutes up Highway 410 and East on 401 — we're the easiest dispensary to reach when you're coming from the surrounding area. Whether you're driving from North York and surrounding areas, Jane Finch Cannabis is the fastest, most convenient option for top-tier cannabis.",
+        "heading": "Start With Budget And AA",
+        "body": "If cheap weed or affordable weed is the mission, start with the Budget and AA flower lanes before jumping around the rest of the menu. That keeps the comparison clean."
       },
       {
-        heading: "Why Make the Drive to Jane Finch Cannabis?",
-        body: "Jane Finch Cannabis offers a wider selection and more competitive pricing than most local Peel options. You'll find over 200 strains across five quality tiers — from ultra-rare Exotic genetics (THC 35-39%) to affordable Budget flower at just $3/g. Our 3g bundle pricing applies to every tier, and our top three tiers offer 6g bundle pricing. With prices starting at $3/g and ounces from $40, Jane Finch Cannabis delivers value that's worth the short drive from North York.",
+        "heading": "Compare The Current Menu",
+        "body": "Look at product name, format, weight, posted price, and item notes. Menus change, so use this page for the shopping method and the live menu or staff for current details."
       },
       {
-        heading: "Open 24 Hours — Perfect for Late Night Visits",
-        body: "Unlike most dispensaries in Peel Region with limited hours, Jane Finch Cannabis is open 24 hours a day, 7 days a week. Whether you're heading home from a late shift, going out for the night, or just need a quick pickup, you can stop by Jane Finch Cannabis during our hours: Open 24 Hours. Early morning, late night, weekends, holidays — we are always here.",
-      },
-      {
-        heading: "Directions From North York",
-        body: "We are located centrally at 2728 Jane St, North York, making it easy to drive or take transit from North York. Total drive time is just a few minutes. Free street parking is available.",
-      },
-      {
-        heading: "Full Menu — Cannabis, Edibles, Vapes & More",
-        body: "When you make the trip up to North York, make it count. Jane Finch Cannabis carries a full selection including 200+ flower strains, edibles, vape pens, disposable vapes, concentrates (shatter, wax, hash, live resin), pre-rolled joints, native cigarettes, and accessories. Check our live online menu at janefinchcannabis.ca before you visit to see exactly what's in stock.",
-      },
+        "heading": "Know When To Move Up",
+        "body": "If Budget or AA does not fit the visit, compare AAA+, Premium, or Exotic flower next. A better tier decision starts with the lane, not with random scrolling."
+      }
     ],
-    faqs: [
-      { q: "How far is Jane Finch Cannabis from Mississauga?", a: "We're located at 2728 Jane St in North York — just a 15-20 minute drive from central Mississauga via Highway 401 East." },
-      { q: "Is it worth driving from Mississauga for cannabis?", a: "Absolutely. Jane Finch Cannabis offers 200+ strains, prices starting at $3/g, and bundle pricing options like 3g total that make the short drive incredibly worthwhile." },
-      { q: "Is Jane Finch Cannabis open late?", a: "We are open 24 hours a day, 7 days a week. Whether you're driving up at noon or late at night, we are open and ready to serve you." },
-      { q: "What's the cheapest weed near North York?", a: "Jane Finch Cannabis has Budget flower from $3/g and value ounces from $40. With our 3g bundle pricing, these are some of the best prices in the Greater Toronto Area." },
-      { q: "Is there parking at Jane Finch Cannabis?", a: "Yes. Free evening street parking is available near the store and surrounding residential streets." },
-      { q: "Can I take transit from North York to Jane Finch Cannabis?", a: "Yes! Local transit connects directly subway and bus routes that will drop you off right near our location." },
-      { q: "Do you carry products besides cannabis?", a: "Yes — we also carry native cigarettes, rolling papers, grinders, and other accessories. Many Mississauga customers appreciate the one-stop convenience." },
-    ],
+    "faqs": [
+      {
+        "q": "Where should value shoppers start at Jane Finch Cannabis?",
+        "a": "Start with Budget and AA flower, then compare current menu details before choosing."
+      },
+      {
+        "q": "Does affordable weed mean guessing?",
+        "a": "No. Compare the category, product name, format, size, posted price, and item notes. Ask staff if anything is unclear."
+      },
+      {
+        "q": "Where can shoppers confirm current prices?",
+        "a": "Use the current menu or ask staff. A guide should not pretend prices and availability never move."
+      }
+    ]
   },
-
   {
-    slug: "dispensary-near-me-york",
-    title: "Cannabis Dispensary Near Me North York — Jane Finch Cannabis | Open 24 Hours",
-    metaDescription: "Find a cannabis dispensary near you in North York. Jane Finch Cannabis at 2728 Jane St has 200+ strains from $3/g. We are Open 24 Hours. Walk in anytime, no appointment needed.",
-    h1: "Cannabis Dispensary Near Me — North York",
-    icon: "🗺️",
-    heroTagline: "Walk-In Welcome · Open 24 Hours · 200+ Strains In Stock",
-    banner: "/banners/jfc_welcome_banner.webp",
-    sections: [
+    "slug": "native-cigarettes-north-york",
+    "title": "Jane Finch Cannabis Native Cigarettes Resource",
+    "metaDescription": "Jane Finch Cannabis Native cigarettes resource with brand names shown on the menu and $25 carton notes where listed.",
+    "h1": "Jane Finch Cannabis Native Cigarettes Resource",
+    "icon": "#",
+    "heroTagline": "$25 carton notes and brand names where listed",
+    "sections": [
       {
-        heading: "Find Premium Cannabis Near You in North York",
-        body: "If you're searching for a cannabis dispensary near you in North York, Jane Finch Cannabis is conveniently located at 2728 Jane St — in the heart of Jane St & Sheppard Ave W area. We serve customers from across North York, North North York, Etobicoke, Mississauga, and Toronto.",
+        "heading": "Start With The Cigarette Category",
+        "body": "The cigarette menu may show carton-style Native smoke options around $25, with brand names such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, and Canadian Classics Silver. Check the current menu or ask staff before making the trip."
       },
       {
-        heading: "Why Choose Jane Finch Cannabis Over Other Dispensaries?",
-        body: "What sets Jane Finch Cannabis apart from other North York dispensaries is our combination of selection, pricing, and convenience. We carry 200+ strains across five clear quality tiers — no confusing markups, no inconsistent pricing. Our 3g bundle pricing applies to every tier, every purchase. And unlike most dispensaries that close early, we are open 24 hours a day, 7 days a week. Whether you need flower, edibles, vapes, or concentrates, Jane Finch Cannabis is here.",
+        "heading": "Keep Cannabis And Smokes Separate",
+        "body": "If you are also shopping flower, pre-rolls, edibles, THC vapes, or concentrates, compare those categories separately. It keeps the visit cleaner."
       },
       {
-        heading: "Areas We Serve in Greater Toronto Area",
-        body: "Jane Finch Cannabis is centrally located and easily accessible from anywhere in North York and West Toronto. We regularly serve customers from: Jane St & Sheppard Ave W and surrounding areas including North York, North York, and nearby neighbourhoods."
-      },
+        "heading": "Confirm What Matters Today",
+        "body": "Specific brands, carton options, and prices can change. Use this resource for the shopping path, then confirm current details with the menu or staff."
+      }
     ],
-    faqs: [
-      { q: "Where is the closest dispensary in Jane St & Sheppard Ave W?", a: "Jane Finch Cannabis at 2728 Jane St is conveniently located in the heart of North York — easily accessible from Jane St & Sheppard Ave W." },
-      { q: "Is Jane Finch Cannabis walk-in friendly?", a: "Absolutely! No appointment needed. Walk in anytime during our hours — we are open 24 hours a day, 7 days a week. Our friendly staff is always ready to help." },
-      { q: "What neighbourhoods does Jane Finch Cannabis serve?", a: "We serve all of North York and surrounding areas, including Jane St & Sheppard Ave W and surrounding areas." },
-      { q: "How do I check what's in stock?", a: "Visit janefinchcannabis.ca for our live menu with real-time stock, pricing, and THC levels for all products." },
-      { q: "Do you sell edibles and vapes?", a: "Yes! In addition to 200+ flower strains, we carry edibles (gummies, chocolates), vape pens, disposable vapes, concentrates, pre-rolls, and accessories." },
-    ],
+    "faqs": [
+      {
+        "q": "Does Jane Finch Cannabis list Native cigarette options?",
+        "a": "The menu may show Native smoke brands such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, and Canadian Menthol. Confirm current options before visiting."
+      },
+      {
+        "q": "Are $25 cartons guaranteed?",
+        "a": "No. This page points shoppers toward menu listings where $25 carton-style options are shown. Confirm current price and availability before choosing."
+      },
+      {
+        "q": "Where should shoppers start?",
+        "a": "Open the cigarette category, then use the store page for directions, contact options, and listed hours."
+      }
+    ]
   },
+  {
+    "slug": "native-cigarettes-york",
+    "title": "Jane Finch Cannabis Native Cigarettes Resource",
+    "metaDescription": "Jane Finch Cannabis Native cigarettes resource with brand names shown on the menu and $25 carton notes where listed.",
+    "h1": "Jane Finch Cannabis Native Cigarettes Resource",
+    "icon": "#",
+    "heroTagline": "$25 carton notes and brand names where listed",
+    "sections": [
+      {
+        "heading": "Start With The Cigarette Category",
+        "body": "The cigarette menu may show carton-style Native smoke options around $25, with brand names such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, and Canadian Classics Silver. Check the current menu or ask staff before making the trip."
+      },
+      {
+        "heading": "Keep Cannabis And Smokes Separate",
+        "body": "If you are also shopping flower, pre-rolls, edibles, THC vapes, or concentrates, compare those categories separately. It keeps the visit cleaner."
+      },
+      {
+        "heading": "Confirm What Matters Today",
+        "body": "Specific brands, carton options, and prices can change. Use this resource for the shopping path, then confirm current details with the menu or staff."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Does Jane Finch Cannabis list Native cigarette options?",
+        "a": "The menu may show Native smoke brands such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, and Canadian Menthol. Confirm current options before visiting."
+      },
+      {
+        "q": "Are $25 cartons guaranteed?",
+        "a": "No. This page points shoppers toward menu listings where $25 carton-style options are shown. Confirm current price and availability before choosing."
+      },
+      {
+        "q": "Where should shoppers start?",
+        "a": "Open the cigarette category, then use the store page for directions, contact options, and listed hours."
+      }
+    ]
+  },
+  {
+    "slug": "weed-store-near-jane-and-finch-north-york",
+    "title": "Weed Store Near Jane and Finch / North York | Jane Finch Cannabis",
+    "metaDescription": "Looking for a weed store near Jane and Finch / North York? Use Jane Finch Cannabis for store-page checks, menu categories, and local visit planning in North York.",
+    "h1": "Weed Store Near Jane and Finch / North York",
+    "icon": ">",
+    "heroTagline": "Local visit notes for Jane and Finch / North York, Jane and Finch, North York, Jane Street",
+    "sections": [
+      {
+        "heading": "Confirm The Right Store Page",
+        "body": "When you search for a weed store near Jane and Finch / North York, open the Jane Finch Cannabis store page first. Confirm directions, contact options, listed hours, and the menu path before visiting."
+      },
+      {
+        "heading": "Choose The Product Lane",
+        "body": "Flower, pre-rolls, edibles, THC vapes, concentrates, and accessories all shop differently. Pick the category first, then compare current product details."
+      },
+      {
+        "heading": "Use Staff For The Close Call",
+        "body": "If one detail decides the visit, ask staff. That is the cleanest way to handle current product questions."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What is the best first step for a Jane and Finch / North York visit?",
+        "a": "Open the Jane Finch Cannabis store page, then use the current menu category that matches the visit."
+      },
+      {
+        "q": "Should shoppers rely on old blog prices?",
+        "a": "No. Use the current menu or staff for details that change."
+      },
+      {
+        "q": "What categories can shoppers compare?",
+        "a": "Use the menu paths for flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes where listed."
+      }
+    ]
+  },
+  {
+    "slug": "weed-store-near-brampton",
+    "title": "Weed Store Near Jane and Finch / North York | Jane Finch Cannabis",
+    "metaDescription": "Looking for a weed store near Jane and Finch / North York? Use Jane Finch Cannabis for store-page checks, menu categories, and local visit planning in North York.",
+    "h1": "Weed Store Near Jane and Finch / North York",
+    "icon": ">",
+    "heroTagline": "Local visit notes for Jane and Finch / North York, Jane and Finch, North York, Jane Street",
+    "sections": [
+      {
+        "heading": "Confirm The Right Store Page",
+        "body": "When you search for a weed store near Jane and Finch / North York, open the Jane Finch Cannabis store page first. Confirm directions, contact options, listed hours, and the menu path before visiting."
+      },
+      {
+        "heading": "Choose The Product Lane",
+        "body": "Flower, pre-rolls, edibles, THC vapes, concentrates, and accessories all shop differently. Pick the category first, then compare current product details."
+      },
+      {
+        "heading": "Use Staff For The Close Call",
+        "body": "If one detail decides the visit, ask staff. That is the cleanest way to handle current product questions."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What is the best first step for a Jane and Finch / North York visit?",
+        "a": "Open the Jane Finch Cannabis store page, then use the current menu category that matches the visit."
+      },
+      {
+        "q": "Should shoppers rely on old blog prices?",
+        "a": "No. Use the current menu or staff for details that change."
+      },
+      {
+        "q": "What categories can shoppers compare?",
+        "a": "Use the menu paths for flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes where listed."
+      }
+    ]
+  },
+  {
+    "slug": "dispensary-near-me-north-york",
+    "title": "Cannabis Dispensary Near Me in North York | Jane Finch Cannabis",
+    "metaDescription": "Use Jane Finch Cannabis when searching for a cannabis dispensary near me in North York; compare menu categories and confirm current details before visiting.",
+    "h1": "Cannabis Dispensary Near Me in North York",
+    "icon": "o",
+    "heroTagline": "Store page first, menu category second",
+    "sections": [
+      {
+        "heading": "Make The Search Useful",
+        "body": "A near-me search should get you to the right store page, not a wall of generic copy. Jane Finch Cannabis gives shoppers a clear path to the store page, menu categories, and resources."
+      },
+      {
+        "heading": "Compare Categories Naturally",
+        "body": "Use normal shopping language: cannabis dispensary in North York, weed dispensary in Jane and Finch / North York, cheap weed, budget weed, premium flower, pre-rolls, edibles, THC vapes, and concentrates. The point is to help the shopper, not stuff a sentence."
+      },
+      {
+        "heading": "Check Current Details",
+        "body": "For product names, prices, and availability, use the current menu or ask staff. This page is for orientation and visit planning."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Is Jane Finch Cannabis useful for a near-me cannabis search?",
+        "a": "Yes. Use the store page to confirm Jane Finch Cannabis, then open the menu category that matches your visit."
+      },
+      {
+        "q": "Can shoppers browse before visiting?",
+        "a": "Yes. Use the current menu and resources section before heading over."
+      },
+      {
+        "q": "What should shoppers avoid?",
+        "a": "Avoid guessing from old examples. Confirm current details with the menu or staff."
+      }
+    ]
+  },
+  {
+    "slug": "dispensary-near-me-york",
+    "title": "Cannabis Dispensary Near Me in North York | Jane Finch Cannabis",
+    "metaDescription": "Use Jane Finch Cannabis when searching for a cannabis dispensary near me in North York; compare menu categories and confirm current details before visiting.",
+    "h1": "Cannabis Dispensary Near Me in North York",
+    "icon": "o",
+    "heroTagline": "Store page first, menu category second",
+    "sections": [
+      {
+        "heading": "Make The Search Useful",
+        "body": "A near-me search should get you to the right store page, not a wall of generic copy. Jane Finch Cannabis gives shoppers a clear path to the store page, menu categories, and resources."
+      },
+      {
+        "heading": "Compare Categories Naturally",
+        "body": "Use normal shopping language: cannabis dispensary in North York, weed dispensary in Jane and Finch / North York, cheap weed, budget weed, premium flower, pre-rolls, edibles, THC vapes, and concentrates. The point is to help the shopper, not stuff a sentence."
+      },
+      {
+        "heading": "Check Current Details",
+        "body": "For product names, prices, and availability, use the current menu or ask staff. This page is for orientation and visit planning."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Is Jane Finch Cannabis useful for a near-me cannabis search?",
+        "a": "Yes. Use the store page to confirm Jane Finch Cannabis, then open the menu category that matches your visit."
+      },
+      {
+        "q": "Can shoppers browse before visiting?",
+        "a": "Yes. Use the current menu and resources section before heading over."
+      },
+      {
+        "q": "What should shoppers avoid?",
+        "a": "Avoid guessing from old examples. Confirm current details with the menu or staff."
+      }
+    ]
+  }
 ];
 
 export function getSeoPageBySlug(slug: string): SeoPageData | undefined {

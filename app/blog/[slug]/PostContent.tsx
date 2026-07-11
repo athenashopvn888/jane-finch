@@ -90,7 +90,7 @@ export default function PostContent() {
 
         <div className={styles.cta}>
           <p><strong>Jane Finch Cannabis</strong> - use the store page for current store details before visiting.</p>
-          <Link href="/weed-dispensary-north-york" className={styles.ctaBtn}>Store Page</Link>
+          <Link href="/weed-dispensary-north-york" className={styles.ctaBtn}>Open Store Page</Link>
         </div>
 
         <Link href="/blog" className={styles.backLink}>Back to Blog</Link>
