@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import BlogContent from "./BlogContent";
 
 export const metadata: Metadata = {
-  title: "Cannabis Blog & Guides — Jane Finch Cannabis | North York",
-  description: "Read the latest strain reviews, dosing guides, and cannabis news from Jane Finch Cannabis in North York.",
+  title: "Jane Finch Cannabis Blog | Cannabis Menu Guides",
+  description: "Read Jane Finch Cannabis cannabis menu guides, flower tier notes, and local store checks for North York shoppers.",
   alternates: {
     canonical: "https://www.janefinchcannabis.ca/blog",
   },
