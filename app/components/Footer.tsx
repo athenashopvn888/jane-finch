@@ -6,27 +6,18 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.grid}>
-          {/* Column 1 — Store Description */}
           <div className={styles.col}>
-            <div className={styles.brand}>
-              JANE FINCH CANNABIS
-            </div>
+            <div className={styles.brand}>JANE FINCH CANNABIS</div>
             <p className={styles.desc}>
-              Your Local Cannabis Dispensary At 2728 Jane St, North York. Visit
-              Jane Finch Cannabis For Premium Flower, Edibles, Vapes &amp; More.
+              Your local cannabis dispensary at 2728 Jane St, North York. Visit
+              Jane Finch Cannabis for flower, edibles, vapes, pre-rolls, cigarettes, and menu resources.
               Open: Open 24 Hours.
             </p>
             <div className={styles.buttons}>
-              <a
-                href="tel:+15483232728"
-                className={styles.btnPrimary}
-              >
-                Call Now
-              </a>
+              <a href="tel:+15483232728" className={styles.btnPrimary}>Call Now</a>
             </div>
           </div>
 
-          {/* Column 2 — Contact Info */}
           <div className={styles.col}>
             <h3 className={styles.colTitle}>Contact Info</h3>
             <div className={styles.infoBlock}>
@@ -45,7 +36,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 3 — Quick Links */}
           <div className={styles.col}>
             <h3 className={styles.colTitle}>Quick Links</h3>
             <nav className={styles.links}>
@@ -58,15 +48,13 @@ export default function Footer() {
               <Link href="/items/edibles">Edibles</Link>
               <Link href="/items/cigarettes">Cigarettes</Link>
               <Link href="/items/vapes">Vape Pens</Link>
-              <Link href="/blog">Blog</Link>
               <Link href="/resources">Resources</Link>
-              <Link href="/blog/jane-finch-cannabis-local-visit-guide-2026">Local Visit Guide</Link>
               <Link href="/faq">FAQ</Link>
               <Link href="/delivery">Delivery (Coming Soon)</Link>
-              <Link href="/info/york-weed-dispensary">North York Dispensary</Link>
-              <Link href="/info/cheap-weed-york">Cheap Weed North York</Link>
-              <Link href="/info/native-cigarettes-york">Native Cigarettes</Link>
-              <Link href="/info/weed-store-near-mississauga">Weed Store Near Mississauga</Link>
+              <Link href="/info/north-york-weed-dispensary">North York Dispensary</Link>
+              <Link href="/info/cheap-weed-north-york">Cheap Weed North York</Link>
+              <Link href="/info/native-cigarettes-north-york">Native Cigarettes North York</Link>
+              <Link href="/info/weed-store-near-jane-and-finch-north-york">Jane and Finch Visit Notes</Link>
               <Link href="/weed-dispensary-north-york/">Jane Finch Cannabis Weed Dispensary in North York</Link>
               <Link href="/contact">Contact Us</Link>
             </nav>
@@ -74,10 +62,7 @@ export default function Footer() {
         </div>
 
         <div className={styles.bottom}>
-          <p>
-            © {new Date().getFullYear()} Jane Finch Cannabis. Must be 19+ to
-            enter. Please consume responsibly.
-          </p>
+          <p>(c) {new Date().getFullYear()} Jane Finch Cannabis. Must be 19+ to enter. Please consume responsibly.</p>
         </div>
       </div>
     </footer>
