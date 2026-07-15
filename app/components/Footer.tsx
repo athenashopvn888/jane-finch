@@ -62,7 +62,7 @@ export default function Footer() {
         </div>
 
         <div className={styles.bottom}>
-          <p>(c) {new Date().getFullYear()} Jane Finch Cannabis. Must be 19+ to enter. Please consume responsibly.</p>
+          <p>(c) {new Date().getFullYear()} Jane Finch Cannabis. Adults 19+ only.</p>
         </div>
       </div>
     </footer>

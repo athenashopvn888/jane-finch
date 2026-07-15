@@ -77,7 +77,7 @@ const LOCAL_FAQS = [
   },
   {
     q: "Where is Jane Finch Cannabis located?",
-    a: "We are located at 2728 Jane St, North York, ON M3L 2G6. Visit us in person or call us at (548) 323-2728. Free evening street parking is available.",
+    a: "We are located at 2728 Jane St, North York, ON M3L 2G6. Visit us in person or call us at (548) 323-2728. Free evening street parking is listed.",
   },
   {
     q: "What is the cheapest weed at Jane Finch Cannabis?",
@@ -334,7 +334,7 @@ export default function HomePage() {
               If cheap weed or affordable weed is the goal, start with Budget and AA flower before moving up. If premium flower or exotic flower is the mood, open those lanes first and compare the current details there.
             </p>
             <p className={styles.seoPanelText}>
-              Menus change, so use the current menu and staff for product names, prices, and availability before you make the trip.
+              Menus change, so use the current menu and staff for product names, prices, and listings before you make the trip.
             </p>
           </div>
         </div>
@@ -363,7 +363,7 @@ export default function HomePage() {
               <div className={styles.reviewsLoading}>Loading reviews...</div>
             ) : reviews.length === 0 ? (
               <div className={styles.reviewsLoading}>
-                Reviews are not available right now.
+                Reviews are not listed right now.
               </div>
             ) : (
               reviews.map((rv, idx) => (

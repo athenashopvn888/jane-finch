@@ -38,7 +38,7 @@ export async function generateMetadata({
     },
     openGraph: {
       title: `${tierInfo.config.name} Flower | Jane Finch Cannabis`,
-      description: `${flowers.length} curated ${tierInfo.config.name.toLowerCase()} strains in stock now. From $${tierInfo.config.unitPrice}/g.`,
+      description: `Browse listed ${tierInfo.config.name.toLowerCase()} flower names, weights, and prices. Menu pricing starts from $${tierInfo.config.unitPrice}/g.`,
     },
   };
 }
