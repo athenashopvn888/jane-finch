@@ -21,7 +21,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "sections": [
       {
         "heading": "Shop Jane Finch Cannabis With A Plan",
-        "body": "Jane Finch Cannabis helps adults compare the menu without turning the visit into a maze. Start with the store page, then choose the category that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed."
+        "body": "Jane Finch Cannabis helps adults compare the menu with less noise. Start with the store page, then choose the category that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed."
       },
       {
         "heading": "Local Menu Notes For Jane and Finch / North York",
@@ -43,7 +43,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "q": "Does Jane Finch Cannabis carry flower and pre-rolls?",
-        "a": "The site has menu paths for flower tiers and pre-rolls. Check the current menu or ask staff for current details."
+        "a": "Flower tiers and pre-rolls are listed on the current menu. Check the menu or ask staff for current details."
       }
     ]
   },
@@ -57,7 +57,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "sections": [
       {
         "heading": "Shop Jane Finch Cannabis With A Plan",
-        "body": "Jane Finch Cannabis helps adults compare the menu without turning the visit into a maze. Start with the store page, then choose the category that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed."
+        "body": "Jane Finch Cannabis helps adults compare the menu with less noise. Start with the store page, then choose the category that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed."
       },
       {
         "heading": "Local Menu Notes For Jane and Finch / North York",
@@ -79,7 +79,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "q": "Does Jane Finch Cannabis carry flower and pre-rolls?",
-        "a": "The site has menu paths for flower tiers and pre-rolls. Check the current menu or ask staff for current details."
+        "a": "Flower tiers and pre-rolls are listed on the current menu. Check the menu or ask staff for current details."
       }
     ]
   },
@@ -89,7 +89,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "metaDescription": "A value-minded Jane Finch Cannabis guide for cheap weed, budget weed, affordable weed, and flower tier shopping in North York.",
     "h1": "Jane Finch Cannabis Cheap Weed and Budget Weed Guide",
     "icon": "$",
-    "heroTagline": "Value shopping without the guessing game",
+    "heroTagline": "Value shopping with current menu checks",
     "sections": [
       {
         "heading": "Start With Budget And AA",
@@ -101,7 +101,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "heading": "Know When To Move Up",
-        "body": "If Budget or AA does not fit the visit, compare AAA+, Premium, or Exotic flower next. A better tier decision starts with the lane, not with random scrolling."
+        "body": "If Budget or AA does not fit the visit, compare AAA+, Premium, or Exotic flower next. A better tier decision starts with the tier, then the current item details."
       }
     ],
     "faqs": [
@@ -125,7 +125,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "metaDescription": "A value-minded Jane Finch Cannabis guide for cheap weed, budget weed, affordable weed, and flower tier shopping in North York.",
     "h1": "Jane Finch Cannabis Cheap Weed and Budget Weed Guide",
     "icon": "$",
-    "heroTagline": "Value shopping without the guessing game",
+    "heroTagline": "Value shopping with current menu checks",
     "sections": [
       {
         "heading": "Start With Budget And AA",
@@ -137,7 +137,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "heading": "Know When To Move Up",
-        "body": "If Budget or AA does not fit the visit, compare AAA+, Premium, or Exotic flower next. A better tier decision starts with the lane, not with random scrolling."
+        "body": "If Budget or AA does not fit the visit, compare AAA+, Premium, or Exotic flower next. A better tier decision starts with the tier, then the current item details."
       }
     ],
     "faqs": [
@@ -237,10 +237,10 @@ export const SEO_PAGES: SeoPageData[] = [
     "sections": [
       {
         "heading": "Confirm The Right Store Page",
-        "body": "When you search for a weed store near Jane and Finch / North York, open the Jane Finch Cannabis store page first. Confirm directions, contact options, listed hours, and the menu path before visiting."
+        "body": "When you search for a weed store near Jane and Finch / North York, open the Jane Finch Cannabis store page first. Confirm directions, contact options, listed hours, and current menu details before visiting."
       },
       {
-        "heading": "Choose The Product Lane",
+        "heading": "Choose The Product Category",
         "body": "Flower, pre-rolls, edibles, THC vapes, concentrates, and accessories all shop differently. Pick the category first, then compare current product details."
       },
       {
@@ -259,7 +259,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "q": "What categories can shoppers compare?",
-        "a": "Use the menu paths for flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes where listed."
+        "a": "Browse flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes where listed, then confirm current details on the menu."
       }
     ]
   },
@@ -273,10 +273,10 @@ export const SEO_PAGES: SeoPageData[] = [
     "sections": [
       {
         "heading": "Confirm The Right Store Page",
-        "body": "When you search for a weed store near Jane and Finch / North York, open the Jane Finch Cannabis store page first. Confirm directions, contact options, listed hours, and the menu path before visiting."
+        "body": "When you search for a weed store near Jane and Finch / North York, open the Jane Finch Cannabis store page first. Confirm directions, contact options, listed hours, and current menu details before visiting."
       },
       {
-        "heading": "Choose The Product Lane",
+        "heading": "Choose The Product Category",
         "body": "Flower, pre-rolls, edibles, THC vapes, concentrates, and accessories all shop differently. Pick the category first, then compare current product details."
       },
       {
@@ -295,7 +295,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "q": "What categories can shoppers compare?",
-        "a": "Use the menu paths for flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes where listed."
+        "a": "Browse flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes where listed, then confirm current details on the menu."
       }
     ]
   },
@@ -309,7 +309,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "sections": [
       {
         "heading": "Make The Search Useful",
-        "body": "A near-me search should get you to the right store page, not a wall of generic copy. Jane Finch Cannabis gives shoppers a clear path to the store page, menu categories, and resources."
+        "body": "A near-me search should help you confirm the store, then compare menu categories and current details before visiting."
       },
       {
         "heading": "Compare Categories Naturally",
@@ -345,7 +345,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "sections": [
       {
         "heading": "Make The Search Useful",
-        "body": "A near-me search should get you to the right store page, not a wall of generic copy. Jane Finch Cannabis gives shoppers a clear path to the store page, menu categories, and resources."
+        "body": "A near-me search should help you confirm the store, then compare menu categories and current details before visiting."
       },
       {
         "heading": "Compare Categories Naturally",

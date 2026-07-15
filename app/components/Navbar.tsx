@@ -25,6 +25,7 @@ const CATEGORY_LINKS = [
 ];
 
 const SUPPORT_LINKS = [
+  { href: "/careers/budtender", label: "Hiring" },
   { href: "/resources", label: "Resources" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
@@ -82,6 +83,14 @@ export default function Navbar() {
           >
             <span className={styles.commandTitle} style={FALLBACK.commandTitle}>Delivery</span>
             <span className={styles.commandMeta} style={FALLBACK.commandMeta}>Coming soon</span>
+          </Link>
+          <Link
+            href="/careers/budtender"
+            className={styles.commandBtn}
+            style={FALLBACK.commandBtn}
+          >
+            <span className={styles.commandTitle} style={FALLBACK.commandTitle}>Hiring</span>
+            <span className={styles.commandMeta} style={FALLBACK.commandMeta}>Apply online</span>
           </Link>
           <span className={styles.open} style={FALLBACK.open}>
             <span className={styles.dot} style={FALLBACK.dot}></span>

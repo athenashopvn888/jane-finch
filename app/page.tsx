@@ -216,6 +216,21 @@ export default function HomePage() {
         </section>
       )}
 
+      <section className={styles.hiringBannerSection} aria-label="Jane Finch Cannabis hiring">
+        <div className={styles.hiringBanner}>
+          <div>
+            <span className={styles.hiringBannerLabel}>Now Hiring</span>
+            <h2>Budtenders / Managers Wanted At Jane Finch Cannabis</h2>
+            <p>
+              We are looking for reliable people who can keep the 24-hour counter calm, clear, and customer-ready. Online applications only. If we think you may be a good fit, we will contact you.
+            </p>
+          </div>
+          <Link href="/careers/budtender" className={styles.hiringBannerButton}>
+            Apply Online
+          </Link>
+        </div>
+      </section>
+
       {/* ── BENTO MOSAIC HERO ── */}
       <section className={styles.hero}>
         <div className={styles.heroBg} />
@@ -313,7 +328,7 @@ export default function HomePage() {
           <div className={styles.seoPanel}>
             <h2 className={styles.seoPanelTitle}>Shop The Menu With A Plan</h2>
             <p className={styles.seoPanelText}>
-              Start with the store page, then choose the product lane that fits the visit. Flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes each shop differently.
+              Start with the store page, then choose the product category that fits the visit. Flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes each shop differently.
             </p>
             <p className={styles.seoPanelText}>
               If cheap weed or affordable weed is the goal, start with Budget and AA flower before moving up. If premium flower or exotic flower is the mood, open those lanes first and compare the current details there.

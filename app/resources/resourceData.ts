@@ -28,7 +28,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "seoTitle": "Jane Finch Cannabis Resources | Menu and Shopping Guides",
     "description": "Resource guides for shopping the Jane Finch Cannabis menu in North York, including flower, value, pre-rolls, and Native smokes where listed.",
     "eyebrow": "Resource Centre",
-    "intro": "Welcome to the Jane Finch Cannabis resource centre. This is the no-stress corner for shoppers who want the menu to make sense before they visit. Pick the product lane, compare what matters, then use the current menu or staff for details that change.",
+    "intro": "Welcome to the Jane Finch Cannabis resource centre. This section helps shoppers make sense of the menu before they visit. Pick the product category, compare what matters, then use the current menu or staff for details that change.",
     "cards": [
       {
         "title": "Menu Guide",
@@ -38,7 +38,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       {
         "title": "Flower Guide",
         "href": "/resources/flower-guide",
-        "text": "Compare Exotic, Premium, AAA+, AA, and Budget without guessing."
+        "text": "Compare Exotic, Premium, AAA+, AA, and Budget with current menu details."
       },
       {
         "title": "Value Guide",
@@ -58,17 +58,17 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
     "sections": [
       {
-        "heading": "Shop The Menu Like A Human",
+        "heading": "Menu Guide",
         "body": "Start with the store page, then choose the category that matches the visit. Flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarette options should not all be compared the same way.",
         "bullets": [
           "Use the store page for directions, contact options, and listed hours.",
-          "Use category pages to compare the current menu lane.",
+          "Use category pages to compare current menu details.",
           "Ask staff when a product detail needs a current answer."
         ]
       },
       {
         "heading": "Local Notes For Jane and Finch / North York",
-        "body": "Jane Finch Cannabis serves shoppers around Jane and Finch / North York, Jane and Finch, North York, Jane Street. If you searched for a weed dispensary in Jane and Finch / North York, this resource section keeps the visit simple: right store, right menu lane, right next step."
+        "body": "Jane Finch Cannabis serves shoppers around Jane and Finch / North York, Jane and Finch, North York, Jane Street. If you searched for a weed dispensary in Jane and Finch / North York, this resource section keeps the visit simple: confirm the store, choose a category, and check current details."
       }
     ]
   },
@@ -83,7 +83,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       {
         "title": "Flower Guide",
         "href": "/resources/flower-guide",
-        "text": "Compare Exotic, Premium, AAA+, AA, and Budget without guessing."
+        "text": "Compare Exotic, Premium, AAA+, AA, and Budget with current menu details."
       },
       {
         "title": "Value Guide",
@@ -103,12 +103,12 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
     "sections": [
       {
-        "heading": "Pick The Lane First",
+        "heading": "Choose The Category First",
         "body": "If you want flower, start with flower. If you want pre-rolls, stay in pre-rolls. If the visit is about edibles, vapes, concentrates, or accessories, open that section and compare there first.",
         "bullets": [
           "Flower shoppers should compare tiers.",
           "Pre-roll shoppers should compare format and package details.",
-          "Edible, vape, and concentrate shoppers should read product notes carefully."
+          "Edible, vape, and concentrate shoppers should read item details carefully."
         ]
       },
       {
@@ -121,7 +121,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "slug": "flower-guide",
     "title": "Jane Finch Cannabis Flower Guide",
     "seoTitle": "Jane Finch Cannabis Flower Guide | Exotic, Premium, Budget",
-    "description": "Compare exotic flower, premium flower, budget weed, cheap weed, and affordable weed at Jane Finch Cannabis without guessing.",
+    "description": "Compare exotic flower, premium flower, budget weed, cheap weed, and affordable weed at Jane Finch Cannabis with current menu details.",
     "eyebrow": "Flower Guide",
     "intro": "Flower gets easier when you compare one tier at a time. Exotic flower and premium flower sit in different lanes from AAA+, AA, and Budget, so start with the lane that matches the visit.",
     "cards": [
@@ -168,7 +168,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "seoTitle": "Jane Finch Cannabis Value Guide | Cheap Weed and Budget Weed",
     "description": "A practical value guide for shoppers comparing cheap weed, budget weed, affordable weed, and menu categories at Jane Finch Cannabis.",
     "eyebrow": "Value Guide",
-    "intro": "Good value shopping is not just chasing the lowest number. It is choosing the right category, checking the current details, and knowing when Budget, AA, or another lane makes more sense.",
+    "intro": "Good value shopping is not just chasing the lowest number. It is choosing a useful category, checking the current details, and knowing when Budget, AA, or another tier makes more sense.",
     "cards": [
       {
         "title": "Budget Flower",
@@ -243,7 +243,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       {
         "title": "Flower Guide",
         "href": "/resources/flower-guide",
-        "text": "Compare Exotic, Premium, AAA+, AA, and Budget without guessing."
+        "text": "Compare Exotic, Premium, AAA+, AA, and Budget with current menu details."
       },
       {
         "title": "Value Guide",
