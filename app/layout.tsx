@@ -3,7 +3,7 @@ import "./globals.css";
 import AgeGate from "./components/AgeGate";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://janefinchcannabis.ca"),
+  metadataBase: new URL("https://www.janefinchcannabis.ca"),
   title: {
     default: "24 Hour North York Dispensary | Jane Finch Cannabis",
     template: "%s | Jane Finch Cannabis",
@@ -24,22 +24,22 @@ export const metadata: Metadata = {
     "vapes",
     "pre-rolls",
     "native cigarettes North York",
-    "weed store Mississauga",
+    "weed store North York",
   ],
   openGraph: {
     type: "website",
     locale: "en_CA",
-    url: "https://janefinchcannabis.ca",
+    url: "https://www.janefinchcannabis.ca",
     siteName: "Jane Finch Cannabis",
     title: "24 Hour North York Dispensary | Jane Finch Cannabis",
     description:
       "Jane Finch Cannabis is a North York dispensary on Jane St with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
     images: [
       {
-        url: "https://janefinchcannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg",
+        url: "https://www.janefinchcannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg",
         width: 1200,
         height: 630,
-        alt: "Jane Finch Cannabis — Premium Cannabis Dispensary North York",
+        alt: "Jane Finch Cannabis - Premium Cannabis Dispensary North York",
       },
     ],
   },
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "24 Hour North York Dispensary | Jane Finch Cannabis",
     description: "Jane Finch Cannabis is a North York dispensary on Jane St with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
-    images: ["https://janefinchcannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg"],
+    images: ["https://www.janefinchcannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg"],
   },
   robots: {
     index: true,
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://janefinchcannabis.ca",
+    canonical: "https://www.janefinchcannabis.ca",
   },
   verification: {
     // google: "your-google-verification-code",
@@ -73,12 +73,12 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Store",
   additionalType: "https://schema.org/Store",
-  "@id": "https://janefinchcannabis.ca",
+  "@id": "https://www.janefinchcannabis.ca",
   name: "Jane Finch Cannabis",
   description: "Cannabis dispensary at 2728 Jane St in North York, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 Hours.",
-  url: "https://janefinchcannabis.ca",
+  url: "https://www.janefinchcannabis.ca",
   telephone: "+15483232728",
-  image: "https://janefinchcannabis.ca/wp-content/uploads/2026/04/7Clmh.jpg",
+  image: "https://www.janefinchcannabis.ca/wp-content/uploads/2026/04/7Clmh.jpg",
   priceRange: "$3 - $12/g",
   address: {
     "@type": "PostalAddress",

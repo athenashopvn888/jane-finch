@@ -1,7 +1,7 @@
 // Auto-generated Google Business Profile Local SEO Location Configuration
 export const gbpLocation = {
   storeName: "Jane Finch Cannabis",
-  domain: "janefinchcannabis.ca",
+  domain: "www.janefinchcannabis.ca",
   city: "North York",
   province: "ON",
   country: "CA",
