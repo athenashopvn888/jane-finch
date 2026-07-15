@@ -59,13 +59,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   /* Resource pages */
   const resourcePages: MetadataRoute.Sitemap = RESOURCE_PAGES.map((page) => ({
-    url: page.slug ? `${BASE}/resources/${page.slug}` : `${BASE}/resources`,
+    url: `${BASE}${page.route}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
-    priority: page.slug ? 0.6 : 0.7,
+    priority: page.route === "/resources" ? 0.7 : 0.6,
   }));
 
 
   return [...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...resourcePages, ...seoPages];
 }
-

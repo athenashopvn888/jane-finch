@@ -6,9 +6,9 @@ import BudtenderApplicationForm from "./BudtenderApplicationForm";
 import styles from "./budtender.module.css";
 
 export const metadata: Metadata = {
-  title: "Budtender And Manager Application | Jane Finch Cannabis",
+  title: { absolute: "Budtender And Manager Application | Jane Finch Cannabis" },
   description: "Apply online for budtender or manager opportunities at Jane Finch Cannabis in North York.",
-  alternates: { canonical: "https://janefinchcannabis.ca/careers/budtender" },
+  alternates: { canonical: "https://www.janefinchcannabis.ca/careers/budtender" },
 };
 
 export default function BudtenderCareersPage() {

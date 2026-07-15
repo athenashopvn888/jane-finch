@@ -1,13 +1,25 @@
 import type { Metadata } from "next";
 import ResourceView from "./ResourceView";
-import { RESOURCE_HOME } from "./resourceData";
+import { getResourcePageByRoute, resourceCanonical } from "./resourceData";
 
-export const metadata: Metadata = {
-  title: RESOURCE_HOME.seoTitle,
-  description: RESOURCE_HOME.description,
-  alternates: { canonical: "https://janefinchcannabis.ca/resources" },
-};
+const page = getResourcePageByRoute("/resources");
+
+export function generateMetadata(): Metadata {
+  if (!page) return {};
+  return {
+    title: { absolute: page.seoTitle },
+    description: page.metaDescription,
+    alternates: { canonical: resourceCanonical(page) },
+    openGraph: {
+      title: page.seoTitle,
+      description: page.metaDescription,
+      url: resourceCanonical(page),
+      type: "website",
+    },
+  };
+}
 
 export default function ResourcesPage() {
-  return <ResourceView page={RESOURCE_HOME} />;
+  if (!page) return null;
+  return <ResourceView page={page} />;
 }
