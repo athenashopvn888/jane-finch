@@ -1,5 +1,6 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
@@ -24,10 +25,33 @@ const CATEGORY_LINKS = [
 ];
 
 const SUPPORT_LINKS = [
+  { href: "/careers/budtender", label: "Hiring" },
   { href: "/resources", label: "Resources" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ];
+
+/* Critical geometry stays inline so a stale CSS chunk can never produce a giant
+   natural-size logo or a collapsed wall of navigation text. Module CSS still
+   owns the finished theme, responsive polish, hover, and active states. */
+const FALLBACK: Record<string, CSSProperties> = {
+  navbar: { position: "fixed", inset: "0 0 auto", zIndex: 1000, background: "#050f0a", color: "#fff" },
+  topBar: { display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, minHeight: 56, maxWidth: 1440, margin: "0 auto", padding: "0 16px" },
+  logo: { display: "inline-flex", alignItems: "center", gap: 10, minWidth: 0, textDecoration: "none" },
+  logoMark: { width: 34, height: 34, flex: "0 0 auto", objectFit: "contain", borderRadius: 8 },
+  brandText: { overflow: "hidden", fontSize: 16, fontWeight: 900, lineHeight: 1.05, textOverflow: "ellipsis", textTransform: "uppercase", whiteSpace: "nowrap" },
+  actionDock: { display: "flex", alignItems: "center", justifyContent: "flex-end", gap: 8, overflowX: "auto" },
+  commandBtn: { display: "grid", flex: "0 0 auto", gap: 1, minWidth: 112, padding: "8px 12px", border: "1px solid rgba(255,255,255,.16)", borderRadius: 8, textDecoration: "none" },
+  commandTitle: { fontSize: 12, fontWeight: 900, lineHeight: 1.1, textTransform: "uppercase" },
+  commandMeta: { fontSize: 10, fontWeight: 700, lineHeight: 1.1, opacity: 0.72 },
+  open: { display: "inline-flex", flex: "0 0 auto", alignItems: "center", gap: 6, minHeight: 36, padding: "0 10px", border: "1px solid rgba(52,211,153,.3)", borderRadius: 999, color: "#34d399", whiteSpace: "nowrap" },
+  dot: { width: 6, height: 6, flex: "0 0 auto", borderRadius: "50%", background: "#34d399" },
+  menuRail: { overflowX: "auto", overflowY: "hidden", borderTop: "1px solid rgba(255,255,255,.08)" },
+  menuInner: { display: "flex", alignItems: "center", gap: 10, width: "max-content", minWidth: "100%", minHeight: 44, padding: "7px 16px" },
+  menuGroup: { display: "flex", alignItems: "center", gap: 5 },
+  groupLabel: { display: "inline-flex", alignItems: "center", padding: "0 7px", fontSize: 10, fontWeight: 900, textTransform: "uppercase" },
+  menuLink: { display: "inline-flex", alignItems: "center", justifyContent: "center", minHeight: 30, padding: "6px 10px", borderRadius: 7, color: "rgba(255,255,255,.82)", fontSize: 12, fontWeight: 800, lineHeight: 1, textDecoration: "none", whiteSpace: "nowrap" },
+};
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -36,70 +60,83 @@ export default function Navbar() {
   const isDeliveryActive = pathname === "/delivery";
 
   return (
-    <nav className={styles.navbar} id="main-nav">
-      <div className={styles.topBar}>
-        <Link href="/" className={styles.logo}>
-          <img src="/storeFavicon.webp" alt="Jane Finch Cannabis Logo" className={styles.logoMark} />
-          <span className={styles.brandText}>Jane Finch Cannabis</span>
+    <nav className={styles.navbar} id="main-nav" style={FALLBACK.navbar}>
+      <div className={styles.topBar} style={FALLBACK.topBar}>
+        <Link href="/" className={styles.logo} style={FALLBACK.logo}>
+          <img src="/storeFavicon.webp" alt="Jane Finch Cannabis Logo" className={styles.logoMark} style={FALLBACK.logoMark} />
+          <span className={styles.brandText} style={FALLBACK.brandText}>Jane Finch Cannabis</span>
         </Link>
 
-        <div className={styles.actionDock} aria-label="Primary navigation">
+        <div className={styles.actionDock} aria-label="Primary navigation" style={FALLBACK.actionDock}>
           <Link
             href="/exotic"
             className={`${styles.commandBtn} ${isStoreMenuActive ? styles.commandBtnActive : ""}`}
+            style={FALLBACK.commandBtn}
           >
-            <span className={styles.commandTitle}>Store Menu</span>
-            <span className={styles.commandMeta}>Flower + products</span>
+            <span className={styles.commandTitle} style={FALLBACK.commandTitle}>Store Menu</span>
+            <span className={styles.commandMeta} style={FALLBACK.commandMeta}>Flower + products</span>
           </Link>
           <Link
             href="/delivery"
             className={`${styles.commandBtn} ${styles.deliveryBtn} ${isDeliveryActive ? styles.commandBtnActive : ""}`}
+            style={FALLBACK.commandBtn}
           >
-            <span className={styles.commandTitle}>Delivery</span>
-            <span className={styles.commandMeta}>Coming soon</span>
+            <span className={styles.commandTitle} style={FALLBACK.commandTitle}>Delivery</span>
+            <span className={styles.commandMeta} style={FALLBACK.commandMeta}>Coming soon</span>
           </Link>
-          <span className={styles.open}>
-            <span className={styles.dot}></span>
-            Open Now
+          <Link
+            href="/careers/budtender"
+            className={styles.commandBtn}
+            style={FALLBACK.commandBtn}
+          >
+            <span className={styles.commandTitle} style={FALLBACK.commandTitle}>Hiring</span>
+            <span className={styles.commandMeta} style={FALLBACK.commandMeta}>Apply online</span>
+          </Link>
+          <span className={styles.open} style={FALLBACK.open}>
+            <span className={styles.dot} style={FALLBACK.dot}></span>
+            <span className={styles.openText}>Open Now</span>
           </span>
         </div>
       </div>
 
-      <div className={styles.menuRail} aria-label="Store menu categories">
-        <div className={styles.menuInner}>
-          <div className={styles.menuGroup}>
-            <span className={styles.groupLabel}>Flower</span>
+      <div className={styles.menuRail} aria-label="Store menu categories" style={FALLBACK.menuRail}>
+        <div className={styles.menuInner} style={FALLBACK.menuInner}>
+          <div className={styles.menuGroup} style={FALLBACK.menuGroup}>
+            <span className={styles.groupLabel} style={FALLBACK.groupLabel}>Flower</span>
             {FLOWER_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`${styles.menuLink} ${pathname === link.href ? styles.menuLinkActive : ""}`}
+                style={FALLBACK.menuLink}
               >
                 {link.label}
               </Link>
             ))}
           </div>
 
-          <div className={styles.menuGroup}>
-            <span className={styles.groupLabel}>Products</span>
+          <div className={styles.menuGroup} style={FALLBACK.menuGroup}>
+            <span className={styles.groupLabel} style={FALLBACK.groupLabel}>Products</span>
             {CATEGORY_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`${styles.menuLink} ${pathname === link.href ? styles.menuLinkActive : ""}`}
+                style={FALLBACK.menuLink}
               >
                 {link.label}
               </Link>
             ))}
           </div>
 
-          <div className={`${styles.menuGroup} ${styles.helpGroup}`}>
-            <span className={styles.groupLabel}>Help</span>
+          <div className={`${styles.menuGroup} ${styles.helpGroup}`} style={FALLBACK.menuGroup}>
+            <span className={styles.groupLabel} style={FALLBACK.groupLabel}>Help</span>
             {SUPPORT_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`${styles.menuLink} ${pathname === link.href ? styles.menuLinkActive : ""}`}
+                style={FALLBACK.menuLink}
               >
                 {link.label}
               </Link>

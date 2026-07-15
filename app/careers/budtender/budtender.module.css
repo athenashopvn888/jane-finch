@@ -1,0 +1,236 @@
+.main {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 80% 12%, rgba(251, 191, 36, 0.18), transparent 26rem),
+    radial-gradient(circle at 18% 22%, rgba(52, 211, 153, 0.14), transparent 22rem),
+    linear-gradient(180deg, #030a07 0%, #05100b 42%, #020617 100%);
+  color: #f8fafc;
+  padding-top: 92px;
+}
+
+.hero,
+.contentGrid {
+  width: min(100% - 32px, 1180px);
+  margin: 0 auto;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  gap: 18px;
+  padding: 58px 0 34px;
+}
+
+.heroCopy,
+.heroPanel,
+.infoPanel,
+.formPanel,
+.formSection {
+  border-radius: 8px;
+  border: 1px solid rgba(251, 191, 36, 0.18);
+  background: rgba(5, 16, 11, 0.78);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
+}
+
+.heroCopy {
+  padding: clamp(28px, 5vw, 52px);
+  border-top: 4px solid #fbbf24;
+}
+
+.eyebrow {
+  display: inline-flex;
+  color: #fbbf24;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.hero h1,
+.infoPanel h2,
+.formIntro h2 {
+  margin: 0;
+  color: #ffffff;
+  letter-spacing: 0;
+  line-height: 1.05;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 6vw, 70px);
+}
+
+.hero p,
+.infoPanel p,
+.formIntro p {
+  color: #d1d5db;
+  line-height: 1.7;
+}
+
+.onlineOnly {
+  color: #d9f99d;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.primaryAction,
+.secondaryAction,
+.submitButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 8px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.primaryAction,
+.submitButton {
+  border: 0;
+  background: #fbbf24;
+  color: #06140c;
+}
+
+.secondaryAction {
+  border: 1px solid rgba(52, 211, 153, 0.28);
+  color: #f8fafc;
+}
+
+.heroPanel,
+.infoPanel,
+.formPanel {
+  padding: 26px;
+}
+
+.heroPanel span {
+  color: #34d399;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.heroPanel ul {
+  margin: 18px 0 0;
+  padding-left: 18px;
+  color: #e5e7eb;
+  line-height: 1.8;
+}
+
+.contentSection {
+  padding: 36px 0 70px;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 18px;
+}
+
+.applicationForm {
+  display: grid;
+  gap: 18px;
+}
+
+.formSection {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  background: rgba(2, 8, 3, 0.74);
+}
+
+.formSection h3 {
+  margin: 0;
+  color: #fef3c7;
+}
+
+.twoColumn {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.field {
+  display: grid;
+  gap: 7px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  border: 1px solid rgba(52, 211, 153, 0.18);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.28);
+  color: #fff;
+  padding: 12px;
+  font: inherit;
+}
+
+.field small {
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.checkboxGroup,
+.choiceGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.checkboxGroup legend,
+.choiceGroup legend {
+  width: 100%;
+  color: #fbbf24;
+  font-weight: 900;
+}
+
+.checkboxGroup label,
+.choiceGroup label,
+.consentLine {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 9px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(251, 191, 36, 0.18);
+  color: #e5e7eb;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.consentLine {
+  border-radius: 8px;
+}
+
+.formMessage {
+  border-radius: 8px;
+  padding: 14px;
+  font-weight: 800;
+}
+
+.success { background: rgba(34, 197, 94, 0.14); color: #bbf7d0; }
+.sending { background: rgba(251, 191, 36, 0.14); color: #fef3c7; }
+.error { background: rgba(248, 113, 113, 0.14); color: #fecaca; }
+.submitButton { cursor: pointer; }
+.submitButton:disabled { opacity: 0.6; cursor: wait; }
+
+@media (max-width: 900px) {
+  .hero,
+  .contentGrid,
+  .twoColumn {
+    grid-template-columns: 1fr;
+  }
+}
