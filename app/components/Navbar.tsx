@@ -46,7 +46,7 @@ const FALLBACK: Record<string, CSSProperties> = {
   commandTitle: { fontSize: 12, fontWeight: 900, lineHeight: 1.1, textTransform: "uppercase" },
   commandMeta: { fontSize: 10, fontWeight: 700, lineHeight: 1.1, opacity: 0.72 },
   menuRail: { overflowX: "auto", overflowY: "hidden" },
-  menuInner: { display: "flex", alignItems: "center", gap: 10, width: "max-content", minWidth: "100%", minHeight: 44, padding: "7px 58px 7px 16px" },
+  menuInner: { display: "flex", alignItems: "center", gap: 10, width: "max-content", minWidth: "min(calc(100% - 32px), 1440px)", minHeight: 44, margin: "0 auto", padding: "7px 58px 7px 0" },
   menuGroup: { display: "flex", alignItems: "center", gap: 5 },
   groupLabel: { display: "inline-flex", alignItems: "center", padding: "0 7px", fontSize: 10, fontWeight: 900, textTransform: "uppercase" },
   menuLink: { display: "inline-flex", alignItems: "center", justifyContent: "center", minHeight: 30, padding: "6px 10px", borderRadius: 7, color: "rgba(255,255,255,.82)", fontSize: 12, fontWeight: 800, lineHeight: 1, textDecoration: "none", whiteSpace: "nowrap" },
