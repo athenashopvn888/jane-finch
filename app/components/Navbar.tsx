@@ -1,6 +1,7 @@
 "use client";
 
 import type { CSSProperties } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
@@ -44,10 +45,8 @@ const FALLBACK: Record<string, CSSProperties> = {
   commandBtn: { display: "grid", flex: "0 0 auto", gap: 1, minWidth: 112, padding: "8px 12px", border: "1px solid rgba(255,255,255,.16)", borderRadius: 8, textDecoration: "none" },
   commandTitle: { fontSize: 12, fontWeight: 900, lineHeight: 1.1, textTransform: "uppercase" },
   commandMeta: { fontSize: 10, fontWeight: 700, lineHeight: 1.1, opacity: 0.72 },
-  open: { display: "inline-flex", flex: "0 0 auto", alignItems: "center", gap: 6, minHeight: 36, padding: "0 10px", border: "1px solid rgba(52,211,153,.3)", borderRadius: 999, color: "#34d399", whiteSpace: "nowrap" },
-  dot: { width: 6, height: 6, flex: "0 0 auto", borderRadius: "50%", background: "#34d399" },
-  menuRail: { overflowX: "auto", overflowY: "hidden", borderTop: "1px solid rgba(255,255,255,.08)" },
-  menuInner: { display: "flex", alignItems: "center", gap: 10, width: "max-content", minWidth: "100%", minHeight: 44, padding: "7px 16px" },
+  menuRail: { overflowX: "auto", overflowY: "hidden" },
+  menuInner: { display: "flex", alignItems: "center", gap: 10, width: "max-content", minWidth: "100%", minHeight: 44, padding: "7px 58px 7px 16px" },
   menuGroup: { display: "flex", alignItems: "center", gap: 5 },
   groupLabel: { display: "inline-flex", alignItems: "center", padding: "0 7px", fontSize: 10, fontWeight: 900, textTransform: "uppercase" },
   menuLink: { display: "inline-flex", alignItems: "center", justifyContent: "center", minHeight: 30, padding: "6px 10px", borderRadius: 7, color: "rgba(255,255,255,.82)", fontSize: 12, fontWeight: 800, lineHeight: 1, textDecoration: "none", whiteSpace: "nowrap" },
@@ -55,9 +54,48 @@ const FALLBACK: Record<string, CSSProperties> = {
 
 export default function Navbar() {
   const pathname = usePathname();
+  const menuRailRef = useRef<HTMLDivElement>(null);
+  const [canAdvanceMenu, setCanAdvanceMenu] = useState(false);
   const menuLinks = [...FLOWER_LINKS, ...CATEGORY_LINKS];
   const isStoreMenuActive = menuLinks.some((link) => pathname === link.href);
   const isDeliveryActive = pathname === "/delivery";
+
+  const updateMenuRail = useCallback(() => {
+    const rail = menuRailRef.current;
+    if (!rail) return;
+
+    setCanAdvanceMenu(rail.scrollWidth - rail.clientWidth - rail.scrollLeft > 2);
+  }, []);
+
+  useEffect(() => {
+    const rail = menuRailRef.current;
+    if (!rail) return;
+
+    updateMenuRail();
+    rail.addEventListener("scroll", updateMenuRail, { passive: true });
+    window.addEventListener("resize", updateMenuRail);
+
+    const resizeObserver = new ResizeObserver(updateMenuRail);
+    resizeObserver.observe(rail);
+    if (rail.firstElementChild) resizeObserver.observe(rail.firstElementChild);
+
+    return () => {
+      rail.removeEventListener("scroll", updateMenuRail);
+      window.removeEventListener("resize", updateMenuRail);
+      resizeObserver.disconnect();
+    };
+  }, [pathname, updateMenuRail]);
+
+  const advanceMenuRail = () => {
+    const rail = menuRailRef.current;
+    if (!rail) return;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    rail.scrollBy({
+      left: Math.max(180, rail.clientWidth * 0.75),
+      behavior: reduceMotion ? "auto" : "smooth",
+    });
+  };
 
   return (
     <nav className={styles.navbar} id="main-nav" style={FALLBACK.navbar}>
@@ -92,15 +130,18 @@ export default function Navbar() {
             <span className={styles.commandTitle} style={FALLBACK.commandTitle}>Hiring</span>
             <span className={styles.commandMeta} style={FALLBACK.commandMeta}>Apply online</span>
           </Link>
-          <span className={styles.open} style={FALLBACK.open}>
-            <span className={styles.dot} style={FALLBACK.dot}></span>
-            <span className={styles.openText}>Open Now</span>
-          </span>
         </div>
       </div>
 
-      <div className={styles.menuRail} aria-label="Store menu categories" style={FALLBACK.menuRail}>
-        <div className={styles.menuInner} style={FALLBACK.menuInner}>
+      <div className={styles.menuRailWrap}>
+        <div
+          ref={menuRailRef}
+          id="store-menu-rail"
+          className={styles.menuRail}
+          aria-label="Store menu categories"
+          style={FALLBACK.menuRail}
+        >
+          <div className={styles.menuInner} style={FALLBACK.menuInner}>
           <div className={styles.menuGroup} style={FALLBACK.menuGroup}>
             <span className={styles.groupLabel} style={FALLBACK.groupLabel}>Flower</span>
             {FLOWER_LINKS.map((link) => (
@@ -142,7 +183,19 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
+          </div>
         </div>
+        {canAdvanceMenu && (
+          <button
+            type="button"
+            className={styles.menuAdvance}
+            aria-label="Show more store menu categories"
+            aria-controls="store-menu-rail"
+            onClick={advanceMenuRail}
+          >
+            <span aria-hidden="true">›</span>
+          </button>
+        )}
       </div>
     </nav>
   );
