@@ -120,7 +120,7 @@ export default function Navbar() {
             style={FALLBACK.commandBtn}
           >
             <span className={styles.commandTitle} style={FALLBACK.commandTitle}>Delivery</span>
-            <span className={styles.commandMeta} style={FALLBACK.commandMeta}>Coming soon</span>
+            <span className={styles.commandMeta} style={FALLBACK.commandMeta}>Live 10 a.m.–10 p.m.</span>
           </Link>
           <Link
             href="/careers/budtender"
