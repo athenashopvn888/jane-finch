@@ -44,6 +44,14 @@ const FAQ_CATEGORIES = [
       { q: "Where should cigarette shoppers start?", a: "Open the cigarette category first, then use the store page for directions, contact options, and listed hours." },
     ],
   },
+  {
+    title: "Delivery",
+    faqs: [
+      { q: "Does Jane Finch Cannabis offer delivery?", a: "Yes. The delivery menu is available daily from 10:00 a.m. to 10:00 p.m. with a $60 product minimum and a $10 delivery fee." },
+      { q: "How do I start a delivery order?", a: "Browse the delivery menu, then select LIVE ORDER to connect with the Jane Finch Cannabis dispatcher. The dispatcher confirms availability and delivery details." },
+      { q: "Are the store and delivery hours the same?", a: "No. The storefront is listed as open 24 hours. Delivery ordering hours are 10:00 a.m. to 10:00 p.m. daily." },
+    ],
+  },
 ];
 
 export default function FAQPage() {
