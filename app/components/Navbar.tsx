@@ -42,7 +42,7 @@ const FALLBACK: Record<string, CSSProperties> = {
   logoMark: { width: 34, height: 34, flex: "0 0 auto", objectFit: "contain", borderRadius: 8 },
   brandText: { overflow: "hidden", fontSize: 16, fontWeight: 900, lineHeight: 1.05, textOverflow: "ellipsis", textTransform: "uppercase", whiteSpace: "nowrap" },
   actionDock: { display: "flex", alignItems: "center", justifyContent: "flex-end", gap: 8, overflowX: "auto" },
-  commandBtn: { display: "grid", flex: "0 0 auto", gap: 1, minWidth: 112, padding: "8px 12px", border: "1px solid rgba(255,255,255,.16)", borderRadius: 8, textDecoration: "none" },
+  commandBtn: { display: "grid", flex: "0 0 auto", gap: 1, minWidth: 112, minHeight: 44, padding: "8px 12px", border: "1px solid rgba(255,255,255,.16)", borderRadius: 8, textDecoration: "none" },
   commandTitle: { fontSize: 12, fontWeight: 900, lineHeight: 1.1, textTransform: "uppercase" },
   commandMeta: { fontSize: 10, fontWeight: 700, lineHeight: 1.1, opacity: 0.72 },
   menuRail: { overflowX: "auto", overflowY: "hidden" },
@@ -57,7 +57,9 @@ export default function Navbar() {
   const menuRailRef = useRef<HTMLDivElement>(null);
   const [canAdvanceMenu, setCanAdvanceMenu] = useState(false);
   const menuLinks = [...FLOWER_LINKS, ...CATEGORY_LINKS];
-  const isStoreMenuActive = menuLinks.some((link) => pathname === link.href);
+  const isStoreMenuActive =
+    menuLinks.some((link) => pathname === link.href) ||
+    pathname.startsWith("/item/");
   const isDeliveryActive = pathname === "/delivery";
 
   const updateMenuRail = useCallback(() => {
@@ -110,16 +112,18 @@ export default function Navbar() {
             href="/exotic"
             className={`${styles.commandBtn} ${isStoreMenuActive ? styles.commandBtnActive : ""}`}
             style={FALLBACK.commandBtn}
+            aria-current={isStoreMenuActive ? "page" : undefined}
           >
             <span className={styles.commandTitle} style={FALLBACK.commandTitle}>Store Menu</span>
             <span className={styles.commandMeta} style={FALLBACK.commandMeta}>Flower + products</span>
           </Link>
           <Link
             href="/delivery"
-            className={`${styles.commandBtn} ${styles.deliveryBtn} ${isDeliveryActive ? styles.commandBtnActive : ""}`}
+            className={`${styles.commandBtn} ${styles.deliveryBtn} ${isDeliveryActive ? styles.deliveryBtnActive : ""}`}
             style={FALLBACK.commandBtn}
+            aria-current={isDeliveryActive ? "page" : undefined}
           >
-            <span className={styles.commandTitle} style={FALLBACK.commandTitle}>Delivery</span>
+            <span className={styles.commandTitle} style={FALLBACK.commandTitle}>Delivery Menu</span>
             <span className={styles.commandMeta} style={FALLBACK.commandMeta}>Live 10 a.m.–10 p.m.</span>
           </Link>
           <Link

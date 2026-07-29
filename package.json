@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "verify:navigation": "node scripts/verify-navigation-actions.mjs",
     "test:web-chat": "node --test tests/web-chat-intake.test.mjs",
     "verify:delivery": "node scripts/verify-delivery-menu.mjs"
   },
