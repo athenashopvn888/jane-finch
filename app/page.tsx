@@ -234,6 +234,14 @@ export default function HomePage() {
             <h1 className={styles.brandTitle}>JANE FINCH CANNABIS</h1>
             <p className={styles.brandSub}>Premium Cannabis Dispensary</p>
             <div className={styles.brandBadge}>Open 24 Hours</div>
+            <aside className={styles.homeDeliveryNotice} aria-labelledby="home-delivery-title">
+              <h2 id="home-delivery-title">NEW DELIVERY AVAILABLE</h2>
+              <p>Jane Finch Cannabis delivery serves North York daily from 10 a.m. to 10 p.m. Browse the Jane Finch Cannabis flower delivery menu and use LIVE ORDER to connect with its dispatcher.</p>
+            </aside>
+            <div className={styles.homeMenuActions} aria-label="Choose a Jane Finch Cannabis menu">
+              <Link href="/exotic" className={styles.homeMenuCta}>STORE MENU</Link>
+              <Link href="/delivery" className={`${styles.homeMenuCta} ${styles.homeDeliveryCta}`}>DELIVERY MENU</Link>
+            </div>
           </div>
 
           {/* Bento Grid */}
