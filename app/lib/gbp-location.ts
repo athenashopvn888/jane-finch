@@ -9,8 +9,8 @@ export const gbpLocation = {
   address: "2728 Jane St, North York, ON M3L 2G6",
   streetAddress: "2728 Jane St",
   postalCode: "M3L 2G6",
-  phone: "(548) 323-2728",
-  phoneIntl: "+15483232728",
+  phone: "+1 (437) 524-9336",
+  phoneIntl: "+14375249336",
   neighborhood: "Jane and Finch / North York",
   nearbyAreas: ["Jane and Finch", "North York", "Jane Street", "Finch Avenue", "York University area", "Black Creek", "Downsview", "Humbermede", "TTC"],
   products: [

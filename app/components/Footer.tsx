@@ -14,7 +14,7 @@ export default function Footer() {
               Open: Open 24 Hours.
             </p>
             <div className={styles.buttons}>
-              <a href="tel:+15483232728" className={styles.btnPrimary}>Call Now</a>
+              <a href="tel:+14375249336" className={styles.btnPrimary}>Call Now</a>
             </div>
           </div>
 
@@ -28,7 +28,7 @@ export default function Footer() {
             </div>
             <div className={styles.infoBlock}>
               <span className={styles.infoLabel}>Phone:</span>
-              <span><a href="tel:+15483232728" style={{color: "inherit"}}>(548) 323-2728</a></span>
+              <span><a href="tel:+14375249336" style={{color: "inherit"}}>+1 (437) 524-9336</a></span>
             </div>
             <div className={styles.infoBlock}>
               <span className={styles.infoLabel}>Hours:</span>
