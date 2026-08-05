@@ -77,7 +77,7 @@ const jsonLd = {
   name: "Jane Finch Cannabis",
   description: "Cannabis dispensary at 2728 Jane St in North York, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 Hours.",
   url: "https://www.janefinchcannabis.ca",
-  telephone: "+15483232728",
+  telephone: "+14375249336",
   image: "https://www.janefinchcannabis.ca/wp-content/uploads/2026/04/7Clmh.jpg",
   priceRange: "$3 - $12/g",
   address: {

@@ -79,7 +79,7 @@ const LOCAL_FAQS = [
   },
   {
     q: "Where is Jane Finch Cannabis located?",
-    a: "We are located at 2728 Jane St, North York, ON M3L 2G6. Visit us in person or call us at (548) 323-2728. Free evening street parking is listed.",
+    a: "We are located at 2728 Jane St, North York, ON M3L 2G6. Visit us in person or call us at +1 (437) 524-9336. Free evening street parking is listed.",
   },
   {
     q: "What is the cheapest weed at Jane Finch Cannabis?",
