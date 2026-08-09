@@ -11,7 +11,8 @@
     "verify:home-actions": "node scripts/verify-home-actions.mjs",
     "verify:navigation": "node scripts/verify-navigation-actions.mjs",
     "test:web-chat": "node --test tests/web-chat-intake.test.mjs",
-    "verify:delivery": "node scripts/verify-delivery-menu.mjs"
+    "verify:delivery": "node scripts/verify-delivery-menu.mjs",
+    "verify:delivery-images": "node scripts/verify-athena-delivery-images.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.105.4",
