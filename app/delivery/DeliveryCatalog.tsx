@@ -173,7 +173,7 @@ export default function Catalog() {
               return (
                 <article className="product-card" key={product.publicProductId}>
                   <button className="product-image" type="button" onClick={()=>setSelectedProduct(product)} aria-label={`View details for ${product.name}`}>
-                    {product.images[0] ? <Image src={product.images[0]} alt={`${product.name} on the JFC delivery menu`} fill sizes="(max-width: 640px) 50vw, (max-width: 1380px) 33vw, 235px" /> : <span>JFC</span>}
+                    {product.images[0] ? <Image src={product.images[0]} alt={`${product.name} on the JFC delivery menu`} fill sizes="(max-width: 640px) 50vw, (max-width: 1380px) 33vw, 235px" unoptimized /> : <span>JFC</span>}
                   </button>
                   <div className="product-body">
                     <div className="badges">{productTier && <span>{productTier}</span>}<span>{product.category}</span></div>
