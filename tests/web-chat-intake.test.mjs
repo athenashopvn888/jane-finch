@@ -28,3 +28,23 @@ test("JFC customer paths and mobile interaction contract are accessible", () => 
   assert.match(component, /\{open \? "Close chat" : "LIVE ORDER"\}/);
   assert.match(styles, /@keyframes p59-live-order-ring/);
 });
+
+test("JFC authenticated chat exposes confirmed phone correction and explicit additional intake cycles", () => {
+  assert.match(component, /customerNumberMasked/);
+  assert.match(component, />Change number</);
+  assert.match(component, /New Canadian mobile number/);
+  assert.match(component, /Enter the new number again/);
+  assert.match(component, /phoneConfirmation: replacementPhoneConfirmation/);
+  assert.match(component, /phoneVersion: conversation\.phoneVersion/);
+  assert.match(component, /\/api\/web-chat\/phone/);
+  assert.match(component, /START ANOTHER ORDER/);
+  assert.match(component, /\/api\/web-chat\/order-cycle/);
+  assert.match(component, /requestId: crypto\.randomUUID\(\)/);
+  assert.match(styles, /\.sod-chat-account/);
+});
+
+test("approved selfie consent copy explains secure retained use without exposing storage details", () => {
+  assert.match(component, /securely retained for future identity and address verification until replaced, manually removed, or your profile is deleted/);
+  assert.match(component, /Unapproved photos expire after 24 hours/);
+  assert.doesNotMatch(component, /BLOB_READ_WRITE_TOKEN|approvedImageKey|sod-id\//);
+});
