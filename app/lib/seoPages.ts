@@ -12,6 +12,7 @@ const NATIVE_HERO_PRODUCTS = [
 export interface SeoPageData {
   slug: string;
   title: string;
+  absoluteTitle?: boolean;
   metaDescription: string;
   h1: string;
   icon: string;
@@ -20,8 +21,17 @@ export interface SeoPageData {
   heroPreview?: {
     eyebrow: string;
     intro: string;
-    products: typeof NATIVE_HERO_PRODUCTS;
-    disclosure: typeof NATIVE_HERO_DISCLOSURE;
+    products: readonly { name: string; image: string; sourceSlug?: string }[];
+    disclosure: string;
+    theme?: "cigarettes" | "nicotine";
+    menuHref?: string;
+    primaryLabel?: string;
+    secondaryLabel?: string;
+    secondaryHref?: string;
+    identityStrip?: string;
+    featuredHeading?: string;
+    featuredIntro?: string;
+    warning?: string;
   };
   sections: { heading: string; body: string }[];
   faqs: { q: string; a: string }[];
@@ -393,6 +403,48 @@ export const SEO_PAGES: SeoPageData[] = [
         "a": "Avoid guessing from old examples. Confirm current details with the menu or staff."
       }
     ]
+  },
+  {
+    slug: "nicotine-vapes-north-york",
+    title: "Nicotine Vapes in North York | Jane Finch Cannabis",
+    absoluteTitle: true,
+    metaDescription: "Adults 19+: review six verified nicotine vape product pages from Jane Finch Cannabis in North York, then check /items/vapes for the current category. Nicotine is addictive.",
+    h1: "Nicotine Vapes at Jane Finch Cannabis in North York",
+    icon: "NV",
+    heroTagline: "Adults 19+ · Nicotine is addictive.",
+    heroPreview: {
+      eyebrow: "JANE FINCH CANNABIS • JANE AND FINCH / NORTH YORK • ADULTS 19+",
+      intro: "Searching for nicotine vapes near me around Jane and Finch in North York? This adult-only Jane Finch Cannabis guide features six verified VAPE PENS product pages. Compare the supported product names, then use /items/vapes for the current nicotine category. Product details can change. Nicotine is addictive.",
+      products: [
+        { name: "Geek Promax 5% — 30K Puffs", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/GEEK-PROMAX.jpg", sourceSlug: "geek-promax-5-30k-puffs" },
+        { name: "Geek Universe — 25K Puffs", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/geek_universe_pulse_x_25k.webp", sourceSlug: "geek-universe-25k-puffs" },
+        { name: "Level X G2 Pod", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/1086-Level-X-G2-pod.webp", sourceSlug: "level-x-g2-pod" },
+        { name: "NEXA PIX — 30K Puffs — Many Flavors", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/nexa_showcase_600x600.webp", sourceSlug: "nexa-pix-30k-puffs-many-flavors" },
+        { name: "OVNS 10000 5% — 10K Puffs", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/1081OVNS10000.jpg", sourceSlug: "ovns-10000-5-10k-puffs" },
+        { name: "OVNS Disposable 5% — 8 mL — Many Flavors", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/OVNS500x500HQ.webp", sourceSlug: "ovns-disposable-5-8ml-many-flavors" },
+      ],
+      disclosure: "Featured cards are verified starting points, not guarantees of current stock, price or availability.",
+      theme: "nicotine",
+      menuHref: "/items/vapes",
+      primaryLabel: "Browse Nicotine Vapes",
+      secondaryLabel: "Compare the Six Featured Items",
+      secondaryHref: "#featured-vapes",
+      identityStrip: "Jane Finch Cannabis | Jane and Finch / North York | Adults 19+ | Nicotine is addictive.",
+      featuredHeading: "Six Verified Jane Finch Vape Cards",
+      featuredIntro: "This shortlist contains verified Geek, Level X, NEXA and OVNS VAPE PENS product pages. Use each card for its supported display name, then rely on /items/vapes for the current Jane Finch Cannabis category listing.",
+      warning: "Adults 19+. Nicotine is addictive.",
+    },
+    sections: [
+      { heading: "Read Each Product Format Carefully", body: "One verified page identifies a Level X G2 Pod, while another explicitly identifies an OVNS disposable. Keep those formats attached only to their respective products and do not relabel another featured item by assumption." },
+      { heading: "Puff Counts Identify Listings", body: "Several verified names include puff counts. Use those numbers to distinguish the listings, not as guarantees of duration, performance or superiority." },
+      { heading: "Keep Nicotine and Cannabis Vape Routes Separate", body: "This adult-only Jane Finch Cannabis guide uses VAPE PENS products under /items/vapes. THC and cannabis vape products under /items/vape-disposables are excluded." },
+      { heading: "Review the Current North York Category", body: "Before choosing, open /items/vapes and the individual product page for current supported details. This guide does not claim prices, stock or guaranteed availability." },
+    ],
+    faqs: [
+      { q: "Where should I check Jane Finch Cannabis’s current nicotine selection?", a: "Use /items/vapes. The six featured cards are verified starting points while the current category listing controls selection information." },
+      { q: "Does every featured item use the same format?", a: "No. The verified set explicitly identifies a Level X G2 Pod and an OVNS disposable. Read every current product page for its supported format and details." },
+      { q: "Does this page include cannabis vapes?", a: "No. It covers nicotine products from the VAPE PENS category for adults 19+. THC and cannabis vape products under /items/vape-disposables are excluded." },
+    ],
   }
 ];
 
