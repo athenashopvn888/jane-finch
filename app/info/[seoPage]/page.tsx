@@ -25,11 +25,15 @@ export async function generateMetadata({
   const page = getSeoPageBySlug(slug);
   if (!page) return {};
 
+  const canonicalHost = slug === "nicotine-vapes-north-york"
+    ? "https://www.janefinchcannabis.ca"
+    : "https://janefinchcannabis.ca";
+
   return {
     title: page.absoluteTitle ? { absolute: page.title } : page.title,
     description: page.metaDescription,
     alternates: {
-      canonical: `https://janefinchcannabis.ca/info/${slug}`,
+      canonical: `${canonicalHost}/info/${slug}`,
     },
   };
 }
