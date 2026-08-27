@@ -11,6 +11,7 @@
     "verify:home-actions": "node scripts/verify-home-actions.mjs",
     "verify:navigation": "node scripts/verify-navigation-actions.mjs",
     "test:web-chat": "node --test tests/web-chat-intake.test.mjs",
+    "test:local-routes": "node --experimental-strip-types --experimental-specifier-resolution=node --test tests/local-route-aliases.test.ts",
     "verify:delivery": "node scripts/verify-delivery-menu.mjs",
     "verify:delivery-images": "node scripts/verify-athena-delivery-images.mjs",
     "verify:ready-workflow": "node scripts/verify-ready-workflow.mjs",
@@ -32,3 +33,4 @@
     "typescript": "^5"
   }
 }
+
