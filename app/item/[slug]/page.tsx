@@ -8,6 +8,8 @@ import { getItemData } from "../../lib/itemData";
 import Magnifier from "../../components/Magnifier";
 import styles from "../../flower/[slug]/flower.module.css";
 
+const SITE_ORIGIN = "https://www.janefinchcannabis.ca";
+
 /* -- Pre-generate all item pages -- */
 export function generateStaticParams() {
   return allItems.map((i) => ({ slug: i.slug }));
@@ -29,11 +31,12 @@ export async function generateMetadata({
     title: `${item.name} | ${item.category} | Jane Finch Cannabis North York`,
     description: itemData.metaDescription,
     alternates: {
-      canonical: `https://janefinchcannabis.ca/item/${slug}`,
+      canonical: `${SITE_ORIGIN}/item/${slug}`,
     },
     openGraph: {
       title: `${item.name} | Jane Finch Cannabis`,
       description: itemData.metaDescription,
+      url: `${SITE_ORIGIN}/item/${slug}`,
       images: item.image ? [{ url: item.image, width: 800, height: 800, alt: item.name }] : [],
     },
   };
@@ -54,7 +57,7 @@ function getJsonLd(item: ItemProduct) {
 
   const offers: any = {
     "@type": "Offer",
-    url: `https://janefinchcannabis.ca/item/${item.slug}`,
+    url: `${SITE_ORIGIN}/item/${item.slug}`,
     priceCurrency: "CAD",
     itemCondition: "https://schema.org/NewCondition",
     seller: { "@type": "Organization", name: "Jane Finch Cannabis" },
@@ -73,7 +76,7 @@ function getJsonLd(item: ItemProduct) {
     "@context": "https://schema.org",
     "@type": "Product",
     name: item.name,
-    image: item.image ? [item.image.startsWith('http') ? item.image : `https://janefinchcannabis.ca${item.image.startsWith('/') ? '' : '/'}${item.image}`] : undefined,
+    image: item.image ? [item.image.startsWith('http') ? item.image : `${SITE_ORIGIN}${item.image.startsWith('/') ? '' : '/'}${item.image}`] : undefined,
     description: itemData.description,
     brand: { "@type": "Brand", name: "Jane Finch Cannabis" },
     sku: cleanSku(item.sku || item.slug),
@@ -92,19 +95,19 @@ function getBreadcrumbJsonLd(item: ItemProduct) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://janefinchcannabis.ca"
+        "item": SITE_ORIGIN
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": item.category,
-        "item": `https://janefinchcannabis.ca/items/${catSlug}`
+        "item": `${SITE_ORIGIN}/items/${catSlug}`
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": item.name,
-        "item": `https://janefinchcannabis.ca/item/${item.slug}`
+        "item": `${SITE_ORIGIN}/item/${item.slug}`
       }
     ]
   };
