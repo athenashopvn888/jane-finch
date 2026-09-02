@@ -5,165 +5,53 @@ export interface TierSeoData {
   faqs: { q: string; a: string }[];
 }
 
+const OTHER_TIERS: Record<string, string> = {
+  EXOTIC: "Premium Weed, AAA+ Weed, AA Weed and Budget Weed",
+  PREMIUM: "Exotic Weed, AAA+ Weed, AA Weed and Budget Weed",
+  "AAA+": "Exotic Weed, Premium Weed, AA Weed and Budget Weed",
+  AA: "Exotic Weed, Premium Weed, AAA+ Weed and Budget Weed",
+  BUDGET: "Exotic Weed, Premium Weed, AAA+ Weed and AA Weed",
+};
+
+function createTierSeo(key: string, name: string): TierSeoData {
+  return {
+    seoTitle: `${name} in North York | Jane Finch Cannabis`,
+    seoIntro: `Jane Finch Cannabis brings ${name} together as one of its Cannabis Flower collections for shoppers exploring flower in North York. Browse the selections presented in this collection and compare them with other Jane Finch flower tiers that interest you.`,
+    sections: [
+      {
+        heading: `Explore ${name} at Jane Finch Cannabis`,
+        body: `Browse the Cannabis Flower selections presented within ${name} and use the product information shown with individual items as you explore.`,
+      },
+      {
+        heading: `Compare ${name} with Other Flower Collections`,
+        body: `Jane Finch Cannabis also offers ${OTHER_TIERS[key]} for shoppers who want to explore different parts of the flower selection.`,
+      },
+      {
+        heading: "Continue with Jane Finch Cannabis in North York",
+        body: "Use the dedicated Jane Finch Cannabis Weed page for broader store information, then return to the flower collection that matches your browsing.",
+      },
+    ],
+    faqs: [
+      {
+        q: `How can shoppers explore ${name}?`,
+        a: `Open the ${name} collection and review the product information shown with each selection.`,
+      },
+      {
+        q: `Can shoppers compare ${name} with other flower collections?`,
+        a: `Yes. Jane Finch Cannabis keeps ${name} and the other named flower collections on separate browsing routes.`,
+      },
+      {
+        q: "Where can shoppers find broader store information?",
+        a: "Use the dedicated Jane Finch Cannabis Weed page for broader North York store information.",
+      },
+    ],
+  };
+}
+
 export const TIER_SEO: Record<string, TierSeoData> = {
-  "EXOTIC": {
-    "seoTitle": "Exotic Cannabis Flower North York | Jane Finch Cannabis",
-    "seoIntro": "Exotic flower at Jane Finch Cannabis is easiest to compare as its own lane. Open the current Exotic menu, read the posted details, and ask staff when one product detail matters.",
-    "sections": [
-      {
-        "heading": "How To Shop Exotic",
-        "body": "Exotic is the lane for shoppers who want to compare the higher shelf flower category first. Start with the tier page, then compare product name, format, weight, posted price, and item notes. The current menu is the right place for details that move."
-      },
-      {
-        "heading": "When Exotic Makes Sense",
-        "body": "Use Exotic when the visit is about the upper flower lane, not when the main goal is cheap weed. If the listing is close but not clear, ask staff before choosing. That is faster than guessing from an old blog line."
-      },
-      {
-        "heading": "Local Jane and Finch / North York Menu Tip",
-        "body": "If you searched for a weed dispensary in Jane and Finch / North York or a cannabis dispensary in North York, keep the Exotic page open while you compare. Use the store page for directions, contact options, and listed hours."
-      }
-    ],
-    "faqs": [
-      {
-        "q": "How should shoppers compare Exotic flower?",
-        "a": "Open the Exotic tier, compare the current product details, and ask staff when a note needs a current answer."
-      },
-      {
-        "q": "Does Exotic listings change?",
-        "a": "Yes. Product names, prices, and listings can change, so confirm through the current menu or staff."
-      },
-      {
-        "q": "Where should shoppers go after this Exotic guide?",
-        "a": "Use the Exotic tier page first, then the store page when you are ready for directions or contact options."
-      }
-    ]
-  },
-  "PREMIUM": {
-    "seoTitle": "Premium Cannabis Flower North York | Jane Finch Cannabis",
-    "seoIntro": "Premium flower at Jane Finch Cannabis is easiest to compare as its own lane. Open the current Premium menu, read the posted details, and ask staff when one product detail matters.",
-    "sections": [
-      {
-        "heading": "How To Shop Premium",
-        "body": "Premium is a strong lane for shoppers balancing flower quality and value. Start with the tier page, then compare product name, format, weight, posted price, and item notes. The current menu is the right place for details that move."
-      },
-      {
-        "heading": "When Premium Makes Sense",
-        "body": "Use Premium when you want to compare above the value lanes without starting every search in Exotic. If the listing is close but not clear, ask staff before choosing. That is faster than guessing from an old blog line."
-      },
-      {
-        "heading": "Local Jane and Finch / North York Menu Tip",
-        "body": "If you searched for a weed dispensary in Jane and Finch / North York or a cannabis dispensary in North York, keep the Premium page open while you compare. Use the store page for directions, contact options, and listed hours."
-      }
-    ],
-    "faqs": [
-      {
-        "q": "How should shoppers compare Premium flower?",
-        "a": "Open the Premium tier, compare the current product details, and ask staff when a note needs a current answer."
-      },
-      {
-        "q": "Does Premium listings change?",
-        "a": "Yes. Product names, prices, and listings can change, so confirm through the current menu or staff."
-      },
-      {
-        "q": "Where should shoppers go after this Premium guide?",
-        "a": "Use the Premium tier page first, then the store page when you are ready for directions or contact options."
-      }
-    ]
-  },
-  "AAA+": {
-    "seoTitle": "AAA+ Cannabis Flower North York | Jane Finch Cannabis",
-    "seoIntro": "AAA+ flower at Jane Finch Cannabis is easiest to compare as its own lane. Open the current AAA+ menu, read the posted details, and ask staff when one product detail matters.",
-    "sections": [
-      {
-        "heading": "How To Shop AAA+",
-        "body": "AAA+ is a clean middle lane for shoppers comparing flower without jumping straight to the top tier. Start with the tier page, then compare product name, format, weight, posted price, and item notes. The current menu is the right place for details that move."
-      },
-      {
-        "heading": "When AAA+ Makes Sense",
-        "body": "Use AAA+ when you want a focused flower comparison with less menu noise. If the listing is close but not clear, ask staff before choosing. That is faster than guessing from an old blog line."
-      },
-      {
-        "heading": "Local Jane and Finch / North York Menu Tip",
-        "body": "If you searched for a weed dispensary in Jane and Finch / North York or a cannabis dispensary in North York, keep the AAA+ page open while you compare. Use the store page for directions, contact options, and listed hours."
-      }
-    ],
-    "faqs": [
-      {
-        "q": "How should shoppers compare AAA+ flower?",
-        "a": "Open the AAA+ tier, compare the current product details, and ask staff when a note needs a current answer."
-      },
-      {
-        "q": "Does AAA+ listings change?",
-        "a": "Yes. Product names, prices, and listings can change, so confirm through the current menu or staff."
-      },
-      {
-        "q": "Where should shoppers go after this AAA+ guide?",
-        "a": "Use the AAA+ tier page first, then the store page when you are ready for directions or contact options."
-      }
-    ]
-  },
-  "AA": {
-    "seoTitle": "AA Cannabis Flower North York | Jane Finch Cannabis",
-    "seoIntro": "AA flower at Jane Finch Cannabis is easiest to compare as its own lane. Open the current AA menu, read the posted details, and ask staff when one product detail matters.",
-    "sections": [
-      {
-        "heading": "How To Shop AA",
-        "body": "AA is a practical value lane for shoppers who want straightforward flower browsing. Start with the tier page, then compare product name, format, weight, posted price, and item notes. The current menu is the right place for details that move."
-      },
-      {
-        "heading": "When AA Makes Sense",
-        "body": "Use AA when affordable weed is part of the plan but you still want a dedicated flower tier. If the listing is close but not clear, ask staff before choosing. That is faster than guessing from an old blog line."
-      },
-      {
-        "heading": "Local Jane and Finch / North York Menu Tip",
-        "body": "If you searched for a weed dispensary in Jane and Finch / North York or a cannabis dispensary in North York, keep the AA page open while you compare. Use the store page for directions, contact options, and listed hours."
-      }
-    ],
-    "faqs": [
-      {
-        "q": "How should shoppers compare AA flower?",
-        "a": "Open the AA tier, compare the current product details, and ask staff when a note needs a current answer."
-      },
-      {
-        "q": "Does AA listings change?",
-        "a": "Yes. Product names, prices, and listings can change, so confirm through the current menu or staff."
-      },
-      {
-        "q": "Where should shoppers go after this AA guide?",
-        "a": "Use the AA tier page first, then the store page when you are ready for directions or contact options."
-      }
-    ]
-  },
-  "BUDGET": {
-    "seoTitle": "Budget Cannabis Flower North York | Jane Finch Cannabis",
-    "seoIntro": "Budget flower at Jane Finch Cannabis is easiest to compare as its own lane. Open the current Budget menu, read the posted details, and ask staff when one product detail matters.",
-    "sections": [
-      {
-        "heading": "How To Shop Budget",
-        "body": "Budget is the first stop when cheap weed, budget weed, or affordable weed is the goal. Start with the tier page, then compare product name, format, weight, posted price, and item notes. The current menu is the right place for details that move."
-      },
-      {
-        "heading": "When Budget Makes Sense",
-        "body": "Use Budget when price is the main filter, then compare the current listings before choosing. If the listing is close but not clear, ask staff before choosing. That is faster than guessing from an old blog line."
-      },
-      {
-        "heading": "Local Jane and Finch / North York Menu Tip",
-        "body": "If you searched for a weed dispensary in Jane and Finch / North York or a cannabis dispensary in North York, keep the Budget page open while you compare. Use the store page for directions, contact options, and listed hours."
-      }
-    ],
-    "faqs": [
-      {
-        "q": "How should shoppers compare Budget flower?",
-        "a": "Open the Budget tier, compare the current product details, and ask staff when a note needs a current answer."
-      },
-      {
-        "q": "Does Budget listings change?",
-        "a": "Yes. Product names, prices, and listings can change, so confirm through the current menu or staff."
-      },
-      {
-        "q": "Where should shoppers go after this Budget guide?",
-        "a": "Use the Budget tier page first, then the store page when you are ready for directions or contact options."
-      }
-    ]
-  }
+  EXOTIC: createTierSeo("EXOTIC", "Exotic Weed"),
+  PREMIUM: createTierSeo("PREMIUM", "Premium Weed"),
+  "AAA+": createTierSeo("AAA+", "AAA+ Weed"),
+  AA: createTierSeo("AA", "AA Weed"),
+  BUDGET: createTierSeo("BUDGET", "Budget Weed"),
 };

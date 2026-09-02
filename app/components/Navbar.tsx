@@ -7,17 +7,17 @@ import Link from "next/link";
 import styles from "./Navbar.module.css";
 
 const FLOWER_LINKS = [
-  { href: "/exotic", label: "Exotic" },
-  { href: "/premium", label: "Premium" },
-  { href: "/aaa", label: "AAA+" },
-  { href: "/aa", label: "AA" },
-  { href: "/budget", label: "Budget" },
+  { href: "/exotic-weed", label: "Exotic Weed" },
+  { href: "/premium-weed", label: "Premium Weed" },
+  { href: "/aaa-weed", label: "AAA+ Weed" },
+  { href: "/aa-weed", label: "AA Weed" },
+  { href: "/budget-weed", label: "Budget Weed" },
 ];
 
 const CATEGORY_LINKS = [
   { href: "/items/edibles", label: "Edibles" },
   { href: "/items/prerolls", label: "Pre-Rolls" },
-  { href: "/items/vapes", label: "Nic Vape" },
+  { href: "/items/vapes", label: "Nicotine Vape" },
   { href: "/items/vape-disposables", label: "THC Vape" },
   { href: "/items/concentrates", label: "Concentrates" },
   { href: "/items/magic", label: "Magic Stuff" },
@@ -109,7 +109,7 @@ export default function Navbar() {
 
         <div className={styles.actionDock} aria-label="Primary navigation" style={FALLBACK.actionDock}>
           <Link
-            href="/exotic"
+            href="/exotic-weed"
             className={`${styles.commandBtn} ${isStoreMenuActive ? styles.commandBtnActive : ""}`}
             style={FALLBACK.commandBtn}
             aria-current={isStoreMenuActive ? "page" : undefined}

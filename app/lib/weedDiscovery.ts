@@ -4,7 +4,7 @@ export type WeedFaq = { question: string; answer: string };
 export const weedOwner = {
   storeName: "Jane Finch Cannabis",
   domain: "www.janefinchcannabis.ca",
-  ownerPath: "/weed-dispensary-north-york/",
+  ownerPath: "/weed-dispensary-north-york",
   city: "North York",
   streetAddress: "2728 Jane St",
   postalCode: "M3L 2G6",
@@ -95,4 +95,3 @@ export const weedOwner = {
     secondaryHref: "/resources",
   },
 };
-

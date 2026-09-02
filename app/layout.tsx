@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   keywords: [
     "cannabis dispensary North York",
     "weed store North York",
-    "exotic flower North York",
-    "premium cannabis",
+    "Exotic Weed North York",
+    "Premium Weed North York",
     "Jane Finch Cannabis",
     "cheap weed North York",
     "dispensary near me",
@@ -76,11 +76,10 @@ const jsonLd = {
   additionalType: "https://schema.org/Store",
   "@id": "https://www.janefinchcannabis.ca",
   name: "Jane Finch Cannabis",
-  description: "Cannabis dispensary at 2728 Jane St in North York, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 Hours.",
+  description: "Cannabis dispensary at 2728 Jane St in North York, ON with Exotic Weed, Premium Weed, AAA+ Weed, AA Weed, Budget Weed, edibles, pre-rolls, and vapes. Open 24 Hours.",
   url: "https://www.janefinchcannabis.ca",
   telephone: "+14375249336",
   image: "https://www.janefinchcannabis.ca/wp-content/uploads/2026/04/7Clmh.jpg",
-  priceRange: "$3 - $12/g",
   address: {
     "@type": "PostalAddress",
     streetAddress: "2728 Jane St",

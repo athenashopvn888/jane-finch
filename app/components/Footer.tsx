@@ -40,14 +40,14 @@ export default function Footer() {
             <h3 className={styles.colTitle}>Quick Links</h3>
             <nav className={styles.links}>
               <Link href="/">Home</Link>
-              <Link href="/exotic">Exotic Flower</Link>
-              <Link href="/premium">Premium Flower</Link>
-              <Link href="/aaa">AAA+ Flower</Link>
-              <Link href="/aa">AA Flower</Link>
-              <Link href="/budget">Budget Flower</Link>
+              <Link href="/exotic-weed">Exotic Weed</Link>
+              <Link href="/premium-weed">Premium Weed</Link>
+              <Link href="/aaa-weed">AAA+ Weed</Link>
+              <Link href="/aa-weed">AA Weed</Link>
+              <Link href="/budget-weed">Budget Weed</Link>
               <Link href="/items/edibles">Edibles</Link>
               <Link href="/items/cigarettes">Cigarettes</Link>
-              <Link href="/items/vapes">Vape Pens</Link>
+              <Link href="/items/vapes">Nicotine Vape</Link>
               <Link href="/info/nicotine-vapes-north-york">Nicotine Vapes North York</Link>
               <Link href="/resources">Resources</Link>
               <Link href="/faq">FAQ</Link>
@@ -56,7 +56,7 @@ export default function Footer() {
               <Link href="/info/cheap-weed-north-york">Cheap Weed North York</Link>
               <Link href="/info/native-cigarettes-north-york">Native Cigarettes North York</Link>
               <Link href="/info/weed-store-near-jane-and-finch-north-york">Jane and Finch Visit Notes</Link>
-              <Link href="/weed-dispensary-north-york/">Jane Finch Cannabis Weed Dispensary in North York</Link>
+              <Link href="/weed-dispensary-north-york">Jane Finch Cannabis Weed Dispensary in North York</Link>
               <Link href="/contact">Contact Us</Link>
             </nav>
           </div>
