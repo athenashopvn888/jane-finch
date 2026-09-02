@@ -27,18 +27,17 @@ export async function generateMetadata({
   const { tier: tierSlug } = await params;
   const tierInfo = getTierFromSlug(tierSlug);
   if (!tierInfo) return {};
-  const flowers = getFlowersByTier(tierInfo.key);
   const seo = TIER_SEO[tierInfo.key];
 
   return {
-    title: seo?.seoTitle || `${tierInfo.config.name} Cannabis Flower — ${flowers.length} Strains`,
-    description: seo?.seoIntro || `Shop ${flowers.length} ${tierInfo.config.name.toLowerCase()} cannabis strains at Jane Finch Cannabis.`,
+    title: { absolute: seo?.seoTitle || `${tierInfo.config.name} in North York | Jane Finch Cannabis` },
+    description: seo?.seoIntro || `Browse ${tierInfo.config.name} from Jane Finch Cannabis in North York and explore the Cannabis Flower information presented with each selection.`,
     alternates: {
-      canonical: `https://janefinchcannabis.ca/${tierSlug}`,
+      canonical: `https://www.janefinchcannabis.ca/${tierSlug}`,
     },
     openGraph: {
-      title: `${tierInfo.config.name} Flower | Jane Finch Cannabis`,
-      description: `Browse listed ${tierInfo.config.name.toLowerCase()} flower names, weights, and prices. Menu pricing starts from $${tierInfo.config.unitPrice}/g.`,
+      title: `${tierInfo.config.name} in North York | Jane Finch Cannabis`,
+      description: `Explore the ${tierInfo.config.name} Cannabis Flower collection from Jane Finch Cannabis in North York.`,
     },
   };
 }
@@ -75,7 +74,7 @@ export default async function TierPage({
         <section className={styles.bannerSection}>
           <img
             src={config.banner}
-            alt={`${config.name} Cannabis Flower — ${config.tagline}`}
+            alt={`${config.name} Cannabis Flower`}
             className={styles.bannerImg}
           />
         </section>

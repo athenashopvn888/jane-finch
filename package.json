@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "eslint",
     "test:weed-seo": "node --test tests/weed-seo-pilot.test.mjs",
+    "test:weed-v21": "node --test tests/weed-seo-v21.test.mjs",
     "verify:home-actions": "node scripts/verify-home-actions.mjs",
     "verify:navigation": "node scripts/verify-navigation-actions.mjs",
     "test:web-chat": "node --test tests/web-chat-intake.test.mjs",

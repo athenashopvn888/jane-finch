@@ -11,11 +11,11 @@ const MENU_NOTES = [
 ];
 
 const TIER_DESCRIPTIONS: Record<string, string> = {
-  EXOTIC: "Exotic flower",
-  PREMIUM: "Premium flower",
-  "AAA+": "AAA+ flower",
-  AA: "AA flower",
-  BUDGET: "Budget flower",
+  EXOTIC: "Exotic Weed",
+  PREMIUM: "Premium Weed",
+  "AAA+": "AAA+ Weed",
+  AA: "AA Weed",
+  BUDGET: "Budget Weed",
 };
 
 export function getStrainData(

@@ -4,7 +4,7 @@ import { readFileSync } from "node:fs";
 const navbar = readFileSync("app/components/Navbar.tsx", "utf8");
 const styles = readFileSync("app/components/Navbar.module.css", "utf8");
 
-assert.match(navbar, /href="\/exotic"[\s\S]*?Store Menu/i, "Store Menu must target the existing /exotic menu");
+assert.match(navbar, /href="\/exotic-weed"[\s\S]*?Store Menu/i, "Store Menu must target /exotic-weed");
 assert.match(navbar, /href="\/delivery"[\s\S]*?Delivery Menu/i, "Delivery Menu must target /delivery");
 assert.match(navbar, /aria-label="Primary navigation"/, "Top actions need an accessible label");
 assert.match(navbar, /aria-current=/, "Active menu choices must expose aria-current");

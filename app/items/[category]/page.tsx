@@ -31,10 +31,10 @@ export async function generateMetadata({
   const items = getItemsByCategory(catInfo.key);
 
   return {
-    title: catInfo.config.seoTitle || `${catInfo.config.name} — ${items.length} Products`,
+    title: { absolute: catInfo.config.seoTitle || `${catInfo.config.name} — ${items.length} Products` },
     description: catInfo.config.seoIntro || `Shop ${items.length} ${catInfo.config.name.toLowerCase()} at Jane Finch Cannabis.`,
     alternates: {
-      canonical: `https://janefinchcannabis.ca/items/${catSlug}`,
+      canonical: `https://www.janefinchcannabis.ca/items/${catSlug}`,
     },
   };
 }
@@ -70,11 +70,20 @@ export default async function ItemsCategoryPage({
       {/* Hero Banner */}
       <section style={{ width: "100%", overflow: "hidden", marginTop: "92px", marginBottom: "24px" }}>
         {config.banner && bannerExists ? (
-          <img
-            src={config.banner}
-            alt={config.name}
-            style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}
-          />
+          <>
+            <img
+              src={config.banner}
+              alt={config.name}
+              style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}
+            />
+            {(catInfo.key === "VAPE PENS" || catInfo.key === "VAPE DISPOSABLE") && (
+              <div className={styles.heroContent} style={{ background: config.color, padding: "24px", textAlign: "center" }}>
+                <h1 className={styles.heroTitle}>
+                  <span style={{ color: "#fff" }}>{config.name}</span>
+                </h1>
+              </div>
+            )}
+          </>
         ) : (
           <div className={styles.heroContent} style={{ background: config.color, padding: "60px 24px", textAlign: "center" }}>
             <span className={styles.heroIcon}>{config.icon}</span>

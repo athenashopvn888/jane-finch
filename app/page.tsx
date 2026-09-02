@@ -14,36 +14,36 @@ import Papa from "papaparse";
 /* ── Bento Mosaic Config ── */
 const BENTO_TIERS = [
   {
-    name: "EXOTICS",
-    slug: "exotic",
+    name: "EXOTIC WEED",
+    slug: "exotic-weed",
     price: "$10-$12/g",
     banner: "/banners/exotics_banner.webp",
     className: styles.bentoExotic,
   },
   {
-    name: "PREMIUM",
-    slug: "premium",
+    name: "PREMIUM WEED",
+    slug: "premium-weed",
     price: "$7-$10/g",
     banner: "/banners/premium_banner.webp",
     className: styles.bentoPremium,
   },
   {
-    name: "AAA+",
-    slug: "aaa",
+    name: "AAA+ WEED",
+    slug: "aaa-weed",
     price: "$5-$6/g",
     banner: "/banners/aaa_plus_banner.webp",
     className: styles.bentoTile,
   },
   {
-    name: "AA",
-    slug: "aa",
+    name: "AA WEED",
+    slug: "aa-weed",
     price: "$4/g",
     banner: "/banners/aa_banner.webp",
     className: styles.bentoTile,
   },
   {
-    name: "BUDGET",
-    slug: "budget",
+    name: "BUDGET WEED",
+    slug: "budget-weed",
     price: "$3/g",
     banner: "/banners/budget_banner.webp",
     className: styles.bentoTile,
@@ -59,8 +59,8 @@ const BENTO_TIERS = [
 
 /* ── Explore Categories Config (New Banners) ── */
 const EXPLORE_CATEGORIES = [
-  { name: "Vape Pens", slug: "items/vapes", banner: "/banners/01_Vape_Pens.webp", icon: "💨" },
-  { name: "Nic Vape", slug: "items/vape-disposables", banner: "/banners/02_Vape_Disposable.webp", icon: "💨" },
+  { name: "Nicotine Vape", slug: "items/vapes", banner: "/banners/01_Vape_Pens.webp", icon: "💨" },
+  { name: "THC Vape", slug: "items/vape-disposables", banner: "/banners/02_Vape_Disposable.webp", icon: "💨" },
   { name: "Concentrates", slug: "items/concentrates", banner: "/banners/03_Concentrates.webp", icon: "💎" },
   { name: "Pre-Rolls", slug: "items/prerolls", banner: "/banners/04_Pre_Rolls.webp", icon: "🚬" },
   { name: "Accessories", slug: "items/add-ons", banner: "/banners/05_Accessories.webp", icon: "➕" },
@@ -76,15 +76,15 @@ const LOCAL_FAQS = [
   },
   {
     q: "What cannabis products do you carry?",
-    a: "We carry five tiers of premium flower: Exotic ($10-$12/g), Premium ($7-$10/g), AAA+ ($5-$6/g), AA ($4/g), and Budget ($3/g), plus a wide variety of edibles, prerolls, vapes, and concentrates.",
+    a: "Browse Exotic Weed, Premium Weed, AAA+ Weed, AA Weed, and Budget Weed as separate flower collections, plus the other category pages shown on the menu.",
   },
   {
     q: "Where is Jane Finch Cannabis located?",
-    a: "We are located at 2728 Jane St, North York, ON M3L 2G6. Visit us in person or call us at +1 (437) 524-9336. Free evening street parking is listed.",
+    a: "We are located at 2728 Jane St, North York, ON M3L 2G6. Visit us in person or call us at +1 (437) 524-9336.",
   },
   {
     q: "What is the cheapest weed at Jane Finch Cannabis?",
-    a: "Our budget flower starts at just $3/g. We also offer AA daily drivers from $4/g and AAA+ heavy hitters from $5-$6/g. View our budget menu for our latest deals.",
+    a: "Start with the Budget Weed collection, then compare the product information presented with each selection.",
   },
 ];
 
@@ -240,7 +240,7 @@ export default function HomePage() {
               <p>Jane Finch Cannabis delivery serves North York daily from 10 a.m. to 10 p.m. Browse the Jane Finch Cannabis flower delivery menu and use LIVE ORDER to connect with its dispatcher.</p>
             </aside>
             <div className={styles.homeMenuActions} aria-label="Choose a Jane Finch Cannabis menu">
-              <Link href="/exotic" className={styles.homeMenuCta}>STORE MENU</Link>
+              <Link href="/exotic-weed" className={styles.homeMenuCta}>STORE MENU</Link>
               <Link href="/delivery" className={`${styles.homeMenuCta} ${styles.homeDeliveryCta}`}>DELIVERY MENU</Link>
             </div>
           </div>
@@ -332,7 +332,7 @@ export default function HomePage() {
               Start with the store page, then choose the product category that fits the visit. Flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes each shop differently.
             </p>
             <p className={styles.seoPanelText}>
-              If cheap weed or affordable weed is the goal, start with Budget and AA flower before moving up. If premium flower or exotic flower is the mood, open those lanes first and compare the current details there.
+              If cheap weed or affordable weed is the goal, start with Budget Weed or AA Weed. Premium Weed and Exotic Weed provide separate collection routes for shoppers who want to compare other flower selections.
             </p>
             <p className={styles.seoPanelText}>
               Menus change, so use the current menu and staff for product names, prices, and listings before you make the trip.

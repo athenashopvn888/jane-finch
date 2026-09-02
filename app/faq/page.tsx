@@ -31,8 +31,8 @@ const FAQ_CATEGORIES = [
   {
     title: "Flower and Value",
     faqs: [
-      { q: "Where should cheap weed shoppers start?", a: "Start with Budget and AA flower, then compare the current listings before choosing." },
-      { q: "Where should premium flower shoppers start?", a: "Use Premium or Exotic flower when the visit is about the higher shelf lanes." },
+      { q: "Where should cheap weed shoppers start?", a: "Start with Budget Weed or AA Weed, then review the product information shown with each selection." },
+      { q: "Where should shoppers explore other flower collections?", a: "Use Premium Weed or Exotic Weed as separate collection routes when those tiers match the browsing goal." },
       { q: "How do shoppers avoid guessing?", a: "Stay inside one tier, compare the posted details, and ask staff when the final choice needs a current answer." },
     ],
   },

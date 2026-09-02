@@ -83,8 +83,8 @@ export const SEO_PAGES: SeoPageData[] = [
     "heroTagline": "Value shopping with current menu checks",
     "sections": [
       {
-        "heading": "Start With Budget And AA",
-        "body": "If cheap weed or affordable weed is the mission, start with the Budget and AA flower lanes before jumping around the rest of the menu. That keeps the comparison clean."
+        "heading": "Start With Budget Weed And AA Weed",
+        "body": "If cheap weed or affordable weed is the mission, start with the Budget Weed and AA Weed collections before exploring the rest of the menu."
       },
       {
         "heading": "Compare The Current Menu",
@@ -92,13 +92,13 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "heading": "Know When To Move Up",
-        "body": "If Budget or AA does not fit the visit, compare AAA+, Premium, or Exotic flower next. A better tier decision starts with the tier, then the current item details."
+        "body": "If Budget Weed or AA Weed does not match the browsing goal, compare AAA+ Weed, Premium Weed, or Exotic Weed next, then review the information shown with each selection."
       }
     ],
     "faqs": [
       {
         "q": "Where should value shoppers start at Jane Finch Cannabis?",
-        "a": "Start with Budget and AA flower, then compare current menu details before choosing."
+        "a": "Start with Budget Weed and AA Weed, then review the product information shown with each selection."
       },
       {
         "q": "Does affordable weed mean guessing?",
@@ -202,7 +202,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "heading": "Compare Categories Naturally",
-        "body": "Use normal shopping language: cannabis dispensary in North York, weed dispensary in Jane and Finch / North York, cheap weed, budget weed, premium flower, pre-rolls, edibles, THC vapes, and concentrates. The point is to help the shopper, not stuff a sentence."
+        "body": "Choose the category that matches your visit, such as Budget Weed, Premium Weed, pre-rolls, edibles, THC vapes, or concentrates, then review the information presented there."
       },
       {
         "heading": "Check Current Details",
