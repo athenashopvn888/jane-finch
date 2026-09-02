@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "FAQ | Jane Finch Cannabis",
   description: "Frequently asked questions about Jane Finch Cannabis in North York, including store-page checks, menu categories, value shopping, and Native smokes where listed.",
   alternates: {
-    canonical: "https://janefinchcannabis.ca/faq",
+    canonical: "https://www.janefinchcannabis.ca/faq",
   },
 };
 
