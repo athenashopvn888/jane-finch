@@ -20,6 +20,11 @@ export type ResourceCard = {
   updated: string;
 };
 
+export type ResourceFaq = {
+  question: string;
+  answer: string;
+};
+
 export type ResourcePage = {
   pageNumber: number;
   sourceHeading: string;
@@ -44,6 +49,7 @@ export type ResourcePage = {
   relatedRoutes: string[];
   commercialLinks: ResourceLink[];
   cards: ResourceCard[];
+  faqs: ResourceFaq[];
 };
 
 export const SITE_URL = "https://www.janefinchcannabis.ca";
@@ -85,6 +91,9 @@ type PageSeed = {
   childRoutes?: string[];
   relatedRoutes?: string[];
   commercialLinks?: ResourceLink[];
+  faqs?: ResourceFaq[];
+  datePublished?: string;
+  dateModified?: string;
 };
 
 const menuLink = (title: string, href: string, description: string): ResourceLink => ({
@@ -106,6 +115,7 @@ const seeds: PageSeed[] = [
     body: "Choose the section that matches what you want to browse. Each guide explains the menu structure and points back to the current category page.\n\n## Start with a category\n\nFlower, pre-rolls, edibles, vapes, value, native smokes, and specialty formats each have their own section.\n\n## Plan a Jane Street visit\n\nUse the local guide for store navigation, then use the store page for the current contact and visit details.",
     childRoutes: [
       "/resources/cannabis-101",
+      "/resources/cannabis-dispensary-vs-weed-dispensary",
       "/resources/weed-flower-guides",
       "/resources/pre-roll-guides",
       "/resources/edibles-guides",
@@ -119,6 +129,41 @@ const seeds: PageSeed[] = [
     commercialLinks: [
       menuLink("Open the store page", STORE_ROUTE, "Find Jane Finch Cannabis store and visit information."),
       menuLink("Browse the menu", "/#menu", "Open the main menu categories."),
+    ],
+  },
+  {
+    route: "/resources/cannabis-dispensary-vs-weed-dispensary",
+    kind: "article",
+    pageType: "Local Dispensary Guide",
+    parentRoute: "/resources",
+    h1: "Dispensary, Cannabis Dispensary or Weed Dispensary: Understanding the Search",
+    seoTitle: "Dispensary vs Weed Dispensary | Jane Finch Cannabis North York",
+    metaDescription: "What is the difference between a cannabis dispensary and weed dispensary? Jane Finch Cannabis explains the language behind local dispensary searches in North York.",
+    excerpt: "Customers rarely think in exact SEO phrases. They use whichever words feel natural: cannabis, weed, cannabis store, weed dispensary, or simply dispensary. For a local business, the useful job of a website is to connect those words to one clear real-world location without forcing repetitive keyword language.",
+    body: "## What Changes — and What Does Not\n\nThe wording changes, but the business a customer is trying to identify may be the same.\n\n**Cannabis dispensary** is formal and explicit.  \n**Weed dispensary** is more conversational.  \n**Cannabis store** is another common retail description.  \n**Dispensary near me** is shorter and strongly local.\n\nA useful page should explain those relationships naturally instead of repeating every exact phrase in every heading.\n\n## From Search Phrase to Real Store Information\n\nFor someone searching in North York, the terminology is only the first step. Jane Finch Cannabis should be represented as one clear local entity across the website and Business Profile.\n\nThe existing local store page remains the primary destination for visit intent. This article explains the vocabulary and then points readers toward that established local resource.",
+    author: LOCAL,
+    datePublished: "2026-09-04",
+    dateModified: "2026-09-04",
+    commercialLinks: [
+      menuLink("Open the Jane Finch Cannabis local store page", STORE_ROUTE, "Use the established North York dispensary page for store and visit information."),
+    ],
+    faqs: [
+      {
+        question: "Is a weed dispensary different from a cannabis dispensary?",
+        answer: "Usually the main difference is wording. Cannabis is the more formal term, while weed is common conversational language.",
+      },
+      {
+        question: "Does “dispensary near me” include cannabis dispensaries?",
+        answer: "In a cannabis-related search context, people commonly use the shorter phrase to look for a nearby cannabis dispensary.",
+      },
+      {
+        question: "Is “cannabis store near me” related?",
+        answer: "Yes. Cannabis store is another common way to describe a nearby cannabis retail business.",
+      },
+      {
+        question: "Should every keyword variation have a separate page?",
+        answer: "No. Closely related local-search phrases are generally better supported by a strong local page plus useful supporting content than by multiple thin duplicate pages.",
+      },
     ],
   },
   {
@@ -477,8 +522,8 @@ const basePages: ResourcePage[] = seeds.map((seed, index) => ({
   primaryKeyword: seed.h1,
   supportingKeywords: [],
   author: seed.author || (seed.kind === "article" ? MENU : TEAM),
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
+  datePublished: seed.datePublished || PUBLISHED,
+  dateModified: seed.dateModified || PUBLISHED,
   heroImage: "/storeFavicon.webp",
   excerpt: seed.excerpt,
   body: seed.body,
@@ -488,6 +533,7 @@ const basePages: ResourcePage[] = seeds.map((seed, index) => ({
   relatedRoutes: seed.relatedRoutes || [],
   commercialLinks: seed.commercialLinks || [],
   cards: [],
+  faqs: seed.faqs || [],
 }));
 
 export const RESOURCE_PAGES: ResourcePage[] = basePages.map((page) => ({

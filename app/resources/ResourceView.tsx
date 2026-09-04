@@ -177,7 +177,17 @@ function resourceJsonLd(page: ResourcePage) {
           author,
           publisher,
         };
-  return { "@context": "https://schema.org", "@graph": [pageSchema, breadcrumbSchema] };
+  const faqSchema = page.faqs.length
+    ? {
+        "@type": "FAQPage",
+        mainEntity: page.faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: { "@type": "Answer", text: faq.answer },
+        })),
+      }
+    : null;
+  return { "@context": "https://schema.org", "@graph": [pageSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])] };
 }
 
 function CardGrid({ cards }: { cards: ResourceCard[] }) {
@@ -229,6 +239,21 @@ function SecondTake({ page }: { page: ResourcePage }) {
   );
 }
 
+function FaqList({ page }: { page: ResourcePage }) {
+  if (!page.faqs.length) return null;
+  return (
+    <section className={styles.content} aria-labelledby="resource-faq-heading">
+      <h2 id="resource-faq-heading" className={styles.bodyHeading}>Frequently Asked Questions</h2>
+      {page.faqs.map((faq) => (
+        <div key={faq.question}>
+          <h3 className={styles.bodyHeading}>{faq.question}</h3>
+          <p className={styles.bodyP}>{faq.answer}</p>
+        </div>
+      ))}
+    </section>
+  );
+}
+
 export default function ResourceView({ page }: { page: ResourcePage }) {
   const childPages = getResourceChildren(page);
   const displayCards =
@@ -271,6 +296,7 @@ export default function ResourceView({ page }: { page: ResourcePage }) {
         </header>
 
         <div className={styles.content}>{renderBody(page.body)}</div>
+        <FaqList page={page} />
         <SecondTake page={page} />
         <LinkPanel links={page.commercialLinks} />
         <CardGrid cards={displayCards} />
