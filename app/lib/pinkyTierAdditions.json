@@ -1,0 +1,112 @@
+{
+  "EXOTIC": {
+    "rows": [
+      {
+        "heading": "What “Exotic Weed” Means at Jane Finch Cannabis",
+        "body": "Exotic Weed is an established Jane Finch Cannabis flower collection. The label helps adults narrow the current menu. It is not a universal Canadian government grade and it does not guarantee one THC range."
+      },
+      {
+        "heading": "What Adults May Compare",
+        "body": "Inside the Exotic Weed collection, compare the actual product information: producer, cultivar, THC/CBD, package details and any aroma or other product information that is actually provided. Flower appearance, trim, trichomes, cure and freshness can also differ between products."
+      },
+      {
+        "heading": "Exotic Is Not One Guaranteed Effect",
+        "body": "Exotic can describe premium positioning, distinctive genetics, aroma, rarity or presentation. It does not guarantee one effect or one terpene profile."
+      }
+    ],
+    "links": [
+      "/resources/weed-flower-guides",
+      "/resources/weed-flower-guides/aa-vs-aaa-vs-premium-vs-exotic",
+      "/resources/weed-flower-guides/terpenes-gas-loud-aroma",
+      "/resources/weed-flower-guides/thc-vs-weed-quality"
+    ]
+  },
+  "PREMIUM": {
+    "rows": [
+      {
+        "heading": "What “Premium Weed” Means at Jane Finch Cannabis",
+        "body": "Premium Weed is a separate Jane Finch Cannabis flower collection. It helps adults browse a higher-positioned shelf without pretending that the word Premium is one regulated national grade."
+      },
+      {
+        "heading": "Compare the Product, Not Only the Collection",
+        "body": "Use the current listing for producer, cultivar, THC/CBD, package details and current price. The educational guides explain aroma, trichomes, cure, freshness and other quality language that the collection name cannot fully describe."
+      },
+      {
+        "heading": "Premium Is Not Automatically Higher THC",
+        "body": "Premium positioning and THC are different pieces of information. A larger THC number does not automatically determine the flower collection."
+      }
+    ],
+    "links": [
+      "/resources/weed-flower-guides",
+      "/resources/weed-flower-guides/what-does-good-weed-mean",
+      "/resources/weed-flower-guides/thc-vs-weed-quality",
+      "/resources/weed-flower-guides/drying-curing-freshness"
+    ]
+  },
+  "AAA+": {
+    "rows": [
+      {
+        "heading": "AAA+ Weed: Useful Retail Shorthand",
+        "body": "AAA+ Weed is Jane Finch Cannabis's established collection name. AAA and AAA+ are familiar cannabis retail terms, but they are not one universal government grading system."
+      },
+      {
+        "heading": "AAA+ vs Quads / AAAA",
+        "body": "Quads is common Canadian slang for AAAA and generally signals premium positioning. AAA+ sits in a different retail-label lane. Do not assume a fixed THC threshold separates the terms."
+      },
+      {
+        "heading": "Read the Current Listing",
+        "body": "Use the current product page for the actual producer, cultivar, THC/CBD, package details, price and availability."
+      }
+    ],
+    "links": [
+      "/resources/weed-flower-guides/aa-vs-aaa-vs-premium-vs-exotic",
+      "/resources/weed-flower-guides",
+      "/resources/weed-flower-guides/thc-vs-weed-quality",
+      "/resources/cannabis-101/weed-slang-glossary"
+    ]
+  },
+  "AA": {
+    "rows": [
+      {
+        "heading": "AA Weed as a Clear Menu Collection",
+        "body": "AA Weed is one of Jane Finch Cannabis's five flower collections. The label makes the menu easier to scan. It does not define one mandatory THC level, aroma profile or bud size."
+      },
+      {
+        "heading": "Value and Quality Are Different Questions",
+        "body": "AA Weed can be part of a value-first browse. Value does not automatically mean low quality, and a lower price does not prove that flower is weak or stale."
+      },
+      {
+        "heading": "Compare Current Product Information",
+        "body": "Use the current listing for changing price, stock, package and product-specific details."
+      }
+    ],
+    "links": [
+      "/resources/value-guides",
+      "/resources/weed-flower-guides",
+      "/resources/weed-flower-guides/what-does-good-weed-mean",
+      "/resources/weed-flower-guides/smalls-vs-big-buds"
+    ]
+  },
+  "BUDGET": {
+    "rows": [
+      {
+        "heading": "Budget Weed Means Value-First Browsing",
+        "body": "Budget Weed is Jane Finch Cannabis's value-first flower collection. The word Budget describes price positioning on the menu. It does not automatically mean unsafe, stale, weak or low THC."
+      },
+      {
+        "heading": "Do Not Judge the Product From the Label Alone",
+        "body": "Adults can still compare producer, cultivar, THC/CBD, package details, aroma information where provided and the actual flower characteristics."
+      },
+      {
+        "heading": "Current Price Belongs on the Current Page",
+        "body": "This educational section should not freeze a price or deal into permanent copy. The live collection remains the current source for changing commercial details."
+      }
+    ],
+    "links": [
+      "/resources/value-guides",
+      "/resources/weed-flower-guides",
+      "/resources/weed-flower-guides/thc-vs-weed-quality",
+      "/resources/weed-flower-guides/what-does-good-weed-mean"
+    ]
+  }
+}
