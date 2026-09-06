@@ -70,4 +70,5 @@ test("protected Weed route labels remain unchanged", () => {
 test("generated public content contains no raw Markdown rule leakage", () => {
   const publicText = JSON.stringify({ content, tiers });
   assert.doesNotMatch(publicText, /(^|\\n)---($|\\n)/);
+  assert.doesNotMatch(publicText, /\b(PINKY|Cody|Agent X|SEO|keyword strategy|ranking|repository|evidence|source truth|workflow|implementation|content gate|protected-owner)\b/i);
 });
