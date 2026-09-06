@@ -87,10 +87,17 @@ function renderBody(body: string) {
   return body.split(/\n\n+/).map((block, index) => {
     const trimmed = block.trim();
     if (!trimmed) return null;
-    if (/^#{2,3}\s/.test(trimmed)) {
+    if (/^###\s/.test(trimmed)) {
+      return (
+        <h3 key={index} className={styles.bodyHeading}>
+          {renderInline(trimmed.replace(/^###\s/, ""))}
+        </h3>
+      );
+    }
+    if (/^##\s/.test(trimmed)) {
       return (
         <h2 key={index} className={styles.bodyHeading}>
-          {renderInline(trimmed.replace(/^#{2,3}\s/, ""))}
+          {renderInline(trimmed.replace(/^##\s/, ""))}
         </h2>
       );
     }

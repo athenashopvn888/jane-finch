@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Link from "next/link";
 import fs from "fs";
 import path from "path";
 import Navbar from "../components/Navbar";
@@ -189,6 +190,16 @@ export default async function TierPage({
               <div key={i} className={styles.seoBlock}>
                 <h3 className={styles.seoHeading}>{s.heading}</h3>
                 <p className={styles.seoBody}>{s.body}</p>
+                {s.links?.length ? (
+                  <p className={styles.seoBody}>
+                    {s.links.map((href, linkIndex) => (
+                      <span key={href}>
+                        {linkIndex ? " · " : ""}
+                        <Link href={href}>Learn more</Link>
+                      </span>
+                    ))}
+                  </p>
+                ) : null}
               </div>
             ))}
 

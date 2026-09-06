@@ -1,3 +1,5 @@
+import pinkyContent from "./pinkyResourceContent.json";
+
 export type ResourceAuthor = {
   name: string;
   handle: string;
@@ -505,11 +507,12 @@ export const RESOURCE_ROUTE_LABELS: Record<string, string> = {
   "/items/magic": "Magic Stuff",
   "/info/native-cigarettes-north-york": "Native cigarettes information",
   ...Object.fromEntries(seeds.map((page) => [page.route, page.h1])),
+  ...Object.fromEntries(pinkyContent.pages.map((page) => [page.route, page.h1])),
 };
 
 const PUBLISHED = "2026-07-15";
 
-const basePages: ResourcePage[] = seeds.map((seed, index) => ({
+const originalPages: ResourcePage[] = seeds.map((seed, index) => ({
   pageNumber: index + 1,
   sourceHeading: seed.pageType,
   route: seed.route,
@@ -535,6 +538,83 @@ const basePages: ResourcePage[] = seeds.map((seed, index) => ({
   cards: [],
   faqs: seed.faqs || [],
 }));
+
+const contentByRoute = new Map(pinkyContent.pages.map((page) => [page.route, page]));
+const supportByRoute = pinkyContent.support as Record<string, { appendBody?: string; addLinks?: string[]; dateModified?: string }>;
+
+function withPinkyContent(page: ResourcePage): ResourcePage {
+  const approved = contentByRoute.get(page.route);
+  const support = supportByRoute[page.route];
+  const hubAppend = page.route === "/resources" ? pinkyContent.hub.appendBody : "";
+  const appendBody = [hubAppend, support?.appendBody].filter(Boolean).join("\n\n");
+  const addedLinks = support?.addLinks || [];
+  return {
+    ...page,
+    ...(approved
+      ? {
+          h1: approved.h1,
+          seoTitle: approved.seoTitle,
+          metaDescription: approved.metaDescription,
+          excerpt: approved.excerpt,
+          body: approved.body,
+          faqs: approved.faqs,
+          commercialLinks: approved.commercialLinks,
+          linkRoutes: approved.commercialLinks.map((link) => link.href),
+          dateModified: approved.dateModified,
+        }
+      : {}),
+    body: approved?.body || [page.body, appendBody].filter(Boolean).join("\n\n"),
+    dateModified: approved?.dateModified || support?.dateModified || (hubAppend ? pinkyContent.hub.dateModified : page.dateModified),
+    commercialLinks: [
+      ...(approved?.commercialLinks || page.commercialLinks),
+      ...addedLinks.map((href) => menuLink(RESOURCE_ROUTE_LABELS[href] || "Open the current Resource Centre", href, `Continue to ${RESOURCE_ROUTE_LABELS[href] || "the current Resource Centre"}.`)),
+    ],
+    linkRoutes: [...new Set([...(approved?.commercialLinks || page.commercialLinks).map((link) => link.href), ...addedLinks])],
+  };
+}
+
+const expandedPages = originalPages.map(withPinkyContent);
+const newPages: ResourcePage[] = pinkyContent.pages
+  .filter((page) => page.action === "NEW")
+  .map((page, index) => ({
+    pageNumber: originalPages.length + index + 1,
+    sourceHeading: page.pageType,
+    route: page.route,
+    kind: "article",
+    pageType: page.pageType,
+    parentRoute: page.parentRoute,
+    h1: page.h1,
+    seoTitle: page.seoTitle,
+    metaDescription: page.metaDescription,
+    primaryKeyword: page.h1,
+    supportingKeywords: [],
+    author: MENU,
+    datePublished: page.datePublished || "2026-09-06",
+    dateModified: page.dateModified,
+    heroImage: "/storeFavicon.webp",
+    excerpt: page.excerpt,
+    body: page.body,
+    secondTake: null,
+    linkRoutes: page.commercialLinks.map((link) => link.href),
+    childRoutes: [],
+    relatedRoutes: [],
+    commercialLinks: page.commercialLinks,
+    cards: [],
+    faqs: page.faqs,
+  }));
+
+const basePages: ResourcePage[] = [...expandedPages, ...newPages].map((page) => {
+  if (page.route === "/resources/cannabis-101") {
+    return { ...page, childRoutes: [...new Set([...page.childRoutes, ...newPages.filter((child) => child.parentRoute === page.route).map((child) => child.route)])] };
+  }
+  if (page.route === "/resources/weed-flower-guides") {
+    return { ...page, childRoutes: [...new Set([...page.childRoutes, ...newPages.filter((child) => child.parentRoute === page.route).map((child) => child.route)])] };
+  }
+  if (page.route === "/resources/local-guides") {
+    return { ...page, childRoutes: [...new Set([...page.childRoutes, "/resources/local-guides/weed-dispensary-in-jane-and-finch"])] };
+  }
+  return page;
+});
 
 export const RESOURCE_PAGES: ResourcePage[] = basePages.map((page) => ({
   ...page,

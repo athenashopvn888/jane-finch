@@ -1,7 +1,9 @@
+import pinkyTierAdditions from "./pinkyTierAdditions.json";
+
 export interface TierSeoData {
   seoTitle: string;
   seoIntro: string;
-  sections: { heading: string; body: string }[];
+  sections: { heading: string; body: string; links?: string[] }[];
   faqs: { q: string; a: string }[];
 }
 
@@ -55,3 +57,8 @@ export const TIER_SEO: Record<string, TierSeoData> = {
   AA: createTierSeo("AA", "AA Weed"),
   BUDGET: createTierSeo("BUDGET", "Budget Weed"),
 };
+
+for (const [key, addition] of Object.entries(pinkyTierAdditions)) {
+  if (!TIER_SEO[key]) continue;
+  TIER_SEO[key].sections.push(...addition.rows.map((row) => ({ ...row, links: addition.links })));
+}
