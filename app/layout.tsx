@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import "./globals.css";
 import AgeGate from "./components/AgeGate";
 
@@ -150,9 +149,9 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Link className="deliveryAnnouncement" href="/delivery">
-          NEW DELIVERY MENU IS HERE — CLICK TO EXPLORE
-        </Link>
+        <div className="deliveryAnnouncement" role="status" aria-label="Store hours">
+          OPEN 24 HOURS
+        </div>
         {children}
         <AgeGate />
       </body>

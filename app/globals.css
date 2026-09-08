@@ -20,8 +20,8 @@
   min-height: var(--delivery-announcement-height);
   box-sizing: border-box;
   padding: 0.65rem 1rem;
-  background: var(--green-deep, #052e16);
-  border-bottom: 3px solid var(--green-light, #22c55e);
+  background: #b91c1c;
+  border-bottom: 3px solid #7f1d1d;
   color: #fff;
   font: 800 clamp(0.78rem, 2.5vw, 0.95rem)/1.25 system-ui, sans-serif;
   letter-spacing: 0.04em;
@@ -31,18 +31,6 @@
 
 body > .deliveryAnnouncement ~ * nav {
   top: var(--delivery-announcement-height) !important;
-}
-
-.deliveryAnnouncement:hover,
-.deliveryAnnouncement:focus-visible {
-  color: #fff;
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
-}
-
-.deliveryAnnouncement:focus-visible {
-  outline: 3px solid #fff;
-  outline-offset: -4px;
 }
 
 :root {
