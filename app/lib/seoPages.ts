@@ -39,42 +39,6 @@ export interface SeoPageData {
 
 export const SEO_PAGES: SeoPageData[] = [
   {
-    "slug": "north-york-weed-dispensary",
-    "title": "Jane Finch Cannabis Weed Dispensary in North York",
-    "metaDescription": "Jane Finch Cannabis is a weed dispensary in North York with flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and shopper resources.",
-    "h1": "Jane Finch Cannabis Weed Dispensary in North York",
-    "icon": "*",
-    "heroTagline": "Menu shopping around Jane and Finch / North York",
-    "sections": [
-      {
-        "heading": "Shop Jane Finch Cannabis With A Plan",
-        "body": "Jane Finch Cannabis helps adults compare the menu with less noise. Start with the store page, then choose the category that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed."
-      },
-      {
-        "heading": "Local Menu Notes For Jane and Finch / North York",
-        "body": "If you searched for a weed dispensary in Jane and Finch / North York or a cannabis dispensary in North York, use this page to get oriented. Jane and Finch / North York, Jane and Finch, North York, Jane Street are useful local cues, but the current menu and staff are the right place for details that change."
-      },
-      {
-        "heading": "What To Check Before Visiting",
-        "body": "Confirm the store page, directions, contact options, listed hours, and menu category first. For current products, prices, or listings, use the menu or ask staff before leaving."
-      }
-    ],
-    "faqs": [
-      {
-        "q": "Is Jane Finch Cannabis a cannabis dispensary in North York?",
-        "a": "Yes. Jane Finch Cannabis serves shoppers looking for a cannabis dispensary in North York. Use the store page for directions, contact options, and listed hours."
-      },
-      {
-        "q": "What should I check before visiting Jane Finch Cannabis?",
-        "a": "Start with the store page, then use the current menu to compare product names, formats, prices, and item notes."
-      },
-      {
-        "q": "Does Jane Finch Cannabis carry flower and pre-rolls?",
-        "a": "Flower tiers and pre-rolls are listed on the current menu. Check the menu or ask staff for current details."
-      }
-    ]
-  },
-  {
     "slug": "cheap-weed-north-york",
     "title": "Jane Finch Cannabis Cheap Weed and Budget Weed Guide",
     "metaDescription": "A value-minded Jane Finch Cannabis guide for cheap weed, budget weed, affordable weed, and flower tier shopping in North York.",
@@ -153,48 +117,12 @@ export const SEO_PAGES: SeoPageData[] = [
     ]
   },
   {
-    "slug": "weed-store-near-jane-and-finch-north-york",
-    "title": "Weed Store Near Jane and Finch / North York | Jane Finch Cannabis",
-    "metaDescription": "Looking for a weed store near Jane and Finch / North York? Use Jane Finch Cannabis for store-page checks, menu categories, and local visit planning in North York.",
-    "h1": "Weed Store Near Jane and Finch / North York",
-    "icon": ">",
-    "heroTagline": "Local visit notes for Jane and Finch / North York, Jane and Finch, North York, Jane Street",
-    "sections": [
-      {
-        "heading": "Confirm The Right Store Page",
-        "body": "When you search for a weed store near Jane and Finch / North York, open the Jane Finch Cannabis store page first. Confirm directions, contact options, listed hours, and current menu details before visiting."
-      },
-      {
-        "heading": "Choose The Product Category",
-        "body": "Flower, pre-rolls, edibles, THC vapes, concentrates, and accessories all shop differently. Pick the category first, then compare current product details."
-      },
-      {
-        "heading": "Use Staff For The Close Call",
-        "body": "If one detail decides the visit, ask staff. That is the cleanest way to handle current product questions."
-      }
-    ],
-    "faqs": [
-      {
-        "q": "What is the best first step for a Jane and Finch / North York visit?",
-        "a": "Open the Jane Finch Cannabis store page, then use the current menu category that matches the visit."
-      },
-      {
-        "q": "Should shoppers rely on old blog prices?",
-        "a": "No. Use the current menu or staff for details that change."
-      },
-      {
-        "q": "What categories can shoppers compare?",
-        "a": "Browse flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes where listed, then confirm current details on the menu."
-      }
-    ]
-  },
-  {
     "slug": "dispensary-near-me-north-york",
     "title": "Cannabis Dispensary Near Me in North York | Jane Finch Cannabis",
     "metaDescription": "Use Jane Finch Cannabis when searching for a cannabis dispensary near me in North York; compare menu categories and confirm current details before visiting.",
     "h1": "Cannabis Dispensary Near Me in North York",
     "icon": "o",
-    "heroTagline": "Store page first, menu category second",
+    "heroTagline": "Start with our North York store page for location and hours, then browse the menu categories that interest you.",
     "sections": [
       {
         "heading": "Make The Search Useful",
