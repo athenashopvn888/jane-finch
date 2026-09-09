@@ -52,10 +52,8 @@ export default function Footer() {
               <Link href="/resources">Resources</Link>
               <Link href="/faq">FAQ</Link>
               <Link href="/delivery">Delivery Menu</Link>
-              <Link href="/info/north-york-weed-dispensary">North York Dispensary</Link>
               <Link href="/info/cheap-weed-north-york">Cheap Weed North York</Link>
               <Link href="/info/native-cigarettes-north-york">Native Cigarettes North York</Link>
-              <Link href="/info/weed-store-near-jane-and-finch-north-york">Jane and Finch Visit Notes</Link>
               <Link href="/weed-dispensary-north-york">Jane Finch Cannabis Weed Dispensary in North York</Link>
               <Link href="/contact">Contact Us</Link>
             </nav>

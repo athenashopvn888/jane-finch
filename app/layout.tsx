@@ -10,22 +10,6 @@ export const metadata: Metadata = {
   },
   description:
     "Jane Finch Cannabis is a North York dispensary on Jane St with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
-  keywords: [
-    "cannabis dispensary North York",
-    "weed store North York",
-    "Exotic Weed North York",
-    "Premium Weed North York",
-    "Jane Finch Cannabis",
-    "cheap weed North York",
-    "dispensary near me",
-    "THC flower",
-    "indica sativa hybrid",
-    "edibles North York",
-    "vapes",
-    "pre-rolls",
-    "native cigarettes North York",
-    "weed store North York",
-  ],
   openGraph: {
     type: "website",
     locale: "en_CA",
@@ -69,11 +53,14 @@ export const metadata: Metadata = {
 };
 
 /* ── JSON-LD Structured Data ── */
-const jsonLd = {
+const storeId = "https://www.janefinchcannabis.ca/#store";
+const websiteId = "https://www.janefinchcannabis.ca/#website";
+const mapsUrl = "https://www.google.com/maps?cid=6991178766551029626";
+
+const storeJsonLd = {
   "@context": "https://schema.org",
   "@type": "Store",
-  additionalType: "https://schema.org/Store",
-  "@id": "https://www.janefinchcannabis.ca",
+  "@id": storeId,
   name: "Jane Finch Cannabis",
   description: "Cannabis dispensary at 2728 Jane St in North York, ON with Exotic Weed, Premium Weed, AAA+ Weed, AA Weed, Budget Weed, edibles, pre-rolls, and vapes. Open 24 Hours.",
   url: "https://www.janefinchcannabis.ca",
@@ -89,8 +76,8 @@ const jsonLd = {
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 43.7432147,
-    longitude: -79.5144564,
+    latitude: 43.7432199,
+    longitude: -79.5144264,
   },
   openingHoursSpecification: [
   {
@@ -112,6 +99,17 @@ const jsonLd = {
     "@type": "City",
     name: "North York",
   },
+  sameAs: [mapsUrl],
+  hasMap: mapsUrl,
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": websiteId,
+  name: "Jane Finch Cannabis",
+  url: "https://www.janefinchcannabis.ca",
+  publisher: { "@id": storeId },
 };
 
 export default function RootLayout({
@@ -134,7 +132,11 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(storeJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-51JW61RPS8"></script>
         <script

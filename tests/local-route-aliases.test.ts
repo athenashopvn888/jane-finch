@@ -6,19 +6,24 @@ import nextConfig from "../next.config.ts";
 import { SEO_PAGES } from "../app/lib/seoPages.ts";
 
 const ALIAS_REDIRECTS = [
-  ["york-weed-dispensary", "north-york-weed-dispensary"],
-  ["cheap-weed-york", "cheap-weed-north-york"],
-  ["native-cigarettes-york", "native-cigarettes-north-york"],
-  ["weed-store-near-brampton", "weed-store-near-jane-and-finch-north-york"],
-  ["weed-store-near-mississauga", "weed-store-near-jane-and-finch-north-york"],
-  ["dispensary-near-me-york", "dispensary-near-me-north-york"],
+  ["/info/north-york-weed-dispensary", "/weed-dispensary-north-york"],
+  ["/info/york-weed-dispensary", "/weed-dispensary-north-york"],
+  ["/info/cheap-weed-york", "/info/cheap-weed-north-york"],
+  ["/info/native-cigarettes-york", "/info/native-cigarettes-north-york"],
+  ["/info/weed-store-near-jane-and-finch-north-york", "/weed-dispensary-north-york"],
+  ["/info/weed-store-near-brampton", "/weed-dispensary-north-york"],
+  ["/info/weed-store-near-mississauga", "/weed-dispensary-north-york"],
+  ["/info/dispensary-near-me-york", "/info/dispensary-near-me-north-york"],
 ] as const;
 
 test("legacy aliases are excluded while canonical North York pages remain discoverable", async () => {
   const slugs = new Set(SEO_PAGES.map((page) => page.slug));
   for (const [source, destination] of ALIAS_REDIRECTS) {
-    assert.equal(slugs.has(source), false, `${source} must not be generated or included in the sitemap`);
-    assert.equal(slugs.has(destination), true, `${destination} must remain generated and discoverable`);
+    const sourceSlug = source.replace("/info/", "");
+    assert.equal(slugs.has(sourceSlug), false, `${source} must not be generated or included in the sitemap`);
+    if (destination.startsWith("/info/")) {
+      assert.equal(slugs.has(destination.replace("/info/", "")), true, `${destination} must remain generated and discoverable`);
+    }
   }
 
   const sitemapSource = await readFile(new URL("../app/sitemap.ts", import.meta.url), "utf8");
@@ -32,8 +37,8 @@ test("all six existing permanent redirects remain exact", async () => {
   for (const [source, destination] of ALIAS_REDIRECTS) {
     assert.ok(
       redirects.some((redirect) =>
-        redirect.source === `/info/${source}` &&
-        redirect.destination === `/info/${destination}` &&
+        redirect.source === source &&
+        redirect.destination === destination &&
         redirect.permanent === true
       ),
       `${source} must permanently redirect to ${destination}`,

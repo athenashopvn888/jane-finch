@@ -264,7 +264,7 @@ const seeds: PageSeed[] = [
     seoTitle: "Jane Street North York Visit Guides | Jane Finch Cannabis",
     metaDescription: "Use Jane Finch Cannabis local guides to find the store page, menu routes, and Jane Street visit information.",
     excerpt: "Connect the store page with the right menu category before a visit.",
-    body: "Start with the Jane Finch Cannabis store page for location, contact, and visit information. Then open the category that matches what you want to browse.\n\n## Keep the route simple\n\nStore page first, menu category second, individual listing third.",
+    body: "Start with the Jane Finch Cannabis store page for location, contact, and visit information. Then open the category that matches what you want to browse.\n\n## Plan your visit\n\nStart with our North York store page for location and hours, then browse the menu categories that interest you.",
     author: LOCAL,
     childRoutes: ["/resources/local-guides/weed-dispensary-in-jane-and-finch"],
     commercialLinks: [menuLink("Open the store page", STORE_ROUTE, "Review Jane Finch Cannabis visit information.")],
