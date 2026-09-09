@@ -5,6 +5,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { allItems, CATEGORY_CONFIG, type ItemProduct } from "../../lib/products";
 import { getItemData } from "../../lib/itemData";
+import { getItemPriceDisplay } from "../../lib/itemPricing";
 import Magnifier from "../../components/Magnifier";
 import styles from "../../flower/[slug]/flower.module.css";
 
@@ -128,6 +129,7 @@ export default async function ItemPage({
   const catIcon = catInfo?.icon || "🏷️";
   
   const itemData = getItemData(item.category, item.name);
+  const itemPrice = getItemPriceDisplay(item.price, item.sku);
 
   return (
     <>
@@ -235,9 +237,9 @@ export default async function ItemPage({
                   </div>
                   
                   <div className={styles.priceTableRow}>
-                    <span className={styles.priceWeight}>1 Item</span>
+                    <span className={styles.priceWeight}>{itemPrice.isMultiple ? "Available options" : "1 Item"}</span>
                     <span className={styles.priceRegular}>
-                      {item.price?.startsWith('$') ? item.price : `$${item.price}`}
+                      {itemPrice.display}
                     </span>
                   </div>
                 </div>
