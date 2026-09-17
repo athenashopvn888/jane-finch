@@ -9,9 +9,8 @@ export default function Footer() {
           <div className={styles.col}>
             <div className={styles.brand}>JANE FINCH CANNABIS</div>
             <p className={styles.desc}>
-              Your local cannabis dispensary at 2728 Jane St, North York. Visit
-              Jane Finch Cannabis for flower, edibles, vapes, pre-rolls, cigarettes, and menu resources.
-              Open: Open 24 Hours.
+              Walk-in cannabis at 2728 Jane St in the Jane–Finch / Black Creek neighbourhood of North York.
+              Open 24 hours. Adults 19+.
             </p>
             <div className={styles.buttons}>
               <a href="tel:+14375249336" className={styles.btnPrimary}>Call Now</a>
@@ -40,6 +39,7 @@ export default function Footer() {
             <h3 className={styles.colTitle}>Quick Links</h3>
             <nav className={styles.links}>
               <Link href="/">Home</Link>
+              <Link href="/visit">How to Get Here</Link>
               <Link href="/exotic-weed">Exotic Weed</Link>
               <Link href="/premium-weed">Premium Weed</Link>
               <Link href="/aaa-weed">AAA+ Weed</Link>
@@ -54,7 +54,6 @@ export default function Footer() {
               <Link href="/delivery">Delivery Menu</Link>
               <Link href="/info/cheap-weed-north-york">Cheap Weed North York</Link>
               <Link href="/info/native-cigarettes-north-york">Native Cigarettes North York</Link>
-              <Link href="/weed-dispensary-north-york">Jane Finch Cannabis Weed Dispensary in North York</Link>
               <Link href="/contact">Contact Us</Link>
             </nav>
           </div>

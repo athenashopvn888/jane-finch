@@ -1,36 +1,41 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import AgeGate from "./components/AgeGate";
+import {
+  cannabisStoreJsonLd,
+  jsonLdScript,
+  websiteJsonLd,
+} from "./lib/jfcLocal";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.janefinchcannabis.ca"),
   title: {
-    default: "24 Hour North York Dispensary | Jane Finch Cannabis",
+    default: "Jane–Finch / Black Creek Walk-In Dispensary | Jane Finch Cannabis",
     template: "%s | Jane Finch Cannabis",
   },
   description:
-    "Jane Finch Cannabis is a North York dispensary on Jane St with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
+    "Jane Finch Cannabis is the Jane–Finch / Black Creek walk-in dispensary at 2728 Jane St, North York. Open 24 hours. Adults 19+. Call +1 (437) 524-9336.",
   openGraph: {
     type: "website",
     locale: "en_CA",
     url: "https://www.janefinchcannabis.ca",
     siteName: "Jane Finch Cannabis",
-    title: "24 Hour North York Dispensary | Jane Finch Cannabis",
+    title: "Jane–Finch / Black Creek Walk-In Dispensary | Jane Finch Cannabis",
     description:
-      "Jane Finch Cannabis is a North York dispensary on Jane St with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
+      "Jane Finch Cannabis is the Jane–Finch / Black Creek walk-in dispensary at 2728 Jane St, North York. Open 24 hours. Adults 19+. Call +1 (437) 524-9336.",
     images: [
       {
         url: "https://www.janefinchcannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg",
         width: 1200,
         height: 630,
-        alt: "Jane Finch Cannabis - Premium Cannabis Dispensary North York",
+        alt: "Jane Finch Cannabis — Jane–Finch / Black Creek dispensary at 2728 Jane St",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "24 Hour North York Dispensary | Jane Finch Cannabis",
-    description: "Jane Finch Cannabis is a North York dispensary on Jane St with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
+    title: "Jane–Finch / Black Creek Walk-In Dispensary | Jane Finch Cannabis",
+    description: "Jane Finch Cannabis is the Jane–Finch / Black Creek walk-in dispensary at 2728 Jane St, North York. Open 24 hours. Adults 19+. Call +1 (437) 524-9336.",
     images: ["https://www.janefinchcannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg"],
   },
   robots: {
@@ -52,66 +57,6 @@ export const metadata: Metadata = {
   },
 };
 
-/* ── JSON-LD Structured Data ── */
-const storeId = "https://www.janefinchcannabis.ca/#store";
-const websiteId = "https://www.janefinchcannabis.ca/#website";
-const mapsUrl = "https://www.google.com/maps?cid=6991178766551029626";
-
-const storeJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "CannabisStore",
-  "@id": storeId,
-  name: "Jane Finch Cannabis",
-  description: "Cannabis dispensary at 2728 Jane St in North York, ON with Exotic Weed, Premium Weed, AAA+ Weed, AA Weed, Budget Weed, edibles, pre-rolls, and vapes. Open 24 Hours.",
-  url: "https://www.janefinchcannabis.ca",
-  telephone: "+14375249336",
-  image: "https://www.janefinchcannabis.ca/wp-content/uploads/2026/04/7Clmh.jpg",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "2728 Jane St",
-    addressLocality: "North York",
-    addressRegion: "ON",
-    postalCode: "M3L 2G6",
-    addressCountry: "CA",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 43.7432199,
-    longitude: -79.5144264,
-  },
-  openingHoursSpecification: [
-  {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday"
-    ],
-    "opens": "00:00",
-    "closes": "23:59"
-  }
-],
-  areaServed: {
-    "@type": "City",
-    name: "North York",
-  },
-  sameAs: [mapsUrl],
-  hasMap: mapsUrl,
-};
-
-const websiteJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": websiteId,
-  name: "Jane Finch Cannabis",
-  url: "https://www.janefinchcannabis.ca",
-  publisher: { "@id": storeId },
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -121,9 +66,9 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="geo.region" content="CA-ON" />
-        <meta name="geo.placename" content="North York" />
-        <meta name="geo.position" content="43.7432147;-79.5144564" />
-        <meta name="ICBM" content="43.7432147, -79.5144564" />
+        <meta name="geo.placename" content="Jane–Finch / Black Creek, North York" />
+        <meta name="geo.position" content="43.7432199;-79.5144264" />
+        <meta name="ICBM" content="43.7432199, -79.5144264" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -132,11 +77,11 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(storeJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: jsonLdScript(cannabisStoreJsonLd) }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: jsonLdScript(websiteJsonLd) }}
         />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-51JW61RPS8"></script>
         <script

@@ -13,7 +13,7 @@ export function GBPLandingPage() {
           <p className={styles.eyebrow}>{store.hoursLabel ? `${store.hoursLabel} · Adults 19+` : "Adults 19+"}</p>
           <h1>{store.h1}</h1>
           <p className={styles.heroAddress}>{store.streetAddress}, {store.city}, ON {store.postalCode}</p>
-          <div className={styles.actions}><Link href="#find-your-weed" className={styles.primaryAction}>Find Your Weed</Link><Link href="#visit" className={styles.secondaryAction}>Visit {store.storeName}</Link></div>
+          <div className={styles.actions}><Link href="#find-your-weed" className={styles.primaryAction}>Find Your Weed</Link><Link href="/visit" className={styles.secondaryAction}>How to get here</Link></div>
         </section>
 
         <section className={styles.section}>
@@ -43,7 +43,7 @@ export function GBPLandingPage() {
         <section className={styles.visitSection} id="visit">
           <div><p className={styles.kicker}>{store.hoursLabel || "Adults 19+"}</p><h2>{store.storeName}</h2><address>{store.streetAddress}<br />{store.city}, ON {store.postalCode}</address></div>
           <div className={styles.visitFacts}>{store.hoursLabel && <strong>{store.hoursLabel}</strong>}<a href={`tel:${store.phoneIntl}`}>Phone: {store.phoneDisplay}</a><span>Adults 19+</span></div>
-          <p>Call ahead if one particular product is the reason for your trip. This page does not make a current inventory claim.</p>
+          <p>Call ahead if one particular product is the reason for your trip. This page does not make a current inventory claim. The homepage is the Jane Finch Cannabis visit hub; use /visit for Jane Street route notes.</p>
         </section>
 
         <section className={styles.section}>

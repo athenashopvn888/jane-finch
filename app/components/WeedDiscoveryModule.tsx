@@ -10,7 +10,7 @@ export function WeedDiscoveryModule() {
         <h2 id="weed-discovery-title">{store.home.title}</h2>
         <p>{store.home.text}</p>
         <div className={styles.actions}>
-          <Link href={store.ownerPath} className={styles.primary}>{store.home.primaryLabel}</Link>
+          <Link href="/visit" className={styles.primary}>{store.home.primaryLabel}</Link>
           <Link href={store.home.secondaryHref} className={styles.secondary}>{store.home.secondaryLabel}</Link>
         </div>
       </div>

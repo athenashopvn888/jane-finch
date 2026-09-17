@@ -12,9 +12,9 @@ export const weedOwner = {
   phoneIntl: "+14375249336",
   hoursLabel: "Open 24 Hours · 7 Days a Week",
   openingHours: "Mo-Su 00:00-23:59",
-  seoTitle: "North York Weed Dispensary | Jane Finch Cannabis 24/7",
-  metaDescription: "Walk-in North York dispensary at 2728 Jane St. Open 24/7 near Finch West and York University. Flower from $3/g. Call (437) 524-9336. Adults 19+.",
-  h1: "North York Weed Dispensary at Jane & Finch — Open 24 Hours",
+  seoTitle: "Jane Finch Cannabis — Weed Dispensary in North York",
+  metaDescription: "Walk-in Jane–Finch / Black Creek dispensary at 2728 Jane St. Open 24 hours. Flower from $3/g on the current menu. Call +1 (437) 524-9336. Adults 19+.",
+  h1: "Jane–Finch / Black Creek walk-in at 2728 Jane St — Open 24 Hours",
   introTitle: "Walk-In Cannabis at Jane and Finch",
   intro: [
   "Jane Finch Cannabis is the North York walk-in dispensary at 2728 Jane Street, at the Jane and Finch corridor. The store is open 24 hours. This page is for people coming to the counter — students heading down from York University, shift workers off Highway 400, and residents around Finch West, Pioneer Village, and Jane-Sheppard.",
@@ -23,6 +23,11 @@ export const weedOwner = {
 ],
   findTitle: "Find Your Weed at Jane Finch Cannabis",
   discoveryLinks: [
+  {
+    "label": "How to get here",
+    "description": "Jane Street from Finch, TTC, plaza parking, and the walk-in door.",
+    "href": "/visit"
+  },
   {
     "label": "Explore Categories",
     "description": "See the broad cannabis choices presented by Jane Finch Cannabis.",
@@ -88,9 +93,9 @@ export const weedOwner = {
   }
 ] satisfies WeedFaq[],
   home: {
-    title: "Weed in North York at Jane Finch Cannabis",
-    text: "Jane Finch Cannabis is open 24 hours at 2728 Jane St. Adults 19+ can explore store information, cannabis resources and the dedicated North York Weed section.",
-    primaryLabel: "Explore Weed in North York",
+    title: "Walk in at Jane–Finch / Black Creek",
+    text: "Jane Finch Cannabis is the 24-hour walk-in counter at 2728 Jane St on Jane Street in the Jane–Finch / Black Creek neighbourhood. Use the visit hub on the homepage, then the how-to-get-here notes for Finch, TTC, and plaza parking.",
+    primaryLabel: "How to get here",
     secondaryLabel: "Explore Cannabis Resources",
     secondaryHref: "/resources",
   },

@@ -219,7 +219,7 @@ export default async function TierPage({
               <h3 className={styles.seoHeading}>{config.name} at Jane Finch Cannabis</h3>
               {tierCopy.paragraphs.map((paragraph) => <p key={paragraph} className={styles.seoBody}>{paragraph}</p>)}
               <p className={styles.seoBody}>{tierCopy.links.map((label, index) => {
-                const destination = index === 0 ? "/weed-dispensary-north-york" : index === 1 ? "/weed-delivery-north-york" : `/${tierSlug}`;
+                const destination = index === 0 ? "/" : index === 1 ? "/visit" : `/${tierSlug}`;
                 return <span key={label}>{index ? " · " : ""}<Link href={destination}>{label}</Link></span>;
               })}</p>
             </div>
