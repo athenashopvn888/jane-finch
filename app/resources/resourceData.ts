@@ -56,7 +56,7 @@ export type ResourcePage = {
 
 export const SITE_URL = "https://www.janefinchcannabis.ca";
 export const STORE_NAME = "Jane Finch Cannabis";
-export const STORE_ROUTE = "/weed-dispensary-north-york";
+export const STORE_ROUTE = "/";
 
 const TEAM: ResourceAuthor = {
   name: "Jane Finch Cannabis Team",
@@ -491,8 +491,8 @@ const seeds: PageSeed[] = [
 ];
 
 export const RESOURCE_ROUTE_LABELS: Record<string, string> = {
-  "/": "Home",
-  [STORE_ROUTE]: "Jane Finch Cannabis store page",
+  "/": "Jane Finch Cannabis visit hub",
+  "/visit": "How to get here",
   "/#menu": "Menu",
   "/budget-weed": "Budget Weed",
   "/aa-weed": "AA Weed",

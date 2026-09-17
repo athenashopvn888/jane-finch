@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Visit Jane Finch Cannabis at 2728 Jane St, North York, ON M3L 2G6. We are open 24 hours a day, 7 days a week. Walk-ins welcome.",
   alternates: {
-    canonical: "https://janefinchcannabis.ca/contact",
+    canonical: "https://www.janefinchcannabis.ca/contact",
   },
   openGraph: {
     title: "Contact Jane Finch Cannabis — North York Dispensary",
@@ -42,7 +42,7 @@ export default function ContactPage() {
                 <br />
                 North York, ON M3L 2G6
                 <br />
-                <span className={styles.infoMuted}>Jane St & Sheppard Ave W</span>
+                <span className={styles.infoMuted}>Jane–Finch / Black Creek · Jane Street plaza</span>
               </p>
             </div>
 

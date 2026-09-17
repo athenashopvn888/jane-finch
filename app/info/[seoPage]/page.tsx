@@ -29,6 +29,20 @@ export async function generateMetadata({
     ? "https://www.janefinchcannabis.ca"
     : "https://janefinchcannabis.ca";
 
+  if (slug === "dispensary-near-me-north-york") {
+    return {
+      title: page.absoluteTitle ? { absolute: page.title } : page.title,
+      description: page.metaDescription,
+      alternates: {
+        canonical: "https://www.janefinchcannabis.ca",
+      },
+      robots: {
+        index: false,
+        follow: true,
+      },
+    };
+  }
+
   return {
     title: page.absoluteTitle ? { absolute: page.title } : page.title,
     description: page.metaDescription,

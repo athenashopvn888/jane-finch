@@ -1,27 +1,27 @@
 import Link from "next/link";
-
-const areas = ["North York", "Toronto", "Vaughan", "Etobicoke", "Brampton", "Mississauga"];
+import { JFC, SITE_ORIGIN, STORE_ID } from "../lib/jfcLocal";
 
 export function DeliveryCoverage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://www.janefinchcannabis.ca/weed-dispensary-north-york/#delivery-service",
-    name: "Jane Finch Cannabis delivery coverage",
+    "@id": `${SITE_ORIGIN}/delivery#service`,
+    name: "Jane Finch Cannabis delivery",
     serviceType: "Cannabis delivery information",
-    provider: { "@id": "https://www.janefinchcannabis.ca/#store" },
-    url: "https://www.janefinchcannabis.ca/delivery",
-    areaServed: [
-      { "@type": "GeoCircle", geoMidpoint: { "@type": "GeoCoordinates", latitude: 43.7432199, longitude: -79.5144264 }, geoRadius: 50000 },
-      ...areas.map((name) => ({ "@type": "City", name })),
-    ],
+    provider: { "@id": STORE_ID },
+    url: `${SITE_ORIGIN}/delivery`,
+    areaServed: { "@type": "Place", name: "Jane–Finch / Black Creek, North York" },
   };
 
-  return <section style={{ maxWidth: 1040, margin: "0 auto", padding: "24px 24px 64px" }}>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
-    <h2>Delivery Coverage from Jane Finch Cannabis</h2>
-    <p>Delivery is coordinated from the North York store and confirmed when an order is placed. A practical planning area is approximately 50 km from Jane Street and Finch Avenue, including North York, Toronto, Vaughan, Etobicoke, Brampton and Mississauga.</p>
-    <p>Longer trips toward Barrie, Kitchener or Hamilton may be available when a driver is already positioned in that area. Extended coverage is not guaranteed, so confirm the destination and timing with the dispatcher before relying on delivery.</p>
-    <p><Link href="/delivery">Check current North York delivery information</Link></p>
-  </section>;
+  return (
+    <section style={{ maxWidth: 1040, margin: "0 auto", padding: "24px 24px 64px" }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
+      <h2>Delivery from the Jane Street counter</h2>
+      <p>
+        Delivery requests are dispatched from Jane Finch Cannabis at {JFC.addressLine}. The dispatcher confirms whether an address is in range. This site does not publish a kilometre radius or a list of other cities.
+      </p>
+      <p>Ordering hours are 10:00 a.m. to 10:00 p.m. daily. Walk-in at the Jane–Finch / Black Creek counter remains 24 hours.</p>
+      <p><Link href="/delivery">Open the Jane Finch Cannabis delivery menu</Link></p>
+    </section>
+  );
 }

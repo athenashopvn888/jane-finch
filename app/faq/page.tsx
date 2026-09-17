@@ -15,9 +15,9 @@ const FAQ_CATEGORIES = [
   {
     title: "Location and Hours",
     faqs: [
-      { q: "Where is Jane Finch Cannabis located?", a: "Jane Finch Cannabis is listed at 2728 Jane St, North York, ON M3L 2G6. Use the store page for directions and contact options before visiting." },
-      { q: "What are the listed hours?", a: "Open 24 Hours. Check the current store page or contact staff before visiting if timing matters." },
-      { q: "What is the best way to plan the visit?", a: "Start with the store page, confirm directions and listed hours, then open the menu category that matches the visit." },
+      { q: "Where is Jane Finch Cannabis located?", a: "Jane Finch Cannabis is at 2728 Jane St, North York, ON M3L 2G6, on Jane Street in the Jane–Finch / Black Creek neighbourhood. Use the homepage visit hub and the how-to-get-here page before travelling." },
+      { q: "What are the listed hours?", a: "Open 24 Hours. Check the current homepage or contact staff before visiting if timing matters." },
+      { q: "What is the best way to plan the visit?", a: "Start with the homepage for NAP, hours, map, and menu. Open How to get here for Jane Street and Finch Avenue West route notes, then pick the menu category that matches the visit." },
     ],
   },
   {
@@ -41,7 +41,7 @@ const FAQ_CATEGORIES = [
     faqs: [
       { q: "Does Jane Finch Cannabis list Native cigarettes?", a: "The cigarette menu may show Native smoke brands such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, and Canadian Classics Silver. Confirm current options through the menu or staff." },
       { q: "Are $25 cartons guaranteed?", a: "No. Where $25 carton-style listings are shown, confirm current price and listings through the menu or staff." },
-      { q: "Where should cigarette shoppers start?", a: "Open the cigarette category first, then use the store page for directions, contact options, and listed hours." },
+      { q: "Where should cigarette shoppers start?", a: "Open the cigarette category first, then use the homepage and How to get here for directions, contact options, and listed hours." },
     ],
   },
   {
@@ -81,7 +81,7 @@ export default function FAQPage() {
         <div className={styles.content}>
           <h1 className={styles.pageTitle}>Frequently Asked Questions</h1>
           <p className={styles.pageSubtitle}>
-            Straight answers for shopping Jane Finch Cannabis: store page first, menu category second, staff when the current detail matters.
+            Straight answers for shopping Jane Finch Cannabis: homepage first for the Jane–Finch / Black Creek counter, How to get here for the last kilometre, menu category next, staff when the current detail matters.
           </p>
 
           {FAQ_CATEGORIES.map((cat) => (

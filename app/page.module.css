@@ -218,9 +218,9 @@
 
 .homeMenuActions {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
-  width: min(100%, 440px);
+  width: min(100%, 560px);
   margin: 0 auto;
 }
 
@@ -243,6 +243,12 @@
   border-color: #38bdf8;
   color: #03131d;
   background: #38bdf8;
+}
+
+.homeVisitCta {
+  border-color: #fbbf24;
+  color: #1c1403;
+  background: #fbbf24;
 }
 
 .homeMenuCta:focus-visible {
@@ -948,6 +954,7 @@
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  min-height: 360px;
 }
 
 /* ── RESPONSIVE MEDIA QUERIES ── */
@@ -996,6 +1003,11 @@
   .storeGrid {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  .homeMenuActions {
+    grid-template-columns: 1fr;
+    width: min(100%, 440px);
   }
   
   .seoPanel {

@@ -4,8 +4,8 @@ import JFCWebChat from "./JFCWebChat";
 import menu from "./delivery-menu.json";
 
 export const metadata: Metadata = {
-  title: { absolute: "Cannabis Delivery North York | Jane Finch Cannabis" },
-  description: "Browse the Jane Finch Cannabis flower delivery menu in North York and connect with the store dispatcher through LIVE ORDER, daily from 10:00 a.m. to 10:00 p.m.",
+  title: { absolute: "Jane–Finch / Black Creek Delivery | Jane Finch Cannabis" },
+  description: "Browse the Jane Finch Cannabis delivery menu dispatched from 2728 Jane St. LIVE ORDER connects you with the dispatcher daily from 10:00 a.m. to 10:00 p.m. Range is confirmed per request. Adults 19+.",
   alternates: { canonical: "https://www.janefinchcannabis.ca/delivery" },
 };
 
@@ -32,7 +32,7 @@ export default function DeliveryPage() {
       name: "Jane Finch Cannabis Delivery",
       serviceType: "Cannabis delivery",
       url: "https://www.janefinchcannabis.ca/delivery",
-      areaServed: { "@type": "City", name: "North York" },
+      areaServed: { "@type": "Place", name: "Jane–Finch / Black Creek, North York" },
       hoursAvailable: {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],

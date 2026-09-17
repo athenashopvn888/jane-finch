@@ -62,7 +62,7 @@ export default async function ItemsCategoryPage({
   const { config } = catInfo;
   const seoKey = config.name.toLowerCase().includes("thc") ? "vape-disposables" : config.name.toLowerCase().includes("nic") ? "vapes" : catSlug;
   const seoCopy = seoContent.categories[seoKey as keyof typeof seoContent.categories];
-  const categoryLinkHrefs = [`/items/${catSlug}`, "/weed-dispensary-north-york", "/exotic-weed", "/premium-weed"];
+  const categoryLinkHrefs = [`/items/${catSlug}`, "/visit", "/exotic-weed", "/premium-weed"];
 
   // Check if banner file exists in the public folder
   const bannerExists = config.banner
@@ -133,7 +133,7 @@ export default async function ItemsCategoryPage({
           {seoCopy?.links.length ? (
             <p className={styles.seoBody}>
               {seoCopy.links.map((label, index) => (
-                <span key={label}>{index ? " · " : ""}<Link href={categoryLinkHrefs[index] || "/weed-dispensary-north-york"}>{label}</Link></span>
+                <span key={label}>{index ? " · " : ""}<Link href={categoryLinkHrefs[index] || "/"}>{label}</Link></span>
               ))}
             </p>
           ) : null}
