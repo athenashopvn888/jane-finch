@@ -59,7 +59,7 @@ const mapsUrl = "https://www.google.com/maps?cid=6991178766551029626";
 
 const storeJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Store",
+  "@type": "CannabisStore",
   "@id": storeId,
   name: "Jane Finch Cannabis",
   description: "Cannabis dispensary at 2728 Jane St in North York, ON with Exotic Weed, Premium Weed, AAA+ Weed, AA Weed, Budget Weed, edibles, pre-rolls, and vapes. Open 24 Hours.",

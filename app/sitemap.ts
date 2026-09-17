@@ -11,6 +11,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     { url: BASE, lastModified: now, changeFrequency: "daily", priority: 1 },
     { url: `${BASE}/weed-dispensary-north-york`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE}/weed-delivery-north-york`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${BASE}/weed-delivery-vaughan`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${BASE}/resources/local-guides/york-university-cannabis-guide`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/resources/local-guides/highway-400-pioneer-village-cannabis`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/careers/budtender`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/faq`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
