@@ -12,14 +12,14 @@ export const weedOwner = {
   phoneIntl: "+14375249336",
   hoursLabel: "Open 24 Hours · 7 Days a Week",
   openingHours: "Mo-Su 00:00-23:59",
-  seoTitle: "Weed Dispensary in North York | Jane Finch Cannabis",
-  metaDescription: "Jane Finch Cannabis is open 24 hours at 2728 Jane St in North York. Adults 19+ can explore Weed and Cannabis information before visiting.",
-  h1: "Jane Finch Cannabis — Weed Dispensary in North York",
-  introTitle: "Weed and Cannabis on Jane Street",
+  seoTitle: "North York Weed Dispensary | Jane Finch Cannabis 24/7",
+  metaDescription: "Walk-in North York dispensary at 2728 Jane St. Open 24/7 near Finch West and York University. Flower from $3/g. Call (437) 524-9336. Adults 19+.",
+  h1: "North York Weed Dispensary at Jane & Finch — Open 24 Hours",
+  introTitle: "Walk-In Cannabis at Jane and Finch",
   intro: [
-  "Jane Finch Cannabis is located at 2728 Jane St in North York and is open 24 hours a day, seven days a week.",
-  "For adults 19+, the useful first choice is whether you want to learn more about flower or another cannabis format. The broad terms weed and cannabis may bring you to the store, but deciding what format interests you is what makes shopping easier.",
-  "If you are looking for one particular item, call +1 (437) 524-9336 first."
+  "Jane Finch Cannabis is the North York walk-in dispensary at 2728 Jane Street, at the Jane and Finch corridor. The store is open 24 hours. This page is for people coming to the counter — students heading down from York University, shift workers off Highway 400, and residents around Finch West, Pioneer Village, and Jane-Sheppard.",
+  "Browse the five flower tiers and the format pages before you travel. Posted Budget flower starts at $3/g. Product listings and prices can change, so use the current menu for today’s choices.",
+  "Call +1 (437) 524-9336 if one item decides the trip. Plaza parking is in front of the store. Adults 19+ with valid government photo ID."
 ],
   findTitle: "Find Your Weed at Jane Finch Cannabis",
   discoveryLinks: [

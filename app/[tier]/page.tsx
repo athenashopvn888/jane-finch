@@ -12,6 +12,8 @@ import {
   TIER_CONFIG,
 } from "../lib/products";
 import { TIER_SEO } from "../lib/tierSeoContent";
+import { buildTierCollectionJsonLd } from "../lib/tierStructuredData";
+import tierCopyData from "../lib/tierCopy.generated.json";
 import styles from "./tier.module.css";
 
 /* -- Generate all tier pages at build -- */
@@ -56,10 +58,18 @@ export default async function TierPage({
   const flowers = getFlowersByTier(tierInfo.key);
   const { config } = tierInfo;
   const seo = TIER_SEO[tierInfo.key];
+  const tierCopy = tierCopyData[tierInfo.key as keyof typeof tierCopyData];
 
   const saleFlowers = flowers.filter((f) => f.isSale);
   const regularFlowers = flowers.filter((f) => !f.isSale);
   const hotFlowers = flowers.filter((f) => f.isHot);
+  const displayFlowers = [...saleFlowers, ...regularFlowers];
+  const tierJsonLd = buildTierCollectionJsonLd({
+    canonicalPath: `/${tierSlug}`,
+    name: seo?.seoTitle || config.name,
+    description: seo?.seoIntro || `${config.name} cannabis flower at Jane Finch Cannabis in North York.`,
+    flowers: displayFlowers,
+  });
 
   // Check if banner file exists in the public folder
   const bannerExists = config.banner
@@ -67,6 +77,8 @@ export default async function TierPage({
     : false;
 
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(tierJsonLd) }} />
     <main className={styles.main}>
       <Navbar />
 
@@ -203,6 +215,15 @@ export default async function TierPage({
               </div>
             ))}
 
+            <div className={styles.seoBlock}>
+              <h3 className={styles.seoHeading}>{config.name} at Jane Finch Cannabis</h3>
+              {tierCopy.paragraphs.map((paragraph) => <p key={paragraph} className={styles.seoBody}>{paragraph}</p>)}
+              <p className={styles.seoBody}>{tierCopy.links.map((label, index) => {
+                const destination = index === 0 ? "/weed-dispensary-north-york" : index === 1 ? "/weed-delivery-north-york" : `/${tierSlug}`;
+                return <span key={label}>{index ? " · " : ""}<Link href={destination}>{label}</Link></span>;
+              })}</p>
+            </div>
+
             {/* FAQ Accordion */}
             {seo.faqs.length > 0 && (
               <div className={styles.faqSection}>
@@ -221,5 +242,6 @@ export default async function TierPage({
 
       <Footer />
     </main>
+    </>
   );
 }
