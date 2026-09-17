@@ -1,37 +1,50 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import AgeGate from "./components/AgeGate";
+import {
+  CITY,
+  COUNTRY,
+  HOME_SEO_DESCRIPTION,
+  HOME_SEO_TITLE,
+  LATITUDE,
+  LONGITUDE,
+  MAPS_CID_URL,
+  PHONE_INTL,
+  POSTAL_CODE,
+  REGION,
+  SITE_ORIGIN,
+  STORE_NAME,
+  STREET_ADDRESS,
+} from "./lib/nap";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.janefinchcannabis.ca"),
+  metadataBase: new URL(SITE_ORIGIN),
   title: {
-    default: "24 Hour North York Dispensary | Jane Finch Cannabis",
+    default: HOME_SEO_TITLE,
     template: "%s | Jane Finch Cannabis",
   },
-  description:
-    "Jane Finch Cannabis is a North York dispensary on Jane St with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
+  description: HOME_SEO_DESCRIPTION,
   openGraph: {
     type: "website",
     locale: "en_CA",
-    url: "https://www.janefinchcannabis.ca",
-    siteName: "Jane Finch Cannabis",
-    title: "24 Hour North York Dispensary | Jane Finch Cannabis",
-    description:
-      "Jane Finch Cannabis is a North York dispensary on Jane St with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
+    url: SITE_ORIGIN,
+    siteName: STORE_NAME,
+    title: HOME_SEO_TITLE,
+    description: HOME_SEO_DESCRIPTION,
     images: [
       {
-        url: "https://www.janefinchcannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg",
+        url: `${SITE_ORIGIN}/wp-content/uploads/2026/04/46Oi5.jpg`,
         width: 1200,
         height: 630,
-        alt: "Jane Finch Cannabis - Premium Cannabis Dispensary North York",
+        alt: "Jane Finch Cannabis - 24 hour weed dispensary near Jane Finch, North York",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "24 Hour North York Dispensary | Jane Finch Cannabis",
-    description: "Jane Finch Cannabis is a North York dispensary on Jane St with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
-    images: ["https://www.janefinchcannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg"],
+    title: HOME_SEO_TITLE,
+    description: HOME_SEO_DESCRIPTION,
+    images: [`${SITE_ORIGIN}/wp-content/uploads/2026/04/46Oi5.jpg`],
   },
   robots: {
     index: true,
@@ -45,7 +58,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://www.janefinchcannabis.ca",
+    canonical: SITE_ORIGIN,
   },
   verification: {
     // google: "your-google-verification-code",
@@ -53,62 +66,54 @@ export const metadata: Metadata = {
 };
 
 /* ── JSON-LD Structured Data ── */
-const storeId = "https://www.janefinchcannabis.ca/#store";
-const websiteId = "https://www.janefinchcannabis.ca/#website";
-const mapsUrl = "https://www.google.com/maps?cid=6991178766551029626";
+const storeId = `${SITE_ORIGIN}/#store`;
+const websiteId = `${SITE_ORIGIN}/#website`;
 
 const storeJsonLd = {
   "@context": "https://schema.org",
   "@type": "CannabisStore",
   "@id": storeId,
-  name: "Jane Finch Cannabis",
-  description: "Cannabis dispensary at 2728 Jane St in North York, ON with Exotic Weed, Premium Weed, AAA+ Weed, AA Weed, Budget Weed, edibles, pre-rolls, and vapes. Open 24 Hours.",
-  url: "https://www.janefinchcannabis.ca",
-  telephone: "+14375249336",
-  image: "https://www.janefinchcannabis.ca/wp-content/uploads/2026/04/7Clmh.jpg",
+  name: STORE_NAME,
+  description:
+    "24 hour weed dispensary at 2728 Jane St in North York, ON (Jane St & Sheppard Ave W). Flower, pre-rolls, vapes, edibles, concentrates, and accessories. Open 24 hours, 7 days.",
+  url: SITE_ORIGIN,
+  telephone: PHONE_INTL,
+  image: `${SITE_ORIGIN}/wp-content/uploads/2026/04/7Clmh.jpg`,
   address: {
     "@type": "PostalAddress",
-    streetAddress: "2728 Jane St",
-    addressLocality: "North York",
-    addressRegion: "ON",
-    postalCode: "M3L 2G6",
-    addressCountry: "CA",
+    streetAddress: STREET_ADDRESS,
+    addressLocality: CITY,
+    addressRegion: REGION,
+    postalCode: POSTAL_CODE,
+    addressCountry: COUNTRY,
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 43.7432199,
-    longitude: -79.5144264,
+    latitude: LATITUDE,
+    longitude: LONGITUDE,
   },
   openingHoursSpecification: [
-  {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday"
-    ],
-    "opens": "00:00",
-    "closes": "23:59"
-  }
-],
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: "00:00",
+      closes: "24:00",
+    },
+  ],
   areaServed: {
     "@type": "City",
-    name: "North York",
+    name: CITY,
   },
-  sameAs: [mapsUrl],
-  hasMap: mapsUrl,
+  sameAs: [MAPS_CID_URL],
+  hasMap: MAPS_CID_URL,
 };
 
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": websiteId,
-  name: "Jane Finch Cannabis",
-  url: "https://www.janefinchcannabis.ca",
+  name: STORE_NAME,
+  url: SITE_ORIGIN,
   publisher: { "@id": storeId },
 };
 
@@ -121,9 +126,9 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="geo.region" content="CA-ON" />
-        <meta name="geo.placename" content="North York" />
-        <meta name="geo.position" content="43.7432147;-79.5144564" />
-        <meta name="ICBM" content="43.7432147, -79.5144564" />
+        <meta name="geo.placename" content={CITY} />
+        <meta name="geo.position" content={`${LATITUDE};${LONGITUDE}`} />
+        <meta name="ICBM" content={`${LATITUDE}, ${LONGITUDE}`} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

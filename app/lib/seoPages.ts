@@ -119,36 +119,36 @@ export const SEO_PAGES: SeoPageData[] = [
   {
     "slug": "dispensary-near-me-north-york",
     "title": "Cannabis Dispensary Near Me in North York | Jane Finch Cannabis",
-    "metaDescription": "Use Jane Finch Cannabis when searching for a cannabis dispensary near me in North York; compare menu categories and confirm current details before visiting.",
+    "metaDescription": "If you searched cannabis dispensary near me in North York, confirm Jane Finch Cannabis at 2728 Jane St (Jane & Sheppard). Open 24 hours, 7 days. Adults 19+.",
     "h1": "Cannabis Dispensary Near Me in North York",
     "icon": "o",
-    "heroTagline": "Start with our North York store page for location and hours, then browse the menu categories that interest you.",
+    "heroTagline": "Pin the Jane Street storefront first, then open the menu category that matches the visit.",
     "sections": [
       {
-        "heading": "Make The Search Useful",
-        "body": "A near-me search should help you confirm the store, then compare menu categories and current details before visiting."
+        "heading": "Confirm The Store Before You Travel",
+        "body": "A near-me search is only useful if the pin matches the real counter. Jane Finch Cannabis is at 2728 Jane St, North York, ON M3L 2G6, at Jane St & Sheppard Ave W. The homepage and North York walk-in page list the same address, phone, and 24-hour hours."
       },
       {
-        "heading": "Compare Categories Naturally",
-        "body": "Choose the category that matches your visit, such as Budget Weed, Premium Weed, pre-rolls, edibles, THC vapes, or concentrates, then review the information presented there."
+        "heading": "If You Are Around Jane Finch Or Sheppard",
+        "body": "This is the Jane Street walk-in store for people already in Jane Finch, along Jane Street, or coming across Sheppard Ave W. Plaza parking is in front of the store. Call +1 (437) 524-9336 if you need to confirm one product before the trip."
       },
       {
-        "heading": "Check Current Details",
-        "body": "For product names, prices, and listings, use the current menu or ask staff. This page is for orientation and visit planning."
+        "heading": "Compare Categories After The Address",
+        "body": "Once the location is confirmed, choose the category that matches your visit, such as Budget Weed, Premium Weed, pre-rolls, edibles, THC vapes, or concentrates, then review the information presented there."
       }
     ],
     "faqs": [
       {
-        "q": "Is Jane Finch Cannabis useful for a near-me cannabis search?",
-        "a": "Yes. Use the store page to confirm Jane Finch Cannabis, then open the menu category that matches your visit."
+        "q": "Which store should a North York near-me search open?",
+        "a": "Use Jane Finch Cannabis at 2728 Jane St, North York, ON M3L 2G6. Then open the menu category that matches your visit."
+      },
+      {
+        "q": "Is the near-me store open 24 hours?",
+        "a": "Yes. Jane Finch Cannabis is open 24 hours a day, 7 days a week."
       },
       {
         "q": "Can shoppers browse before visiting?",
-        "a": "Yes. Use the current menu and resources section before heading over."
-      },
-      {
-        "q": "What should shoppers avoid?",
-        "a": "Avoid guessing from old examples. Confirm current details with the menu or staff."
+        "a": "Yes. Use the current menu and the North York walk-in page before heading over."
       }
     ]
   },

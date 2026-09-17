@@ -2,18 +2,28 @@ import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "./contact.module.css";
+import {
+  FULL_ADDRESS,
+  HOURS_LABEL,
+  HOURS_SHORT,
+  INTERSECTION,
+  PHONE_DISPLAY,
+  PHONE_INTL,
+  SITE_ORIGIN,
+  STORE_NAME,
+} from "../lib/nap";
 
 export const metadata: Metadata = {
   title: "Contact Us — Jane Finch Cannabis | 2728 Jane St, North York",
   description:
-    "Visit Jane Finch Cannabis at 2728 Jane St, North York, ON M3L 2G6. We are open 24 hours a day, 7 days a week. Walk-ins welcome.",
+    "Visit Jane Finch Cannabis at 2728 Jane St, North York, ON M3L 2G6. Open 24 hours, 7 days. Call +1 (437) 524-9336. Walk-ins welcome.",
   alternates: {
-    canonical: "https://janefinchcannabis.ca/contact",
+    canonical: `${SITE_ORIGIN}/contact`,
   },
   openGraph: {
     title: "Contact Jane Finch Cannabis — North York Dispensary",
     description:
-      "2728 Jane St, North York. We are open 24 hours a day, 7 days a week. Premium cannabis, always fire.",
+      "2728 Jane St, North York (Jane & Sheppard). Open 24 hours, 7 days. Call +1 (437) 524-9336.",
   },
 };
 
@@ -25,7 +35,9 @@ export default function ContactPage() {
       {/* ── Hero ── */}
       <section className={styles.hero} style={{ paddingTop: "92px" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px" }}>
-          <img src="/banners/08_Contact_Us.webp" alt="Contact Us" style={{ width: "100%", height: "auto", display: "block", borderRadius: "var(--radius-lg)" }} />
+          <img src="/banners/08_Contact_Us.webp" alt="Contact Jane Finch Cannabis in North York" style={{ width: "100%", height: "auto", display: "block", borderRadius: "var(--radius-lg)" }} />
+          <h1 className={styles.heroTitle} style={{ marginTop: "28px" }}>Contact {STORE_NAME}</h1>
+          <p className={styles.heroSub}>{FULL_ADDRESS} · {INTERSECTION} · {HOURS_LABEL}</p>
         </div>
       </section>
 
@@ -42,7 +54,7 @@ export default function ContactPage() {
                 <br />
                 North York, ON M3L 2G6
                 <br />
-                <span className={styles.infoMuted}>Jane St & Sheppard Ave W</span>
+                <span className={styles.infoMuted}>{INTERSECTION}</span>
               </p>
             </div>
 
@@ -51,18 +63,33 @@ export default function ContactPage() {
               <div className={styles.infoIcon}>🕒</div>
               <h2 className={styles.infoTitle}>Hours</h2>
               <div className={styles.hoursTable}>
-                <div className={styles.hoursRow}><span>Monday</span><span className={styles.hoursTime}>Open 24 Hours</span></div>
-                <div className={styles.hoursRow}><span>Tuesday</span><span className={styles.hoursTime}>Open 24 Hours</span></div>
-                <div className={styles.hoursRow}><span>Wednesday</span><span className={styles.hoursTime}>Open 24 Hours</span></div>
-                <div className={styles.hoursRow}><span>Thursday</span><span className={styles.hoursTime}>Open 24 Hours</span></div>
-                <div className={styles.hoursRow}><span>Friday</span><span className={styles.hoursTime}>Open 24 Hours</span></div>
-                <div className={styles.hoursRow}><span>Saturday</span><span className={styles.hoursTime}>Open 24 Hours</span></div>
-                <div className={styles.hoursRow}><span>Sunday</span><span className={styles.hoursTime}>Open 24 Hours</span></div>
+                <div className={styles.hoursRow}><span>Monday</span><span className={styles.hoursTime}>{HOURS_SHORT}</span></div>
+                <div className={styles.hoursRow}><span>Tuesday</span><span className={styles.hoursTime}>{HOURS_SHORT}</span></div>
+                <div className={styles.hoursRow}><span>Wednesday</span><span className={styles.hoursTime}>{HOURS_SHORT}</span></div>
+                <div className={styles.hoursRow}><span>Thursday</span><span className={styles.hoursTime}>{HOURS_SHORT}</span></div>
+                <div className={styles.hoursRow}><span>Friday</span><span className={styles.hoursTime}>{HOURS_SHORT}</span></div>
+                <div className={styles.hoursRow}><span>Saturday</span><span className={styles.hoursTime}>{HOURS_SHORT}</span></div>
+                <div className={styles.hoursRow}><span>Sunday</span><span className={styles.hoursTime}>{HOURS_SHORT}</span></div>
               </div>
               <div className={styles.openBadge}>
                 <div className={styles.openDot} />
-                Open 24 Hours
+                {HOURS_LABEL}
               </div>
+            </div>
+
+            {/* Phone */}
+            <div className={styles.infoCard}>
+              <div className={styles.infoIcon}>📞</div>
+              <h2 className={styles.infoTitle}>Phone</h2>
+              <p className={styles.infoText}>
+                <a href={`tel:${PHONE_INTL}`}>{PHONE_DISPLAY}</a>
+                <br />
+                <span className={styles.infoMuted}>Website: </span>
+                <a href={SITE_ORIGIN}>janefinchcannabis.ca</a>
+              </p>
+              <p className={styles.infoMuted}>
+                Call if one product is the reason for the trip. Listings can change.
+              </p>
             </div>
 
             {/* Walk-in */}
@@ -80,10 +107,6 @@ export default function ContactPage() {
                 <div className={styles.featureItem}>
                   <span className={styles.featureCheck}>✓</span>
                   Browse current flower tiers
-                </div>
-                <div className={styles.featureItem}>
-                  <span className={styles.featureCheck}>✓</span>
-                  Lab-tested &amp; safe
                 </div>
                 <div className={styles.featureItem}>
                   <span className={styles.featureCheck}>✓</span>

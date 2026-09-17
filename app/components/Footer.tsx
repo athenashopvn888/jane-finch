@@ -1,5 +1,16 @@
 import Link from "next/link";
 import styles from "./Footer.module.css";
+import {
+  CITY,
+  COUNTRY,
+  HOURS_LABEL,
+  PHONE_DISPLAY,
+  PHONE_INTL,
+  POSTAL_CODE,
+  SITE_ORIGIN,
+  STORE_NAME,
+  STREET_ADDRESS,
+} from "../lib/nap";
 
 export default function Footer() {
   return (
@@ -7,14 +18,14 @@ export default function Footer() {
       <div className={styles.inner}>
         <div className={styles.grid}>
           <div className={styles.col}>
-            <div className={styles.brand}>JANE FINCH CANNABIS</div>
+            <div className={styles.brand}>{STORE_NAME.toUpperCase()}</div>
             <p className={styles.desc}>
-              Your local cannabis dispensary at 2728 Jane St, North York. Visit
-              Jane Finch Cannabis for flower, edibles, vapes, pre-rolls, cigarettes, and menu resources.
-              Open: Open 24 Hours.
+              Your local cannabis dispensary at {STREET_ADDRESS}, {CITY}. Visit
+              {" "}{STORE_NAME} for flower, edibles, vapes, pre-rolls, cigarettes, and menu resources.
+              {" "}Hours: {HOURS_LABEL}.
             </p>
             <div className={styles.buttons}>
-              <a href="tel:+14375249336" className={styles.btnPrimary}>Call Now</a>
+              <a href={`tel:${PHONE_INTL}`} className={styles.btnPrimary}>Call Now</a>
             </div>
           </div>
 
@@ -22,17 +33,21 @@ export default function Footer() {
             <h3 className={styles.colTitle}>Contact Info</h3>
             <div className={styles.infoBlock}>
               <span className={styles.infoLabel}>Address:</span>
-              <span>2728 Jane St</span>
-              <span>North York, ON M3L 2G6</span>
-              <span>Canada</span>
+              <span>{STREET_ADDRESS}</span>
+              <span>{CITY}, ON {POSTAL_CODE}</span>
+              <span>{COUNTRY === "CA" ? "Canada" : COUNTRY}</span>
             </div>
             <div className={styles.infoBlock}>
               <span className={styles.infoLabel}>Phone:</span>
-              <span><a href="tel:+14375249336" style={{color: "inherit"}}>+1 (437) 524-9336</a></span>
+              <span><a href={`tel:${PHONE_INTL}`} style={{color: "inherit"}}>{PHONE_DISPLAY}</a></span>
+            </div>
+            <div className={styles.infoBlock}>
+              <span className={styles.infoLabel}>Website:</span>
+              <span><a href={SITE_ORIGIN} style={{color: "inherit"}}>janefinchcannabis.ca</a></span>
             </div>
             <div className={styles.infoBlock}>
               <span className={styles.infoLabel}>Hours:</span>
-              <span className={styles.highlight}>Open 24 Hours</span>
+              <span className={styles.highlight}>{HOURS_LABEL}</span>
             </div>
           </div>
 
@@ -61,7 +76,7 @@ export default function Footer() {
         </div>
 
         <div className={styles.bottom}>
-          <p>(c) {new Date().getFullYear()} Jane Finch Cannabis. Adults 19+ only.</p>
+          <p>(c) {new Date().getFullYear()} {STORE_NAME}. Adults 19+ only.</p>
         </div>
       </div>
     </footer>
