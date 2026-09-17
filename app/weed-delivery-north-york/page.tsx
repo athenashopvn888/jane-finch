@@ -3,7 +3,7 @@ import { AreaIntentPage } from "../components/AreaIntentPage";
 import { SITE_ORIGIN } from "../lib/jfcLocal";
 
 export const metadata: Metadata = {
-  title: "Jane–Finch Delivery Notes | Jane Finch Cannabis",
+  title: { absolute: "Jane–Finch Delivery Notes | Jane Finch Cannabis" },
   description:
     "Delivery requests from Jane Finch Cannabis are dispatched from 2728 Jane St. The dispatcher confirms range. Adults 19+.",
   alternates: { canonical: `${SITE_ORIGIN}/delivery` },
