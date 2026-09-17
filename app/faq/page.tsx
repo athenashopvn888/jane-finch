@@ -5,7 +5,7 @@ import styles from "./faq.module.css";
 import { SITE_ORIGIN } from "../lib/nap";
 
 export const metadata: Metadata = {
-  title: "FAQ | Jane Finch Cannabis",
+  title: "FAQ",
   description: "Hours, address, and visit questions for Jane Finch Cannabis at 2728 Jane St, North York — a 24 hour weed dispensary near Jane Finch and Sheppard.",
   alternates: {
     canonical: `${SITE_ORIGIN}/faq`,

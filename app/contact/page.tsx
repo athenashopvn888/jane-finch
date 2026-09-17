@@ -14,7 +14,7 @@ import {
 } from "../lib/nap";
 
 export const metadata: Metadata = {
-  title: "Contact Us — Jane Finch Cannabis | 2728 Jane St, North York",
+  title: "Contact Us — 2728 Jane St, North York",
   description:
     "Visit Jane Finch Cannabis at 2728 Jane St, North York, ON M3L 2G6. Open 24 hours, 7 days. Call +1 (437) 524-9336. Walk-ins welcome.",
   alternates: {

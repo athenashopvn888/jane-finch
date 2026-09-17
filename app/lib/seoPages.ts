@@ -118,7 +118,7 @@ export const SEO_PAGES: SeoPageData[] = [
   },
   {
     "slug": "dispensary-near-me-north-york",
-    "title": "Cannabis Dispensary Near Me in North York | Jane Finch Cannabis",
+    "title": "Cannabis Dispensary Near Me in North York",
     "metaDescription": "If you searched cannabis dispensary near me in North York, confirm Jane Finch Cannabis at 2728 Jane St (Jane & Sheppard). Open 24 hours, 7 days. Adults 19+.",
     "h1": "Cannabis Dispensary Near Me in North York",
     "icon": "o",
