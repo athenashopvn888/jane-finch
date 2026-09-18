@@ -17,6 +17,7 @@ import {
   INTERSECTION,
   PHONE_DISPLAY,
   PHONE_INTL,
+  OPEN_NOW_PATH,
   SITE_ORIGIN,
   STORE_NAME,
   VISIT_PATH,
@@ -340,6 +341,7 @@ export default function HomePage() {
             </p>
             <p className={styles.seoPanelLinks}>
               <Link href={VISIT_PATH}>2728 Jane St walk-in hub</Link>
+              <Link href={OPEN_NOW_PATH}>24-hour North York FAQ</Link>
               <Link href="/weed-dispensary-north-york">North York cannabis store</Link>
               <Link href="/contact">Address, phone and hours</Link>
               <Link href="/budget-weed">Budget Weed</Link>

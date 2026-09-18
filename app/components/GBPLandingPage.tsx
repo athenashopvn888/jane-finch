@@ -3,7 +3,7 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import styles from "./GBPLandingPage.module.css";
 import { weedOwner as store } from "../lib/weedDiscovery";
-import { FULL_ADDRESS, INTERSECTION, SITE_ORIGIN, VISIT_PATH } from "../lib/nap";
+import { FULL_ADDRESS, INTERSECTION, OPEN_NOW_PATH, SITE_ORIGIN, VISIT_PATH } from "../lib/nap";
 
 export function GBPLandingPage() {
   return (
@@ -26,7 +26,7 @@ export function GBPLandingPage() {
         <section className={styles.section}>
           <h2>Jane–Finch walk-in vs North York delivery</h2>
           <p>A cannabis store near me search should open this Jane Street counter. Walk in at {FULL_ADDRESS} any hour — no appointment. Delivery is a separate 10 a.m. to 10 p.m. menu and does not move the store pin.</p>
-          <p>Use the <Link href={VISIT_PATH}>walk-in hub</Link> for arrival notes, or the <Link href="/">homepage</Link> for the current store menu. Adults 19+ with valid government photo ID.</p>
+          <p>Use the <Link href={VISIT_PATH}>walk-in hub</Link> for arrival notes, the <Link href={OPEN_NOW_PATH}>24-hour open-now FAQ</Link> for hours truth, or the <Link href="/">homepage</Link> for the current store menu. Adults 19+ with valid government photo ID.</p>
         </section>
 
         <section className={styles.section}>
