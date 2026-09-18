@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import styles from "./GBPLandingPage.module.css";
 import { weedOwner as store } from "../lib/weedDiscovery";
+import { FULL_ADDRESS, INTERSECTION, SITE_ORIGIN } from "../lib/nap";
 
 export function GBPLandingPage() {
   return (
@@ -13,12 +14,24 @@ export function GBPLandingPage() {
           <p className={styles.eyebrow}>{store.hoursLabel ? `${store.hoursLabel} · Adults 19+` : "Adults 19+"}</p>
           <h1>{store.h1}</h1>
           <p className={styles.heroAddress}>{store.streetAddress}, {store.city}, ON {store.postalCode}</p>
+          <p className={styles.heroAddress}>{INTERSECTION} · <a href={SITE_ORIGIN}>janefinchcannabis.ca</a></p>
           <div className={styles.actions}><Link href="#find-your-weed" className={styles.primaryAction}>Find Your Weed</Link><Link href="#visit" className={styles.secondaryAction}>Visit {store.storeName}</Link></div>
         </section>
 
         <section className={styles.section}>
           <h2>{store.introTitle}</h2>
           {store.intro.map((text) => <p key={text}>{text}</p>)}
+        </section>
+
+        <section className={styles.section}>
+          <h2>Jane Finch, Jane &amp; Sheppard, North York</h2>
+          <p>{store.neighborhoodDescription}</p>
+          <p>{store.parkingNote}. {store.transitNote}</p>
+          <div className={styles.areaList}>
+            {store.nearbyAreas.map((area) => (
+              <span className={styles.areaTag} key={area}>{area}</span>
+            ))}
+          </div>
         </section>
 
         <section className={styles.section} id="find-your-weed">
@@ -41,9 +54,22 @@ export function GBPLandingPage() {
         </section>
 
         <section className={styles.visitSection} id="visit">
-          <div><p className={styles.kicker}>{store.hoursLabel || "Adults 19+"}</p><h2>{store.storeName}</h2><address>{store.streetAddress}<br />{store.city}, ON {store.postalCode}</address></div>
-          <div className={styles.visitFacts}>{store.hoursLabel && <strong>{store.hoursLabel}</strong>}<a href={`tel:${store.phoneIntl}`}>Phone: {store.phoneDisplay}</a><span>Adults 19+</span></div>
-          <p>Call ahead if one particular product is the reason for your trip. This page does not make a current inventory claim.</p>
+          <div>
+            <p className={styles.kicker}>{store.hoursLabel || "Adults 19+"}</p>
+            <h2>{store.storeName}</h2>
+            <address>
+              {store.streetAddress}<br />
+              {store.city}, ON {store.postalCode}<br />
+              {INTERSECTION}
+            </address>
+          </div>
+          <div className={styles.visitFacts}>
+            {store.hoursLabel && <strong>{store.hoursLabel}</strong>}
+            <a href={`tel:${store.phoneIntl}`}>Phone: {store.phoneDisplay}</a>
+            <a href={SITE_ORIGIN}>Website: janefinchcannabis.ca</a>
+            <span>Adults 19+</span>
+          </div>
+          <p>Call ahead if one particular product is the reason for your trip. This page does not make a current inventory claim. The physical address is {FULL_ADDRESS} — not a second North York counter.</p>
         </section>
 
         <section className={styles.section}>

@@ -169,6 +169,22 @@ export default async function SeoLandingPage({
             </div>
           )}
           {heroPreview?.warning && <p className={styles.nicotineWarning}>{heroPreview.warning}</p>}
+          {heroPreview?.theme !== "nicotine" && (
+            <div className={styles.section}>
+              <h2 className={styles.sectionTitle}>Visit Jane Finch Cannabis</h2>
+              <p className={styles.sectionBody}>
+                2728 Jane St, North York, ON M3L 2G6 · Jane St &amp; Sheppard Ave W · Open 24 hours, 7 days ·{" "}
+                <a href="tel:+14375249336">+1 (437) 524-9336</a>
+              </p>
+              <p className={styles.sectionBody}>
+                <Link href="/">Homepage</Link>
+                {" · "}
+                <Link href="/weed-dispensary-north-york">North York walk-in details</Link>
+                {" · "}
+                <Link href="/contact">Contact</Link>
+              </p>
+            </div>
+          )}
         </div>
       </section>
 

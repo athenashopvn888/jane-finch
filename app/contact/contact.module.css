@@ -57,7 +57,11 @@
 }
 
 @media (min-width: 768px) {
-  .infoGrid { grid-template-columns: repeat(3, 1fr); }
+  .infoGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1100px) {
+  .infoGrid { grid-template-columns: repeat(4, 1fr); }
 }
 
 .infoCard {

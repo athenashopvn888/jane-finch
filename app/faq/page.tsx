@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "./faq.module.css";
+import { SITE_ORIGIN } from "../lib/nap";
 
 export const metadata: Metadata = {
-  title: "FAQ | Jane Finch Cannabis",
-  description: "Frequently asked questions about Jane Finch Cannabis in North York, including store-page checks, menu categories, value shopping, and Native smokes where listed.",
+  title: "FAQ",
+  description: "Hours, address, and visit questions for Jane Finch Cannabis at 2728 Jane St, North York — a 24 hour weed dispensary near Jane Finch and Sheppard.",
   alternates: {
-    canonical: "https://www.janefinchcannabis.ca/faq",
+    canonical: `${SITE_ORIGIN}/faq`,
   },
 };
 
@@ -15,9 +16,11 @@ const FAQ_CATEGORIES = [
   {
     title: "Location and Hours",
     faqs: [
-      { q: "Where is Jane Finch Cannabis located?", a: "Jane Finch Cannabis is listed at 2728 Jane St, North York, ON M3L 2G6. Use the store page for directions and contact options before visiting." },
-      { q: "What are the listed hours?", a: "Open 24 Hours. Check the current store page or contact staff before visiting if timing matters." },
-      { q: "What is the best way to plan the visit?", a: "Start with the store page, confirm directions and listed hours, then open the menu category that matches the visit." },
+      { q: "Where is Jane Finch Cannabis located?", a: "Jane Finch Cannabis is at 2728 Jane St, North York, ON M3L 2G6, at Jane St & Sheppard Ave W. Use the store page for directions and contact options before visiting." },
+      { q: "Is there a 24 hour dispensary in North York?", a: "Yes. Jane Finch Cannabis is open 24 hours a day, 7 days a week. Walk in anytime — no appointment needed." },
+      { q: "Is this a weed dispensary near Jane Finch?", a: "Yes. The walk-in store is on Jane Street in the Jane and Finch / Jane and Sheppard area of North York." },
+      { q: "Are you near Jane and Sheppard?", a: "Yes. The storefront is at 2728 Jane St, at the Jane St & Sheppard Ave W area. Plaza parking is in front of the store." },
+      { q: "What is the best way to plan the visit?", a: "Start with the homepage or North York store page, confirm the address and hours, then open the menu category that matches the visit." },
     ],
   },
   {
@@ -99,7 +102,7 @@ export default function FAQPage() {
           <div className={styles.ctaSection}>
             <h2 className={styles.ctaTitle}>Still have questions?</h2>
             <p className={styles.ctaText}>
-              Call <a href="tel:+14375249336">+1 (437) 524-9336</a> or use the store page before visiting.
+              Call <a href="tel:+14375249336">+1 (437) 524-9336</a> or visit <a href={SITE_ORIGIN}>janefinchcannabis.ca</a> before heading to 2728 Jane St.
             </p>
           </div>
         </div>
