@@ -2,6 +2,8 @@ import {
   CITY,
   COUNTRY,
   FULL_ADDRESS,
+  GBP_SEO_DESCRIPTION,
+  GBP_SEO_TITLE,
   HOURS_SHORT,
   LATITUDE,
   LONGITUDE,
@@ -56,9 +58,8 @@ export const gbpLocation = {
   latitude: String(LATITUDE),
   longitude: String(LONGITUDE),
   hours: [HOURS_SHORT],
-  seoTitle: "North York Weed Dispensary at Jane & Sheppard | Open 24 Hours",
-  metaDescription:
-    "Walk-in North York weed dispensary at 2728 Jane St, Jane & Sheppard. Jane Finch Cannabis is open 24 hours, 7 days. Plaza parking out front. Call +1 (437) 524-9336. Adults 19+.",
+  seoTitle: GBP_SEO_TITLE,
+  metaDescription: GBP_SEO_DESCRIPTION,
   localLandmarks: ["Jane and Finch", "Jane and Sheppard", "North York", "Jane Street"],
   introVariant:
     "Jane Finch Cannabis is the walk-in weed dispensary at 2728 Jane St, North York, in the Jane and Sheppard / Jane and Finch corridor. We serve adults 19+ looking for cannabis flower, pre-rolls, edibles, THC vapes, concentrates, and accessories. Open 24 hours, 7 days.",

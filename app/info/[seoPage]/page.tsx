@@ -179,6 +179,8 @@ export default async function SeoLandingPage({
               <p className={styles.sectionBody}>
                 <Link href="/">Homepage</Link>
                 {" · "}
+                <Link href="/visit">Walk-in hub</Link>
+                {" · "}
                 <Link href="/weed-dispensary-north-york">North York walk-in details</Link>
                 {" · "}
                 <Link href="/contact">Contact</Link>

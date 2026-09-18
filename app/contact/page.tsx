@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "./contact.module.css";
@@ -102,6 +103,9 @@ export default function ContactPage() {
                 Just walk in and our staff will
                 <br />
                 help you find the perfect strain.
+              </p>
+              <p className={styles.infoMuted}>
+                <Link href="/visit">2728 Jane St walk-in hub</Link>
               </p>
               <div className={styles.featureList}>
                 <div className={styles.featureItem}>

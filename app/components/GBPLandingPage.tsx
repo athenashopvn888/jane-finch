@@ -3,7 +3,7 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import styles from "./GBPLandingPage.module.css";
 import { weedOwner as store } from "../lib/weedDiscovery";
-import { FULL_ADDRESS, INTERSECTION, SITE_ORIGIN } from "../lib/nap";
+import { FULL_ADDRESS, INTERSECTION, SITE_ORIGIN, VISIT_PATH } from "../lib/nap";
 
 export function GBPLandingPage() {
   return (
@@ -15,12 +15,18 @@ export function GBPLandingPage() {
           <h1>{store.h1}</h1>
           <p className={styles.heroAddress}>{store.streetAddress}, {store.city}, ON {store.postalCode}</p>
           <p className={styles.heroAddress}>{INTERSECTION} · <a href={SITE_ORIGIN}>janefinchcannabis.ca</a></p>
-          <div className={styles.actions}><Link href="#find-your-weed" className={styles.primaryAction}>Find Your Weed</Link><Link href="#visit" className={styles.secondaryAction}>Visit {store.storeName}</Link></div>
+          <div className={styles.actions}><Link href="#find-your-weed" className={styles.primaryAction}>Find Your Weed</Link><Link href={VISIT_PATH} className={styles.secondaryAction}>Visit {store.storeName}</Link></div>
         </section>
 
         <section className={styles.section}>
           <h2>{store.introTitle}</h2>
           {store.intro.map((text) => <p key={text}>{text}</p>)}
+        </section>
+
+        <section className={styles.section}>
+          <h2>Jane–Finch walk-in vs North York delivery</h2>
+          <p>A cannabis store near me search should open this Jane Street counter. Walk in at {FULL_ADDRESS} any hour — no appointment. Delivery is a separate 10 a.m. to 10 p.m. menu and does not move the store pin.</p>
+          <p>Use the <Link href={VISIT_PATH}>walk-in hub</Link> for arrival notes, or the <Link href="/">homepage</Link> for the current store menu. Adults 19+ with valid government photo ID.</p>
         </section>
 
         <section className={styles.section}>
@@ -67,6 +73,7 @@ export function GBPLandingPage() {
             {store.hoursLabel && <strong>{store.hoursLabel}</strong>}
             <a href={`tel:${store.phoneIntl}`}>Phone: {store.phoneDisplay}</a>
             <a href={SITE_ORIGIN}>Website: janefinchcannabis.ca</a>
+            <Link href={VISIT_PATH}>Walk-in hub</Link>
             <span>Adults 19+</span>
           </div>
           <p>Call ahead if one particular product is the reason for your trip. This page does not make a current inventory claim. The physical address is {FULL_ADDRESS} — not a second North York counter.</p>

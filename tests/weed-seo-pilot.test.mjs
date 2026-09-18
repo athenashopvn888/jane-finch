@@ -10,7 +10,7 @@ const nap = readFileSync("app/lib/nap.ts", "utf8");
 
 test("protected owner renders exactly one H1 and approved content", () => {
   assert.equal((landing.match(/<h1>/g) || []).length, 1);
-  assert.match(nap, /North York Weed Dispensary at Jane & Sheppard/);
+  assert.match(nap, /Cannabis Store in North York at Jane & Finch/);
   assert.match(discovery, /h1: GBP_H1/);
   assert.match(landing, /Find Your Weed/);
   assert.match(landing, /Weed, Cannabis, Bud and Flower/);
@@ -20,7 +20,7 @@ test("homepage has one bounded Weed bridge and unique neighbourhood H1", () => {
   assert.equal((home.match(/<WeedDiscoveryModule \/>/g) || []).length, 1);
   assert.match(home, /HOME_H1/);
   assert.match(homeRoute, /canonical: SITE_ORIGIN/);
-  assert.match(nap, /24 Hour Weed Dispensary Near Jane Finch/);
+  assert.match(nap, /Dispensary Near Me in Jane–Finch \/ North York/);
 });
 
 test("unsafe implementation claims stay absent", () => {
