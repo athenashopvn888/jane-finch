@@ -10,6 +10,7 @@ import DeliveryBanner from "./components/DeliveryBanner";
 import FlowerCard from "./components/FlowerCard";
 import { WeedDiscoveryModule } from "./components/WeedDiscoveryModule";
 import { allFlowers } from "./lib/products";
+import SccHubLinks from "./components/SccHubLinks";
 import {
   FULL_ADDRESS,
   HOME_FAQS,
@@ -275,6 +276,11 @@ export default function HomePage() {
                     <Link href="/weed-dispensary-north-york">North York cannabis store</Link>
                     <Link href={OPEN_NOW_PATH}>24-hour North York FAQ</Link>
                     <Link href={VISIT_PATH}>Walk-in hub</Link>
+                    <Link href="/exotic-weed">Exotic Weed</Link>
+                    <Link href="/premium-weed">Premium Weed</Link>
+                    <Link href="/aaa-weed">AAA+ Weed</Link>
+                    <Link href="/aa-weed">AA Weed</Link>
+                    <Link href="/budget-weed">Budget Weed</Link>
                   </p>
                 </div>
                 <div className={styles.localHubMap}>
@@ -300,9 +306,11 @@ export default function HomePage() {
               <Link href="/exotic-weed" className={styles.homeMenuCta}>STORE MENU</Link>
               <Link href="/delivery" className={`${styles.homeMenuCta} ${styles.homeDeliveryCta}`}>DELIVERY MENU</Link>
             </div>
+            <SccHubLinks currentPath="/" heading="Visit, North York store, and 24-hour FAQ" includeTiers={false} />
           </div>
 
           {/* Bento Grid */}
+          <p className={styles.fiveTiersKicker}>Five flower tiers</p>
           <div className={styles.bentoGrid}>
             {BENTO_TIERS.map((tier) => (
               <Link
@@ -343,8 +351,12 @@ export default function HomePage() {
               <Link href="/weed-dispensary-north-york">North York cannabis store</Link>
               <Link href={OPEN_NOW_PATH}>24-hour North York FAQ</Link>
               <Link href={VISIT_PATH}>2728 Jane St walk-in hub</Link>
-              <Link href="/contact">Address, phone and hours</Link>
+              <Link href="/exotic-weed">Exotic Weed</Link>
+              <Link href="/premium-weed">Premium Weed</Link>
+              <Link href="/aaa-weed">AAA+ Weed</Link>
+              <Link href="/aa-weed">AA Weed</Link>
               <Link href="/budget-weed">Budget Weed</Link>
+              <Link href="/contact">Address, phone and hours</Link>
               <Link href="/faq">FAQ</Link>
             </p>
           </div>

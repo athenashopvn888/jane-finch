@@ -13,6 +13,8 @@ import {
 } from "../lib/products";
 import { TIER_SEO } from "../lib/tierSeoContent";
 import { buildTierCollectionJsonLd } from "../lib/tierStructuredData";
+import { faqJsonLd } from "../lib/nap";
+import SccHubLinks from "../components/SccHubLinks";
 import tierCopyData from "../lib/tierCopy.generated.json";
 import styles from "./tier.module.css";
 
@@ -39,8 +41,8 @@ export async function generateMetadata({
       canonical: `https://www.janefinchcannabis.ca/${tierSlug}`,
     },
     openGraph: {
-      title: `${tierInfo.config.name} in North York | Jane Finch Cannabis`,
-      description: `Explore the ${tierInfo.config.name} Cannabis Flower collection from Jane Finch Cannabis in North York.`,
+      title: seo?.seoTitle || `${tierInfo.config.name} in North York | Jane Finch Cannabis`,
+      description: seo?.seoIntro || `Explore the ${tierInfo.config.name} Cannabis Flower collection from Jane Finch Cannabis in North York.`,
     },
   };
 }
@@ -70,6 +72,7 @@ export default async function TierPage({
     description: seo?.seoIntro || `${config.name} cannabis flower at Jane Finch Cannabis in North York.`,
     flowers: displayFlowers,
   });
+  const tierFaqJsonLd = seo?.faqs.length ? faqJsonLd(seo.faqs) : null;
 
   // Check if banner file exists in the public folder
   const bannerExists = config.banner
@@ -79,6 +82,9 @@ export default async function TierPage({
   return (
     <>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(tierJsonLd) }} />
+    {tierFaqJsonLd ? (
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(tierFaqJsonLd) }} />
+    ) : null}
     <main className={styles.main}>
       <Navbar />
 
@@ -103,7 +109,7 @@ export default async function TierPage({
             <div className={styles.heroTitleRow}>
               <span className={styles.heroIcon}>{config.icon}</span>
               <h1 className={styles.heroTitle}>
-                <span style={{ color: config.color }}>{config.name}</span>
+                <span style={{ color: config.color }}>{seo?.h1 || config.name}</span>
               </h1>
             </div>
             <p className={styles.heroTagline}>{config.tagline}</p>
@@ -151,6 +157,9 @@ export default async function TierPage({
             </div>
             )}
           </div>
+        </div>
+        <div className={styles.hubWrap}>
+          <SccHubLinks currentPath={`/${tierSlug}`} heading="Jane Finch hubs from this tier" />
         </div>
       </section>
 
@@ -204,10 +213,10 @@ export default async function TierPage({
                 <p className={styles.seoBody}>{s.body}</p>
                 {s.links?.length ? (
                   <p className={styles.seoBody}>
-                    {s.links.map((href, linkIndex) => (
-                      <span key={href}>
+                    {s.links.map((link, linkIndex) => (
+                      <span key={`${link.href}-${link.label}-${linkIndex}`}>
                         {linkIndex ? " · " : ""}
-                        <Link href={href}>Learn more</Link>
+                        <Link href={link.href}>{link.label}</Link>
                       </span>
                     ))}
                   </p>

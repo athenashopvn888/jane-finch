@@ -21,6 +21,7 @@ import {
   VISIT_PATH,
   faqJsonLd,
 } from "../lib/nap";
+import SccHubLinks from "../components/SccHubLinks";
 
 export const metadata: Metadata = {
   title: { absolute: OPEN_NOW_SEO_TITLE },
@@ -65,6 +66,16 @@ export default function OpenNowFaqPage() {
               Walk-in hub
             </Link>
           </div>
+        </section>
+
+        <section className={styles.section}>
+          <h2>Walk-in hubs and five flower tiers</h2>
+          <p>
+            This FAQ owns 24-hour / open-now walk-in questions. Delivery stays 10 a.m. to 10 p.m.
+            and is not a 24-hour courier. For the pin, use the visit hub. For flower shelves, use
+            the five tier pages.
+          </p>
+          <SccHubLinks currentPath={OPEN_NOW_PATH} heading="Cross-links from the 24-hour FAQ" />
         </section>
 
         <section className={styles.section}>

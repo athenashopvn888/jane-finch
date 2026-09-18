@@ -98,7 +98,13 @@ export default function FAQPage() {
             <Link href={OPEN_NOW_PATH}>24-hour North York FAQ</Link>, then the{" "}
             <Link href="/">homepage</Link>,{" "}
             <Link href="/weed-dispensary-north-york">North York store page</Link>, or{" "}
-            <Link href={VISIT_PATH}>walk-in hub</Link>.
+            <Link href={VISIT_PATH}>walk-in hub</Link>
+            . Flower shelves:{" "}
+            <Link href="/exotic-weed">Exotic Weed</Link>,{" "}
+            <Link href="/premium-weed">Premium Weed</Link>,{" "}
+            <Link href="/aaa-weed">AAA+ Weed</Link>,{" "}
+            <Link href="/aa-weed">AA Weed</Link>,{" "}
+            <Link href="/budget-weed">Budget Weed</Link>.
           </p>
 
           {FAQ_CATEGORIES.map((cat) => (
