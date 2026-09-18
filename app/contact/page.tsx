@@ -106,6 +106,8 @@ export default function ContactPage() {
               </p>
               <p className={styles.infoMuted}>
                 <Link href="/visit">2728 Jane St walk-in hub</Link>
+                {" · "}
+                <Link href="/24-hour-dispensary-north-york">24-hour open-now FAQ</Link>
               </p>
               <div className={styles.featureList}>
                 <div className={styles.featureItem}>

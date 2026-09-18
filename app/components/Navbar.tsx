@@ -28,6 +28,7 @@ const CATEGORY_LINKS = [
 const SUPPORT_LINKS = [
   { href: "/weed-dispensary-north-york", label: "North York Store" },
   { href: "/visit", label: "Visit" },
+  { href: "/24-hour-dispensary-north-york", label: "24h FAQ" },
   { href: "/careers/budtender", label: "Hiring" },
   { href: "/resources", label: "Resources" },
   { href: "/faq", label: "FAQ" },

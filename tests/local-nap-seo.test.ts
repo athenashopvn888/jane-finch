@@ -12,9 +12,11 @@ const home = read("app/HomePage.tsx");
 const gbp = read("app/lib/weedDiscovery.ts");
 const gbpPage = read("app/weed-dispensary-north-york/page.tsx");
 const visit = read("app/visit/page.tsx");
+const openNow = read("app/24-hour-dispensary-north-york/page.tsx");
 const faq = read("app/faq/page.tsx");
+const sitemap = read("app/sitemap.ts");
 const publicFiles = [
-  nap, layout, footer, contact, home, gbp, gbpPage, visit, faq,
+  nap, layout, footer, contact, home, gbp, gbpPage, visit, openNow, faq,
   read("app/components/GBPLandingPage.tsx"),
   read("app/lib/gbp-location.ts"),
   read("app/lib/seoPages.ts"),
@@ -53,6 +55,7 @@ test("homepage and North York landing use unique title, meta, and H1", () => {
   assert.match(nap, /HOME_SEO_TITLE = "Dispensary Near Me in Jane–Finch \| North York Walk-In"/);
   assert.match(nap, /GBP_SEO_TITLE = "Cannabis Store North York — Open Now at Jane & Finch"/);
   assert.match(nap, /VISIT_SEO_TITLE = "Visit Jane Finch Cannabis — 2728 Jane St Walk-In Hub"/);
+  assert.match(nap, /OPEN_NOW_SEO_TITLE = "24-Hour North York Dispensary — Jane Finch Open-Now FAQ"/);
   assert.notEqual(
     nap.match(/HOME_SEO_TITLE = "([^"]+)"/)?.[1],
     nap.match(/GBP_SEO_TITLE = "([^"]+)"/)?.[1],
@@ -69,11 +72,25 @@ test("homepage and North York landing use unique title, meta, and H1", () => {
     nap.match(/GBP_H1 = "([^"]+)"/)?.[1],
     nap.match(/VISIT_H1 = "([^"]+)"/)?.[1],
   );
+  assert.notEqual(
+    nap.match(/OPEN_NOW_H1 = "([^"]+)"/)?.[1],
+    nap.match(/HOME_H1 = "([^"]+)"/)?.[1],
+  );
+  assert.notEqual(
+    nap.match(/OPEN_NOW_H1 = "([^"]+)"/)?.[1],
+    nap.match(/GBP_H1 = "([^"]+)"/)?.[1],
+  );
+  assert.notEqual(
+    nap.match(/OPEN_NOW_H1 = "([^"]+)"/)?.[1],
+    nap.match(/VISIT_H1 = "([^"]+)"/)?.[1],
+  );
   assert.match(home, /HOME_H1/);
   assert.match(gbp, /GBP_H1/);
   assert.match(visit, /VISIT_H1/);
+  assert.match(openNow, /OPEN_NOW_H1/);
   assert.match(gbpPage, /canonical: `\$\{SITE_ORIGIN\}\$\{weedOwner\.ownerPath\}`/);
   assert.match(visit, /canonical: `\$\{SITE_ORIGIN\}\$\{VISIT_PATH\}`/);
+  assert.match(openNow, /canonical: `\$\{SITE_ORIGIN\}\$\{OPEN_NOW_PATH\}`/);
 });
 
 test("door-test neighbourhood language is present without stuffing other fleet brands", () => {
@@ -89,6 +106,7 @@ test("homepage FAQ JSON-LD is wired for local questions", () => {
   assert.match(page, /faqJsonLd\(HOME_FAQS\)/);
   assert.match(gbpPage, /faqJsonLd\(weedOwner\.faq\)/);
   assert.match(visit, /faqJsonLd\(VISIT_FAQS\)/);
+  assert.match(openNow, /faqJsonLd\(OPEN_NOW_FAQS\)/);
   assert.match(nap, /Is there a 24 hour dispensary in North York\?/);
   assert.match(nap, /Where is the weed dispensary near Jane Finch\?/);
   assert.match(nap, /Is there a dispensary near me in Jane–Finch \/ North York\?/);
@@ -108,4 +126,29 @@ test("B03 near-me hub links homepage, North York LP, and /visit without GBP name
   assert.match(footer, /href="\/visit"/);
   assert.doesNotMatch(publicFiles, /GBP Name|rename the profile|Google Business Profile name/i);
   assert.match(nap, /STORE_NAME = "Jane Finch Cannabis"/);
+});
+
+test("B09 expands 24-hour North York FAQPage and links home, LP, and /visit", () => {
+  assert.match(openNow, /Hours truth/);
+  assert.match(openNow, /North York open now/);
+  assert.match(openNow, /Jane–Finch arrival/);
+  assert.match(openNow, /FAQ: 24 hour dispensary North York/);
+  assert.match(openNow, /href="\/"/);
+  assert.match(openNow, /href="\/weed-dispensary-north-york"/);
+  assert.match(openNow, /VISIT_PATH/);
+  assert.match(openNow, /faqJsonLd\(OPEN_NOW_FAQS\)/);
+  assert.match(nap, /Is Jane Finch Cannabis a 24\/7 dispensary near me\?/);
+  assert.match(nap, /Is the dispensary near me open now in North York\?/);
+  assert.match(faq, /24-Hour \/ Open Now/);
+  assert.match(faq, /OPEN_NOW_PATH/);
+  assert.match(faq, /href="\/weed-dispensary-north-york"/);
+  assert.match(faq, /VISIT_PATH/);
+  assert.match(home, /OPEN_NOW_PATH/);
+  assert.match(gbp, /OPEN_NOW_PATH/);
+  assert.match(visit, /OPEN_NOW_PATH/);
+  assert.match(footer, /href="\/24-hour-dispensary-north-york"/);
+  assert.match(sitemap, /\$\{BASE\}\/24-hour-dispensary-north-york/);
+  assert.doesNotMatch(publicFiles, /GBP Name|rename the profile|Google Business Profile name/i);
+  assert.match(nap, /STORE_NAME = "Jane Finch Cannabis"/);
+  assert.match(openNow, /https:\/\/janefinchcannabis\.ca\//);
 });

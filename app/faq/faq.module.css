@@ -26,6 +26,12 @@
   line-height: 1.6;
 }
 
+.pageSubtitle a,
+.ctaText a {
+  color: var(--green-mid);
+  font-weight: 700;
+}
+
 /* FAQ Category */
 .category {
   margin-bottom: 40px;

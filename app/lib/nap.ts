@@ -17,6 +17,7 @@ export const LONGITUDE = -79.5144564;
 export const MAPS_CID_URL = "https://www.google.com/maps?cid=6991178766551029626";
 
 export const VISIT_PATH = "/visit";
+export const OPEN_NOW_PATH = "/24-hour-dispensary-north-york";
 
 export const HOME_SEO_TITLE = "Dispensary Near Me in Jane–Finch | North York Walk-In";
 export const HOME_SEO_DESCRIPTION =
@@ -32,6 +33,11 @@ export const VISIT_SEO_TITLE = "Visit Jane Finch Cannabis — 2728 Jane St Walk-
 export const VISIT_SEO_DESCRIPTION =
   "How to walk in at Jane Finch Cannabis, 2728 Jane St, North York. Jane–Finch pin, hours, parking, TTC, and walk-in vs delivery. Call +1 (437) 524-9336. Adults 19+.";
 export const VISIT_H1 = "Visit Jane Finch Cannabis at 2728 Jane St";
+
+export const OPEN_NOW_SEO_TITLE = "24-Hour North York Dispensary — Jane Finch Open-Now FAQ";
+export const OPEN_NOW_SEO_DESCRIPTION =
+  "24 hour dispensary in North York at 2728 Jane St, Jane Finch. Open now 24/7 for walk-in. Hours truth, arrival, and FAQ. Call +1 (437) 524-9336. Adults 19+.";
+export const OPEN_NOW_H1 = "24-Hour North York Dispensary — Jane Finch Open Now";
 
 export const HOME_FAQS = [
   {
@@ -72,6 +78,30 @@ export const VISIT_FAQS = [
   {
     q: "Where do I park or take transit?",
     a: "Plaza parking is in front of the store. TTC buses run Jane Street and nearby Finch Avenue. Call +1 (437) 524-9336 if you need the pin confirmed before you travel.",
+  },
+] as const;
+
+/** B09 FAQPage entities — visible on /24-hour-dispensary-north-york only. Hours match GBP / layout CannabisStore 00:00–24:00. */
+export const OPEN_NOW_FAQS = [
+  {
+    q: "Is there a 24 hour dispensary in North York?",
+    a: "Yes. Jane Finch Cannabis at 2728 Jane St, North York is a 24 hour dispensary. The walk-in counter is open 24 hours a day, 7 days a week. No appointment.",
+  },
+  {
+    q: "Is Jane Finch Cannabis a 24/7 dispensary near me?",
+    a: "If you are around Jane–Finch, Jane & Sheppard, or elsewhere in North York looking for a 24/7 dispensary near me, walk in at 2728 Jane St any hour. Delivery is not 24/7 — it runs 10 a.m. to 10 p.m.",
+  },
+  {
+    q: "Is the dispensary near me open now in North York?",
+    a: "Walk-in is open now at any hour. Jane Finch Cannabis does not close overnight. Call +1 (437) 524-9336 if you want the pin confirmed before you travel.",
+  },
+  {
+    q: "Is this a cannabis store in North York that stays open 24 hours?",
+    a: "Yes. Jane Finch Cannabis is the cannabis store at 2728 Jane St in the Jane–Finch / Jane & Sheppard area of North York, and the counter is open 24 hours, 7 days.",
+  },
+  {
+    q: "Do I need an appointment for a late-night walk-in?",
+    a: "No. Adults 19+ with valid government photo ID can walk in any hour. Use the visit hub for parking and transit, then come to 2728 Jane St.",
   },
 ] as const;
 

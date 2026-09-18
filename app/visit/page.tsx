@@ -7,6 +7,7 @@ import {
   FULL_ADDRESS,
   HOURS_LABEL,
   INTERSECTION,
+  OPEN_NOW_PATH,
   PHONE_DISPLAY,
   PHONE_INTL,
   SITE_ORIGIN,
@@ -56,6 +57,9 @@ export default function VisitPage() {
             <Link href="/weed-dispensary-north-york" className={styles.secondaryAction}>
               North York store page
             </Link>
+            <Link href={OPEN_NOW_PATH} className={styles.secondaryAction}>
+              24-hour FAQ
+            </Link>
           </div>
         </section>
 
@@ -93,7 +97,8 @@ export default function VisitPage() {
           <p>
             {STORE_NAME} is {HOURS_LABEL.toLowerCase()}. A “dispensary near me open now” search in
             North York can use this storefront at any hour. Staff are at the Jane Street counter
-            overnight as well as during the day.
+            overnight as well as during the day. For the dedicated 24 hour dispensary North York
+            questions, use the <Link href={OPEN_NOW_PATH}>open-now FAQ</Link>.
           </p>
           <p>
             Delivery “open now” is different: LIVE ORDER only runs 10 a.m. to 10 p.m. The homepage

@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "./faq.module.css";
-import { SITE_ORIGIN } from "../lib/nap";
+import { OPEN_NOW_PATH, SITE_ORIGIN, VISIT_PATH } from "../lib/nap";
 
 export const metadata: Metadata = {
   title: "FAQ",
-  description: "Hours, address, and visit questions for Jane Finch Cannabis at 2728 Jane St, North York — a 24 hour weed dispensary near Jane Finch and Sheppard.",
+  description: "Hours, address, 24-hour open-now, and visit questions for Jane Finch Cannabis at 2728 Jane St, North York — a 24 hour weed dispensary near Jane Finch and Sheppard.",
   alternates: {
     canonical: `${SITE_ORIGIN}/faq`,
   },
@@ -14,11 +15,19 @@ export const metadata: Metadata = {
 
 const FAQ_CATEGORIES = [
   {
+    title: "24-Hour / Open Now",
+    faqs: [
+      { q: "Is Jane Finch Cannabis a 24/7 dispensary near me?", a: "Yes. The walk-in counter at 2728 Jane St, North York is open 24 hours, 7 days. A 24/7 dispensary near me search around Jane–Finch can use this storefront. Delivery is not 24/7 — it runs 10 a.m. to 10 p.m." },
+      { q: "Is the North York dispensary open now?", a: "Walk-in is open now at any hour. Jane Finch Cannabis does not close overnight. Use the 24-hour North York FAQ for hours truth, then the homepage or walk-in hub for the pin." },
+      { q: "Where should I read the 24-hour open-now FAQ?", a: "Open the 24-hour North York dispensary FAQ for hours, open-now, and Jane–Finch arrival. The homepage, North York store page, and /visit hub list the same 2728 Jane St address and phone." },
+    ],
+  },
+  {
     title: "Location and Hours",
     faqs: [
       { q: "Where is Jane Finch Cannabis located?", a: "Jane Finch Cannabis is at 2728 Jane St, North York, ON M3L 2G6, at Jane St & Sheppard Ave W. Use the /visit walk-in hub or the North York store page for directions and contact options before visiting." },
       { q: "Is there a cannabis store in North York?", a: "Yes. Jane Finch Cannabis is the cannabis store at 2728 Jane St in the Jane–Finch / Jane & Sheppard area of North York. Walk in 24 hours." },
-      { q: "Is there a 24 hour dispensary in North York?", a: "Yes. Jane Finch Cannabis is open 24 hours a day, 7 days a week. Walk in anytime — no appointment needed." },
+      { q: "Is there a 24 hour dispensary in North York?", a: "Yes. Jane Finch Cannabis is open 24 hours a day, 7 days a week. Walk in anytime — no appointment needed. The dedicated 24-hour FAQ has the hours table and late-arrival notes." },
       { q: "Is this a weed dispensary near Jane Finch?", a: "Yes. The walk-in store is on Jane Street in the Jane and Finch / Jane and Sheppard area of North York." },
       { q: "Are you near Jane and Sheppard?", a: "Yes. The storefront is at 2728 Jane St, at the Jane St & Sheppard Ave W area. Plaza parking is in front of the store." },
       { q: "What is the best way to plan the visit?", a: "Start with the homepage or the /visit walk-in hub, confirm 2728 Jane St and the 24-hour hours, then open the North York store page or the menu category that matches the visit." },
@@ -85,7 +94,11 @@ export default function FAQPage() {
         <div className={styles.content}>
           <h1 className={styles.pageTitle}>Frequently Asked Questions</h1>
           <p className={styles.pageSubtitle}>
-            Straight answers for shopping Jane Finch Cannabis: store page first, menu category second, staff when the current detail matters.
+            Straight answers for shopping Jane Finch Cannabis: store page first, menu category second, staff when the current detail matters. For 24 hour / open-now questions, start with the{" "}
+            <Link href={OPEN_NOW_PATH}>24-hour North York FAQ</Link>, then the{" "}
+            <Link href="/">homepage</Link>,{" "}
+            <Link href="/weed-dispensary-north-york">North York store page</Link>, or{" "}
+            <Link href={VISIT_PATH}>walk-in hub</Link>.
           </p>
 
           {FAQ_CATEGORIES.map((cat) => (
@@ -103,7 +116,7 @@ export default function FAQPage() {
           <div className={styles.ctaSection}>
             <h2 className={styles.ctaTitle}>Still have questions?</h2>
             <p className={styles.ctaText}>
-              Call <a href="tel:+14375249336">+1 (437) 524-9336</a> or visit <a href={SITE_ORIGIN}>janefinchcannabis.ca</a> before heading to 2728 Jane St.
+              Call <a href="tel:+14375249336">+1 (437) 524-9336</a> or visit <a href={SITE_ORIGIN}>janefinchcannabis.ca</a> before heading to 2728 Jane St. Open-now hours: <Link href={OPEN_NOW_PATH}>24-hour FAQ</Link>.
             </p>
           </div>
         </div>

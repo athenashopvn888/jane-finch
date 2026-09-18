@@ -10,6 +10,7 @@ import {
   SITE_ORIGIN,
   STORE_NAME,
   STREET_ADDRESS,
+  OPEN_NOW_PATH,
   VISIT_PATH,
 } from "./nap";
 import { gbpLocation } from "./gbp-location";
@@ -53,6 +54,11 @@ export const weedOwner = {
       label: "Walk-In Hub",
       description: "Jane–Finch pin, hours, parking, TTC, and walk-in vs delivery.",
       href: VISIT_PATH,
+    },
+    {
+      label: "24-Hour Open-Now FAQ",
+      description: "24 hour dispensary North York hours truth, open now, and late arrival.",
+      href: OPEN_NOW_PATH,
     },
     {
       label: "Contact & Hours",
