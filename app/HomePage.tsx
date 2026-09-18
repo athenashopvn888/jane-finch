@@ -14,15 +14,22 @@ import {
   FULL_ADDRESS,
   HOME_FAQS,
   HOME_H1,
+  HOURS_LABEL,
+  HOURS_SHORT,
   INTERSECTION,
+  MAPS_CID_URL,
+  MAPS_EMBED_URL,
+  OPEN_NOW_PATH,
   PHONE_DISPLAY,
   PHONE_INTL,
-  OPEN_NOW_PATH,
   SITE_ORIGIN,
   STORE_NAME,
+  STREET_ADDRESS,
   VISIT_PATH,
 } from "./lib/nap";
 import Papa from "papaparse";
+
+const WEEKDAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] as const;
 
 /* ── Bento Mosaic Config ── */
 const BENTO_TIERS = [
@@ -193,7 +200,7 @@ export default function HomePage() {
           <div className={styles.welcomeBannerContainer}>
             <img
               src={welcomeBannerSrc}
-              alt="Welcome to Jane Finch Cannabis — walk-in dispensary near me in Jane–Finch / North York"
+              alt="Jane Finch Cannabis — Jane and Finch dispensary near me in North York"
               className={styles.welcomeBannerImg}
               onError={() => setWelcomeBannerError(true)}
             />
@@ -228,15 +235,63 @@ export default function HomePage() {
             <img src="/storeFavicon.webp" alt="Jane Finch Cannabis Icon" style={{ height: "60px", width: "60px", objectFit: "contain", borderRadius: "8px", marginBottom: "8px" }} />
             <p className={styles.brandKicker}>{STORE_NAME}</p>
             <h1 className={styles.brandTitle}>{HOME_H1}</h1>
-            <p className={styles.brandSub}>Walk-in dispensary near me at {FULL_ADDRESS}</p>
-            <div className={styles.brandBadge}>Open 24 Hours · 7 Days</div>
+            <p className={styles.brandSub}>Jane and Finch dispensary near me at {FULL_ADDRESS}</p>
+            <div className={styles.brandBadge}>{HOURS_LABEL}</div>
             <p className={styles.brandNap}>
               {INTERSECTION}
               {" · "}
               <a href={`tel:${PHONE_INTL}`}>{PHONE_DISPLAY}</a>
               {" · "}
-              <Link href={VISIT_PATH}>Walk-in hub</Link>
+              <a href={SITE_ORIGIN}>janefinchcannabis.ca</a>
             </p>
+            <aside className={styles.localHub} aria-labelledby="home-nap-hours-map">
+              <p className={styles.localHubKicker}>Local visit hub</p>
+              <h2 id="home-nap-hours-map">Address, hours, and map</h2>
+              <div className={styles.localHubGrid}>
+                <div className={styles.localHubNap}>
+                  <p className={styles.localHubName}>{STORE_NAME}</p>
+                  <address>
+                    {STREET_ADDRESS}
+                    <br />
+                    North York, ON M3L 2G6
+                    <br />
+                    {INTERSECTION}
+                  </address>
+                  <p className={styles.localHubHoursLabel}>{HOURS_LABEL}</p>
+                  <ul className={styles.localHubHours}>
+                    {WEEKDAYS.map((day) => (
+                      <li key={day}>
+                        <span>{day}</span>
+                        <span>{HOURS_SHORT}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p>
+                    <a href={`tel:${PHONE_INTL}`}>{PHONE_DISPLAY}</a>
+                    {" · "}
+                    <a href={SITE_ORIGIN}>janefinchcannabis.ca</a>
+                  </p>
+                  <p className={styles.localHubLinks}>
+                    <Link href="/weed-dispensary-north-york">North York cannabis store</Link>
+                    <Link href={OPEN_NOW_PATH}>24-hour North York FAQ</Link>
+                    <Link href={VISIT_PATH}>Walk-in hub</Link>
+                  </p>
+                </div>
+                <div className={styles.localHubMap}>
+                  <iframe
+                    className={styles.mapFrame}
+                    title={`Map of ${STORE_NAME} at ${FULL_ADDRESS}`}
+                    src={MAPS_EMBED_URL}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    allowFullScreen
+                  />
+                  <a href={MAPS_CID_URL} target="_blank" rel="noreferrer">
+                    Open Jane Finch Cannabis in Google Maps
+                  </a>
+                </div>
+              </div>
+            </aside>
             <aside className={styles.homeDeliveryNotice} aria-labelledby="home-delivery-title">
               <h2 id="home-delivery-title">NEW DELIVERY AVAILABLE</h2>
               <p>Jane Finch Cannabis delivery serves North York daily from 10 a.m. to 10 p.m. Browse the Jane Finch Cannabis flower delivery menu and use LIVE ORDER to connect with its dispatcher.</p>
@@ -266,6 +321,32 @@ export default function HomePage() {
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── JANE–FINCH CORRIDOR INTRO ── */}
+      <section className={styles.seoSection} id="jane-finch-corridor">
+        <div className={styles.container}>
+          <div className={styles.seoPanel}>
+            <h2 className={styles.seoPanelTitle}>Jane–Finch corridor — Jane and Finch dispensary</h2>
+            <p className={styles.seoPanelText}>
+              Jane Finch Cannabis is the Jane and Finch dispensary at {FULL_ADDRESS}, at {INTERSECTION} in the Jane–Finch corridor. This homepage is the local visit hub: name, address, phone, hours, and the map stay here so a brand or near-me search does not have to bounce to the North York landing page first.
+            </p>
+            <p className={styles.seoPanelText}>
+              If you searched for a dispensary near me, a weed dispensary near Jane Finch, a Jane and Finch dispensary, or a cannabis store North York, this Jane Street storefront is the pin. The counter is a 24 hour weed dispensary in North York — {HOURS_LABEL.toLowerCase()}.
+            </p>
+            <p className={styles.seoPanelText}>
+              Confirm the pin, then open the current menu. Flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes each shop differently. Delivery is a separate 10 a.m.–10 p.m. window — it does not replace walk-in. Call {PHONE_DISPLAY} if one item is the reason you are coming in.
+            </p>
+            <p className={styles.seoPanelLinks}>
+              <Link href="/weed-dispensary-north-york">North York cannabis store</Link>
+              <Link href={OPEN_NOW_PATH}>24-hour North York FAQ</Link>
+              <Link href={VISIT_PATH}>2728 Jane St walk-in hub</Link>
+              <Link href="/contact">Address, phone and hours</Link>
+              <Link href="/budget-weed">Budget Weed</Link>
+              <Link href="/faq">FAQ</Link>
+            </p>
           </div>
         </div>
       </section>
@@ -321,32 +402,6 @@ export default function HomePage() {
                 <FlowerCard flower={strain} tierKey={strain.tier} />
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── LOCAL SEO PANEL ── */}
-      <section className={styles.seoSection}>
-        <div className={styles.container}>
-          <div className={styles.seoPanel}>
-            <h2 className={styles.seoPanelTitle}>Dispensary near me in Jane–Finch / North York</h2>
-            <p className={styles.seoPanelText}>
-              Jane Finch Cannabis is a walk-in weed dispensary at {FULL_ADDRESS}, at {INTERSECTION} in the Jane–Finch corridor. The counter is open 24 hours, 7 days. If you searched for a dispensary near me, a weed dispensary near Jane Finch, or a 24 hour weed dispensary in North York, this is the Jane Street storefront.
-            </p>
-            <p className={styles.seoPanelText}>
-              Confirm the pin first, then open the current menu. Flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes each shop differently. If cheap weed is the goal, start with Budget Weed. Delivery is a separate 10 a.m.–10 p.m. window — it does not replace walk-in.
-            </p>
-            <p className={styles.seoPanelText}>
-              Menus change, so use the live listings and staff for product names, prices, and availability before you make the trip. Call {PHONE_DISPLAY} if one item is the reason you are coming in.
-            </p>
-            <p className={styles.seoPanelLinks}>
-              <Link href={VISIT_PATH}>2728 Jane St walk-in hub</Link>
-              <Link href={OPEN_NOW_PATH}>24-hour North York FAQ</Link>
-              <Link href="/weed-dispensary-north-york">North York cannabis store</Link>
-              <Link href="/contact">Address, phone and hours</Link>
-              <Link href="/budget-weed">Budget Weed</Link>
-              <Link href="/faq">FAQ</Link>
-            </p>
           </div>
         </div>
       </section>
@@ -466,13 +521,27 @@ export default function HomePage() {
                 <Link href={VISIT_PATH} className={styles.storeLink}>Walk-in hub</Link>
                 <br />
                 <Link href="/weed-dispensary-north-york" className={styles.storeLink}>North York store details</Link>
+                <br />
+                <Link href={OPEN_NOW_PATH} className={styles.storeLink}>24-hour North York FAQ</Link>
               </p>
             </div>
           </div>
 
-          {/* Map wrapper */}
           <div className={styles.mapWrap}>
+            <iframe
+              className={styles.mapFrame}
+              title={`Map of ${STORE_NAME} at ${FULL_ADDRESS}`}
+              src={MAPS_EMBED_URL}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
           </div>
+          <p className={styles.mapCaption}>
+            <a href={MAPS_CID_URL} target="_blank" rel="noreferrer">
+              Open Jane Finch Cannabis in Google Maps
+            </a>
+          </p>
         </div>
       </section>
 

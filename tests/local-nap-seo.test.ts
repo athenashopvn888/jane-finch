@@ -52,7 +52,7 @@ test("canonical NAP is identical in the shared module, schema, footer, and conta
 });
 
 test("homepage and North York landing use unique title, meta, and H1", () => {
-  assert.match(nap, /HOME_SEO_TITLE = "Dispensary Near Me in Jane–Finch \| North York Walk-In"/);
+  assert.match(nap, /HOME_SEO_TITLE = "Jane Finch Cannabis \| Jane and Finch Dispensary North York"/);
   assert.match(nap, /GBP_SEO_TITLE = "Cannabis Store North York — Open Now at Jane & Finch"/);
   assert.match(nap, /VISIT_SEO_TITLE = "Visit Jane Finch Cannabis — 2728 Jane St Walk-In Hub"/);
   assert.match(nap, /OPEN_NOW_SEO_TITLE = "24-Hour North York Dispensary — Jane Finch Open-Now FAQ"/);
@@ -151,4 +151,29 @@ test("B09 expands 24-hour North York FAQPage and links home, LP, and /visit", ()
   assert.doesNotMatch(publicFiles, /GBP Name|rename the profile|Google Business Profile name/i);
   assert.match(nap, /STORE_NAME = "Jane Finch Cannabis"/);
   assert.match(openNow, /https:\/\/janefinchcannabis\.ca\//);
+});
+
+test("B16 rebuilds homepage as Jane Finch Cannabis local hub vs North York LP monoculture", () => {
+  assert.match(nap, /HOME_H1 = "Jane Finch Cannabis — Jane and Finch Dispensary"/);
+  assert.match(nap, /jane finch cannabis/i);
+  assert.match(nap, /Dispensary near me/);
+  assert.match(nap, /Jane and Finch dispensary/);
+  assert.match(nap, /cannabis store North York/);
+  assert.match(nap, /www→apex host consolidation is a separate ticket/);
+  assert.match(nap, /MAPS_EMBED_URL/);
+  assert.match(home, /id="home-nap-hours-map"/);
+  assert.match(home, /Address, hours, and map/);
+  assert.match(home, /MAPS_EMBED_URL/);
+  assert.match(home, /<iframe/);
+  assert.match(home, /Jane–Finch corridor — Jane and Finch dispensary/);
+  assert.match(home, /href="\/weed-dispensary-north-york"/);
+  assert.match(home, /OPEN_NOW_PATH/);
+  assert.doesNotMatch(home, /href="\/weed-dispensary-north-york\/"/);
+  assert.doesNotMatch(home, /href="\/24-hour-dispensary-north-york\/"/);
+  assert.match(gbp, /OPEN_NOW_PATH/);
+  assert.match(sitemap, /const BASE = "https:\/\/www\.janefinchcannabis\.ca"/);
+  assert.match(nap, /SITE_ORIGIN = "https:\/\/janefinchcannabis\.ca"/);
+  assert.doesNotMatch(publicFiles, /GBP Name|rename the profile|Google Business Profile name/i);
+  assert.match(nap, /STORE_NAME = "Jane Finch Cannabis"/);
+  assert.match(nap, /What is Jane Finch Cannabis\?/);
 });
