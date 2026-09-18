@@ -16,11 +16,12 @@ const FAQ_CATEGORIES = [
   {
     title: "Location and Hours",
     faqs: [
-      { q: "Where is Jane Finch Cannabis located?", a: "Jane Finch Cannabis is at 2728 Jane St, North York, ON M3L 2G6, at Jane St & Sheppard Ave W. Use the store page for directions and contact options before visiting." },
+      { q: "Where is Jane Finch Cannabis located?", a: "Jane Finch Cannabis is at 2728 Jane St, North York, ON M3L 2G6, at Jane St & Sheppard Ave W. Use the /visit walk-in hub or the North York store page for directions and contact options before visiting." },
+      { q: "Is there a cannabis store in North York?", a: "Yes. Jane Finch Cannabis is the cannabis store at 2728 Jane St in the Jane–Finch / Jane & Sheppard area of North York. Walk in 24 hours." },
       { q: "Is there a 24 hour dispensary in North York?", a: "Yes. Jane Finch Cannabis is open 24 hours a day, 7 days a week. Walk in anytime — no appointment needed." },
       { q: "Is this a weed dispensary near Jane Finch?", a: "Yes. The walk-in store is on Jane Street in the Jane and Finch / Jane and Sheppard area of North York." },
       { q: "Are you near Jane and Sheppard?", a: "Yes. The storefront is at 2728 Jane St, at the Jane St & Sheppard Ave W area. Plaza parking is in front of the store." },
-      { q: "What is the best way to plan the visit?", a: "Start with the homepage or North York store page, confirm the address and hours, then open the menu category that matches the visit." },
+      { q: "What is the best way to plan the visit?", a: "Start with the homepage or the /visit walk-in hub, confirm 2728 Jane St and the 24-hour hours, then open the North York store page or the menu category that matches the visit." },
     ],
   },
   {

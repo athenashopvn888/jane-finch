@@ -126,7 +126,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "sections": [
       {
         "heading": "Confirm The Store Before You Travel",
-        "body": "A near-me search is only useful if the pin matches the real counter. Jane Finch Cannabis is at 2728 Jane St, North York, ON M3L 2G6, at Jane St & Sheppard Ave W. The homepage and North York walk-in page list the same address, phone, and 24-hour hours."
+        "body": "A near-me search is only useful if the pin matches the real counter. Jane Finch Cannabis is at 2728 Jane St, North York, ON M3L 2G6, at Jane St & Sheppard Ave W. The homepage, /visit walk-in hub, and North York store page list the same address, phone, and 24-hour hours."
       },
       {
         "heading": "If You Are Around Jane Finch Or Sheppard",
@@ -140,7 +140,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "faqs": [
       {
         "q": "Which store should a North York near-me search open?",
-        "a": "Use Jane Finch Cannabis at 2728 Jane St, North York, ON M3L 2G6. Then open the menu category that matches your visit."
+        "a": "Use Jane Finch Cannabis at 2728 Jane St, North York, ON M3L 2G6. Open /visit for arrival notes, then the menu category that matches your visit."
       },
       {
         "q": "Is the near-me store open 24 hours?",

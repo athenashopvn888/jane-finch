@@ -19,6 +19,7 @@ import {
   PHONE_INTL,
   SITE_ORIGIN,
   STORE_NAME,
+  VISIT_PATH,
 } from "./lib/nap";
 import Papa from "papaparse";
 
@@ -191,7 +192,7 @@ export default function HomePage() {
           <div className={styles.welcomeBannerContainer}>
             <img
               src={welcomeBannerSrc}
-              alt="Welcome to Jane Finch Cannabis — 24 hour weed dispensary near Jane Finch, North York"
+              alt="Welcome to Jane Finch Cannabis — walk-in dispensary near me in Jane–Finch / North York"
               className={styles.welcomeBannerImg}
               onError={() => setWelcomeBannerError(true)}
             />
@@ -226,12 +227,14 @@ export default function HomePage() {
             <img src="/storeFavicon.webp" alt="Jane Finch Cannabis Icon" style={{ height: "60px", width: "60px", objectFit: "contain", borderRadius: "8px", marginBottom: "8px" }} />
             <p className={styles.brandKicker}>{STORE_NAME}</p>
             <h1 className={styles.brandTitle}>{HOME_H1}</h1>
-            <p className={styles.brandSub}>Walk in at {FULL_ADDRESS}</p>
+            <p className={styles.brandSub}>Walk-in dispensary near me at {FULL_ADDRESS}</p>
             <div className={styles.brandBadge}>Open 24 Hours · 7 Days</div>
             <p className={styles.brandNap}>
               {INTERSECTION}
               {" · "}
               <a href={`tel:${PHONE_INTL}`}>{PHONE_DISPLAY}</a>
+              {" · "}
+              <Link href={VISIT_PATH}>Walk-in hub</Link>
             </p>
             <aside className={styles.homeDeliveryNotice} aria-labelledby="home-delivery-title">
               <h2 id="home-delivery-title">NEW DELIVERY AVAILABLE</h2>
@@ -325,21 +328,21 @@ export default function HomePage() {
       <section className={styles.seoSection}>
         <div className={styles.container}>
           <div className={styles.seoPanel}>
-            <h2 className={styles.seoPanelTitle}>24 hour weed dispensary in North York</h2>
+            <h2 className={styles.seoPanelTitle}>Dispensary near me in Jane–Finch / North York</h2>
             <p className={styles.seoPanelText}>
-              Jane Finch Cannabis is a walk-in weed dispensary at {FULL_ADDRESS}, at {INTERSECTION}. The counter is open 24 hours, 7 days. If you searched for a weed dispensary near Jane Finch or a 24 hour dispensary in North York, this is the Jane Street storefront.
+              Jane Finch Cannabis is a walk-in weed dispensary at {FULL_ADDRESS}, at {INTERSECTION} in the Jane–Finch corridor. The counter is open 24 hours, 7 days. If you searched for a dispensary near me, a weed dispensary near Jane Finch, or a 24 hour weed dispensary in North York, this is the Jane Street storefront.
             </p>
             <p className={styles.seoPanelText}>
-              Start with the current menu, then choose the product category that fits the visit. Flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes each shop differently. If cheap weed is the goal, start with Budget Weed or AA Weed.
+              Confirm the pin first, then open the current menu. Flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes each shop differently. If cheap weed is the goal, start with Budget Weed. Delivery is a separate 10 a.m.–10 p.m. window — it does not replace walk-in.
             </p>
             <p className={styles.seoPanelText}>
               Menus change, so use the live listings and staff for product names, prices, and availability before you make the trip. Call {PHONE_DISPLAY} if one item is the reason you are coming in.
             </p>
             <p className={styles.seoPanelLinks}>
-              <Link href="/weed-dispensary-north-york">North York walk-in details</Link>
+              <Link href={VISIT_PATH}>2728 Jane St walk-in hub</Link>
+              <Link href="/weed-dispensary-north-york">North York cannabis store</Link>
               <Link href="/contact">Address, phone and hours</Link>
-              <Link href="/info/dispensary-near-me-north-york">Dispensary near me</Link>
-              <Link href="/resources/local-guides/york-university-cannabis-guide">York University area</Link>
+              <Link href="/budget-weed">Budget Weed</Link>
               <Link href="/faq">FAQ</Link>
             </p>
           </div>
@@ -457,6 +460,8 @@ export default function HomePage() {
               <h3 className={styles.storeCardTitle}>Walk In</h3>
               <p className={styles.storeCardText}>
                 No appointment needed
+                <br />
+                <Link href={VISIT_PATH} className={styles.storeLink}>Walk-in hub</Link>
                 <br />
                 <Link href="/weed-dispensary-north-york" className={styles.storeLink}>North York store details</Link>
               </p>
