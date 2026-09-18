@@ -20,6 +20,10 @@ export const MAPS_EMBED_URL =
 
 export const VISIT_PATH = "/visit";
 export const OPEN_NOW_PATH = "/24-hour-dispensary-north-york";
+export const DELIVERY_LP_PATH = "/cannabis-delivery-north-york";
+export const DELIVERY_MENU_PATH = "/delivery";
+export const DELIVERY_HOURS_LABEL = "Delivery 10 a.m.–10 p.m. daily";
+export const DELIVERY_HOURS_SHORT = "10 a.m.–10 p.m.";
 
 /*
  * B16 eng note: www→apex host consolidation is a separate ticket.
@@ -47,6 +51,11 @@ export const OPEN_NOW_SEO_TITLE = "24-Hour North York Dispensary — Jane Finch 
 export const OPEN_NOW_SEO_DESCRIPTION =
   "24 hour dispensary in North York at 2728 Jane St, Jane Finch. Open now 24/7 for walk-in. Hours truth, arrival, and FAQ. Call +1 (437) 524-9336. Adults 19+.";
 export const OPEN_NOW_H1 = "24-Hour North York Dispensary — Jane Finch Open Now";
+
+export const DELIVERY_SEO_TITLE = "Jane Finch Cannabis Delivery in North York — 10 a.m. to 10 p.m.";
+export const DELIVERY_SEO_DESCRIPTION =
+  "Cannabis delivery from Jane Finch Cannabis at 2728 Jane St, North York. LIVE ORDER 10 a.m.–10 p.m. daily — not 24-hour delivery. $60 minimum, $10 fee. Call +1 (437) 524-9336. Adults 19+.";
+export const DELIVERY_H1 = "Cannabis Delivery from Jane Finch in North York";
 
 export const HOME_FAQS = [
   {
@@ -119,6 +128,38 @@ export const OPEN_NOW_FAQS = [
   {
     q: "Do I need an appointment for a late-night walk-in?",
     a: "No. Adults 19+ with valid government photo ID can walk in any hour. Use the visit hub for parking and transit, then come to 2728 Jane St.",
+  },
+] as const;
+
+/** Wave 2 delivery FAQPage — neighbourhood owner for Jane Finch / North York courier intent. Walk-in 24h stays on /visit and the 24-hour FAQ. */
+export const DELIVERY_FAQS = [
+  {
+    q: "Does Jane Finch Cannabis deliver cannabis in North York?",
+    a: "Yes. Jane Finch Cannabis dispatches cannabis delivery from 2728 Jane St in the Jane–Finch / Jane & Sheppard area of North York. The dispatcher confirms whether your address is in range. Adults 19+.",
+  },
+  {
+    q: "What hours does Jane Finch Cannabis delivery run?",
+    a: "Delivery ordering runs daily from 10 a.m. to 10 p.m. That window is on the delivery menu as 10:00 a.m.–10:00 p.m. It is not overnight and not 24/7.",
+  },
+  {
+    q: "Is Jane Finch delivery open 24 hours like the walk-in store?",
+    a: "No. The Jane Street counter at 2728 Jane St is open 24 hours, 7 days. Delivery is a separate courier service and only runs 10 a.m. to 10 p.m. A 24-hour search is for walk-in, not a 24-hour courier.",
+  },
+  {
+    q: "How do I place a Jane Finch Cannabis delivery order?",
+    a: "Open the delivery menu, note the items you want, then use LIVE ORDER to connect with the Jane Finch Cannabis dispatcher. New customers complete ID review in Web Chat. The dispatcher confirms availability, the $60 product minimum, the $10 fee, and drop-off details.",
+  },
+  {
+    q: "Where is Jane Finch Cannabis delivery dispatched from?",
+    a: "Orders leave the walk-in store at 2728 Jane St, North York, ON M3L 2G6 — Jane St & Sheppard Ave W. This is not a second North York counter. Call +1 (437) 524-9336 if you need the pin confirmed.",
+  },
+  {
+    q: "Which Jane–Finch and North York areas can request delivery?",
+    a: "A practical planning area is about 50 km from Jane Street and Finch Avenue, including Jane–Finch, Jane & Sheppard, North York, Toronto, Vaughan, Etobicoke, Brampton, and Mississauga. The dispatcher confirms the destination for each request. Longer trips are not guaranteed.",
+  },
+  {
+    q: "What is the Jane Finch Cannabis delivery minimum and fee?",
+    a: "Site terms are a $60 product minimum and a $10 delivery fee. Eligibility, stock, and timing are confirmed by the dispatcher before checkout. Adults 19+ with valid government photo ID.",
   },
 ] as const;
 

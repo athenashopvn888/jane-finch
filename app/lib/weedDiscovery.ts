@@ -61,6 +61,11 @@ export const weedOwner = {
       href: OPEN_NOW_PATH,
     },
     {
+      label: "North York Cannabis Delivery",
+      description: "Jane Finch courier hours 10 a.m.–10 p.m. — not 24-hour delivery.",
+      href: "/cannabis-delivery-north-york",
+    },
+    {
       label: "Contact & Hours",
       description: "Address, phone, and 24-hour walk-in details for Jane & Sheppard.",
       href: "/contact",

@@ -106,6 +106,8 @@ export default function Catalog() {
         <nav aria-label="Delivery menu navigation">
           <a href="#menu">Menu</a>
           <a href="#how-to-order">How to order</a>
+          <Link href="/cannabis-delivery-north-york">Delivery hours</Link>
+          <Link href="/visit">Walk-in hub</Link>
         </nav>
       </header>
       <DeliveryBanner />

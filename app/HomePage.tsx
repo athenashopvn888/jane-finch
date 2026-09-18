@@ -20,6 +20,7 @@ import {
   INTERSECTION,
   MAPS_CID_URL,
   MAPS_EMBED_URL,
+  DELIVERY_LP_PATH,
   OPEN_NOW_PATH,
   PHONE_DISPLAY,
   PHONE_INTL,
@@ -300,7 +301,7 @@ export default function HomePage() {
             </aside>
             <aside className={styles.homeDeliveryNotice} aria-labelledby="home-delivery-title">
               <h2 id="home-delivery-title">NEW DELIVERY AVAILABLE</h2>
-              <p>Jane Finch Cannabis delivery serves North York daily from 10 a.m. to 10 p.m. Browse the Jane Finch Cannabis flower delivery menu and use LIVE ORDER to connect with its dispatcher.</p>
+              <p>Jane Finch Cannabis delivery serves North York daily from 10 a.m. to 10 p.m. — not 24-hour delivery. Browse the Jane Finch Cannabis flower delivery menu and use LIVE ORDER to connect with its dispatcher, or read the <Link href={DELIVERY_LP_PATH}>North York delivery page</Link>.</p>
             </aside>
             <div className={styles.homeMenuActions} aria-label="Choose a Jane Finch Cannabis menu">
               <Link href="/exotic-weed" className={styles.homeMenuCta}>STORE MENU</Link>
@@ -351,6 +352,7 @@ export default function HomePage() {
               <Link href="/weed-dispensary-north-york">North York cannabis store</Link>
               <Link href={OPEN_NOW_PATH}>24-hour North York FAQ</Link>
               <Link href={VISIT_PATH}>2728 Jane St walk-in hub</Link>
+              <Link href={DELIVERY_LP_PATH}>North York cannabis delivery</Link>
               <Link href="/exotic-weed">Exotic Weed</Link>
               <Link href="/premium-weed">Premium Weed</Link>
               <Link href="/aaa-weed">AAA+ Weed</Link>

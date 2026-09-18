@@ -95,7 +95,8 @@ export default function OpenNowFaqPage() {
           </div>
           <p>
             Delivery is a different clock: 10 a.m. to 10 p.m. daily. A 24 hour search is about the
-            Jane Street counter, not a 24-hour courier.
+            Jane Street counter, not a 24-hour courier. Courier hours live on the{" "}
+            <Link href="/cannabis-delivery-north-york">North York cannabis delivery page</Link>.
           </p>
         </section>
 
