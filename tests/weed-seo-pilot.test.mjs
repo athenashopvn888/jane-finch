@@ -20,7 +20,7 @@ test("homepage has one bounded Weed bridge and unique neighbourhood H1", () => {
   assert.equal((home.match(/<WeedDiscoveryModule \/>/g) || []).length, 1);
   assert.match(home, /HOME_H1/);
   assert.match(homeRoute, /canonical: SITE_ORIGIN/);
-  assert.match(nap, /Dispensary Near Me in Jane–Finch \/ North York/);
+  assert.match(nap, /Jane Finch Cannabis — Jane and Finch Dispensary/);
 });
 
 test("unsafe implementation claims stay absent", () => {
