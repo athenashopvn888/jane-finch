@@ -12,6 +12,7 @@ export function WeedDiscoveryModule() {
         <div className={styles.actions}>
           <Link href={store.ownerPath} className={styles.primary}>{store.home.primaryLabel}</Link>
           <Link href={store.home.secondaryHref} className={styles.secondary}>{store.home.secondaryLabel}</Link>
+          <Link href="/visit" className={styles.secondary}>Walk-in hub</Link>
         </div>
       </div>
     </section>

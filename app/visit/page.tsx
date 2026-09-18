@@ -20,6 +20,7 @@ import {
   VISIT_SEO_TITLE,
   faqJsonLd,
 } from "../lib/nap";
+import SccHubLinks from "../components/SccHubLinks";
 
 export const metadata: Metadata = {
   title: { absolute: VISIT_SEO_TITLE },
@@ -64,12 +65,23 @@ export default function VisitPage() {
         </section>
 
         <section className={styles.section}>
+          <h2>Homepage, North York store, 24-hour FAQ, and flower tiers</h2>
+          <p>
+            This visit hub owns Jane–Sheppard / Jane–Finch arrival. It does not replace the homepage
+            NAP card, the North York weed page, or the 24-hour FAQ. Flower shelves stay on their own
+            routes.
+          </p>
+          <SccHubLinks currentPath={VISIT_PATH} heading="Cross-links from the walk-in hub" />
+        </section>
+
+        <section className={styles.section}>
           <h2>2728 Jane St — Jane–Finch intersection clarity</h2>
           <p>
             Jane Finch Cannabis is the walk-in dispensary at {STREET_ADDRESS}, North York, ON M3L 2G6.
             The pin is on Jane Street at the {INTERSECTION} area — not a second counter on Finch Avenue
             and not a mall kiosk. People searching “dispensary near me” around Jane–Finch, Jane &amp;
             Sheppard, Black Creek, Downsview, or Finch West should use this Jane Street storefront.
+            Jane–Sheppard corridor questions stay on this visit hub rather than a second landmark page.
           </p>
           <p>
             If a map card shows a different street or a delivery-only listing, ignore it and use{" "}
@@ -161,9 +173,14 @@ export default function VisitPage() {
         <section className={styles.section}>
           <h2>After the pin is confirmed</h2>
           <p>
-            Use the homepage for the current menu, then open one category if you already know the
-            format. Flower shoppers can start with{" "}
-            <Link href="/budget-weed">Budget Weed</Link> or the{" "}
+            Use the homepage for the current menu, then open one flower tier if you already know the
+            shelf. Start with{" "}
+            <Link href="/exotic-weed">Exotic Weed</Link>,{" "}
+            <Link href="/premium-weed">Premium Weed</Link>,{" "}
+            <Link href="/aaa-weed">AAA+ Weed</Link>,{" "}
+            <Link href="/aa-weed">AA Weed</Link>, or{" "}
+            <Link href="/budget-weed">Budget Weed</Link>
+            {" "}— or the{" "}
             <Link href="/weed-dispensary-north-york">North York walk-in page</Link>. Keep product
             browsing secondary to the address.
           </p>

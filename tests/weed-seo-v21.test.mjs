@@ -31,7 +31,11 @@ test("all five tier owners use Tier Name plus Weed and weed-bearing canonicals",
     assert.ok(redirects.includes(`source: "/${legacy}", destination: "/${slug}", permanent: true`), `${legacy} redirect missing`);
   }
   assert.match(tierPage, /https:\/\/www\.janefinchcannabis\.ca\/\$\{tierSlug\}/);
-  assert.match(tierCopy, /createTierSeo\("EXOTIC", "Exotic Weed"\)/);
+  assert.match(tierCopy, /h1: "Exotic Weed & Cannabis Flower in North York"/);
+  assert.match(tierCopy, /h1: "Premium Weed at Jane & Sheppard"/);
+  assert.match(tierCopy, /h1: "AAA\+ Weed at 2728 Jane St"/);
+  assert.match(tierCopy, /h1: "AA Weed for Jane–Finch Walk-In"/);
+  assert.match(tierCopy, /h1: "Budget Weed in North York"/);
 });
 
 test("direct tier-support resources use one canonical weed-bearing route family", () => {

@@ -385,6 +385,15 @@
   outline-offset: 3px;
 }
 
+.fiveTiersKicker {
+  margin: 8px 0 14px;
+  color: #fbbf24;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 /* Bento Mosaic Grid */
 .bentoGrid {
   display: grid;

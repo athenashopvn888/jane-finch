@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import styles from "./GBPLandingPage.module.css";
 import { weedOwner as store } from "../lib/weedDiscovery";
 import { FULL_ADDRESS, INTERSECTION, OPEN_NOW_PATH, SITE_ORIGIN, VISIT_PATH } from "../lib/nap";
+import SccHubLinks from "./SccHubLinks";
 
 export function GBPLandingPage() {
   return (
@@ -16,6 +17,12 @@ export function GBPLandingPage() {
           <p className={styles.heroAddress}>{store.streetAddress}, {store.city}, ON {store.postalCode}</p>
           <p className={styles.heroAddress}>{INTERSECTION} · <a href={SITE_ORIGIN}>janefinchcannabis.ca</a></p>
           <div className={styles.actions}><Link href="#find-your-weed" className={styles.primaryAction}>Find Your Weed</Link><Link href={VISIT_PATH} className={styles.secondaryAction}>Visit {store.storeName}</Link></div>
+        </section>
+
+        <section className={styles.section}>
+          <h2>Visit hub, 24-hour FAQ, and five flower tiers</h2>
+          <p>This North York page owns broad weed-dispensary intent for Jane Finch. Walk-in arrival stays on the visit hub. Open-now hours stay on the 24-hour FAQ. Each flower shelf has its own route.</p>
+          <SccHubLinks currentPath={store.ownerPath} heading="Cross-links from the North York weed page" />
         </section>
 
         <section className={styles.section}>
