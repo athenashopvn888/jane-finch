@@ -60,9 +60,9 @@ const FAQ_CATEGORIES = [
   {
     title: "Delivery",
     faqs: [
-      { q: "Does Jane Finch Cannabis offer delivery?", a: "Yes. The delivery menu is available daily from 10:00 a.m. to 10:00 p.m. with a $60 product minimum and a $10 delivery fee." },
-      { q: "How do I start a delivery order?", a: "Browse the delivery menu, then select LIVE ORDER to connect with the Jane Finch Cannabis dispatcher. The dispatcher confirms availability and delivery details." },
-      { q: "Are the store and delivery hours the same?", a: "No. The storefront is listed as open 24 hours. Delivery ordering hours are 10:00 a.m. to 10:00 p.m. daily." },
+      { q: "Does Jane Finch Cannabis offer delivery?", a: "Yes. Jane Finch Cannabis delivery runs daily from 10:00 a.m. to 10:00 p.m. with a $60 product minimum and a $10 delivery fee. That courier window is not 24-hour walk-in. Read the North York cannabis delivery page, then use the delivery menu." },
+      { q: "How do I start a delivery order?", a: "Browse the delivery menu, then select LIVE ORDER to connect with the Jane Finch Cannabis dispatcher. The dispatcher confirms availability and delivery details. Neighbourhood hours and FAQ are on /cannabis-delivery-north-york." },
+      { q: "Are the store and delivery hours the same?", a: "No. The storefront at 2728 Jane St is listed as open 24 hours. Delivery ordering hours are 10:00 a.m. to 10:00 p.m. daily — not overnight." },
     ],
   },
 ];
@@ -99,6 +99,8 @@ export default function FAQPage() {
             <Link href="/">homepage</Link>,{" "}
             <Link href="/weed-dispensary-north-york">North York store page</Link>, or{" "}
             <Link href={VISIT_PATH}>walk-in hub</Link>
+            , or the{" "}
+            <Link href="/cannabis-delivery-north-york">North York cannabis delivery page</Link>
             . Flower shelves:{" "}
             <Link href="/exotic-weed">Exotic Weed</Link>,{" "}
             <Link href="/premium-weed">Premium Weed</Link>,{" "}

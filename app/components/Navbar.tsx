@@ -28,6 +28,7 @@ const CATEGORY_LINKS = [
 const SUPPORT_LINKS = [
   { href: "/weed-dispensary-north-york", label: "North York Store" },
   { href: "/visit", label: "Visit" },
+  { href: "/cannabis-delivery-north-york", label: "North York Delivery" },
   { href: "/24-hour-dispensary-north-york", label: "24h FAQ" },
   { href: "/careers/budtender", label: "Hiring" },
   { href: "/resources", label: "Resources" },
@@ -63,7 +64,7 @@ export default function Navbar() {
   const isStoreMenuActive =
     menuLinks.some((link) => pathname === link.href) ||
     pathname.startsWith("/item/");
-  const isDeliveryActive = pathname === "/delivery";
+  const isDeliveryActive = pathname === "/delivery" || pathname === "/cannabis-delivery-north-york";
 
   const updateMenuRail = useCallback(() => {
     const rail = menuRailRef.current;

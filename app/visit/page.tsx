@@ -100,6 +100,7 @@ export default function VisitPage() {
             fee, and ordering hours from 10 a.m. to 10 p.m. It does not change the physical address
             and it is not a 24-hour courier. If you want to see the product and pay at the counter,
             walk in. If you want a drop-off during delivery hours, use the{" "}
+            <Link href="/cannabis-delivery-north-york">North York delivery page</Link> or the{" "}
             <Link href="/delivery">delivery menu</Link>.
           </p>
         </section>

@@ -1,5 +1,5 @@
-/** SCC Wave 1 hub graph for JFC01. Keep live `*-weed` canonicals; short `/exotic`…`/budget` already 301. */
-import { OPEN_NOW_PATH, VISIT_PATH } from "./nap";
+/** SCC hub graph for JFC01. Wave 2 adds the North York delivery LP; keep live `*-weed` canonicals. */
+import { DELIVERY_LP_PATH, OPEN_NOW_PATH, VISIT_PATH } from "./nap";
 
 export const WEED_OWNER_PATH = "/weed-dispensary-north-york";
 
@@ -61,6 +61,11 @@ export const HUB_PAGES = [
     href: OPEN_NOW_PATH,
     label: "24-hour North York FAQ",
     blurb: "Open-now hours truth for the walk-in counter.",
+  },
+  {
+    href: DELIVERY_LP_PATH,
+    label: "North York cannabis delivery",
+    blurb: "Jane Finch courier window 10 a.m.–10 p.m., not 24h walk-in.",
   },
 ] as const;
 
