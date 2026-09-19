@@ -99,6 +99,10 @@ export const SEO_PAGES: SeoPageData[] = [
       {
         "heading": "Confirm What Matters Today",
         "body": "Specific brands, carton options, and prices can change. Use this resource for the shopping path, then confirm current details with the menu or staff."
+      },
+      {
+        "heading": "Jane Finch Neighbourhood Page",
+        "body": "For Jane–Finch / Jane & Sheppard cigarette walk-in intent, use /native-cigarettes-jane-finch. This resource stays as a brand-preview page. The live menu remains /items/cigarettes."
       }
     ],
     "faqs": [
@@ -187,6 +191,7 @@ export const SEO_PAGES: SeoPageData[] = [
       { heading: "Puff Counts Identify Listings", body: "Several verified names include puff counts. Use those numbers to distinguish the listings, not as guarantees of duration, performance or superiority." },
       { heading: "Keep Nicotine and Cannabis Vape Routes Separate", body: "This adult-only Jane Finch Cannabis guide uses VAPE PENS products under /items/vapes. THC and cannabis vape products under /items/vape-disposables are excluded." },
       { heading: "Review the Current North York Category", body: "Before choosing, open /items/vapes and the individual product page for current supported details. This guide does not claim prices, stock or guaranteed availability." },
+      { heading: "Jane Finch Neighbourhood Page", body: "For Jane & Finch / North York nicotine vape intent, use /nicotine-vape-north-york. This resource stays as the six-card product guide. The live menu remains /items/vapes." },
     ],
     faqs: [
       { q: "Where should I check Jane Finch Cannabis’s current nicotine selection?", a: "Use /items/vapes. The six featured cards are verified starting points while the current category listing controls selection information." },

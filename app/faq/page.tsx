@@ -54,7 +54,15 @@ const FAQ_CATEGORIES = [
     faqs: [
       { q: "Does Jane Finch Cannabis list Native cigarettes?", a: "The cigarette menu may show Native smoke brands such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, and Canadian Classics Silver. Confirm current options through the menu or staff." },
       { q: "Are $25 cartons guaranteed?", a: "No. Where $25 carton-style listings are shown, confirm current price and listings through the menu or staff." },
-      { q: "Where should cigarette shoppers start?", a: "Open the cigarette category first, then use the store page for directions, contact options, and listed hours." },
+      { q: "Where should cigarette shoppers start?", a: "Open the Jane Finch Native cigarettes neighbourhood page, then the cigarette category, then the store page for directions, contact options, and listed hours." },
+    ],
+  },
+  {
+    title: "Nicotine Vape",
+    faqs: [
+      { q: "Does Jane Finch Cannabis sell nicotine vapes?", a: "Yes. Nicotine vapes have a dedicated category at 2728 Jane St, kept separate from THC vapes. Use the North York nicotine vape neighbourhood page, then /items/vapes. Adults 19+. Nicotine is addictive." },
+      { q: "Are nicotine vapes the same as THC vapes?", a: "No. Nicotine vapes stay under /items/vapes. THC vapes stay under /items/vape-disposables." },
+      { q: "Where should nicotine vape shoppers start?", a: "Open /nicotine-vape-north-york for neighbourhood intent, then the live nic-vape menu for current names." },
     ],
   },
   {
@@ -101,6 +109,10 @@ export default function FAQPage() {
             <Link href={VISIT_PATH}>walk-in hub</Link>
             , or the{" "}
             <Link href="/cannabis-delivery-north-york">North York cannabis delivery page</Link>
+            , the{" "}
+            <Link href="/native-cigarettes-jane-finch">Jane Finch Native cigarettes page</Link>
+            , or the{" "}
+            <Link href="/nicotine-vape-north-york">North York nicotine vape page</Link>
             . Flower shelves:{" "}
             <Link href="/exotic-weed">Exotic Weed</Link>,{" "}
             <Link href="/premium-weed">Premium Weed</Link>,{" "}

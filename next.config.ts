@@ -42,6 +42,7 @@ const nextConfig: NextConfig = {
       { source: "/info/weed-store-near-brampton", destination: "/weed-dispensary-north-york", permanent: true },
       { source: "/info/weed-store-near-mississauga", destination: "/weed-dispensary-north-york", permanent: true },
       { source: "/info/dispensary-near-me-york", destination: "/info/dispensary-near-me-north-york", permanent: true },
+      { source: "/24-hour-north-york-dispensary", destination: "/24-hour-dispensary-north-york", permanent: true },
     ];
   },
 };

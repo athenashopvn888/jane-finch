@@ -21,6 +21,8 @@ import {
   MAPS_CID_URL,
   MAPS_EMBED_URL,
   DELIVERY_LP_PATH,
+  NATIVE_CIG_LP_PATH,
+  NIC_VAPE_LP_PATH,
   OPEN_NOW_PATH,
   PHONE_DISPLAY,
   PHONE_INTL,
@@ -353,6 +355,8 @@ export default function HomePage() {
               <Link href={OPEN_NOW_PATH}>24-hour North York FAQ</Link>
               <Link href={VISIT_PATH}>2728 Jane St walk-in hub</Link>
               <Link href={DELIVERY_LP_PATH}>North York cannabis delivery</Link>
+              <Link href={NATIVE_CIG_LP_PATH}>Jane Finch Native cigarettes</Link>
+              <Link href={NIC_VAPE_LP_PATH}>North York nicotine vape</Link>
               <Link href="/exotic-weed">Exotic Weed</Link>
               <Link href="/premium-weed">Premium Weed</Link>
               <Link href="/aaa-weed">AAA+ Weed</Link>

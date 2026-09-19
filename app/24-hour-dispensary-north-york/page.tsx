@@ -4,10 +4,13 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import styles from "../components/GBPLandingPage.module.css";
 import {
+  DELIVERY_LP_PATH,
   FULL_ADDRESS,
   HOURS_LABEL,
   HOURS_SHORT,
   INTERSECTION,
+  NATIVE_CIG_LP_PATH,
+  NIC_VAPE_LP_PATH,
   OPEN_NOW_FAQS,
   OPEN_NOW_H1,
   OPEN_NOW_PATH,
@@ -71,9 +74,10 @@ export default function OpenNowFaqPage() {
         <section className={styles.section}>
           <h2>Walk-in hubs and five flower tiers</h2>
           <p>
-            This FAQ owns 24-hour / open-now walk-in questions. Delivery stays 10 a.m. to 10 p.m.
-            and is not a 24-hour courier. For the pin, use the visit hub. For flower shelves, use
-            the five tier pages.
+            This FAQ owns 24-hour / open-now walk-in questions for Jane Finch / North York.
+            Delivery stays 10 a.m. to 10 p.m. and is not a 24-hour courier. For the pin, use the
+            visit hub. For flower shelves, use the five tier pages. Native cigarettes and nicotine
+            vapes have their own neighbourhood pages.
           </p>
           <SccHubLinks currentPath={OPEN_NOW_PATH} heading="Cross-links from the 24-hour FAQ" />
         </section>
@@ -121,13 +125,29 @@ export default function OpenNowFaqPage() {
           <p>
             The pin is {STREET_ADDRESS}, North York, ON M3L 2G6, at {INTERSECTION} in the Jane–Finch
             corridor. Plaza parking is in front of the store. TTC buses run Jane Street and nearby
-            Finch Avenue.
+            Finch Avenue. Black Creek, Finch West, and Downsview walk-ins use this same Jane Street
+            door.
           </p>
           <p>
             Late-night arrival is the same door as daytime. Bring valid government photo ID. Adults
             19+ only. For parking, transit, and walk-in vs delivery, use the{" "}
             <Link href={VISIT_PATH}>2728 Jane St walk-in hub</Link>. Then come to the counter — no
             appointment.
+          </p>
+        </section>
+
+        <section className={styles.section}>
+          <h2>24-hour walk-in for flower, Native cigarettes, and nic vape</h2>
+          <p>
+            The 24-hour clock is the Jane Street counter. Flower tiers, the{" "}
+            <Link href={NATIVE_CIG_LP_PATH}>Jane Finch Native cigarettes page</Link>, and the{" "}
+            <Link href={NIC_VAPE_LP_PATH}>North York nicotine vape page</Link> do not change those
+            walk-in hours. Courier hours stay on the{" "}
+            <Link href={DELIVERY_LP_PATH}>North York cannabis delivery page</Link>.
+          </p>
+          <p>
+            A 24 hour dispensary search in North York should open this FAQ, then the homepage or
+            visit hub. Do not treat delivery LIVE ORDER as overnight.
           </p>
         </section>
 
@@ -162,6 +182,9 @@ export default function OpenNowFaqPage() {
             <Link href="/">Homepage</Link>
             <Link href="/weed-dispensary-north-york">North York store page</Link>
             <Link href={VISIT_PATH}>Walk-in hub</Link>
+            <Link href={NATIVE_CIG_LP_PATH}>Native cigarettes</Link>
+            <Link href={NIC_VAPE_LP_PATH}>Nicotine vape</Link>
+            <Link href={DELIVERY_LP_PATH}>North York delivery</Link>
             <span>Adults 19+</span>
           </div>
           <p>

@@ -66,6 +66,16 @@ export const weedOwner = {
       href: "/cannabis-delivery-north-york",
     },
     {
+      label: "Jane Finch Native Cigarettes",
+      description: "Neighbourhood page for the cigarette category at 2728 Jane St.",
+      href: "/native-cigarettes-jane-finch",
+    },
+    {
+      label: "North York Nicotine Vape",
+      description: "Dedicated nic-vape category, kept separate from THC vapes.",
+      href: "/nicotine-vape-north-york",
+    },
+    {
       label: "Contact & Hours",
       description: "Address, phone, and 24-hour walk-in details for Jane & Sheppard.",
       href: "/contact",
