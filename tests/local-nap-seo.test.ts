@@ -55,7 +55,7 @@ test("homepage and North York landing use unique title, meta, and H1", () => {
   assert.match(nap, /HOME_SEO_TITLE = "Jane Finch Cannabis \| Jane and Finch Dispensary North York"/);
   assert.match(nap, /GBP_SEO_TITLE = "Cannabis Store North York — Open Now at Jane & Finch"/);
   assert.match(nap, /VISIT_SEO_TITLE = "Visit Jane Finch Cannabis — 2728 Jane St Walk-In Hub"/);
-  assert.match(nap, /OPEN_NOW_SEO_TITLE = "24-Hour North York Dispensary — Jane Finch Open-Now FAQ"/);
+  assert.match(nap, /OPEN_NOW_SEO_TITLE = "24-Hour Jane Finch Dispensary — North York Open-Now FAQ"/);
   assert.notEqual(
     nap.match(/HOME_SEO_TITLE = "([^"]+)"/)?.[1],
     nap.match(/GBP_SEO_TITLE = "([^"]+)"/)?.[1],

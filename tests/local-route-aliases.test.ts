@@ -14,6 +14,7 @@ const ALIAS_REDIRECTS = [
   ["/info/weed-store-near-brampton", "/weed-dispensary-north-york"],
   ["/info/weed-store-near-mississauga", "/weed-dispensary-north-york"],
   ["/info/dispensary-near-me-york", "/info/dispensary-near-me-north-york"],
+  ["/24-hour-north-york-dispensary", "/24-hour-dispensary-north-york"],
 ] as const;
 
 test("legacy aliases are excluded while canonical North York pages remain discoverable", async () => {

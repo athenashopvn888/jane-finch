@@ -21,6 +21,8 @@ import {
   MAPS_CID_URL,
   MAPS_EMBED_URL,
   DELIVERY_LP_PATH,
+  NATIVE_CIG_LP_PATH,
+  NIC_VAPE_LP_PATH,
   OPEN_NOW_PATH,
   PHONE_DISPLAY,
   PHONE_INTL,
@@ -81,12 +83,12 @@ const BENTO_TIERS = [
 
 /* ── Explore Categories Config (New Banners) ── */
 const EXPLORE_CATEGORIES = [
-  { name: "Nicotine Vape", slug: "items/vapes", banner: "/banners/01_Vape_Pens.webp", icon: "💨" },
+  { name: "Nicotine Vape", slug: "nicotine-vape-north-york", banner: "/banners/01_Vape_Pens.webp", icon: "💨" },
   { name: "THC Vape", slug: "items/vape-disposables", banner: "/banners/02_Vape_Disposable.webp", icon: "💨" },
   { name: "Concentrates", slug: "items/concentrates", banner: "/banners/03_Concentrates.webp", icon: "💎" },
   { name: "Pre-Rolls", slug: "items/prerolls", banner: "/banners/04_Pre_Rolls.webp", icon: "🚬" },
   { name: "Accessories", slug: "items/add-ons", banner: "/banners/05_Accessories.webp", icon: "➕" },
-  { name: "Cigarettes", slug: "items/cigarettes", banner: "/banners/native-cigarette-offer-20260822.webp", icon: "🏷️" },
+  { name: "Cigarettes", slug: "native-cigarettes-jane-finch", banner: "/banners/native-cigarette-offer-20260822.webp", icon: "🏷️" },
   { name: "Magic Stuff", slug: "items/magic", banner: "/banners/09_Magic_Stuff.webp", icon: "🍄" },
 ];
 
@@ -307,7 +309,7 @@ export default function HomePage() {
               <Link href="/exotic-weed" className={styles.homeMenuCta}>STORE MENU</Link>
               <Link href="/delivery" className={`${styles.homeMenuCta} ${styles.homeDeliveryCta}`}>DELIVERY MENU</Link>
             </div>
-            <SccHubLinks currentPath="/" heading="Visit, North York store, and 24-hour FAQ" includeTiers={false} />
+            <SccHubLinks currentPath="/" heading="24-hour, delivery, Native cigarettes, and nic-vape" includeTiers={false} />
           </div>
 
           {/* Bento Grid */}
@@ -353,6 +355,8 @@ export default function HomePage() {
               <Link href={OPEN_NOW_PATH}>24-hour North York FAQ</Link>
               <Link href={VISIT_PATH}>2728 Jane St walk-in hub</Link>
               <Link href={DELIVERY_LP_PATH}>North York cannabis delivery</Link>
+              <Link href={NATIVE_CIG_LP_PATH}>Jane Finch Native cigarettes</Link>
+              <Link href={NIC_VAPE_LP_PATH}>North York nicotine vape</Link>
               <Link href="/exotic-weed">Exotic Weed</Link>
               <Link href="/premium-weed">Premium Weed</Link>
               <Link href="/aaa-weed">AAA+ Weed</Link>

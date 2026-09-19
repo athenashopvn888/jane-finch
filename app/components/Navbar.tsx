@@ -30,6 +30,8 @@ const SUPPORT_LINKS = [
   { href: "/visit", label: "Visit" },
   { href: "/cannabis-delivery-north-york", label: "North York Delivery" },
   { href: "/24-hour-dispensary-north-york", label: "24h FAQ" },
+  { href: "/native-cigarettes-jane-finch", label: "Native Cigarettes" },
+  { href: "/nicotine-vape-north-york", label: "Nicotine Vape NY" },
   { href: "/careers/budtender", label: "Hiring" },
   { href: "/resources", label: "Resources" },
   { href: "/faq", label: "FAQ" },

@@ -1,5 +1,5 @@
-/** SCC hub graph for JFC01. Wave 2 adds the North York delivery LP; keep live `*-weed` canonicals. */
-import { DELIVERY_LP_PATH, OPEN_NOW_PATH, VISIT_PATH } from "./nap";
+/** SCC hub graph for JFC01. Wave 3 adds Jane Finch Native cig + North York nic-vape LPs. */
+import { DELIVERY_LP_PATH, NATIVE_CIG_LP_PATH, NIC_VAPE_LP_PATH, OPEN_NOW_PATH, VISIT_PATH } from "./nap";
 
 export const WEED_OWNER_PATH = "/weed-dispensary-north-york";
 
@@ -59,13 +59,23 @@ export const HUB_PAGES = [
   },
   {
     href: OPEN_NOW_PATH,
-    label: "24-hour North York FAQ",
-    blurb: "Open-now hours truth for the walk-in counter.",
+    label: "24-hour Jane Finch FAQ",
+    blurb: "Walk-in 24h / open-now owner for Jane–Finch / North York.",
   },
   {
     href: DELIVERY_LP_PATH,
     label: "North York cannabis delivery",
     blurb: "Jane Finch courier window 10 a.m.–10 p.m., not 24h walk-in.",
+  },
+  {
+    href: NATIVE_CIG_LP_PATH,
+    label: "Jane Finch Native cigarettes",
+    blurb: "Neighbourhood LP for the cigarette category at 2728 Jane St.",
+  },
+  {
+    href: NIC_VAPE_LP_PATH,
+    label: "North York nicotine vape",
+    blurb: "Dedicated nic-vape category, separate from THC vapes.",
   },
 ] as const;
 

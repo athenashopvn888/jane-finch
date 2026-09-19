@@ -182,8 +182,11 @@ export default function VisitPage() {
             <Link href="/aa-weed">AA Weed</Link>, or{" "}
             <Link href="/budget-weed">Budget Weed</Link>
             {" "}— or the{" "}
-            <Link href="/weed-dispensary-north-york">North York walk-in page</Link>. Keep product
-            browsing secondary to the address.
+            <Link href="/weed-dispensary-north-york">North York walk-in page</Link>. Native
+            cigarettes:{" "}
+            <Link href="/native-cigarettes-jane-finch">Jane Finch Native cigarettes</Link>. Nicotine
+            vapes: <Link href="/nicotine-vape-north-york">North York nicotine vape</Link>. Keep
+            product browsing secondary to the address.
           </p>
         </section>
       </main>

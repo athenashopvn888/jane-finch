@@ -17,6 +17,7 @@
     "test:local-nap": "node --experimental-strip-types --experimental-specifier-resolution=node --test tests/local-nap-seo.test.ts",
     "test:scc-wave1": "node --experimental-strip-types --experimental-specifier-resolution=node --test tests/scc-wave1-linking.test.ts",
     "test:scc-wave2": "node --experimental-strip-types --experimental-specifier-resolution=node --test tests/scc-wave2-delivery.test.ts",
+    "test:scc-wave3": "node --experimental-strip-types --experimental-specifier-resolution=node --test tests/scc-wave3-keyword-gap.test.ts",
     "verify:delivery": "node scripts/verify-delivery-menu.mjs",
     "verify:delivery-images": "node scripts/verify-athena-delivery-images.mjs",
     "verify:ready-workflow": "node scripts/verify-ready-workflow.mjs",

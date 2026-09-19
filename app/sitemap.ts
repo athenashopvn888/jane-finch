@@ -14,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/visit`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/24-hour-dispensary-north-york`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/cannabis-delivery-north-york`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE}/native-cigarettes-jane-finch`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE}/nicotine-vape-north-york`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/weed-delivery-north-york`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/weed-delivery-vaughan`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/resources/local-guides/york-university-cannabis-guide`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },

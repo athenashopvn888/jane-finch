@@ -33,7 +33,7 @@ export function GBPLandingPage() {
         <section className={styles.section}>
           <h2>Jane–Finch walk-in vs North York delivery</h2>
           <p>A cannabis store near me search should open this Jane Street counter. Walk in at {FULL_ADDRESS} any hour — no appointment. Delivery is a separate 10 a.m. to 10 p.m. menu and does not move the store pin.</p>
-          <p>Use the <Link href={VISIT_PATH}>walk-in hub</Link> for arrival notes, the <Link href={OPEN_NOW_PATH}>24-hour open-now FAQ</Link> for hours truth, the <Link href="/cannabis-delivery-north-york">North York delivery page</Link> for courier hours, or the <Link href="/">homepage</Link> for the current store menu. Adults 19+ with valid government photo ID.</p>
+          <p>Use the <Link href={VISIT_PATH}>walk-in hub</Link> for arrival notes, the <Link href={OPEN_NOW_PATH}>24-hour open-now FAQ</Link> for hours truth, the <Link href="/cannabis-delivery-north-york">North York delivery page</Link> for courier hours, the <Link href="/native-cigarettes-jane-finch">Jane Finch Native cigarettes page</Link>, the <Link href="/nicotine-vape-north-york">North York nicotine vape page</Link>, or the <Link href="/">homepage</Link> for the current store menu. Adults 19+ with valid government photo ID.</p>
         </section>
 
         <section className={styles.section}>

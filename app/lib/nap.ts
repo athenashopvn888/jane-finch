@@ -20,10 +20,15 @@ export const MAPS_EMBED_URL =
 
 export const VISIT_PATH = "/visit";
 export const OPEN_NOW_PATH = "/24-hour-dispensary-north-york";
+export const OPEN_NOW_ALIAS_PATH = "/24-hour-north-york-dispensary";
 export const DELIVERY_LP_PATH = "/cannabis-delivery-north-york";
 export const DELIVERY_MENU_PATH = "/delivery";
 export const DELIVERY_HOURS_LABEL = "Delivery 10 a.m.–10 p.m. daily";
 export const DELIVERY_HOURS_SHORT = "10 a.m.–10 p.m.";
+export const NATIVE_CIG_LP_PATH = "/native-cigarettes-jane-finch";
+export const NATIVE_CIG_MENU_PATH = "/items/cigarettes";
+export const NIC_VAPE_LP_PATH = "/nicotine-vape-north-york";
+export const NIC_VAPE_MENU_PATH = "/items/vapes";
 
 /*
  * B16 eng note: www→apex host consolidation is a separate ticket.
@@ -47,15 +52,25 @@ export const VISIT_SEO_DESCRIPTION =
   "How to walk in at Jane Finch Cannabis, 2728 Jane St, North York. Jane–Finch pin, hours, parking, TTC, and walk-in vs delivery. Call +1 (437) 524-9336. Adults 19+.";
 export const VISIT_H1 = "Visit Jane Finch Cannabis at 2728 Jane St";
 
-export const OPEN_NOW_SEO_TITLE = "24-Hour North York Dispensary — Jane Finch Open-Now FAQ";
+export const OPEN_NOW_SEO_TITLE = "24-Hour Jane Finch Dispensary — North York Open-Now FAQ";
 export const OPEN_NOW_SEO_DESCRIPTION =
-  "24 hour dispensary in North York at 2728 Jane St, Jane Finch. Open now 24/7 for walk-in. Hours truth, arrival, and FAQ. Call +1 (437) 524-9336. Adults 19+.";
-export const OPEN_NOW_H1 = "24-Hour North York Dispensary — Jane Finch Open Now";
+  "24 hour dispensary at Jane Finch Cannabis, 2728 Jane St, North York. Walk-in open now 24/7 at Jane–Finch / Jane & Sheppard. Delivery stays 10 a.m.–10 p.m. Call +1 (437) 524-9336. Adults 19+.";
+export const OPEN_NOW_H1 = "24-Hour Jane Finch Dispensary — North York Open Now";
 
 export const DELIVERY_SEO_TITLE = "Jane Finch Cannabis Delivery in North York — 10 a.m. to 10 p.m.";
 export const DELIVERY_SEO_DESCRIPTION =
   "Cannabis delivery from Jane Finch Cannabis at 2728 Jane St, North York. LIVE ORDER 10 a.m.–10 p.m. daily — not 24-hour delivery. $60 minimum, $10 fee. Call +1 (437) 524-9336. Adults 19+.";
 export const DELIVERY_H1 = "Cannabis Delivery from Jane Finch in North York";
+
+export const NATIVE_CIG_SEO_TITLE = "Native Cigarettes Jane Finch — 2728 Jane St Walk-In";
+export const NATIVE_CIG_SEO_DESCRIPTION =
+  "Native cigarettes at Jane Finch Cannabis, 2728 Jane St, North York. Jane–Finch / Jane & Sheppard walk-in for the cigarette category. Adults 19+. Call +1 (437) 524-9336. Check the current menu before you travel.";
+export const NATIVE_CIG_H1 = "Native Cigarettes at Jane Finch";
+
+export const NIC_VAPE_SEO_TITLE = "Nicotine Vape North York — Jane Finch Cannabis";
+export const NIC_VAPE_SEO_DESCRIPTION =
+  "Nicotine vape at Jane Finch Cannabis, 2728 Jane St, North York. Dedicated nic-vape category, kept separate from THC vapes. Adults 19+. Nicotine is addictive. Call +1 (437) 524-9336.";
+export const NIC_VAPE_H1 = "Nicotine Vape at Jane & Finch";
 
 export const HOME_FAQS = [
   {
@@ -129,6 +144,18 @@ export const OPEN_NOW_FAQS = [
     q: "Do I need an appointment for a late-night walk-in?",
     a: "No. Adults 19+ with valid government photo ID can walk in any hour. Use the visit hub for parking and transit, then come to 2728 Jane St.",
   },
+  {
+    q: "Is the Jane–Finch / Jane & Sheppard counter open at 2 a.m.?",
+    a: "Yes. Walk-in at 2728 Jane St stays open overnight. Jane Finch Cannabis is a 24 hour dispensary in North York. That clock is for the Jane Street counter only.",
+  },
+  {
+    q: "Is 24-hour for walk-in or for Jane Finch delivery?",
+    a: "24-hour is walk-in only. Delivery ordering runs 10 a.m. to 10 p.m. daily and is not a 24-hour courier. Use the North York delivery page for courier hours.",
+  },
+  {
+    q: "Can I walk in 24 hours for Native cigarettes or nicotine vapes?",
+    a: "Yes, when those categories are listed. The 24-hour clock is the Jane Street walk-in. Use the Jane Finch Native cigarettes page or the North York nicotine vape page for the category path, then confirm the live menu.",
+  },
 ] as const;
 
 /** Wave 2 delivery FAQPage — neighbourhood owner for Jane Finch / North York courier intent. Walk-in 24h stays on /visit and the 24-hour FAQ. */
@@ -160,6 +187,54 @@ export const DELIVERY_FAQS = [
   {
     q: "What is the Jane Finch Cannabis delivery minimum and fee?",
     a: "Site terms are a $60 product minimum and a $10 delivery fee. Eligibility, stock, and timing are confirmed by the dispatcher before checkout. Adults 19+ with valid government photo ID.",
+  },
+] as const;
+
+/** Wave 3 Native cigarettes FAQPage — Jane Finch / Jane & Sheppard neighbourhood owner. Menu truth stays on /items/cigarettes. */
+export const NATIVE_CIG_FAQS = [
+  {
+    q: "Does Jane Finch Cannabis sell Native cigarettes?",
+    a: "Yes. Jane Finch Cannabis lists Native cigarettes and other smoke items in the cigarette category. Open the current cigarette menu, then walk in at 2728 Jane St, North York. Brands and carton notes can change. Adults 19+.",
+  },
+  {
+    q: "Where do I buy Native cigarettes in Jane Finch / North York?",
+    a: "The walk-in counter is Jane Finch Cannabis at 2728 Jane St, North York, ON M3L 2G6 — Jane St & Sheppard Ave W in the Jane–Finch corridor. Call +1 (437) 524-9336 if one listing is the reason for the trip.",
+  },
+  {
+    q: "Are listed cigarette brands or $25 cartons guaranteed?",
+    a: "No. The cigarette category may show carton-style listings and brand names such as Canadian Lights, Canadian Full, BB Lights, or Canadian Classics Silver when they are posted. Confirm today’s names and prices on the live menu or with staff.",
+  },
+  {
+    q: "Is this a medical or #1 Native cigarettes page?",
+    a: "No. This is a retail neighbourhood page for adults 19+ at the Jane Finch counter. It does not make medical claims, rank the store, or invent reviews. Tobacco and nicotine products are addictive.",
+  },
+  {
+    q: "Do nicotine pouches or grabba have their own Jane Finch landing pages?",
+    a: "Not on this wave. When pouches or grabba are listed, they appear on the cigarette category menu. This page owns Native cigarette neighbourhood intent for Jane Finch.",
+  },
+] as const;
+
+/** Wave 3 nicotine vape FAQPage — North York / Jane–Finch owner. Menu truth stays on /items/vapes. */
+export const NIC_VAPE_FAQS = [
+  {
+    q: "Does Jane Finch Cannabis sell nicotine vapes in North York?",
+    a: "Yes. Nicotine vapes have a dedicated category, separate from THC vapes. Open /items/vapes for current names and formats, then walk in at 2728 Jane St. Adults 19+. Nicotine is addictive.",
+  },
+  {
+    q: "Where should a Jane & Finch nicotine vape search go?",
+    a: "Use this neighbourhood page for Jane–Finch / North York intent, then the nicotine vape menu for listings. The pin is 2728 Jane St, North York, ON M3L 2G6 at Jane St & Sheppard Ave W. Call +1 (437) 524-9336 before a special trip.",
+  },
+  {
+    q: "Are nicotine vapes the same as THC vapes at Jane Finch?",
+    a: "No. Nicotine vapes stay under /items/vapes. THC and cannabis vapes stay under /items/vape-disposables. Compare those lists separately so the counter visit stays clear.",
+  },
+  {
+    q: "Are Geek, Level X, NEXA, or OVNS listings guaranteed in stock?",
+    a: "No. Those names appear on the live nicotine vape menu when posted. This page does not promise stock, puff-count performance, or a price. Check the current category before you travel.",
+  },
+  {
+    q: "Does Jane Finch have a separate nicotine pouches landing page?",
+    a: "No dedicated pouches LP on this wave. Pouches such as VELO, PABLO, KILLA, or ZYN, when listed, sit on the cigarette category. This page is for the sold nicotine vape category only.",
   },
 ] as const;
 

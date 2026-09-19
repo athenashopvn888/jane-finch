@@ -157,6 +157,20 @@ export default async function ItemsCategoryPage({
             <p className={styles.visitText}>
               2728 Jane St, North York, ON M3L 2G6 · Open 24 Hours
             </p>
+            {catInfo.key === "CIGARETTES" ? (
+              <p className={styles.visitText}>
+                <Link href="/native-cigarettes-jane-finch">Jane Finch Native cigarettes neighbourhood page</Link>
+                {" · "}
+                <Link href="/24-hour-dispensary-north-york">24-hour North York FAQ</Link>
+              </p>
+            ) : null}
+            {catInfo.key === "VAPE PENS" ? (
+              <p className={styles.visitText}>
+                <Link href="/nicotine-vape-north-york">North York nicotine vape neighbourhood page</Link>
+                {" · "}
+                <Link href="/24-hour-dispensary-north-york">24-hour North York FAQ</Link>
+              </p>
+            ) : null}
           </div>
         </div>
       </section>
