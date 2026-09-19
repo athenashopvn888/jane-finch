@@ -97,9 +97,7 @@ export default function NicotineVapeNorthYorkPage() {
             <Link href={NIC_VAPE_MENU_PATH}>/items/vapes</Link>. Adults 19+. Nicotine is addictive.
           </p>
           <p>
-            The walk-in counter is {HOURS_LABEL.toLowerCase()}. Delivery is a separate 10 a.m.–10
-            p.m. window and is not a 24-hour nic-vape courier. Call {PHONE_DISPLAY} if one listed
-            device is the reason you are coming in.
+            The walk-in counter is {HOURS_LABEL.toLowerCase()}. Delivery is a separate 10 a.m.–10 p.m. window and is not a 24-hour nic-vape courier. Call {PHONE_DISPLAY} if one listed device is the reason you are coming in.
           </p>
         </section>
 
