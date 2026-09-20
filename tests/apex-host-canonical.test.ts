@@ -27,6 +27,7 @@ function walkSourceFiles(dir: string, files: string[] = []) {
 test("primary host is apex and www 301s to apex for all paths", async () => {
   assert.equal(SITE_ORIGIN, APEX_ORIGIN);
   assert.match(read("app/lib/nap.ts"), /SITE_ORIGIN = "https:\/\/janefinchcannabis\.ca"/);
+  assert.match(read("next.config.ts"), /const APEX_ORIGIN = "https:\/\/janefinchcannabis\.ca"/);
 
   const redirects = await nextConfig.redirects!();
   const wwwRedirects = redirects.filter((redirect) =>

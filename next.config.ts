@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
-import { SITE_ORIGIN } from "./app/lib/nap";
 
+const APEX_ORIGIN = "https://janefinchcannabis.ca";
 const WWW_HOST = "www.janefinchcannabis.ca";
 const wwwHost = [{ type: "host" as const, value: WWW_HOST }];
 
@@ -22,19 +22,19 @@ const nextConfig: NextConfig = {
       {
         source: "/:path+/",
         has: wwwHost,
-        destination: `${SITE_ORIGIN}/:path+`,
+        destination: `${APEX_ORIGIN}/:path+`,
         statusCode: 301,
       },
       {
         source: "/",
         has: wwwHost,
-        destination: `${SITE_ORIGIN}/`,
+        destination: `${APEX_ORIGIN}/`,
         statusCode: 301,
       },
       {
         source: "/:path+",
         has: wwwHost,
-        destination: `${SITE_ORIGIN}/:path+`,
+        destination: `${APEX_ORIGIN}/:path+`,
         statusCode: 301,
       },
       { source: "/exotic", destination: "/exotic-weed", permanent: true },
