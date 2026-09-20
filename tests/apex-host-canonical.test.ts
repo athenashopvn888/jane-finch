@@ -69,8 +69,10 @@ test("canonical, sitemap, robots, and JSON-LD hosts use SITE_ORIGIN apex", () =>
   assert.match(read("app/cannabis-delivery-north-york/page.tsx"), /canonical: `\$\{SITE_ORIGIN\}\$\{DELIVERY_LP_PATH\}`/);
   assert.match(read("app/layout.tsx"), /metadataBase: new URL\(SITE_ORIGIN\)/);
   assert.match(read("app/resources/resourceData.ts"), /export const SITE_URL = SITE_ORIGIN/);
-  assert.match(read("app/lib/categoryStructuredData.ts"), /import \{ SITE_ORIGIN \} from "\.\/nap"/);
-  assert.match(read("app/lib/tierStructuredData.ts"), /import \{ SITE_ORIGIN \} from "\.\/nap"/);
+  assert.match(read("app/[tier]/page.tsx"), /import \{ faqJsonLd, SITE_ORIGIN \} from "\.\.\/lib\/nap"/);
+  assert.match(read("app/lib/collectionPageSchema.ts"), /export const SITE_ORIGIN = "https:\/\/janefinchcannabis\.ca"/);
+  assert.match(read("app/lib/tierStructuredData.ts"), /from "\.\/collectionPageSchema"/);
+  assert.match(read("app/lib/categoryStructuredData.ts"), /from "\.\/collectionPageSchema"/);
 });
 
 test("app source does not claim www as the public host", () => {

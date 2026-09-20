@@ -13,6 +13,7 @@ import {
 } from "../lib/products";
 import { TIER_SEO } from "../lib/tierSeoContent";
 import { buildTierCollectionJsonLd } from "../lib/tierStructuredData";
+import { serializeJsonLd } from "../lib/collectionPageSchema";
 import { faqJsonLd, SITE_ORIGIN } from "../lib/nap";
 import SccHubLinks from "../components/SccHubLinks";
 import tierCopyData from "../lib/tierCopy.generated.json";
@@ -43,6 +44,7 @@ export async function generateMetadata({
     openGraph: {
       title: seo?.seoTitle || `${tierInfo.config.name} in North York | Jane Finch Cannabis`,
       description: seo?.seoIntro || `Explore the ${tierInfo.config.name} Cannabis Flower collection from Jane Finch Cannabis in North York.`,
+      url: `${SITE_ORIGIN}/${tierSlug}`,
     },
   };
 }
@@ -68,7 +70,7 @@ export default async function TierPage({
   const displayFlowers = [...saleFlowers, ...regularFlowers];
   const tierJsonLd = buildTierCollectionJsonLd({
     canonicalPath: `/${tierSlug}`,
-    name: seo?.seoTitle || config.name,
+    name: seo?.h1 || config.name,
     description: seo?.seoIntro || `${config.name} cannabis flower at Jane Finch Cannabis in North York.`,
     flowers: displayFlowers,
   });
@@ -81,9 +83,9 @@ export default async function TierPage({
 
   return (
     <>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(tierJsonLd) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(tierJsonLd) }} />
     {tierFaqJsonLd ? (
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(tierFaqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(tierFaqJsonLd) }} />
     ) : null}
     <main className={styles.main}>
       <Navbar />
