@@ -1,3 +1,4 @@
+import { SITE_ORIGIN } from "../lib/nap";
 import pinkyContent from "./pinkyResourceContent.json";
 
 export type ResourceAuthor = {
@@ -54,7 +55,7 @@ export type ResourcePage = {
   faqs: ResourceFaq[];
 };
 
-export const SITE_URL = "https://www.janefinchcannabis.ca";
+export const SITE_URL = SITE_ORIGIN;
 export const STORE_NAME = "Jane Finch Cannabis";
 export const STORE_ROUTE = "/weed-dispensary-north-york";
 

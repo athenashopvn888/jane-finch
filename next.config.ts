@@ -1,4 +1,8 @@
 import type { NextConfig } from "next";
+import { SITE_ORIGIN } from "./app/lib/nap";
+
+const WWW_HOST = "www.janefinchcannabis.ca";
+const wwwHost = [{ type: "host" as const, value: WWW_HOST }];
 
 const nextConfig: NextConfig = {
   images: {
@@ -14,6 +18,25 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Primary host is apex. 301 www → apex for all paths, including trailing-slash hygiene.
+      {
+        source: "/:path+/",
+        has: wwwHost,
+        destination: `${SITE_ORIGIN}/:path+`,
+        statusCode: 301,
+      },
+      {
+        source: "/",
+        has: wwwHost,
+        destination: `${SITE_ORIGIN}/`,
+        statusCode: 301,
+      },
+      {
+        source: "/:path+",
+        has: wwwHost,
+        destination: `${SITE_ORIGIN}/:path+`,
+        statusCode: 301,
+      },
       { source: "/exotic", destination: "/exotic-weed", permanent: true },
       { source: "/premium", destination: "/premium-weed", permanent: true },
       { source: "/aaa", destination: "/aaa-weed", permanent: true },

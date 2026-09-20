@@ -31,10 +31,10 @@ export const NIC_VAPE_LP_PATH = "/nicotine-vape-north-york";
 export const NIC_VAPE_MENU_PATH = "/items/vapes";
 
 /*
- * B16 eng note: www→apex host consolidation is a separate ticket.
- * Do not add slash-duplicate routes (keep /weed-dispensary-north-york and
- * /24-hour-dispensary-north-york without trailing-slash twins). GBP Website
- * stays the homepage root at SITE_ORIGIN.
+ * JFC01: primary host is apex SITE_ORIGIN. www.janefinchcannabis.ca 301s to
+ * apex for all paths (see next.config.ts). Do not add slash-duplicate routes
+ * (keep /weed-dispensary-north-york and /24-hour-dispensary-north-york without
+ * trailing-slash twins). GBP Website stays the homepage root at SITE_ORIGIN.
  */
 
 export const HOME_SEO_TITLE = "Jane Finch Cannabis | Jane and Finch Dispensary North York";
