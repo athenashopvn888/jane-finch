@@ -13,7 +13,7 @@ import {
 } from "../lib/products";
 import { TIER_SEO } from "../lib/tierSeoContent";
 import { buildTierCollectionJsonLd } from "../lib/tierStructuredData";
-import { faqJsonLd } from "../lib/nap";
+import { faqJsonLd, SITE_ORIGIN } from "../lib/nap";
 import SccHubLinks from "../components/SccHubLinks";
 import tierCopyData from "../lib/tierCopy.generated.json";
 import styles from "./tier.module.css";
@@ -38,7 +38,7 @@ export async function generateMetadata({
     title: { absolute: seo?.seoTitle || `${tierInfo.config.name} in North York | Jane Finch Cannabis` },
     description: seo?.seoIntro || `Browse ${tierInfo.config.name} from Jane Finch Cannabis in North York and explore the Cannabis Flower information presented with each selection.`,
     alternates: {
-      canonical: `https://www.janefinchcannabis.ca/${tierSlug}`,
+      canonical: `${SITE_ORIGIN}/${tierSlug}`,
     },
     openGraph: {
       title: seo?.seoTitle || `${tierInfo.config.name} in North York | Jane Finch Cannabis`,

@@ -6,10 +6,9 @@ import Footer from "../../components/Footer";
 import { allItems, CATEGORY_CONFIG, type ItemProduct } from "../../lib/products";
 import { getItemData } from "../../lib/itemData";
 import { getItemPriceDisplay } from "../../lib/itemPricing";
+import { SITE_ORIGIN } from "../../lib/nap";
 import Magnifier from "../../components/Magnifier";
 import styles from "../../flower/[slug]/flower.module.css";
-
-const SITE_ORIGIN = "https://www.janefinchcannabis.ca";
 
 /* -- Pre-generate all item pages -- */
 export function generateStaticParams() {

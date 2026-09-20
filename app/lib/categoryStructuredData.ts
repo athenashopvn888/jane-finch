@@ -1,4 +1,4 @@
-const SITE_ORIGIN = "https://www.janefinchcannabis.ca";
+import { SITE_ORIGIN } from "./nap";
 
 export function buildCategoryCollectionJsonLd({ canonicalPath, name, description, items }: { canonicalPath: string; name: string; description: string; items: Array<{ name: string; slug: string }> }) {
   const url = `${SITE_ORIGIN}${canonicalPath}`;

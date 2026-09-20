@@ -8,6 +8,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { SEO_PAGES, getSeoPageBySlug } from "../../lib/seoPages";
 import { TIER_CONFIG } from "../../lib/products";
+import { SITE_ORIGIN } from "../../lib/nap";
 import styles from "./seo.module.css";
 
 /* ── Generate all SEO pages ── */
@@ -25,15 +26,11 @@ export async function generateMetadata({
   const page = getSeoPageBySlug(slug);
   if (!page) return {};
 
-  const canonicalHost = slug === "nicotine-vapes-north-york"
-    ? "https://www.janefinchcannabis.ca"
-    : "https://janefinchcannabis.ca";
-
   return {
     title: page.absoluteTitle ? { absolute: page.title } : page.title,
     description: page.metaDescription,
     alternates: {
-      canonical: `${canonicalHost}/info/${slug}`,
+      canonical: `${SITE_ORIGIN}/info/${slug}`,
     },
   };
 }

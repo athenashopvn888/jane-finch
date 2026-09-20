@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SITE_ORIGIN } from "../lib/nap";
 
 const areas = ["North York", "Toronto", "Vaughan", "Etobicoke", "Brampton", "Mississauga"];
 
@@ -6,11 +7,11 @@ export function DeliveryCoverage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://www.janefinchcannabis.ca/weed-dispensary-north-york/#delivery-service",
+    "@id": `${SITE_ORIGIN}/weed-dispensary-north-york/#delivery-service`,
     name: "Jane Finch Cannabis delivery coverage",
     serviceType: "Cannabis delivery information",
-    provider: { "@id": "https://www.janefinchcannabis.ca/#store" },
-    url: "https://www.janefinchcannabis.ca/cannabis-delivery-north-york",
+    provider: { "@id": `${SITE_ORIGIN}/#store` },
+    url: `${SITE_ORIGIN}/cannabis-delivery-north-york`,
     areaServed: [
       { "@type": "GeoCircle", geoMidpoint: { "@type": "GeoCoordinates", latitude: 43.7432199, longitude: -79.5144264 }, geoRadius: 50000 },
       ...areas.map((name) => ({ "@type": "City", name })),

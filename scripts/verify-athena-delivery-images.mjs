@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 
 const storeId = "JFC";
-const storefrontBaseUrl = "https://www.janefinchcannabis.ca";
+const storefrontBaseUrl = "https://janefinchcannabis.ca";
 const catalogResponse = await fetch(`https://milestone-1-demo.vercel.app/api/catalog?store=${storeId}`);
 assert.equal(catalogResponse.status, 200, "SOD catalog must return 200");
 const catalog = await catalogResponse.json();

@@ -30,7 +30,7 @@ test("all five tier owners use Tier Name plus Weed and weed-bearing canonicals",
     assert.ok(footer.includes(`href="/${slug}">${name}<`), `${name} footer link missing`);
     assert.ok(redirects.includes(`source: "/${legacy}", destination: "/${slug}", permanent: true`), `${legacy} redirect missing`);
   }
-  assert.match(tierPage, /https:\/\/www\.janefinchcannabis\.ca\/\$\{tierSlug\}/);
+  assert.match(tierPage, /canonical: `\$\{SITE_ORIGIN\}\/\$\{tierSlug\}`/);
   assert.match(tierCopy, /h1: "Exotic Weed & Cannabis Flower in North York"/);
   assert.match(tierCopy, /h1: "Premium Weed at Jane & Sheppard"/);
   assert.match(tierCopy, /h1: "AAA\+ Weed at 2728 Jane St"/);

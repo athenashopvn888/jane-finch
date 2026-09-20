@@ -1,6 +1,5 @@
 import type { FlowerProduct } from "./products";
-
-const SITE_ORIGIN = "https://www.janefinchcannabis.ca";
+import { SITE_ORIGIN } from "./nap";
 
 export function buildTierCollectionJsonLd({ canonicalPath, name, description, flowers }: {
   canonicalPath: string;

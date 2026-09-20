@@ -15,6 +15,7 @@ import {
 } from "../../lib/products";
 import styles from "./items.module.css";
 import { buildCategoryCollectionJsonLd } from "../../lib/categoryStructuredData";
+import { SITE_ORIGIN } from "../../lib/nap";
 import seoContent from "../../lib/seoContent.generated.json";
 
 /* ── Generate all category pages ── */
@@ -37,7 +38,7 @@ export async function generateMetadata({
     title: { absolute: catInfo.config.seoTitle || `${catInfo.config.name} — ${items.length} Products` },
     description: catInfo.config.seoIntro || `Shop ${items.length} ${catInfo.config.name.toLowerCase()} at Jane Finch Cannabis.`,
     alternates: {
-      canonical: `https://www.janefinchcannabis.ca/items/${catSlug}`,
+      canonical: `${SITE_ORIGIN}/items/${catSlug}`,
     },
   };
 }

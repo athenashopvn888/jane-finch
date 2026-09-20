@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
 import { TIER_CONFIG, CATEGORY_CONFIG, allFlowers, allItems } from "./lib/products";
 import { SEO_PAGES } from "./lib/seoPages";
+import { SITE_ORIGIN } from "./lib/nap";
 import { RESOURCE_PAGES } from "./resources/resourceData";
 
-const BASE = "https://www.janefinchcannabis.ca";
+const BASE = SITE_ORIGIN;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();

@@ -1,5 +1,9 @@
 import type { NextConfig } from "next";
 
+const APEX_ORIGIN = "https://janefinchcannabis.ca";
+const WWW_HOST = "www.janefinchcannabis.ca";
+const wwwHost = [{ type: "host" as const, value: WWW_HOST }];
+
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
@@ -14,6 +18,25 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Primary host is apex. 301 www → apex for all paths, including trailing-slash hygiene.
+      {
+        source: "/:path+/",
+        has: wwwHost,
+        destination: `${APEX_ORIGIN}/:path+`,
+        statusCode: 301,
+      },
+      {
+        source: "/",
+        has: wwwHost,
+        destination: `${APEX_ORIGIN}/`,
+        statusCode: 301,
+      },
+      {
+        source: "/:path+",
+        has: wwwHost,
+        destination: `${APEX_ORIGIN}/:path+`,
+        statusCode: 301,
+      },
       { source: "/exotic", destination: "/exotic-weed", permanent: true },
       { source: "/premium", destination: "/premium-weed", permanent: true },
       { source: "/aaa", destination: "/aaa-weed", permanent: true },
