@@ -13,8 +13,8 @@ import {
 } from "../lib/products";
 import { TIER_SEO } from "../lib/tierSeoContent";
 import { buildTierCollectionJsonLd } from "../lib/tierStructuredData";
-import { SITE_ORIGIN, serializeJsonLd } from "../lib/collectionPageSchema";
-import { faqJsonLd } from "../lib/nap";
+import { serializeJsonLd } from "../lib/collectionPageSchema";
+import { faqJsonLd, SITE_ORIGIN } from "../lib/nap";
 import SccHubLinks from "../components/SccHubLinks";
 import tierCopyData from "../lib/tierCopy.generated.json";
 import styles from "./tier.module.css";

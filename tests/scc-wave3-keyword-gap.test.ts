@@ -129,13 +129,18 @@ test("existing /info/ cig and nic resources stay; menu JSON swimlane is untouche
   assert.doesNotMatch(config, /flowers\.json|items\.json|prebuild-stock|adcInventory|APPS_SCRIPT_URL/);
 });
 
-test("Master GO: four pillars, on-page FAQ, homepage hub cards, supporting articles tied to LPs", () => {
+test("Master GO: five pillars, on-page FAQ, homepage hub cards, supporting articles tied to LPs", () => {
   const resources = read("app/resources/resourceData.ts");
+  assert.match(hub, /href: WEED_OWNER_PATH/);
   assert.match(hub, /href: OPEN_NOW_PATH/);
   assert.match(hub, /href: DELIVERY_LP_PATH/);
   assert.match(hub, /href: NATIVE_CIG_LP_PATH/);
   assert.match(hub, /href: NIC_VAPE_LP_PATH/);
-  assert.match(home, /24-hour, delivery, Native cigarettes, and nic-vape/);
+  assert.match(home, /Weed dispensary, 24-hour, delivery, Native cigarettes, and nic-vape/);
+  assert.match(home, /Weed dispensary North York/);
+  assert.match(geo, /FAQ: weed dispensary North York/);
+  assert.match(nap, /WEED_H1 = "Weed Dispensary in North York at Jane Finch"/);
+  assert.match(nap, /Is Jane Finch Cannabis a weed dispensary in North York\?/);
   assert.match(home, /slug: "native-cigarettes-jane-finch"/);
   assert.match(home, /slug: "nicotine-vape-north-york"/);
   assert.match(home, /DELIVERY_LP_PATH/);

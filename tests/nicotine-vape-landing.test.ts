@@ -15,12 +15,12 @@ test("Jane Finch nicotine page uses the six verified VAPE PENS products", () => 
   assert.match(page.sections[2].body, /\/items\/vape-disposables/);
 });
 
-test("Jane Finch nicotine discovery uses the served www canonical host", () => {
+test("Jane Finch nicotine discovery uses the apex canonical host", () => {
   const infoPageSource = readFileSync(new URL("../app/info/[seoPage]/page.tsx", import.meta.url), "utf8");
   const sitemapSource = readFileSync(new URL("../app/sitemap.ts", import.meta.url), "utf8");
   const footerSource = readFileSync(new URL("../app/components/Footer.tsx", import.meta.url), "utf8");
 
-  assert.match(infoPageSource, /slug === "nicotine-vapes-north-york"[\s\S]*"https:\/\/www\.janefinchcannabis\.ca"/);
-  assert.match(sitemapSource, /const BASE = "https:\/\/www\.janefinchcannabis\.ca"/);
+  assert.match(infoPageSource, /canonical: `\$\{SITE_ORIGIN\}\/info\/\$\{slug\}`/);
+  assert.match(sitemapSource, /const BASE = SITE_ORIGIN/);
   assert.ok(footerSource.includes('href="/info/nicotine-vapes-north-york"'));
 });

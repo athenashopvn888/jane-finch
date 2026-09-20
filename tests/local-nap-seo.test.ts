@@ -85,9 +85,21 @@ test("homepage and North York landing use unique title, meta, and H1", () => {
     nap.match(/VISIT_H1 = "([^"]+)"/)?.[1],
   );
   assert.match(home, /HOME_H1/);
-  assert.match(gbp, /GBP_H1/);
+  assert.match(gbp, /WEED_H1/);
   assert.match(visit, /VISIT_H1/);
   assert.match(openNow, /OPEN_NOW_H1/);
+  assert.notEqual(
+    nap.match(/WEED_H1 = "([^"]+)"/)?.[1],
+    nap.match(/HOME_H1 = "([^"]+)"/)?.[1],
+  );
+  assert.notEqual(
+    nap.match(/WEED_H1 = "([^"]+)"/)?.[1],
+    nap.match(/GBP_H1 = "([^"]+)"/)?.[1],
+  );
+  assert.notEqual(
+    nap.match(/WEED_SEO_TITLE = "([^"]+)"/)?.[1],
+    nap.match(/GBP_SEO_TITLE = "([^"]+)"/)?.[1],
+  );
   assert.match(gbpPage, /canonical: `\$\{SITE_ORIGIN\}\$\{weedOwner\.ownerPath\}`/);
   assert.match(visit, /canonical: `\$\{SITE_ORIGIN\}\$\{VISIT_PATH\}`/);
   assert.match(openNow, /canonical: `\$\{SITE_ORIGIN\}\$\{OPEN_NOW_PATH\}`/);
@@ -159,7 +171,7 @@ test("B16 rebuilds homepage as Jane Finch Cannabis local hub vs North York LP mo
   assert.match(nap, /Dispensary near me/);
   assert.match(nap, /Jane and Finch dispensary/);
   assert.match(nap, /cannabis store North York/);
-  assert.match(nap, /www→apex host consolidation is a separate ticket/);
+  assert.match(nap, /www\.janefinchcannabis\.ca 301s to/);
   assert.match(nap, /MAPS_EMBED_URL/);
   assert.match(home, /id="home-nap-hours-map"/);
   assert.match(home, /Address, hours, and map/);
@@ -171,7 +183,7 @@ test("B16 rebuilds homepage as Jane Finch Cannabis local hub vs North York LP mo
   assert.doesNotMatch(home, /href="\/weed-dispensary-north-york\/"/);
   assert.doesNotMatch(home, /href="\/24-hour-dispensary-north-york\/"/);
   assert.match(gbp, /OPEN_NOW_PATH/);
-  assert.match(sitemap, /const BASE = "https:\/\/www\.janefinchcannabis\.ca"/);
+  assert.match(sitemap, /const BASE = SITE_ORIGIN/);
   assert.match(nap, /SITE_ORIGIN = "https:\/\/janefinchcannabis\.ca"/);
   assert.doesNotMatch(publicFiles, /GBP Name|rename the profile|Google Business Profile name/i);
   assert.match(nap, /STORE_NAME = "Jane Finch Cannabis"/);

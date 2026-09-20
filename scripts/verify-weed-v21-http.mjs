@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 
 const base = process.argv[2] || "http://localhost:3111";
-const preferred = "https://www.janefinchcannabis.ca";
+const preferred = "https://janefinchcannabis.ca";
 
 const migrations = {
   "/exotic": "/exotic-weed",
@@ -50,7 +50,7 @@ const sitemap = await sitemapResponse.text();
 for (const canonical of Object.values(migrations)) assert.ok(sitemap.includes(`${preferred}${canonical}`), `${canonical} missing from sitemap`);
 for (const legacy of Object.keys(migrations)) assert.ok(!sitemap.includes(`<loc>${preferred}${legacy}</loc>`), `${legacy} must not remain in sitemap`);
 
-const sitemapPaths = [...sitemap.matchAll(/<loc>https:\/\/www\.janefinchcannabis\.ca([^<]*)<\/loc>/g)].map((match) => match[1] || "/");
+const sitemapPaths = [...sitemap.matchAll(/<loc>https:\/\/janefinchcannabis\.ca([^<]*)<\/loc>/g)].map((match) => match[1] || "/");
 const failures = [];
 for (const path of sitemapPaths) {
   const response = await fetch(`${base}${path}`, { redirect: "manual" });

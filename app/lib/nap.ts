@@ -31,10 +31,10 @@ export const NIC_VAPE_LP_PATH = "/nicotine-vape-north-york";
 export const NIC_VAPE_MENU_PATH = "/items/vapes";
 
 /*
- * B16 eng note: www→apex host consolidation is a separate ticket.
- * Do not add slash-duplicate routes (keep /weed-dispensary-north-york and
- * /24-hour-dispensary-north-york without trailing-slash twins). GBP Website
- * stays the homepage root at SITE_ORIGIN.
+ * JFC01: primary host is apex SITE_ORIGIN. www.janefinchcannabis.ca 301s to
+ * apex for all paths (see next.config.ts). Do not add slash-duplicate routes
+ * (keep /weed-dispensary-north-york and /24-hour-dispensary-north-york without
+ * trailing-slash twins). GBP Website stays the homepage root at SITE_ORIGIN.
  */
 
 export const HOME_SEO_TITLE = "Jane Finch Cannabis | Jane and Finch Dispensary North York";
@@ -46,6 +46,12 @@ export const GBP_SEO_TITLE = "Cannabis Store North York — Open Now at Jane & F
 export const GBP_SEO_DESCRIPTION =
   "Cannabis store in North York at 2728 Jane St, Jane & Finch / Jane & Sheppard. Walk in 24 hours at Jane Finch Cannabis. Plaza parking out front. Call +1 (437) 524-9336. Adults 19+.";
 export const GBP_H1 = "Cannabis Store in North York at Jane & Finch";
+
+export const WEED_LP_PATH = "/weed-dispensary-north-york";
+export const WEED_SEO_TITLE = "Weed Dispensary North York — Jane Finch at Jane & Finch";
+export const WEED_SEO_DESCRIPTION =
+  "Weed dispensary in North York at Jane Finch Cannabis, 2728 Jane St. Jane–Finch / Jane & Sheppard walk-in owner for weed-dispensary intent. Open 24 hours. Call +1 (437) 524-9336. Adults 19+.";
+export const WEED_H1 = "Weed Dispensary in North York at Jane Finch";
 
 export const VISIT_SEO_TITLE = "Visit Jane Finch Cannabis — 2728 Jane St Walk-In Hub";
 export const VISIT_SEO_DESCRIPTION =
@@ -100,6 +106,50 @@ export const HOME_FAQS = [
   {
     q: "What is the cheapest weed at Jane Finch Cannabis?",
     a: "Start with the Budget Weed collection, then compare the product information presented with each selection.",
+  },
+] as const;
+
+/** Neighbourhood owner FAQ for /weed-dispensary-north-york — not a GBP field edit. */
+export const WEED_FAQS = [
+  {
+    q: "Is Jane Finch Cannabis a weed dispensary in North York?",
+    a: "Yes. Jane Finch Cannabis is the weed dispensary at 2728 Jane St, North York, ON M3L 2G6 — Jane St & Sheppard Ave W in the Jane–Finch corridor. This page owns weed-dispensary intent for Jane Finch / North York.",
+  },
+  {
+    q: "Where is the weed dispensary near Jane Finch?",
+    a: "The walk-in counter is 2728 Jane St, North York, at Jane St & Sheppard Ave W. Plaza parking is in front. Call +1 (437) 524-9336 if you want the pin confirmed before you travel.",
+  },
+  {
+    q: "Does this weed dispensary page replace the visit hub or the 24-hour FAQ?",
+    a: "No. This page owns broad weed-dispensary intent. Arrival, parking, and TTC stay on the visit hub. Open-now hours stay on the 24-hour FAQ. Delivery, Native cigarettes, and nicotine vapes have their own neighbourhood pages.",
+  },
+  {
+    q: "Is the Jane Finch weed dispensary open 24 hours?",
+    a: "Yes. Walk-in at 2728 Jane St is open 24 hours, 7 days. Delivery is a separate 10 a.m. to 10 p.m. courier and does not change this address.",
+  },
+  {
+    q: "Can I walk in for flower, Native cigarettes, or nicotine vapes?",
+    a: "Yes, when those categories are listed. Use the five flower-tier pages, the Jane Finch Native cigarettes page, or the North York nicotine vape page, then confirm the live menu. Adults 19+.",
+  },
+  {
+    q: "Are you near Jane and Sheppard?",
+    a: "Yes. The storefront is at Jane St & Sheppard Ave W. Plaza parking is in front of the store.",
+  },
+  {
+    q: "What does weed mean compared with cannabis?",
+    a: "Weed is casual everyday terminology. Cannabis is the broader term.",
+  },
+  {
+    q: "What is cannabis flower?",
+    a: "Flower is dried cannabis flower. Bud is a common informal term for the same category.",
+  },
+  {
+    q: "Can I confirm a particular item before visiting?",
+    a: "Yes. Call +1 (437) 524-9336 if you are making a special trip for something specific.",
+  },
+  {
+    q: "Do I need to be 19+?",
+    a: "Yes. Jane Finch Cannabis is for adults 19+.",
   },
 ] as const;
 

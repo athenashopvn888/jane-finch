@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_ORIGIN } from "../lib/nap";
 import DeliveryCatalog from "./DeliveryCatalog";
 import JFCWebChat from "./JFCWebChat";
 import menu from "./delivery-menu.json";
@@ -6,7 +7,7 @@ import menu from "./delivery-menu.json";
 export const metadata: Metadata = {
   title: { absolute: "Cannabis Delivery North York | Jane Finch Cannabis" },
   description: "Browse the Jane Finch Cannabis flower delivery menu in North York and connect with the store dispatcher through LIVE ORDER, daily from 10:00 a.m. to 10:00 p.m.",
-  alternates: { canonical: "https://www.janefinchcannabis.ca/delivery" },
+  alternates: { canonical: `${SITE_ORIGIN}/delivery` },
 };
 
 export default function DeliveryPage() {
@@ -15,7 +16,7 @@ export default function DeliveryPage() {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       name: "Jane Finch Cannabis North York Delivery Menu",
-      url: "https://www.janefinchcannabis.ca/delivery",
+      url: `${SITE_ORIGIN}/delivery`,
       mainEntity: {
         "@type": "ItemList",
         numberOfItems: menu.products.length,
@@ -31,7 +32,7 @@ export default function DeliveryPage() {
       "@type": "Service",
       name: "Jane Finch Cannabis Delivery",
       serviceType: "Cannabis delivery",
-      url: "https://www.janefinchcannabis.ca/delivery",
+      url: `${SITE_ORIGIN}/delivery`,
       areaServed: { "@type": "City", name: "North York" },
       hoursAvailable: {
         "@type": "OpeningHoursSpecification",
