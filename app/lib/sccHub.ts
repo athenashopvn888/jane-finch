@@ -54,8 +54,8 @@ export const HUB_PAGES = [
   },
   {
     href: WEED_OWNER_PATH,
-    label: "North York cannabis store",
-    blurb: "Weed intent owner for Jane Finch / North York.",
+    label: "North York weed dispensary",
+    blurb: "Weed-dispensary neighbourhood owner for Jane Finch / North York.",
   },
   {
     href: OPEN_NOW_PATH,

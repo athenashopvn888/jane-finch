@@ -85,9 +85,21 @@ test("homepage and North York landing use unique title, meta, and H1", () => {
     nap.match(/VISIT_H1 = "([^"]+)"/)?.[1],
   );
   assert.match(home, /HOME_H1/);
-  assert.match(gbp, /GBP_H1/);
+  assert.match(gbp, /WEED_H1/);
   assert.match(visit, /VISIT_H1/);
   assert.match(openNow, /OPEN_NOW_H1/);
+  assert.notEqual(
+    nap.match(/WEED_H1 = "([^"]+)"/)?.[1],
+    nap.match(/HOME_H1 = "([^"]+)"/)?.[1],
+  );
+  assert.notEqual(
+    nap.match(/WEED_H1 = "([^"]+)"/)?.[1],
+    nap.match(/GBP_H1 = "([^"]+)"/)?.[1],
+  );
+  assert.notEqual(
+    nap.match(/WEED_SEO_TITLE = "([^"]+)"/)?.[1],
+    nap.match(/GBP_SEO_TITLE = "([^"]+)"/)?.[1],
+  );
   assert.match(gbpPage, /canonical: `\$\{SITE_ORIGIN\}\$\{weedOwner\.ownerPath\}`/);
   assert.match(visit, /canonical: `\$\{SITE_ORIGIN\}\$\{VISIT_PATH\}`/);
   assert.match(openNow, /canonical: `\$\{SITE_ORIGIN\}\$\{OPEN_NOW_PATH\}`/);

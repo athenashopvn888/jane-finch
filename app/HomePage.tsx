@@ -276,7 +276,7 @@ export default function HomePage() {
                     <a href={SITE_ORIGIN}>janefinchcannabis.ca</a>
                   </p>
                   <p className={styles.localHubLinks}>
-                    <Link href="/weed-dispensary-north-york">North York cannabis store</Link>
+                    <Link href="/weed-dispensary-north-york">Weed dispensary North York</Link>
                     <Link href={OPEN_NOW_PATH}>24-hour North York FAQ</Link>
                     <Link href={VISIT_PATH}>Walk-in hub</Link>
                     <Link href="/exotic-weed">Exotic Weed</Link>
@@ -309,7 +309,7 @@ export default function HomePage() {
               <Link href="/exotic-weed" className={styles.homeMenuCta}>STORE MENU</Link>
               <Link href="/delivery" className={`${styles.homeMenuCta} ${styles.homeDeliveryCta}`}>DELIVERY MENU</Link>
             </div>
-            <SccHubLinks currentPath="/" heading="24-hour, delivery, Native cigarettes, and nic-vape" includeTiers={false} />
+            <SccHubLinks currentPath="/" heading="Weed dispensary, 24-hour, delivery, Native cigarettes, and nic-vape" includeTiers={false} />
           </div>
 
           {/* Bento Grid */}
@@ -351,7 +351,7 @@ export default function HomePage() {
               Confirm the pin, then open the current menu. Flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes each shop differently. Delivery is a separate 10 a.m.–10 p.m. window — it does not replace walk-in. Call {PHONE_DISPLAY} if one item is the reason you are coming in.
             </p>
             <p className={styles.seoPanelLinks}>
-              <Link href="/weed-dispensary-north-york">North York cannabis store</Link>
+              <Link href="/weed-dispensary-north-york">Weed dispensary North York</Link>
               <Link href={OPEN_NOW_PATH}>24-hour North York FAQ</Link>
               <Link href={VISIT_PATH}>2728 Jane St walk-in hub</Link>
               <Link href={DELIVERY_LP_PATH}>North York cannabis delivery</Link>
@@ -538,7 +538,7 @@ export default function HomePage() {
                 <br />
                 <Link href={VISIT_PATH} className={styles.storeLink}>Walk-in hub</Link>
                 <br />
-                <Link href="/weed-dispensary-north-york" className={styles.storeLink}>North York store details</Link>
+                <Link href="/weed-dispensary-north-york" className={styles.storeLink}>Weed dispensary North York</Link>
                 <br />
                 <Link href={OPEN_NOW_PATH} className={styles.storeLink}>24-hour North York FAQ</Link>
               </p>
