@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import AgeGate from "./components/AgeGate";
+import StoreHoursBar from "./components/StoreHoursBar";
 import {
   CITY,
   COUNTRY,
@@ -156,9 +157,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <div className="deliveryAnnouncement" role="status" aria-label="Store hours">
-          OPEN 24 HOURS
-        </div>
+        <StoreHoursBar />
         {children}
         <AgeGate />
       </body>
