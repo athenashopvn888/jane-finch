@@ -1,4 +1,4 @@
-export const HOME_TITLE = "Jane Finch Cannabis - Cannabis Delivery in North York";
+export const HOME_TITLE = "Jane Finch Cannabis - Weed Delivery in North York";
 export const HOME_MENU_HREF = "/exotic-weed";
 export const HOME_DELIVERY_HREF = "/cannabis-delivery-north-york";
 export const HOME_DELIVERY_H2 = "Cannabis Delivery in North York";
