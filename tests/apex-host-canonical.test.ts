@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative } from "node:path";
 import test from "node:test";
+import { fileURLToPath } from "node:url";
 
 import nextConfig from "../next.config.ts";
 import { SITE_ORIGIN } from "../app/lib/nap.ts";
@@ -76,7 +77,7 @@ test("canonical, sitemap, robots, and JSON-LD hosts use SITE_ORIGIN apex", () =>
 });
 
 test("app source does not claim www as the public host", () => {
-  const root = new URL("..", import.meta.url).pathname;
+  const root = fileURLToPath(new URL("..", import.meta.url));
   const claimedWww: string[] = [];
   for (const file of walkSourceFiles(join(root, "app"))) {
     const text = readFileSync(file, "utf8");

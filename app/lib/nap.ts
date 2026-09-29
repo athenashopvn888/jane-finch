@@ -37,9 +37,9 @@ export const NIC_VAPE_MENU_PATH = "/items/vapes";
  * trailing-slash twins). GBP Website stays the homepage root at SITE_ORIGIN.
  */
 
-export const HOME_SEO_TITLE = "Jane Finch Cannabis | Jane and Finch Dispensary North York";
+export const HOME_SEO_TITLE = "Open 24 Hours in North York | Jane Finch Cannabis";
 export const HOME_SEO_DESCRIPTION =
-  "Jane Finch Cannabis is the Jane and Finch dispensary at 2728 Jane St, North York. Cannabis store North York walk-in hub with NAP, hours, and map. Dispensary near me, open 24 hours. Call +1 (437) 524-9336. Adults 19+.";
+  "Open 24 hours, 7 days a week. For a dispensary near me in North York, visit Jane Finch Cannabis at 2728 Jane St near Jane and Sheppard. Adults 19+.";
 export const HOME_H1 = "Jane Finch Cannabis — Jane and Finch Dispensary";
 
 export const GBP_SEO_TITLE = "Cannabis Store North York — Open Now at Jane & Finch";

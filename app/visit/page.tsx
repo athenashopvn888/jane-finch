@@ -106,17 +106,12 @@ export default function VisitPage() {
         </section>
 
         <section className={styles.section}>
-          <h2>Open now / hours</h2>
+          <h2>Open 24/7</h2>
           <p>
-            {STORE_NAME} is {HOURS_LABEL.toLowerCase()}. A “dispensary near me open now” search in
-            North York can use this storefront at any hour. Staff are at the Jane Street counter
-            overnight as well as during the day. For the dedicated 24 hour dispensary North York
-            questions, use the <Link href={OPEN_NOW_PATH}>open-now FAQ</Link>.
-          </p>
-          <p>
-            Delivery “open now” is different: LIVE ORDER only runs 10 a.m. to 10 p.m. The homepage
-            website for this store stays <a href={SITE_ORIGIN}>https://janefinchcannabis.ca/</a> —
-            not a menu deep link.
+            {STORE_NAME} is open 24 hours, 7 days a week at 2728 Jane St in North York. The same
+            walk-in counter is open during the day, overnight, and after midnight. Adults 19+ should
+            bring valid government photo ID. Delivery is separate, runs 10 a.m. to 10 p.m., and is
+            not a 24-hour courier; see the <Link href={OPEN_NOW_PATH}>open-now FAQ</Link> for more.
           </p>
         </section>
 
