@@ -1,4 +1,8 @@
 "use client";
+import { HOME_TITLE } from "./lib/homeDelivery";
+import CohortDeliveryActions from "./components/CohortDeliveryActions";
+import HomeDeliverySection from "./components/HomeDeliverySection";
+import HomepageTopNotices from "./components/HomepageTopNotices";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -193,9 +197,11 @@ export default function HomePage() {
 
   return (
     <main className={styles.main}>
+      <Navbar />
+      <HomepageTopNotices />
       <FleetAnnouncementBanner />
       {/* ── NAVBAR ── */}
-      <Navbar />
+
       <DeliveryBanner />
 
       {/* ── WELCOME BANNER ── */}
@@ -238,7 +244,8 @@ export default function HomePage() {
           <div className={styles.brandBlock}>
             <img src="/storeFavicon.webp" alt="Jane Finch Cannabis Icon" style={{ height: "60px", width: "60px", objectFit: "contain", borderRadius: "8px", marginBottom: "8px" }} />
             <p className={styles.brandKicker}>{STORE_NAME}</p>
-            <h1 className={styles.brandTitle}>{HOME_H1}</h1>
+            <h1 className={styles.brandTitle}>{HOME_TITLE}</h1>
+            <CohortDeliveryActions variant="hero" />
             <p className={styles.brandSub}>Jane and Finch dispensary near me at {FULL_ADDRESS}</p>
             <div className={styles.brandBadge}>{HOURS_LABEL}</div>
             <p className={styles.brandNap}>
@@ -335,6 +342,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <HomeDeliverySection />
 
       {/* ── JANE–FINCH CORRIDOR INTRO ── */}
       <section className={styles.seoSection} id="jane-finch-corridor">

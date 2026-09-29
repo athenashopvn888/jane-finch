@@ -1,4 +1,5 @@
 "use client";
+import CohortDeliveryActions from "./CohortDeliveryActions";
 
 import type { CSSProperties } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -207,6 +208,7 @@ export default function Navbar() {
           </button>
         )}
       </div>
+      <CohortDeliveryActions />
     </nav>
   );
 }
