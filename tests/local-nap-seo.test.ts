@@ -38,6 +38,9 @@ test("canonical NAP is identical in the shared module, schema, footer, and conta
   assert.match(layout, /url: SITE_ORIGIN/);
   assert.match(layout, /streetAddress: STREET_ADDRESS/);
   assert.match(layout, /telephone: PHONE_INTL/);
+  assert.match(layout, /openingHoursSpecification/);
+  assert.match(layout, /opens: "00:00"/);
+  assert.match(layout, /closes: "23:59"/);
   assert.doesNotMatch(layout, /exotic-weed|#menu/);
 
   assert.match(footer, /STREET_ADDRESS/);
@@ -52,7 +55,8 @@ test("canonical NAP is identical in the shared module, schema, footer, and conta
 });
 
 test("homepage and North York landing use unique title, meta, and H1", () => {
-  assert.match(nap, /HOME_SEO_TITLE = "Jane Finch Cannabis \| Jane and Finch Dispensary North York"/);
+  assert.match(nap, /HOME_SEO_TITLE = "Open 24 Hours in North York \| Jane Finch Cannabis"/);
+  assert.match(nap, /Open 24 hours, 7 days a week/);
   assert.match(nap, /GBP_SEO_TITLE = "Cannabis Store North York — Open Now at Jane & Finch"/);
   assert.match(nap, /VISIT_SEO_TITLE = "Visit Jane Finch Cannabis — 2728 Jane St Walk-In Hub"/);
   assert.match(nap, /OPEN_NOW_SEO_TITLE = "24-Hour Jane Finch Dispensary — North York Open-Now FAQ"/);
@@ -131,7 +135,7 @@ test("B03 near-me hub links homepage, North York LP, and /visit without GBP name
   assert.match(gbp, /VISIT_PATH/);
   assert.match(visit, /2728 Jane St — Jane–Finch intersection clarity/);
   assert.match(visit, /North York walk-in vs delivery/);
-  assert.match(visit, /Open now \/ hours/);
+  assert.match(visit, /Open 24\/7/);
   assert.match(visit, /Transit &amp; parking tips/);
   assert.match(visit, /FAQ: cannabis store North York/);
   assert.match(visit, /Homepage NAP/);
@@ -168,7 +172,7 @@ test("B09 expands 24-hour North York FAQPage and links home, LP, and /visit", ()
 test("B16 rebuilds homepage as Jane Finch Cannabis local hub vs North York LP monoculture", () => {
   assert.match(nap, /HOME_H1 = "Jane Finch Cannabis — Jane and Finch Dispensary"/);
   assert.match(nap, /jane finch cannabis/i);
-  assert.match(nap, /Dispensary near me/);
+  assert.match(nap, /dispensary near me/i);
   assert.match(nap, /Jane and Finch dispensary/);
   assert.match(nap, /cannabis store North York/);
   assert.match(nap, /www\.janefinchcannabis\.ca 301s to/);
