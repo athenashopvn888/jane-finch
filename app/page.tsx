@@ -1,7 +1,6 @@
 import { HOME_TITLE } from "./lib/homeDelivery";
 import type { Metadata } from "next";
 import HomePage from "./HomePage";
-import FleetAnnouncementBanner from "./components/FleetAnnouncementBanner";
 import { faqJsonLd, HOME_FAQS, HOME_SEO_DESCRIPTION, HOME_SEO_TITLE, SITE_ORIGIN } from "./lib/nap";
 
 export const metadata: Metadata = {
@@ -26,7 +25,6 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(HOME_FAQS)) }}
       />
-      <FleetAnnouncementBanner holidayOnly />
       <HomePage />
     </>
   );
