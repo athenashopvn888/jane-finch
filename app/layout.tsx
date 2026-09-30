@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import AgeGate from "./components/AgeGate";
 import StoreHoursBar from "./components/StoreHoursBar";
 import {
   CITY,
@@ -159,7 +158,6 @@ export default function RootLayout({
       <body>
         <StoreHoursBar />
         {children}
-        <AgeGate />
       </body>
     </html>
   );
