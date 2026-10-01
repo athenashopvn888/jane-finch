@@ -6,6 +6,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
+import FlowerBogoStrip from "./FlowerBogoStrip";
 
 const FLOWER_LINKS = [
   { href: "/exotic-weed", label: "Exotic Weed" },
@@ -209,6 +210,7 @@ export default function Navbar() {
         )}
       </div>
       <CohortDeliveryActions />
+      {pathname !== "/" ? <FlowerBogoStrip /> : null}
     </nav>
   );
 }
