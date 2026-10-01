@@ -18,6 +18,7 @@ import { faqJsonLd, SITE_ORIGIN } from "../lib/nap";
 import SccHubLinks from "../components/SccHubLinks";
 import tierCopyData from "../lib/tierCopy.generated.json";
 import styles from "./tier.module.css";
+import { getTierGuideLinks } from "../lib/guideRegistry";
 import {
   formatAsLowAsAfterPromos,
   formatPerGram,
@@ -67,6 +68,7 @@ export default async function TierPage({
 
   const flowers = getFlowersByTier(tierInfo.key);
   const { config } = tierInfo;
+  const guideLinks = getTierGuideLinks(`/${tierSlug}`);
   const seo = TIER_SEO[tierInfo.key];
   const tierCopy = tierCopyData[tierInfo.key as keyof typeof tierCopyData];
 
@@ -170,6 +172,14 @@ export default async function TierPage({
           <SccHubLinks currentPath={`/${tierSlug}`} heading="Jane Finch hubs from this tier" />
         </div>
       </section>
+
+      {guideLinks.length > 0 && (
+        <nav className={styles.guideStrip} aria-label={`Popular ${config.name} strain guides`}>
+          <div className={styles.container}><h2>Popular strain guides</h2><div>
+            {guideLinks.map((guide) => <Link key={guide.slug} href={`/guides/${guide.slug}`}>{guide.name}</Link>)}
+          </div></div>
+        </nav>
+      )}
 
       {/* ── Product grid ── */}
       <section className={styles.products}>
