@@ -49,8 +49,10 @@ test("sitewide strip and JFC01 homepage stack match scope", () => {
   for (const item of sequence) { const next = banner.indexOf(item); assert.ok(next > cursor, item); cursor = next; }
   assert.match(banner, /top-weed-tier-jfc01\.webp/);
   assert.match(banner, /native-cigarette-offer-20260822\.webp/);
+  assert.match(banner, /EXCLUSIVE SPECIAL PREMIUM GRADE BB FULL, BB LIGHT &amp; BELMONT KING SIZE!/);
+  assert.match(banner, /BB_Belmont_Premium_Grade\.webp/);
   assert.match(banner, /Jane Finch Cannabis/);
-  for (const file of ["public/banners/top-weed-tier-jfc01.webp", "public/banners/native-cigarette-offer-20260822.webp", "public/banners/bb-premium-grade-full-lights.webp"]) {
+  for (const file of ["public/banners/top-weed-tier-jfc01.webp", "public/banners/native-cigarette-offer-20260822.webp", "public/banners/BB_Belmont_Premium_Grade.webp"]) {
     assert.ok(fs.statSync(file).size > 1000, file);
   }
 });
