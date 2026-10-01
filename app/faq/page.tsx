@@ -4,6 +4,16 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "./faq.module.css";
 import { OPEN_NOW_PATH, SITE_ORIGIN, VISIT_PATH } from "../lib/nap";
+import { TIER_CONFIG } from "../lib/products";
+import {
+  BOGO_BUY_2_GET_1,
+  BOGO_BUY_3_GET_3,
+  formatAsLowAsAfterPromos,
+  formatBoardDealLine,
+  formatDollars,
+  formatPayEquals,
+  formatPerGram,
+} from "../lib/flowerDeals";
 
 export const metadata: Metadata = {
   title: "FAQ",
@@ -12,6 +22,30 @@ export const metadata: Metadata = {
     canonical: `${SITE_ORIGIN}/faq`,
   },
 };
+
+function boardTierSentence(key: "AAA+" | "PREMIUM" | "EXOTIC"): string {
+  const tier = TIER_CONFIG[key];
+  const deal3 = tier.deal3g;
+  const deal6 = tier.deal6g;
+  if (!deal3 || !deal6) return "";
+  const shortName = tier.name.replace(/ Weed$/, "");
+  return `${shortName} lists at ${formatDollars(tier.unitPrice)}/g. ${formatBoardDealLine(deal3)} (${formatPerGram(deal3.price, deal3.grams)}). ${formatBoardDealLine(deal6)} (${formatPerGram(deal6.price, deal6.grams)}). ${formatAsLowAsAfterPromos(deal6.price, deal6.grams)}.`;
+}
+
+const BOARD_DEAL_ANSWER = [
+  "Exotic, Premium, and AAA+ use the in-store board deals. AA does not include these deals. Budget keeps a separate $10 / 3g Special.",
+  boardTierSentence("AAA+"), boardTierSentence("PREMIUM"), boardTierSentence("EXOTIC"),
+  "Board notation is 2g=3g and 3g=6g.",
+].join(" ");
+
+const aaaDeals = TIER_CONFIG["AAA+"];
+const BOARD_DEAL_HOW = [
+  `${BOGO_BUY_2_GET_1} means you pay for 2g and receive 3g.`,
+  aaaDeals.deal3g ? `On AAA+ that is ${formatPayEquals(aaaDeals.deal3g.price, aaaDeals.deal3g.grams)}.` : "",
+  `${BOGO_BUY_3_GET_3} means you pay for 3g and receive 6g.`,
+  aaaDeals.deal6g ? `On AAA+ that is ${formatPayEquals(aaaDeals.deal6g.price, aaaDeals.deal6g.grams)}.` : "",
+  "Premium and Exotic use the same FREE lines with their own paid totals. The 6g total is on Exotic, Premium, and AAA+ only. AA has neither board deal.",
+].filter(Boolean).join(" ");
 
 const FAQ_CATEGORIES = [
   {
@@ -39,6 +73,13 @@ const FAQ_CATEGORIES = [
       { q: "What menu categories can shoppers compare?", a: "The site has paths for flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes where listed." },
       { q: "How should shoppers use the menu?", a: "Pick one category first, then compare product name, format, weight or package size, posted price, and item notes." },
       { q: "Do menu details change?", a: "Yes. Product names, prices, and listings can change, so use the current menu or ask staff before making the trip." },
+    ],
+  },
+  {
+    title: "Flower Deals",
+    faqs: [
+      { q: "What flower deals match the in-store board?", a: BOARD_DEAL_ANSWER },
+      { q: "How do Buy 2g Get 1g FREE and Buy 3g Get 3g FREE work?", a: BOARD_DEAL_HOW },
     ],
   },
   {
