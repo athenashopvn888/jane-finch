@@ -51,7 +51,7 @@ export default function FleetAnnouncementBanner() {
         CIGARETTE DEAL ! 2 PACK $5 MIX AND MATCH
       </p>
       <p data-bb-light-deal="">
-        EXCLUSIVE SPECIAL PREMIUM GRADE BB FULL &amp; BB LIGHT!
+        EXCLUSIVE SPECIAL PREMIUM GRADE BB FULL, BB LIGHT &amp; BELMONT KING SIZE!
       </p>
       <Link href="/items/cigarettes" data-cig-mix-banner="" aria-label="Shop cigarette mix-and-match deals">
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -60,11 +60,11 @@ export default function FleetAnnouncementBanner() {
           alt="Cigarette mix-and-match deal at Jane Finch Cannabis. Adults 19+."
         />
       </Link>
-      <Link href="/items/cigarettes" data-bb-premium-banner="" aria-label="Shop BB Premium Grade cigarettes">
+      <Link href="/items/cigarettes" data-bb-premium-banner="" aria-label="Shop BB and Belmont Premium Grade cigarettes">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/banners/bb-premium-grade-full-lights.webp"
-          alt="Exclusive BB Premium Grade cigarettes — Full Flavor and Lights Canadian blend tobacco packs and cartons at Jane Finch Cannabis."
+          src="/banners/BB_Belmont_Premium_Grade.webp"
+          alt="Exclusive Premium Grade BB Full Flavor, BB Lights, and Belmont King Size cigarettes at Jane Finch Cannabis."
         />
       </Link>
     </aside>
