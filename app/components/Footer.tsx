@@ -67,6 +67,7 @@ export default function Footer() {
               <Link href="/nicotine-vape-north-york">North York Nicotine Vape</Link>
               <Link href="/info/nicotine-vapes-north-york">Nicotine Vapes North York</Link>
               <Link href="/resources">Resources</Link>
+              <Link href="/guides">Guides</Link>
               <Link href="/faq">FAQ</Link>
               <Link href="/delivery">Delivery Menu</Link>
               <Link href="/cannabis-delivery-north-york">North York Cannabis Delivery</Link>
