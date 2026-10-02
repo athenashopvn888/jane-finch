@@ -36,6 +36,7 @@ const SUPPORT_LINKS = [
   { href: "/nicotine-vape-north-york", label: "Nicotine Vape NY" },
   { href: "/careers/budtender", label: "Hiring" },
   { href: "/resources", label: "Resources" },
+  { href: "/guides", label: "Guides" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ];

@@ -687,17 +687,29 @@ const basePages: ResourcePage[] = [...expandedPages, ...newPages].map((page) => 
 
 export const RESOURCE_PAGES: ResourcePage[] = basePages.map((page) => ({
   ...page,
-  cards: page.childRoutes
-    .map((route) => basePages.find((candidate) => candidate.route === route))
-    .filter((child): child is ResourcePage => Boolean(child))
-    .map((child) => ({
-      title: child.h1,
-      href: child.route,
-      description: child.excerpt,
-      category: child.pageType,
-      author: child.author.name,
-      updated: child.dateModified,
-    })),
+  cards: [
+    ...(page.route === "/resources"
+      ? [{
+          title: "Name Guides",
+          href: "/guides",
+          description: "Browse all strain, Native Cigarettes, Nicotine Vape, and THC Vape name guides in one directory.",
+          category: "Name Guides",
+          author: "Jane Finch Cannabis Team",
+          updated: "2026-10-02",
+        }]
+      : []),
+    ...page.childRoutes
+      .map((route) => basePages.find((candidate) => candidate.route === route))
+      .filter((child): child is ResourcePage => Boolean(child))
+      .map((child) => ({
+        title: child.h1,
+        href: child.route,
+        description: child.excerpt,
+        category: child.pageType,
+        author: child.author.name,
+        updated: child.dateModified,
+      })),
+  ],
 }));
 
 export const RESOURCE_PATHS = RESOURCE_PAGES.map((page) => page.route);
