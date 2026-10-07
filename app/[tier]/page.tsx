@@ -11,6 +11,7 @@ import {
   getTierFromSlug,
   TIER_CONFIG,
 } from "../lib/products";
+import { getResolvedFlowers } from "../lib/resolvedProducts";
 import { TIER_SEO } from "../lib/tierSeoContent";
 import { buildTierCollectionJsonLd } from "../lib/tierStructuredData";
 import { serializeJsonLd } from "../lib/collectionPageSchema";
@@ -25,6 +26,8 @@ import {
   isBogoDeal,
   type BoardDeal,
 } from "../lib/flowerDeals";
+
+export const revalidate = 0;
 
 /* -- Generate all tier pages at build -- */
 export function generateStaticParams() {
@@ -66,7 +69,7 @@ export default async function TierPage({
   const tierInfo = getTierFromSlug(tierSlug);
   if (!tierInfo) notFound();
 
-  const flowers = getFlowersByTier(tierInfo.key);
+  const flowers = getFlowersByTier(tierInfo.key, await getResolvedFlowers());
   const { config } = tierInfo;
   const guideLinks = getTierGuideLinks(`/${tierSlug}`);
   const seo = TIER_SEO[tierInfo.key];
