@@ -84,7 +84,7 @@ export default function Catalog() {
   const closeDetails=useCallback(()=>setSelectedProduct(null),[]);
   useEffect(() => {
     const controller = new AbortController();
-    fetch("https://milestone-1-demo.vercel.app/api/catalog?store=JFC", { signal: controller.signal }).then((response) => response.ok ? response.json() : Promise.reject()).then((payload) => { if (Array.isArray(payload.products) && payload.products.length >= 50 && payload.products.every((product:Product)=>product.publicProductId&&product.tier&&Array.isArray(product.images))) setProducts(payload.products); }).catch(() => {});
+    fetch("/api/delivery-catalog", { signal: controller.signal }).then((response) => response.ok ? response.json() : Promise.reject()).then((payload) => { if (Array.isArray(payload.products) && payload.products.length >= 50 && payload.products.every((product:Product)=>product.publicProductId&&product.tier&&Array.isArray(product.images))) setProducts(payload.products); }).catch(() => {});
     return () => controller.abort();
   }, []);
 
