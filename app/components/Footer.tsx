@@ -69,6 +69,7 @@ export default function Footer() {
               <Link href="/resources">Resources</Link>
               <Link href="/guides">Guides</Link>
               <Link href="/faq">FAQ</Link>
+              <Link href="/hours">Store Hours</Link>
               <Link href="/delivery">Delivery Menu</Link>
               <Link href="/cannabis-delivery-north-york">North York Cannabis Delivery</Link>
               <Link href="/info/cheap-weed-north-york">Cheap Weed North York</Link>
