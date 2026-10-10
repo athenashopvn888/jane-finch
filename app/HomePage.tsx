@@ -367,6 +367,7 @@ export default function HomePage() {
               <Link href={DELIVERY_LP_PATH}>North York cannabis delivery</Link>
               <Link href={NATIVE_CIG_LP_PATH}>Jane Finch Native cigarettes</Link>
               <Link href={NIC_VAPE_LP_PATH}>North York nicotine vape</Link>
+              <Link href="/vape-shop-north-york">Current North York vape shop listings</Link>
               <Link href="/exotic-weed">Exotic Weed</Link>
               <Link href="/premium-weed">Premium Weed</Link>
               <Link href="/aaa-weed">AAA+ Weed</Link>

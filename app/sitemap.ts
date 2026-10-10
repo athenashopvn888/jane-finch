@@ -31,6 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/cannabis-delivery-north-york`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/native-cigarettes-jane-finch`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/nicotine-vape-north-york`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE}/vape-shop-north-york`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
     { url: `${BASE}/weed-delivery-north-york`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/weed-delivery-vaughan`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/resources/local-guides/york-university-cannabis-guide`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },

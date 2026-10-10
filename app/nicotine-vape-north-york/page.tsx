@@ -25,6 +25,7 @@ import {
   faqJsonLd,
 } from "../lib/nap";
 import SccHubLinks from "../components/SccHubLinks";
+import VapeActionPanel from "../components/VapeActionPanel";
 
 export const metadata: Metadata = {
   title: { absolute: NIC_VAPE_SEO_TITLE },
@@ -77,6 +78,7 @@ export default function NicotineVapeNorthYorkPage() {
             </Link>
           </div>
         </section>
+        <VapeActionPanel />
 
         <section className={styles.section}>
           <h2>Homepage, visit hub, North York store, and 24-hour FAQ</h2>

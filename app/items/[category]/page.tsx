@@ -19,6 +19,7 @@ import { getCategoryGuideGroups } from "../../lib/guideRegistry";
 import { buildCategoryCollectionJsonLd } from "../../lib/categoryStructuredData";
 import { SITE_ORIGIN } from "../../lib/nap";
 import seoContent from "../../lib/seoContent.generated.json";
+import VapeActionPanel from "../../components/VapeActionPanel";
 
 export const revalidate = 0;
 
@@ -137,6 +138,8 @@ export default async function ItemsCategoryPage({
           )}
         </div>
       </section>
+
+      {(catInfo.key === "VAPE PENS" || catInfo.key === "VAPE DISPOSABLE") && <VapeActionPanel compact />}
 
       {/* SEO Content */}
       <section className={styles.seoSection}>
