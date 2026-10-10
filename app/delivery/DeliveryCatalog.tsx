@@ -10,7 +10,7 @@ import DeliveryBanner from "../components/DeliveryBanner";
 type PriceOption = { key: string; label: string; price: number };
 type Offer = { kind: "prime_time" | "multi_ounce"; quantity?: number; price?: number; weight?: string; bonus?: string; perUnitPrice?: number; totalPrice?: number; label: string };
 type Tier = "SHREDS" | "Budget" | "BC Premium" | "CRAFTS" | "Exotics";
-type Product = { publicProductId:string; name:string; tier:Tier; category:string; strain:string; thc:string; effects:string[]; description:string|null; images:string[]; priceOptions:PriceOption[]; offers?:Offer[] };
+export type Product = { publicProductId:string; name:string; tier:Tier; category:string; strain:string; thc:string; effects:string[]; description:string|null; images:string[]; priceOptions:PriceOption[]; offers?:Offer[] };
 type TierFilter = "ALL" | Tier;
 
 const bundledProducts = menu.products as Product[];
@@ -76,8 +76,8 @@ function LoyaltySection() {
   return <section className="member-loyalty" aria-labelledby="member-loyalty-title"><div><p className="eyebrow">SAVE ON A LATER ORDER</p><h2 id="member-loyalty-title">Member Loyalty Savings</h2><p>Qualify with an eligible regular-price 28g purchase in BC Premium, Crafts, or Exotics, or with a selected 2 × 28g tier offer. Rewards and coupons apply to a later order—not the qualifying purchase.</p></div><ol><li><span>1</span><p><strong>Qualify</strong> with an eligible regular-price ounce or selected two-ounce tier offer.</p></li><li><span>2</span><p><strong>Return</strong> for $30 off an eligible regular-price 28g item in the selected tier.</p></li><li><span>3</span><p><strong>Use the coupon later.</strong> A 3g Craft coupon requires a qualifying spend of $120 or more.</p></li><li><span>4</span><p><strong>Keep access active</strong> with a $50 or more purchase within 14 days.</p></li></ol><aside><strong>Important conditions</strong><p>Complimentary items apply only to regular-price Craft or Exotic ounces—not BC Premium. Loyalty prices are firm and cannot be reduced with points. Loyalty-price orders do not include extra complimentary items. Otherwise, requalify with a full-price purchase. Dispatcher confirms current eligibility and any included item before checkout.</p></aside></section>;
 }
 
-export default function Catalog() {
-  const [products, setProducts] = useState<Product[]>(bundledProducts);
+export default function Catalog({ initialProducts }: { initialProducts?: Product[] }) {
+  const [products, setProducts] = useState<Product[]>(initialProducts?.length ? initialProducts : bundledProducts);
   const [activeTier, setActiveTier] = useState<TierFilter>("ALL");
   const [search, setSearch] = useState("");
   const [selectedProduct,setSelectedProduct]=useState<Product|null>(null);

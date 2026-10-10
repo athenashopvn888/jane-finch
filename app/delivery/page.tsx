@@ -3,6 +3,7 @@ import { SITE_ORIGIN } from "../lib/nap";
 import DeliveryCatalog from "./DeliveryCatalog";
 import JFCWebChat from "./JFCWebChat";
 import menu from "./delivery-menu.json";
+import { getDeliveryProducts } from "./liveCatalog";
 
 export const metadata: Metadata = {
   title: { absolute: "Cannabis Delivery North York | Jane Finch Cannabis" },
@@ -10,7 +11,11 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_ORIGIN}/delivery` },
 };
 
-export default function DeliveryPage() {
+export const revalidate = 300;
+
+export default async function DeliveryPage() {
+  const catalog = await getDeliveryProducts();
+  const schemaProducts = catalog.live ? catalog.products : menu.products;
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -19,8 +24,8 @@ export default function DeliveryPage() {
       url: `${SITE_ORIGIN}/delivery`,
       mainEntity: {
         "@type": "ItemList",
-        numberOfItems: menu.products.length,
-        itemListElement: menu.products.map((product, index) => ({
+        numberOfItems: schemaProducts.length,
+        itemListElement: schemaProducts.map((product, index) => ({
           "@type": "ListItem",
           position: index + 1,
           name: product.name,
@@ -58,7 +63,7 @@ export default function DeliveryPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
-      <DeliveryCatalog />
+      <DeliveryCatalog initialProducts={catalog.products} />
       <JFCWebChat />
     </>
   );
