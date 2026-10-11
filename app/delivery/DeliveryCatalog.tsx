@@ -6,6 +6,7 @@ import Link from "next/link";
 import menu from "./delivery-menu.json";
 import ProductDetailsDrawer from "./ProductDetailsDrawer";
 import DeliveryBanner from "../components/DeliveryBanner";
+import { deliveryTierRanges, tierRangeText } from "../lib/tierPriceRanges";
 
 type PriceOption = { key: string; label: string; price: number };
 type Offer = { kind: "prime_time" | "multi_ounce"; quantity?: number; price?: number; weight?: string; bonus?: string; perUnitPrice?: number; totalPrice?: number; label: string };
@@ -63,6 +64,7 @@ function ProductPricing({ product }: { product: Product }) {
     ]
     : product.offers?.filter((offer) => offer.kind === "multi_ounce") || [];
   return <div className="product-pricing">
+    <strong className="price-scope-label">Delivery price</strong>
     {compact.length > 0 && <div><div className="compact-price-grid">{compact.map((option) => <div className="compact-price" key={option.key}><span>{option.label}</span><strong>{formatCurrency(option.price)}</strong></div>)}</div></div>}
     {(regular28 || member || bundles.length > 0) && <div className="decision-prices">
       {loyaltyPrice !== null && <div className="decision-tile member-28"><span>MEMBER LOYALTY 28g</span><strong>{formatCurrency(loyaltyPrice)}</strong><small>Member price</small><p>{member?.bonus ? `${member.bonus} applies on a later order when eligible.` : "Coupon or add-on eligibility is confirmed separately."}</p></div>}
@@ -95,6 +97,7 @@ export default function Catalog({ initialProducts }: { initialProducts?: Product
       return !needle || `${product.name} ${product.category} ${product.strain}`.toLowerCase().includes(needle);
     }).sort(compareProducts);
   }, [activeTier, search, products]);
+  const tierRanges = useMemo(() => deliveryTierRanges(products).map(({ tier, range }) => ({ tier, line: tierRangeText(range) })).filter((item): item is { tier: string; line: string } => Boolean(item.line)), [products]);
 
   return (
     <main>
@@ -111,6 +114,8 @@ export default function Catalog({ initialProducts }: { initialProducts?: Product
         </nav>
       </header>
       <DeliveryBanner />
+
+      <p className="price-rule-notice delivery-price-rule"><strong>DELIVERY PRICES ONLY.</strong> Delivery orders are charged these prices, not in-store prices. <Link href="/faq#delivery-price-rule">See the FAQ</Link></p>
 
       <section className="terms-banner" aria-labelledby="delivery-terms-title">
         <div>
@@ -147,6 +152,7 @@ export default function Catalog({ initialProducts }: { initialProducts?: Product
         <div><strong>{products.length} products</strong><span>Browse the flower menu</span></div>
         <div><strong>LIVE ORDER</strong><span>Connect with the dispatcher</span></div>
       </section>
+      {tierRanges.length > 0 ? <section className="tier-range-list" aria-label="Delivery prices per gram by flower tier"><h2>Delivery prices per gram</h2><ul>{tierRanges.map(({ tier, line }) => <li key={tier}><strong>{tier}</strong><span><b className="price-scope-label">Delivery price</b>{line}</span></li>)}</ul></section> : null}
       <LoyaltySection />
 
       <section className="menu-layout" id="menu">
