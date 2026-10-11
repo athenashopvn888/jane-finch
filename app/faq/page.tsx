@@ -109,7 +109,7 @@ const FAQ_CATEGORIES = [
   {
     title: "Delivery",
     faqs: [
-      { q: "Can I get the store price on a delivery order?", a: "No. In-store prices are for purchases made in the store. Delivery orders always use delivery prices." },
+      { q: "Can I get the store price on a delivery order?", a: "In-store prices are for purchases made in the store. Delivery orders always use delivery prices." },
       { q: "Does Jane Finch Cannabis offer delivery?", a: "Yes. Jane Finch Cannabis delivery runs daily from 10:00 a.m. to 10:00 p.m. with a $60 product minimum and a $10 delivery fee. That courier window is not 24-hour walk-in. Read the North York cannabis delivery page, then use the delivery menu." },
       { q: "How do I start a delivery order?", a: "Browse the delivery menu, then select LIVE ORDER to connect with the Jane Finch Cannabis dispatcher. The dispatcher confirms availability and delivery details. Neighbourhood hours and FAQ are on /cannabis-delivery-north-york." },
       { q: "Are the store and delivery hours the same?", a: "No. The storefront at 2728 Jane St is listed as open 24 hours. Delivery ordering hours are 10:00 a.m. to 10:00 p.m. daily — not overnight." },
@@ -167,7 +167,7 @@ export default function FAQPage() {
             <div key={cat.title} className={styles.category}>
               <h2 className={styles.categoryTitle}>{cat.title}</h2>
               {cat.faqs.map((faq) => (
-                <details key={faq.q} id={faq.q === "Can I get the store price on a delivery order?" ? "delivery-price-rule" : undefined} className={styles.faqItem}>
+                <details key={faq.q} id={faq.q === "Can I get the store price on a delivery order?" ? "delivery-price-rule" : undefined} open={faq.q === "Can I get the store price on a delivery order?"} className={styles.faqItem}>
                   <summary className={styles.faqQuestion}>{faq.q}</summary>
                   <p className={styles.faqAnswer}>{faq.a}</p>
                 </details>

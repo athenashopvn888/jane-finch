@@ -1,6 +1,7 @@
 import { HOME_DOC_TITLE } from "./lib/homeDelivery";
 import type { Metadata } from "next";
 import HomePage from "./HomePage";
+import { getLiveMenu } from "./lib/liveMenu";
 import { faqJsonLd, HOME_FAQS, HOME_SEO_DESCRIPTION, HOME_SEO_TITLE, SITE_ORIGIN } from "./lib/nap";
 
 export const metadata: Metadata = {
@@ -18,14 +19,17 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: HOME_DOC_TITLE },
 };
 
-export default function Page() {
+export const dynamic = "force-dynamic";
+
+export default async function Page() {
+  const { flowers } = await getLiveMenu();
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(HOME_FAQS)) }}
       />
-      <HomePage />
+      <HomePage initialFlowers={flowers} />
     </>
   );
 }
