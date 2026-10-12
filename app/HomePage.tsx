@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./page.module.css";
 import FleetAnnouncementBanner from "./components/FleetAnnouncementBanner";
+import HomeTitleBlock from "./components/HomeTitleBlock";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import DeliveryBanner from "./components/DeliveryBanner";
@@ -206,6 +207,7 @@ export default function HomePage({ initialFlowers }: { initialFlowers: Parameter
   return (
     <main className={styles.main}>
       <Navbar />
+      <HomeTitleBlock />
       <FleetAnnouncementBanner />
       <HomepageTopNotices />
       {/* ── NAVBAR ── */}
@@ -252,7 +254,7 @@ export default function HomePage({ initialFlowers }: { initialFlowers: Parameter
           <div className={styles.brandBlock}>
             <img src="/storeFavicon.webp" alt="Jane Finch Cannabis Icon" style={{ height: "60px", width: "60px", objectFit: "contain", borderRadius: "8px", marginBottom: "8px" }} />
             <p className={styles.brandKicker}>{STORE_NAME}</p>
-            <h1 className={styles.brandTitle}>{HOME_TITLE}</h1>
+            <p className={styles.brandTitle}>{HOME_TITLE}</p>
             <CohortDeliveryActions variant="hero" />
             <p className={styles.brandSub}>Jane and Finch dispensary near me at {FULL_ADDRESS}</p>
             <div className={styles.brandBadge}>{HOURS_LABEL}</div>
