@@ -4,6 +4,8 @@ import DeliveryCatalog from "./DeliveryCatalog";
 import JFCWebChat from "./JFCWebChat";
 import menu from "./delivery-menu.json";
 import { getDeliveryProducts } from "./liveCatalog";
+import NearMeFaq from "../components/NearMeFaq";
+import nearMeFaq from "../lib/nearMeFaq.json";
 
 export const metadata: Metadata = {
   title: { absolute: "Cannabis Delivery North York | Jane Finch Cannabis" },
@@ -65,6 +67,7 @@ export default async function DeliveryPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
       <DeliveryCatalog initialProducts={catalog.products} />
       <JFCWebChat />
+      <NearMeFaq id="delivery-near-me" q={nearMeFaq.delivery!.q} a={nearMeFaq.delivery!.a} />
     </>
   );
 }
