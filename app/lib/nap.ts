@@ -80,6 +80,10 @@ export const NIC_VAPE_H1 = "Nicotine Vape at Jane & Finch";
 
 export const HOME_FAQS = [
   {
+    q: "Searching for a weed store near me at Jane and Finch?",
+    a: "Jane Finch Cannabis is at 2728 Jane St, North York, ON M3L 2G6, and the door is open 24 hours. Bring valid photo ID; adults 19+ only.",
+  },
+  {
     q: "What is Jane Finch Cannabis?",
     a: "Jane Finch Cannabis is the walk-in cannabis store at 2728 Jane St, North York, ON M3L 2G6 — the Jane and Finch dispensary at Jane St & Sheppard Ave W. This homepage is the local hub for name, address, phone, hours, and the map. Open 24 hours, 7 days. Adults 19+.",
   },
