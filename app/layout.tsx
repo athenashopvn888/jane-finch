@@ -1,3 +1,4 @@
+import PinnedNavClearance from "./components/PinnedNavClearance";
 import type { Metadata } from "next";
 import "./globals.css";
 import StoreHoursBar from "./components/StoreHoursBar";
@@ -158,6 +159,7 @@ export default function RootLayout({
       <body>
         <StoreHoursBar />
         {children}
+        <PinnedNavClearance />
       </body>
     </html>
   );

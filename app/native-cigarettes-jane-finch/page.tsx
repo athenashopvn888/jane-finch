@@ -1,3 +1,4 @@
+import CigaretteSeasonalNotice from "../components/CigaretteSeasonalNotice";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "../components/Footer";
@@ -57,6 +58,7 @@ export default function NativeCigarettesJaneFinchPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(NATIVE_CIG_FAQS)) }}
       />
       <Navbar />
+      <CigaretteSeasonalNotice sticky />
       <main className={styles.main}>
         <section className={styles.hero}>
           <p className={styles.eyebrow}>{HOURS_LABEL} · Adults 19+</p>
