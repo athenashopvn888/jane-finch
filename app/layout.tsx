@@ -1,3 +1,4 @@
+import FullNameNap from "./components/FullNameNap";
 import PinnedNavClearance from "./components/PinnedNavClearance";
 import type { Metadata } from "next";
 import "./globals.css";
@@ -74,7 +75,8 @@ const storeJsonLd = {
   "@context": "https://schema.org",
   "@type": "CannabisStore",
   "@id": storeId,
-  name: STORE_NAME,
+  name: "Jane Finch Cannabis Dispensary Weed Delivery",
+  alternateName: STORE_NAME,
   description:
     "24 hour weed dispensary at 2728 Jane St in North York, ON (Jane St & Sheppard Ave W). Flower, pre-rolls, vapes, edibles, concentrates, and accessories. Open 24 hours, 7 days.",
   url: SITE_ORIGIN,
@@ -159,6 +161,7 @@ export default function RootLayout({
       <body>
         <StoreHoursBar />
         {children}
+        <FullNameNap />
         <PinnedNavClearance />
       </body>
     </html>

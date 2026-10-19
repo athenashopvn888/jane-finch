@@ -27,4 +27,4 @@ export const HOME_DELIVERY_FAQS = [
 ] as const;
 
 // Document <title> only (exact Google name | area). H1 keeps HOME_TITLE.
-export const HOME_DOC_TITLE = "Jane Finch Cannabis | Dispensary & Weed Delivery in North York";
+export const HOME_DOC_TITLE = "Jane Finch Cannabis Dispensary Weed Delivery | North York";
