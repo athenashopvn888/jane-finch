@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: ResourceRouteProps): Promise<
   const { slug } = await params;
   const page = getResourcePageBySlugParts(slug);
   if (!page) return {};
-  return {
+  const metadata: Metadata = {
     title: { absolute: page.seoTitle },
     description: page.metaDescription,
     alternates: { canonical: resourceCanonical(page) },
@@ -26,6 +26,10 @@ export async function generateMetadata({ params }: ResourceRouteProps): Promise<
       type: page.kind === "article" || page.kind === "update" ? "article" : "website",
     },
   };
+  if (page.route === "/resources/how-to-read-a-cannabis-label") {
+    metadata.robots = { index: true, follow: true };
+  }
+  return metadata;
 }
 
 export default async function ResourceRoute({ params }: ResourceRouteProps) {
