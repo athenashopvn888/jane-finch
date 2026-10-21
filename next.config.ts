@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { SHOW_CIGARETTES, VAPE_PAGE_PATH, hiddenCigarettePaths } from "./app/lib/siteConfig.ts";
 
 const APEX_ORIGIN = "https://janefinchcannabis.ca";
 const WWW_HOST = "www.janefinchcannabis.ca";
@@ -55,17 +56,33 @@ const nextConfig: NextConfig = {
       { source: "/concentrates", destination: "/items/concentrates", permanent: true },
       { source: "/prerolls", destination: "/items/prerolls", permanent: true },
       { source: "/add-ons", destination: "/items/add-ons", permanent: true },
-      { source: "/cigarettes", destination: "/items/cigarettes", permanent: true },
+      ...(SHOW_CIGARETTES
+        ? [{ source: "/cigarettes", destination: "/items/cigarettes", permanent: true as const }]
+        : []),
       { source: "/magic", destination: "/items/magic", permanent: true },
       { source: "/info/north-york-weed-dispensary", destination: "/weed-dispensary-north-york", permanent: true },
       { source: "/info/york-weed-dispensary", destination: "/weed-dispensary-north-york", permanent: true },
       { source: "/info/weed-store-near-jane-and-finch-north-york", destination: "/weed-dispensary-north-york", permanent: true },
       { source: "/info/cheap-weed-york", destination: "/info/cheap-weed-north-york", permanent: true },
-      { source: "/info/native-cigarettes-york", destination: "/info/native-cigarettes-north-york", permanent: true },
+      ...(SHOW_CIGARETTES
+        ? [{ source: "/info/native-cigarettes-york", destination: "/info/native-cigarettes-north-york", permanent: true as const }]
+        : []),
       { source: "/info/weed-store-near-brampton", destination: "/weed-dispensary-north-york", permanent: true },
       { source: "/info/weed-store-near-mississauga", destination: "/weed-dispensary-north-york", permanent: true },
       { source: "/info/dispensary-near-me-york", destination: "/info/dispensary-near-me-north-york", permanent: true },
       { source: "/24-hour-north-york-dispensary", destination: "/24-hour-dispensary-north-york", permanent: true },
+      ...hiddenCigarettePaths().map((source) => ({
+        source,
+        destination: VAPE_PAGE_PATH,
+        statusCode: 302 as const,
+      })),
+      ...(SHOW_CIGARETTES
+        ? []
+        : [{
+            source: "/resources/native-smokes/:path*",
+            destination: VAPE_PAGE_PATH,
+            statusCode: 302 as const,
+          }]),
     ];
   },
 };

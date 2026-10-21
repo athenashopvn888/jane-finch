@@ -1,5 +1,6 @@
 import guideCopy from "./guideCopy.json";
 import { allFlowers, allItems, type FlowerProduct, type ItemProduct } from "./products";
+import { SHOW_CIGARETTES } from "./siteConfig";
 
 export type GuideLane = "strain" | "native_cig" | "nic_vape" | "thc_vape";
 export type GuideFaq = { question: string; answer: string };
@@ -81,8 +82,8 @@ const GUIDE_LANES: { lane: GuideLane; label: string }[] = [
 export function getGuidesByLane() {
   return GUIDE_LANES.map(({ lane, label }) => ({
     lane,
-    label,
-    guides: GUIDE_REGISTRY.filter((guide) => guide.lane === lane),
+    label: !SHOW_CIGARETTES && lane === "native_cig" ? "Backwoods" : label,
+    guides: GUIDE_REGISTRY.filter((guide) => guide.lane === lane && (SHOW_CIGARETTES || lane !== "native_cig" || guide.slug === "backwoods")),
   })).filter((group) => group.guides.length > 0);
 }
 
@@ -98,7 +99,11 @@ export const getTierGuideLinks = (categoryPath: string, limit = 6) => GUIDE_REGI
   .slice(0, limit);
 
 export function getCategoryGuideGroups(categoryPath: string) {
-  if (categoryPath === "/items/cigarettes") return [{ label: "Native Cigarettes brand guides", guides: GUIDE_REGISTRY.filter((guide) => guide.lane === "native_cig").slice(0, 9) }];
+  if (categoryPath === "/items/cigarettes") {
+    const guides = GUIDE_REGISTRY.filter((guide) => guide.lane === "native_cig" && (SHOW_CIGARETTES || guide.slug === "backwoods")).slice(0, 9);
+    if (!guides.length) return [];
+    return [{ label: SHOW_CIGARETTES ? "Native Cigarettes brand guides" : "Backwoods", guides }];
+  }
   if (categoryPath === "/items/vapes") return [
     { label: "Nicotine Vape brand guides", guides: GUIDE_REGISTRY.filter((guide) => guide.lane === "nic_vape").slice(0, 6) },
     { label: "Separate THC Vape guides", guides: GUIDE_REGISTRY.filter((guide) => guide.lane === "thc_vape").slice(0, 3) },

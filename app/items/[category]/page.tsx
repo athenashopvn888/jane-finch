@@ -20,6 +20,7 @@ import styles from "./items.module.css";
 import { getCategoryGuideGroups } from "../../lib/guideRegistry";
 import { buildCategoryCollectionJsonLd } from "../../lib/categoryStructuredData";
 import { SITE_ORIGIN } from "../../lib/nap";
+import { isHiddenCigaretteProduct, SHOW_CIGARETTES } from "../../lib/siteConfig";
 import seoContent from "../../lib/seoContent.generated.json";
 import VapeActionPanel from "../../components/VapeActionPanel";
 
@@ -39,7 +40,14 @@ export async function generateMetadata({
   const { category: catSlug } = await params;
   const catInfo = getCategoryFromSlug(catSlug);
   if (!catInfo) return {};
-  const items = getItemsByCategory(catInfo.key, await getResolvedItems());
+  const items = getItemsByCategory(catInfo.key, await getResolvedItems()).filter((item) => !isHiddenCigaretteProduct(item));
+  if (catSlug === "cigarettes" && !SHOW_CIGARETTES) {
+    return {
+      title: { absolute: "Backwoods | Jane Finch Cannabis" },
+      description: "Backwoods, cigarillos, and rolling papers at Jane Finch Cannabis in North York. Adults 19+.",
+      alternates: { canonical: `${SITE_ORIGIN}/items/${catSlug}` },
+    };
+  }
 
   return {
     title: { absolute: catInfo.config.seoTitle || `${catInfo.config.name} — ${items.length} Products` },
@@ -68,6 +76,8 @@ export default async function ItemsCategoryPage({
     const uniqueAccessories = accessories.filter(a => !existingIds.has(a.sku));
     items = [...items, ...uniqueAccessories];
   }
+  items = items.filter((item) => !isHiddenCigaretteProduct(item));
+  const hideCigaretteMarketing = catSlug === "cigarettes" && !SHOW_CIGARETTES;
   const { config } = catInfo;
   const guideGroups = getCategoryGuideGroups(`/items/${catSlug}`);
   const seoKey = config.name.toLowerCase().includes("thc") ? "vape-disposables" : config.name.toLowerCase().includes("nic") ? "vapes" : catSlug;
@@ -78,18 +88,23 @@ export default async function ItemsCategoryPage({
   const bannerExists = config.banner
     ? fs.existsSync(path.join(process.cwd(), "public", config.banner))
     : false;
-  const categoryJsonLd = buildCategoryCollectionJsonLd({ canonicalPath: `/items/${catSlug}`, name: config.seoTitle || config.name, description: seoCopy?.paragraphs.join(" ") || config.seoDescription || config.seoIntro, items });
+  const categoryJsonLd = buildCategoryCollectionJsonLd({
+    canonicalPath: `/items/${catSlug}`,
+    name: hideCigaretteMarketing ? "Backwoods" : (config.seoTitle || config.name),
+    description: hideCigaretteMarketing ? "Backwoods, cigarillos, and rolling papers at Jane Finch Cannabis in North York." : (seoCopy?.paragraphs.join(" ") || config.seoDescription || config.seoIntro),
+    items,
+  });
 
   return (
     <>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(categoryJsonLd) }} />
     <main className={styles.main}>
       <Navbar />
-      {catSlug === "cigarettes" && <CigaretteSeasonalNotice sticky />}
+      {SHOW_CIGARETTES && catSlug === "cigarettes" && <CigaretteSeasonalNotice sticky />}
 
       {/* Hero Banner */}
       <section style={{ width: "100%", overflow: "hidden", marginTop: "92px", marginBottom: "24px" }}>
-        {config.banner && bannerExists ? (
+        {config.banner && bannerExists && !hideCigaretteMarketing ? (
           <>
             <img
               src={config.banner}
@@ -107,9 +122,9 @@ export default async function ItemsCategoryPage({
           </>
         ) : (
           <div className={styles.heroContent} style={{ background: config.color, padding: "60px 24px", textAlign: "center" }}>
-            <span className={styles.heroIcon}>{config.icon}</span>
+            <span className={styles.heroIcon}>{hideCigaretteMarketing ? "BW" : config.icon}</span>
             <h1 className={styles.heroTitle}>
-              <span style={{ color: "#fff" }}>{config.name}</span>
+              <span style={{ color: "#fff" }}>{hideCigaretteMarketing ? "Backwoods" : config.name}</span>
             </h1>
             <p className={styles.heroSub} style={{ color: "rgba(255,255,255,0.8)" }}>{items.length} products available</p>
           </div>
@@ -117,10 +132,10 @@ export default async function ItemsCategoryPage({
       </section>
 
       {(catSlug === "vapes" || catSlug === "vape-disposables") && <CategoryCoreBanners kind="vapes" />}
-      {catSlug === "cigarettes" && <CategoryCoreBanners kind="cigarettes" />}
+      {SHOW_CIGARETTES && catSlug === "cigarettes" && <CategoryCoreBanners kind="cigarettes" />}
 
       {guideGroups.length > 0 && (
-        <nav className={styles.guideStrip} aria-label={`${config.name} guides`}>
+        <nav className={styles.guideStrip} aria-label={`${hideCigaretteMarketing ? "Backwoods" : config.name} guides`}>
           <div className={styles.container}>
             {guideGroups.map((group) => <div className={styles.guideGroup} key={group.label}><h2>{group.label}</h2><div>{group.guides.map((guide) => <Link key={guide.slug} href={`/guides/${guide.slug}`}>{guide.name}</Link>)}</div></div>)}
           </div>
@@ -151,11 +166,13 @@ export default async function ItemsCategoryPage({
       {/* SEO Content */}
       <section className={styles.seoSection}>
         <div className={styles.container}>
-          <h2 className={styles.seoTitle}>{seoCopy?.heading || config.seoTitle}</h2>
-          {seoCopy ? seoCopy.paragraphs.map((paragraph) => (
+          <h2 className={styles.seoTitle}>{hideCigaretteMarketing ? "Backwoods, cigarillos, and rolling papers" : (seoCopy?.heading || config.seoTitle)}</h2>
+          {hideCigaretteMarketing ? (
+            <p className={styles.seoBody}>Backwoods, cigarillos, and rolling papers stay on this shelf. Adults 19+.</p>
+          ) : seoCopy ? seoCopy.paragraphs.map((paragraph) => (
             <p key={paragraph} className={styles.seoBody}>{paragraph}</p>
           )) : <p className={styles.seoBody}>{config.seoDescription}</p>}
-          {seoCopy?.links.length ? (
+          {!hideCigaretteMarketing && seoCopy?.links.length ? (
             <p className={styles.seoBody}>
               {seoCopy.links.map((label, index) => (
                 <span key={label}>{index ? " · " : ""}<Link href={categoryLinkHrefs[index] || "/weed-dispensary-north-york"}>{label}</Link></span>
@@ -164,7 +181,7 @@ export default async function ItemsCategoryPage({
           ) : null}
 
           {/* FAQ */}
-          {config.faqs.length > 0 && (
+          {!hideCigaretteMarketing && config.faqs.length > 0 && (
             <div className={styles.faqBlock}>
               <h3 className={styles.faqTitle}>Frequently Asked Questions</h3>
               {config.faqs.map((faq, i) => (
@@ -182,7 +199,7 @@ export default async function ItemsCategoryPage({
             <p className={styles.visitText}>
               2728 Jane St, North York, ON M3L 2G6 · Open 24 Hours
             </p>
-            {catInfo.key === "CIGARETTES" ? (
+            {SHOW_CIGARETTES && catInfo.key === "CIGARETTES" ? (
               <p className={styles.visitText}>
                 <Link href="/native-cigarettes-jane-finch">Jane Finch Native cigarettes neighbourhood page</Link>
                 {" · "}

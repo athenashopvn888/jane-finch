@@ -24,6 +24,7 @@ import {
   VISIT_PATH,
   faqJsonLd,
 } from "../lib/nap";
+import { SHOW_CIGARETTES, visibleFaqs } from "../lib/siteConfig";
 import SccHubLinks from "../components/SccHubLinks";
 
 export const metadata: Metadata = {
@@ -42,6 +43,7 @@ export const metadata: Metadata = {
 const WEEKDAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] as const;
 
 export default function OpenNowFaqPage() {
+  const faqs = visibleFaqs(OPEN_NOW_FAQS);
   return (
     <>
       {/* FAQPage JSON-LD matches the visible Q&A below. Store hours stay 00:00–24:00 on the homepage CannabisStore. GBP Website remains the homepage root. */}
@@ -76,8 +78,7 @@ export default function OpenNowFaqPage() {
           <p>
             This FAQ owns 24-hour / open-now walk-in questions for Jane Finch / North York.
             Delivery stays 10 a.m. to 10 p.m. and is not a 24-hour courier. For the pin, use the
-            visit hub. For flower shelves, use the five tier pages. Native cigarettes and nicotine
-            vapes have their own neighbourhood pages.
+            visit hub. For flower shelves, use the five tier pages. {SHOW_CIGARETTES ? "Native cigarettes and nicotine vapes have their own neighbourhood pages." : "Nicotine vapes have their own neighbourhood page."}
           </p>
           <SccHubLinks currentPath={OPEN_NOW_PATH} heading="Cross-links from the 24-hour FAQ" />
         </section>
@@ -137,14 +138,23 @@ export default function OpenNowFaqPage() {
         </section>
 
         <section className={styles.section}>
-          <h2>24-hour walk-in for flower, Native cigarettes, and nic vape</h2>
-          <p>
-            The 24-hour clock is the Jane Street counter. Flower tiers, the{" "}
-            <Link href={NATIVE_CIG_LP_PATH}>Jane Finch Native cigarettes page</Link>, and the{" "}
-            <Link href={NIC_VAPE_LP_PATH}>North York nicotine vape page</Link> do not change those
-            walk-in hours. Courier hours stay on the{" "}
-            <Link href={DELIVERY_LP_PATH}>North York cannabis delivery page</Link>.
-          </p>
+          <h2>{SHOW_CIGARETTES ? "24-hour walk-in for flower, Native cigarettes, and nic vape" : "24-hour walk-in for flower and nic vape"}</h2>
+          {SHOW_CIGARETTES ? (
+            <p>
+              The 24-hour clock is the Jane Street counter. Flower tiers, the{" "}
+              <Link href={NATIVE_CIG_LP_PATH}>Jane Finch Native cigarettes page</Link>, and the{" "}
+              <Link href={NIC_VAPE_LP_PATH}>North York nicotine vape page</Link> do not change those
+              walk-in hours. Courier hours stay on the{" "}
+              <Link href={DELIVERY_LP_PATH}>North York cannabis delivery page</Link>.
+            </p>
+          ) : (
+            <p>
+              The 24-hour clock is the Jane Street counter. Flower tiers and the{" "}
+              <Link href={NIC_VAPE_LP_PATH}>North York nicotine vape page</Link> do not change those
+              walk-in hours. Courier hours stay on the{" "}
+              <Link href={DELIVERY_LP_PATH}>North York cannabis delivery page</Link>.
+            </p>
+          )}
           <p>
             A 24 hour dispensary search in North York should open this FAQ, then the homepage or
             visit hub. Do not treat delivery LIVE ORDER as overnight.
@@ -154,7 +164,7 @@ export default function OpenNowFaqPage() {
         <section className={styles.section} id="faq">
           <h2>FAQ: 24 hour dispensary North York</h2>
           <div className={styles.faqList}>
-            {OPEN_NOW_FAQS.map((item) => (
+            {faqs.map((item) => (
               <article className={styles.faqItem} key={item.q}>
                 <h3>{item.q}</h3>
                 <p>{item.a}</p>
@@ -182,7 +192,7 @@ export default function OpenNowFaqPage() {
             <Link href="/">Homepage</Link>
             <Link href="/weed-dispensary-north-york">North York store page</Link>
             <Link href={VISIT_PATH}>Walk-in hub</Link>
-            <Link href={NATIVE_CIG_LP_PATH}>Native cigarettes</Link>
+            {SHOW_CIGARETTES ? <Link href={NATIVE_CIG_LP_PATH}>Native cigarettes</Link> : null}
             <Link href={NIC_VAPE_LP_PATH}>Nicotine vape</Link>
             <Link href={DELIVERY_LP_PATH}>North York delivery</Link>
             <span>Adults 19+</span>

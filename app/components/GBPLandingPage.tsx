@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import styles from "./GBPLandingPage.module.css";
 import { weedOwner as store } from "../lib/weedDiscovery";
+import { isCigaretteRedirectPath, SHOW_CIGARETTES } from "../lib/siteConfig";
 import { FULL_ADDRESS, INTERSECTION, OPEN_NOW_PATH, SITE_ORIGIN, VISIT_PATH } from "../lib/nap";
 import SccHubLinks from "./SccHubLinks";
 
@@ -33,7 +34,11 @@ export function GBPLandingPage() {
         <section className={styles.section}>
           <h2>Jane–Finch walk-in vs North York delivery</h2>
           <p>A cannabis store near me search should open this Jane Street counter. Walk in at {FULL_ADDRESS} any hour — no appointment. Delivery is a separate 10 a.m. to 10 p.m. menu and does not move the store pin.</p>
-          <p>Use the <Link href={VISIT_PATH}>walk-in hub</Link> for arrival notes, the <Link href={OPEN_NOW_PATH}>24-hour open-now FAQ</Link> for hours truth, the <Link href="/cannabis-delivery-north-york">North York delivery page</Link> for courier hours, the <Link href="/native-cigarettes-jane-finch">Jane Finch Native cigarettes page</Link>, the <Link href="/nicotine-vape-north-york">North York nicotine vape page</Link>, or the <Link href="/">homepage</Link> for the current store menu. Adults 19+ with valid government photo ID.</p>
+          {SHOW_CIGARETTES ? (
+            <p>Use the <Link href={VISIT_PATH}>walk-in hub</Link> for arrival notes, the <Link href={OPEN_NOW_PATH}>24-hour open-now FAQ</Link> for hours truth, the <Link href="/cannabis-delivery-north-york">North York delivery page</Link> for courier hours, the <Link href="/native-cigarettes-jane-finch">Jane Finch Native cigarettes page</Link>, the <Link href="/nicotine-vape-north-york">North York nicotine vape page</Link>, or the <Link href="/">homepage</Link> for the current store menu. Adults 19+ with valid government photo ID.</p>
+          ) : (
+            <p>Use the <Link href={VISIT_PATH}>walk-in hub</Link> for arrival notes, the <Link href={OPEN_NOW_PATH}>24-hour open-now FAQ</Link> for hours truth, the <Link href="/cannabis-delivery-north-york">North York delivery page</Link> for courier hours, the <Link href="/nicotine-vape-north-york">North York nicotine vape page</Link>, or the <Link href="/">homepage</Link> for the current store menu. Adults 19+ with valid government photo ID.</p>
+          )}
           <p><Link href="/vape-shop-north-york">See current North York nicotine vape listings and contact options.</Link></p>
         </section>
 
@@ -51,7 +56,7 @@ export function GBPLandingPage() {
         <section className={styles.section} id="find-your-weed">
           <p className={styles.kicker}>{store.findTitle}</p>
           <h2>Helpful Places to Start</h2>
-          <div className={styles.cardGrid}>{store.discoveryLinks.map((item) => <Link href={item.href} className={styles.card} key={item.href}><span>{item.label}</span><small>{item.description}</small></Link>)}</div>
+          <div className={styles.cardGrid}>{store.discoveryLinks.filter((item) => !isCigaretteRedirectPath(item.href)).map((item) => <Link href={item.href} className={styles.card} key={item.href}><span>{item.label}</span><small>{item.description}</small></Link>)}</div>
           <p className={styles.note}>Browse these pages to learn about product categories and store information before you visit or order.</p>
         </section>
 

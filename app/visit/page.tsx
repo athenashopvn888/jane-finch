@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SHOW_CIGARETTES } from "../lib/siteConfig";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import styles from "../components/GBPLandingPage.module.css";
@@ -177,9 +178,15 @@ export default function VisitPage() {
             <Link href="/aa-weed">AA Weed</Link>, or{" "}
             <Link href="/budget-weed">Budget Weed</Link>
             {" "}— or the{" "}
-            <Link href="/weed-dispensary-north-york">North York walk-in page</Link>. Native
-            cigarettes:{" "}
-            <Link href="/native-cigarettes-jane-finch">Jane Finch Native cigarettes</Link>. Nicotine
+            <Link href="/weed-dispensary-north-york">North York walk-in page</Link>.{" "}
+            {SHOW_CIGARETTES ? (
+              <>
+                Native
+                cigarettes:{" "}
+                <Link href="/native-cigarettes-jane-finch">Jane Finch Native cigarettes</Link>.{" "}
+              </>
+            ) : null}
+            Nicotine
             vapes: <Link href="/nicotine-vape-north-york">North York nicotine vape</Link>. Keep
             product browsing secondary to the address.
           </p>

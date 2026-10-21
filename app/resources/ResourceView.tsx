@@ -4,6 +4,7 @@ import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "./resources.module.css";
+import { isCigaretteRedirectPath, mentionsCigaretteCopy, omitCigaretteProse, SHOW_CIGARETTES } from "../lib/siteConfig";
 import {
   RESOURCE_ROUTE_LABELS,
   SITE_URL,
@@ -33,6 +34,27 @@ function routeLabel(href: string) {
   return RESOURCE_ROUTE_LABELS[href] || href;
 }
 
+function gateResource(page: ResourcePage): ResourcePage {
+  if (SHOW_CIGARETTES) return page;
+  return {
+    ...page,
+    h1: omitCigaretteProse(page.h1),
+    excerpt: omitCigaretteProse(page.excerpt),
+    metaDescription: omitCigaretteProse(page.metaDescription),
+    body: omitCigaretteProse(page.body),
+    faqs: page.faqs.filter((faq) => !mentionsCigaretteCopy(`${faq.question} ${faq.answer}`)),
+    commercialLinks: page.commercialLinks.filter((link) => !isCigaretteRedirectPath(link.href)),
+    childRoutes: page.childRoutes.filter((route) => !isCigaretteRedirectPath(route)),
+    cards: page.cards
+      .filter((card) => !isCigaretteRedirectPath(card.href))
+      .map((card) => ({
+        ...card,
+        title: omitCigaretteProse(card.title),
+        description: omitCigaretteProse(card.description),
+      })),
+  };
+}
+
 function renderInline(text: string) {
   const nodes: ReactNode[] = [];
   const pattern = /(\*\*([^*]+)\*\*)|(`([^`]+)`)|\[([^\]]+)\]\((\/[^)\s]+)\)|(\*([^*]+)\*)/g;
@@ -45,6 +67,10 @@ function renderInline(text: string) {
       nodes.push(<strong key={`strong-${match.index}`}>{match[2]}</strong>);
     } else if (match[4]) {
       const href = cleanInternalHref(match[4]);
+      if (href && isCigaretteRedirectPath(href)) {
+        lastIndex = pattern.lastIndex;
+        continue;
+      }
       nodes.push(
         href ? (
           <Link key={`code-link-${match.index}`} href={href} className={styles.inlineLink}>
@@ -56,6 +82,10 @@ function renderInline(text: string) {
       );
     } else if (match[5] && match[6]) {
       const href = cleanInternalHref(match[6]);
+      if (href && isCigaretteRedirectPath(href)) {
+        lastIndex = pattern.lastIndex;
+        continue;
+      }
       nodes.push(
         href ? (
           <Link key={`md-link-${match.index}`} href={href} className={styles.inlineLink}>
@@ -275,29 +305,30 @@ function FaqList({ page }: { page: ResourcePage }) {
 }
 
 export default function ResourceView({ page }: { page: ResourcePage }) {
-  const childPages = getResourceChildren(page);
+  const view = gateResource(page);
+  const childPages = getResourceChildren(view);
   const displayCards =
     page.kind === "main"
       ? [
-          ...page.cards.filter((card) => card.href === "/guides"),
+          ...view.cards.filter((card) => card.href === "/guides"),
           ...childPages.map((child) => ({
-            title: child.h1,
+            title: omitCigaretteProse(child.h1),
             href: child.route,
-            description: child.excerpt || child.metaDescription,
+            description: omitCigaretteProse(child.excerpt || child.metaDescription),
             category: "Menu guide",
             author: child.author.name,
             updated: child.dateModified,
           })),
         ]
-      : page.cards;
+      : view.cards;
 
   return (
     <main className={styles.main}>
       <Navbar />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(resourceJsonLd(page)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(resourceJsonLd(view)) }} />
       <article className={styles.article}>
         <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-          {breadcrumbItems(page).map((item, index, list) => (
+          {breadcrumbItems(view).map((item, index, list) => (
             <span key={item.href}>
               {index < list.length - 1 ? <Link href={item.href}>{item.name}</Link> : <span>{item.name}</span>}
               {index < list.length - 1 ? <span className={styles.crumbSep}>/</span> : null}
@@ -306,22 +337,22 @@ export default function ResourceView({ page }: { page: ResourcePage }) {
         </nav>
 
         <header className={styles.hero}>
-          <Image src={page.heroImage} alt={`${STORE_NAME} logo`} width={72} height={72} className={styles.heroLogo} />
+          <Image src={view.heroImage} alt={`${STORE_NAME} logo`} width={72} height={72} className={styles.heroLogo} />
           <div>
-            <p className={styles.eyebrow}>{page.kind === "main" ? "Resource Centre" : page.pageType}</p>
-            <h1>{page.h1}</h1>
-            {page.excerpt ? <p className={styles.summary}>{page.excerpt}</p> : null}
+            <p className={styles.eyebrow}>{view.kind === "main" ? "Resource Centre" : view.pageType}</p>
+            <h1>{view.h1}</h1>
+            {view.excerpt ? <p className={styles.summary}>{view.excerpt}</p> : null}
             <div className={styles.meta}>
-              <span>By {page.author.name}{page.author.handle ? ` - ${page.author.handle}` : ""}</span>
-              <span>Updated {displayDate(page.dateModified)}</span>
+              <span>By {view.author.name}{view.author.handle ? ` - ${view.author.handle}` : ""}</span>
+              <span>Updated {displayDate(view.dateModified)}</span>
             </div>
           </div>
         </header>
 
-        <div className={styles.content}>{renderBody(page.body)}</div>
-        <FaqList page={page} />
-        <SecondTake page={page} />
-        <LinkPanel links={page.commercialLinks} />
+        <div className={styles.content}>{renderBody(view.body)}</div>
+        <FaqList page={view} />
+        <SecondTake page={view} />
+        <LinkPanel links={view.commercialLinks} />
         <CardGrid cards={displayCards} />
 
         <div className={styles.storeCta}>

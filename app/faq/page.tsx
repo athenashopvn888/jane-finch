@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import styles from "./faq.module.css";
 import { OPEN_NOW_PATH, SITE_ORIGIN, VISIT_PATH } from "../lib/nap";
 import { TIER_CONFIG } from "../lib/products";
+import { SHOW_CIGARETTES } from "../lib/siteConfig";
 import {
   BOGO_BUY_2_GET_1,
   BOGO_BUY_3_GET_3,
@@ -117,11 +118,24 @@ const FAQ_CATEGORIES = [
   },
 ];
 
+function visibleFaqCategories() {
+  if (SHOW_CIGARETTES) return FAQ_CATEGORIES;
+  return FAQ_CATEGORIES.filter((cat) => cat.title !== "Native Smokes").map((cat) => ({
+    ...cat,
+    faqs: cat.faqs.map((faq) =>
+      faq.q === "What menu categories can shoppers compare?"
+        ? { ...faq, a: "The site has paths for flower, pre-rolls, edibles, THC vapes, concentrates, and accessories where listed." }
+        : faq,
+    ),
+  }));
+}
+
 export default function FAQPage() {
+  const categories = visibleFaqCategories();
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: FAQ_CATEGORIES.flatMap((cat) =>
+    mainEntity: categories.flatMap((cat) =>
       cat.faqs.map((faq) => ({
         "@type": "Question",
         name: faq.q,
@@ -151,8 +165,12 @@ export default function FAQPage() {
             <Link href={VISIT_PATH}>walk-in hub</Link>
             , or the{" "}
             <Link href="/cannabis-delivery-north-york">North York cannabis delivery page</Link>
-            , the{" "}
-            <Link href="/native-cigarettes-jane-finch">Jane Finch Native cigarettes page</Link>
+            {SHOW_CIGARETTES ? (
+              <>
+                , the{" "}
+                <Link href="/native-cigarettes-jane-finch">Jane Finch Native cigarettes page</Link>
+              </>
+            ) : null}
             , or the{" "}
             <Link href="/nicotine-vape-north-york">North York nicotine vape page</Link>
             . Flower shelves:{" "}
@@ -163,7 +181,7 @@ export default function FAQPage() {
             <Link href="/budget-weed">Budget Weed</Link>.
           </p>
 
-          {FAQ_CATEGORIES.map((cat) => (
+          {categories.map((cat) => (
             <div key={cat.title} className={styles.category}>
               <h2 className={styles.categoryTitle}>{cat.title}</h2>
               {cat.faqs.map((faq) => (
