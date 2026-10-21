@@ -24,6 +24,7 @@ import {
   VISIT_PATH,
   faqJsonLd,
 } from "../lib/nap";
+import { SHOW_CIGARETTES, visibleFaqs } from "../lib/siteConfig";
 import SccHubLinks from "../components/SccHubLinks";
 import VapeActionPanel from "../components/VapeActionPanel";
 
@@ -51,6 +52,7 @@ const AREA_TAGS = [
 ] as const;
 
 export default function NicotineVapeNorthYorkPage() {
+  const faqs = visibleFaqs(NIC_VAPE_FAQS);
   return (
     <>
       <script
@@ -127,10 +129,16 @@ export default function NicotineVapeNorthYorkPage() {
           </p>
           <p>
             For overnight walk-in, use the <Link href={OPEN_NOW_PATH}>24-hour North York FAQ</Link>.
-            Native cigarettes stay on the{" "}
-            <Link href={NATIVE_CIG_LP_PATH}>Jane Finch Native cigarettes page</Link>. Nicotine
-            pouches, when listed, stay on the cigarette category rather than a pouches LP this
-            wave.
+            {SHOW_CIGARETTES ? (
+              <>
+                {" "}Native cigarettes stay on the{" "}
+                <Link href={NATIVE_CIG_LP_PATH}>Jane Finch Native cigarettes page</Link>. Nicotine
+                pouches, when listed, stay on the cigarette category rather than a pouches LP this
+                wave.
+              </>
+            ) : (
+              <> Nicotine pouches, when listed, stay on the nicotine vape menu rather than a pouches LP this wave.</>
+            )}
           </p>
           <div className={styles.areaList}>
             {AREA_TAGS.map((area) => (
@@ -144,7 +152,7 @@ export default function NicotineVapeNorthYorkPage() {
         <section className={styles.section} id="faq">
           <h2>FAQ: nicotine vape North York</h2>
           <div className={styles.faqList}>
-            {NIC_VAPE_FAQS.map((item) => (
+            {faqs.map((item) => (
               <article className={styles.faqItem} key={item.q}>
                 <h3>{item.q}</h3>
                 <p>{item.a}</p>

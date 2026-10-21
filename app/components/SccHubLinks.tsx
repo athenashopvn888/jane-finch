@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FLOWER_TIER_PAGES, hubPagesExcept, siblingTierPages } from "../lib/sccHub";
+import { isCigaretteRedirectPath } from "../lib/siteConfig";
 import styles from "./SccHubLinks.module.css";
 
 type SccHubLinksProps = {
@@ -15,7 +16,7 @@ export default function SccHubLinks({
   includeHub = true,
   includeTiers = true,
 }: SccHubLinksProps) {
-  const hubLinks = includeHub ? hubPagesExcept(currentPath) : [];
+  const hubLinks = (includeHub ? hubPagesExcept(currentPath) : []).filter((page) => !isCigaretteRedirectPath(page.href));
   const tierLinks = includeTiers
     ? currentPath.startsWith("/") && FLOWER_TIER_PAGES.some((tier) => tier.href === currentPath)
       ? siblingTierPages(currentPath)

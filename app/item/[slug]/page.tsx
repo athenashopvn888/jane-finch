@@ -1,5 +1,5 @@
 import { getLiveMenu } from "../../lib/liveMenu";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "../../components/Navbar";
@@ -8,6 +8,7 @@ import { CATEGORY_CONFIG, type ItemProduct } from "../../lib/products";
 import { getItemData } from "../../lib/itemData";
 import { getItemPriceDisplay } from "../../lib/itemPricing";
 import { SITE_ORIGIN } from "../../lib/nap";
+import { isHiddenCigaretteProduct, VAPE_PAGE_PATH } from "../../lib/siteConfig";
 import Magnifier from "../../components/Magnifier";
 import styles from "../../flower/[slug]/flower.module.css";
 
@@ -37,6 +38,14 @@ export async function generateMetadata({
   const { slug } = await params;
   const item = __menu.items.find((i) => i.slug === slug);
   if (!item) return {};
+  if (isHiddenCigaretteProduct(item)) {
+    return {
+      title: "Vape Shop North York",
+      description: "Nicotine vape listings at Jane Finch Cannabis in North York. Adults 19+.",
+      robots: { index: false, follow: false },
+      alternates: { canonical: `${SITE_ORIGIN}${VAPE_PAGE_PATH}` },
+    };
+  }
 
   const itemData = getItemData(item.category, item.name);
 
@@ -136,6 +145,7 @@ export default async function ItemPage({
   const { slug } = await params;
   const item = __menu.items.find((i) => i.slug === slug);
   if (!item) notFound();
+  if (isHiddenCigaretteProduct(item)) redirect(VAPE_PAGE_PATH);
 
   const catInfo = Object.values(CATEGORY_CONFIG).find(c => c.name.toUpperCase() === item.category.toUpperCase() || c.name === item.category);
   const catColor = catInfo?.color || "#94a3b8";

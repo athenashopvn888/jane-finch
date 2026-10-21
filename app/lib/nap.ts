@@ -1,3 +1,5 @@
+import { visibleFaqs } from "./siteConfig.ts";
+
 /** Canonical NAP for Jane Finch Cannabis (JFC01). Keep schema, footer, and contact identical. */
 export const SITE_ORIGIN = "https://janefinchcannabis.ca";
 export const STORE_NAME = "Jane Finch Cannabis";
@@ -293,10 +295,13 @@ export const NIC_VAPE_FAQS = [
 ] as const;
 
 export function faqJsonLd(faqs: ReadonlyArray<{ q: string; a: string } | { question: string; answer: string }>) {
+  const visible = faqs.every((faq) => "q" in faq)
+    ? visibleFaqs(faqs as ReadonlyArray<{ q: string; a: string }>)
+    : faqs;
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => {
+    mainEntity: visible.map((faq) => {
       const name = "q" in faq ? faq.q : faq.question;
       const text = "a" in faq ? faq.a : faq.answer;
       return {

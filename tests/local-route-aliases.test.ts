@@ -4,6 +4,7 @@ import test from "node:test";
 
 import nextConfig from "../next.config.ts";
 import { SEO_PAGES } from "../app/lib/seoPages.ts";
+import { SHOW_CIGARETTES } from "../app/lib/siteConfig.ts";
 
 const ALIAS_REDIRECTS = [
   ["/info/north-york-weed-dispensary", "/weed-dispensary-north-york"],
@@ -36,6 +37,14 @@ test("all six existing permanent redirects remain exact", async () => {
   const redirects = await nextConfig.redirects!();
 
   for (const [source, destination] of ALIAS_REDIRECTS) {
+    if (source === "/info/native-cigarettes-york" && !SHOW_CIGARETTES) {
+      assert.equal(
+        redirects.some((redirect) => redirect.source === source && redirect.permanent === true),
+        false,
+        "hidden cigarette alias must not stay a permanent redirect",
+      );
+      continue;
+    }
     assert.ok(
       redirects.some((redirect) =>
         redirect.source === source &&

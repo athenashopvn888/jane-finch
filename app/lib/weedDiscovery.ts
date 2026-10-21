@@ -16,6 +16,7 @@ import {
   WEED_SEO_TITLE,
 } from "./nap";
 import { gbpLocation } from "./gbp-location";
+import { visibleFaqs } from "./siteConfig";
 
 export type WeedDiscoveryLink = { label: string; description: string; href: string };
 export type WeedFaq = { question: string; answer: string };
@@ -120,7 +121,7 @@ export const weedOwner = {
       href: "/contact",
     },
   ] satisfies WeedDiscoveryLink[],
-  faq: WEED_FAQS.map((faq) => ({ question: faq.q, answer: faq.a })),
+  faq: visibleFaqs(WEED_FAQS).map((faq) => ({ question: faq.q, answer: faq.a })),
   home: {
     title: "Weed dispensary North York — Jane Finch owner",
     text: "This homepage holds NAP, hours, and the map at 2728 Jane St, North York — Jane St & Sheppard Ave W. The North York weed dispensary page owns weed-dispensary intent for Jane Finch. Use the visit hub for arrival and the 24-hour FAQ for open-now hours. Adults 19+.",

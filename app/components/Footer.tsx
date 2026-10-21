@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./Footer.module.css";
+import { SHOW_CIGARETTES } from "../lib/siteConfig";
 import {
   CITY,
   COUNTRY,
@@ -20,9 +21,19 @@ export default function Footer() {
           <div className={styles.col}>
             <div className={styles.brand}>{STORE_NAME.toUpperCase()}</div>
             <p className={styles.desc}>
-              Your local cannabis dispensary at {STREET_ADDRESS}, {CITY}. Visit
-              {" "}{STORE_NAME} for flower, edibles, vapes, pre-rolls, cigarettes, and menu resources.
-              {" "}Hours: {HOURS_LABEL}.
+              {SHOW_CIGARETTES ? (
+                <>
+                  Your local cannabis dispensary at {STREET_ADDRESS}, {CITY}. Visit
+                  {" "}{STORE_NAME} for flower, edibles, vapes, pre-rolls, cigarettes, and menu resources.
+                  {" "}Hours: {HOURS_LABEL}.
+                </>
+              ) : (
+                <>
+                  Your local cannabis dispensary at {STREET_ADDRESS}, {CITY}. Visit
+                  {" "}{STORE_NAME} for flower, edibles, vapes, pre-rolls, and menu resources.
+                  {" "}Hours: {HOURS_LABEL}.
+                </>
+              )}
             </p>
             <div className={styles.buttons}>
               <a href={`tel:${PHONE_INTL}`} className={styles.btnPrimary}>Call Now</a>
@@ -61,8 +72,8 @@ export default function Footer() {
               <Link href="/aa-weed">AA Weed</Link>
               <Link href="/budget-weed">Budget Weed</Link>
               <Link href="/items/edibles">Edibles</Link>
-              <Link href="/items/cigarettes">Cigarettes</Link>
-              <Link href="/native-cigarettes-jane-finch">Jane Finch Native Cigarettes</Link>
+              <Link href="/items/cigarettes">{SHOW_CIGARETTES ? "Cigarettes" : "Backwoods"}</Link>
+              {SHOW_CIGARETTES ? <Link href="/native-cigarettes-jane-finch">Jane Finch Native Cigarettes</Link> : null}
               <Link href="/items/vapes">Nicotine Vape</Link>
               <Link href="/nicotine-vape-north-york">North York Nicotine Vape</Link>
               <Link href="/info/nicotine-vapes-north-york">Nicotine Vapes North York</Link>
@@ -73,7 +84,7 @@ export default function Footer() {
               <Link href="/delivery">Delivery Menu</Link>
               <Link href="/cannabis-delivery-north-york">North York Cannabis Delivery</Link>
               <Link href="/info/cheap-weed-north-york">Cheap Weed North York</Link>
-              <Link href="/info/native-cigarettes-north-york">Native Cigarettes North York</Link>
+              {SHOW_CIGARETTES ? <Link href="/info/native-cigarettes-north-york">Native Cigarettes North York</Link> : null}
               <Link href="/weed-dispensary-north-york">Jane Finch Cannabis Weed Dispensary in North York</Link>
               <Link href="/visit">Visit Jane Finch Cannabis</Link>
               <Link href="/24-hour-dispensary-north-york">24-Hour North York FAQ</Link>

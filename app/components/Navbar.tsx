@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
 import FlowerBogoStrip from "./FlowerBogoStrip";
+import { isCigaretteRedirectPath, SHOW_CIGARETTES } from "../lib/siteConfig";
 
 const FLOWER_LINKS = [
   { href: "/exotic-weed", label: "Exotic Weed" },
@@ -65,7 +66,9 @@ export default function Navbar() {
   const pathname = usePathname();
   const menuRailRef = useRef<HTMLDivElement>(null);
   const [canAdvanceMenu, setCanAdvanceMenu] = useState(false);
-  const menuLinks = [...FLOWER_LINKS, ...CATEGORY_LINKS];
+  const categoryLinks = CATEGORY_LINKS.filter((link) => !isCigaretteRedirectPath(link.href));
+  const supportLinks = SUPPORT_LINKS.filter((link) => !isCigaretteRedirectPath(link.href));
+  const menuLinks = [...FLOWER_LINKS, ...categoryLinks];
   const isStoreMenuActive =
     menuLinks.some((link) => pathname === link.href) ||
     pathname.startsWith("/item/");
@@ -171,21 +174,21 @@ export default function Navbar() {
 
           <div className={styles.menuGroup} style={FALLBACK.menuGroup}>
             <span className={styles.groupLabel} style={FALLBACK.groupLabel}>Products</span>
-            {CATEGORY_LINKS.map((link) => (
+            {categoryLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`${styles.menuLink} ${pathname === link.href ? styles.menuLinkActive : ""}`}
                 style={FALLBACK.menuLink}
               >
-                {link.label}
+                {link.href === "/items/cigarettes" && !SHOW_CIGARETTES ? "Backwoods" : link.label}
               </Link>
             ))}
           </div>
 
           <div className={`${styles.menuGroup} ${styles.helpGroup}`} style={FALLBACK.menuGroup}>
             <span className={styles.groupLabel} style={FALLBACK.groupLabel}>Help</span>
-            {SUPPORT_LINKS.map((link) => (
+            {supportLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
