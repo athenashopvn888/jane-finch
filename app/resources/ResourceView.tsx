@@ -35,7 +35,7 @@ function routeLabel(href: string) {
 
 function renderInline(text: string) {
   const nodes: ReactNode[] = [];
-  const pattern = /(\*\*([^*]+)\*\*)|(`([^`]+)`)|\[([^\]]+)\]\((\/[^)\s]+)\)/g;
+  const pattern = /(\*\*([^*]+)\*\*)|(`([^`]+)`)|\[([^\]]+)\]\((\/[^)\s]+)\)|(\*([^*]+)\*)/g;
   let lastIndex = 0;
   let match: RegExpExecArray | null;
 
@@ -65,6 +65,8 @@ function renderInline(text: string) {
           <span key={`bad-link-${match.index}`}>{match[5]}</span>
         )
       );
+    } else if (match[8]) {
+      nodes.push(<em key={`em-${match.index}`}>{match[8]}</em>);
     }
     lastIndex = pattern.lastIndex;
   }
@@ -105,7 +107,7 @@ function renderBody(body: string) {
       return (
         <ul key={index} className={styles.bodyList}>
           {trimmed.split("\n").map((item, itemIndex) => (
-            <li key={itemIndex}>{renderInline(item.replace(/^-\s*/, ""))}</li>
+            <li key={itemIndex}>{renderInline(item.replace(/^-\s*/, "").replace(/^\[[ xX]\]\s*/, ""))}</li>
           ))}
         </ul>
       );
@@ -117,6 +119,17 @@ function renderBody(body: string) {
             <li key={itemIndex}>{renderInline(item.replace(/^\d+\.\s*/, ""))}</li>
           ))}
         </ol>
+      );
+    }
+    if (trimmed.split("\n").every((line) => /^>\s?/.test(line.trim()))) {
+      const quote = trimmed
+        .split("\n")
+        .map((line) => line.replace(/^>\s?/, ""))
+        .join("\n");
+      return (
+        <blockquote key={index} className={styles.bodyQuote}>
+          <p className={styles.bodyP}>{renderLines(quote)}</p>
+        </blockquote>
       );
     }
     return (
@@ -297,7 +310,7 @@ export default function ResourceView({ page }: { page: ResourcePage }) {
           <div>
             <p className={styles.eyebrow}>{page.kind === "main" ? "Resource Centre" : page.pageType}</p>
             <h1>{page.h1}</h1>
-            <p className={styles.summary}>{page.excerpt}</p>
+            {page.excerpt ? <p className={styles.summary}>{page.excerpt}</p> : null}
             <div className={styles.meta}>
               <span>By {page.author.name}{page.author.handle ? ` - ${page.author.handle}` : ""}</span>
               <span>Updated {displayDate(page.dateModified)}</span>

@@ -116,6 +116,16 @@
   margin: 0 0 22px;
 }
 
+.bodyQuote {
+  margin: 0 0 22px;
+  padding: 0 0 0 18px;
+  border-left: 3px solid #d6d3e4;
+}
+
+.bodyQuote .bodyP {
+  margin: 0;
+}
+
 .bodyP strong {
   color: #171728;
 }
