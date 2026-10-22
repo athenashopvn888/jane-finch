@@ -1,8 +1,11 @@
+import FleetContentProvider from "./components/fleet/FleetContentProvider";
 import FullNameNap from "./components/FullNameNap";
 import PinnedNavClearance from "./components/PinnedNavClearance";
 import type { Metadata } from "next";
 import "./globals.css";
 import StoreHoursBar from "./components/StoreHoursBar";
+import { getFleetContent } from "./lib/fleetContent";
+import type { Nap } from "./lib/fleet/types";
 import {
   CITY,
   COUNTRY,
@@ -19,7 +22,7 @@ import {
   STREET_ADDRESS,
 } from "./lib/nap";
 
-export const metadata: Metadata = {
+const ROOT_METADATA: Metadata = {
   metadataBase: new URL(SITE_ORIGIN),
   title: {
     default: HOME_SEO_TITLE,
@@ -66,6 +69,54 @@ export const metadata: Metadata = {
     // google: "your-google-verification-code",
   },
 };
+
+export async function generateMetadata(): Promise<Metadata> {
+  const fleet = await getFleetContent();
+  const description = fleet.active ? fleet.pages.Home?.metaDescription : "";
+  if (!description || description === ROOT_METADATA.description) return ROOT_METADATA;
+  return {
+    ...ROOT_METADATA,
+    description,
+    openGraph: { ...ROOT_METADATA.openGraph, description },
+    twitter: { ...ROOT_METADATA.twitter, description },
+  };
+}
+
+function storeJsonLdWithNap(nap: Nap) {
+  const next = { ...storeJsonLd };
+  let changed = false;
+  if (nap.schemaName !== storeJsonLd.name) {
+    next.name = nap.schemaName;
+    changed = true;
+  }
+  if (nap.name !== STORE_NAME) {
+    next.alternateName = nap.name;
+    changed = true;
+  }
+  if (nap.phoneTel !== PHONE_INTL) {
+    next.telephone = nap.phoneTel;
+    changed = true;
+  }
+  if (nap.website !== SITE_ORIGIN) {
+    next.url = nap.website;
+    changed = true;
+  }
+  if (nap.street !== STREET_ADDRESS || nap.city !== CITY || nap.province !== REGION || nap.postalCode !== POSTAL_CODE) {
+    next.address = {
+      ...storeJsonLd.address,
+      streetAddress: nap.street,
+      addressLocality: nap.city,
+      addressRegion: nap.province,
+      postalCode: nap.postalCode,
+    };
+    changed = true;
+  }
+  if (nap.lat !== String(LATITUDE) || nap.lng !== String(LONGITUDE)) {
+    next.geo = { "@type": "GeoCoordinates", latitude: Number(nap.lat), longitude: Number(nap.lng) };
+    changed = true;
+  }
+  return changed ? next : storeJsonLd;
+}
 
 /* ── JSON-LD Structured Data ── */
 const storeId = `${SITE_ORIGIN}/#store`;
@@ -120,14 +171,17 @@ const websiteJsonLd = {
   publisher: { "@id": storeId },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const fleet = await getFleetContent();
+  const jsonLd = fleet.active ? storeJsonLdWithNap(fleet.nap) : storeJsonLd;
   return (
     <html lang="en">
       <head>
+        <meta name="fleet-content-version" content={fleet.version} />
         <meta name="geo.region" content="CA-ON" />
         <meta name="geo.placename" content={CITY} />
         <meta name="geo.position" content={`${LATITUDE};${LONGITUDE}`} />
@@ -140,7 +194,7 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(storeJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <script
           type="application/ld+json"
@@ -159,10 +213,12 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <StoreHoursBar />
-        {children}
-        <FullNameNap />
-        <PinnedNavClearance />
+        <FleetContentProvider value={{ active: fleet.active, version: fleet.version, nap: fleet.nap }}>
+          <StoreHoursBar />
+          {children}
+          <FullNameNap />
+          <PinnedNavClearance />
+        </FleetContentProvider>
       </body>
     </html>
   );
