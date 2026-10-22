@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { getFleetContent } from "../lib/fleetContent";
 import styles from "./contact.module.css";
 import {
   FULL_ADDRESS,
@@ -14,7 +15,7 @@ import {
   STORE_NAME,
 } from "../lib/nap";
 
-export const metadata: Metadata = {
+const CONTACT_METADATA: Metadata = {
   title: "Contact Us — 2728 Jane St, North York",
   description:
     "Visit Jane Finch Cannabis at 2728 Jane St, North York, ON M3L 2G6. Open 24 hours, 7 days. Call +1 (437) 524-9336. Walk-ins welcome.",
@@ -27,6 +28,22 @@ export const metadata: Metadata = {
       "2728 Jane St, North York (Jane & Sheppard). Open 24 hours, 7 days. Call +1 (437) 524-9336.",
   },
 };
+
+export const dynamic = "force-dynamic";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const fleet = await getFleetContent();
+  const sheet = fleet.active ? fleet.pages.Contact : undefined;
+  if (!sheet) return CONTACT_METADATA;
+  const description = sheet.metaDescription && sheet.metaDescription !== CONTACT_METADATA.description
+    ? sheet.metaDescription
+    : CONTACT_METADATA.description;
+  const title = sheet.metaTitle && sheet.metaTitle !== CONTACT_METADATA.title
+    ? sheet.metaTitle
+    : CONTACT_METADATA.title;
+  if (description === CONTACT_METADATA.description && title === CONTACT_METADATA.title) return CONTACT_METADATA;
+  return { ...CONTACT_METADATA, title, description };
+}
 
 export default function ContactPage() {
   return (
