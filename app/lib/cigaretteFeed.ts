@@ -4,12 +4,13 @@ import {
   decideCigaretteGuide,
   decideCigaretteSurface,
   decideWebsiteSurface,
+  publicWebsiteCigaretteFlag,
   reconcileSurfaceItems,
   type CigaretteSurfaceDecision,
   type CigaretteWording,
 } from "./cigDecision.ts";
 import { allFlowers, allItems, type ItemProduct } from "./products.ts";
-import { cigaretteEnvHardOff } from "./siteConfig.ts";
+import { cigaretteEnvHardOff, SHOW_CIGARETTES } from "./siteConfig.ts";
 import { getCigaretteDataset } from "./tvStock";
 
 export type CigaretteSnapshot = {
@@ -44,7 +45,7 @@ export async function readCigaretteFeed(): Promise<CigaretteSnapshot> {
     const live = dataset?.source === "live";
     const items = Array.isArray(dataset?.items) ? dataset.items as ItemProduct[] : allItems;
     const cig = dataset?.cig ?? null;
-    // A live miss with no cig block fails open on TV. Web still requires webOn.
+    // A live miss with no cig block fails closed. A cached last-good snapshot still carries its saved tvOn.
     return snapshotFrom(cig, items.length ? items : allItems, live, !live && !cig);
   } catch {
     return snapshotFrom(null, allItems, false, true);
@@ -54,11 +55,20 @@ export async function readCigaretteFeed(): Promise<CigaretteSnapshot> {
 export const getCigaretteSnapshot = cache(readCigaretteFeed);
 
 export function toPublicCigaretteState(snap: CigaretteSnapshot): PublicCigaretteState {
-  return { web: snap.web.show, tv: snap.tv.show, wording: snap.wording };
+  return {
+    web: publicWebsiteCigaretteFlag(snap.web, SHOW_CIGARETTES),
+    tv: snap.tv.show,
+    wording: snap.wording,
+  };
 }
 
 export function snapshotHeaders(snap: CigaretteSnapshot): Record<string, string> {
-  return cigarettePublicHeaders({ web: snap.web.show, tv: snap.tv.show, wording: snap.wording });
+  const state = toPublicCigaretteState(snap);
+  return cigarettePublicHeaders({
+    web: SHOW_CIGARETTES ? state.web : false,
+    tv: state.tv,
+    wording: state.wording,
+  });
 }
 
 export { reconcileSurfaceItems };
