@@ -1,7 +1,8 @@
 "use client";
 import { CIGARETTE_FLASH_MESSAGE, isCigaretteFlashWindow } from "../tv/flashMessages";
-import { isNicotineItem } from "../tv/flashMessages";
-import { isHiddenCigaretteProduct, SHOW_CIGARETTES } from "../lib/siteConfig";
+import { useCigaretteState } from "../components/CigaretteStateProvider";
+import { readCigaretteTvHeader } from "../lib/cigDecision";
+import { visibleTvCardItems } from "../lib/tvCigaretteBoard";
 import { useState, useEffect, useCallback, useRef } from "react";
 import styles from "./tv2.module.css";
 import HiringRibbon from "../components/HiringRibbon";
@@ -56,8 +57,8 @@ function CigarettePriceFlash() {
 }
 
 /* -- ITEM CARD -- */
-function ItemCard({ title, accent, items, hiIdx, preset, offerPromo }: {
-  title:string; accent:string; items:Item[]; hiIdx:number; preset:string; offerPromo?:Tv2DaytimePromo;
+function ItemCard({ title, accent, items, hiIdx, preset, offerPromo, showCigarettes }: {
+  title:string; accent:string; items:Item[]; hiIdx:number; preset:string; offerPromo?:Tv2DaytimePromo; showCigarettes?: boolean;
 }) {
   const MAX = 10;
   const hiW = Math.min(hiIdx % Math.max(1, items.length), items.length - 1);
@@ -120,7 +121,7 @@ function ItemCard({ title, accent, items, hiIdx, preset, offerPromo }: {
                 {metaParts.map((p,i) => (
                   <span key={i}>
                     {i > 0 && <span className={styles.detailSep}> · </span>}
-                    {SHOW_CIGARETTES && p === fmtPrice(hi?.price) && hasCartonFlash(hi) ? (
+                    {showCigarettes && p === fmtPrice(hi?.price) && hasCartonFlash(hi) ? (
                       <CigarettePriceFlash />
                     ) : (
                       <span className={p===fmtTHC(hi?.thc)?styles.detailThc:undefined} style={p===fmtPrice(hi?.price)?{fontWeight:900}:undefined}>{p}</span>
@@ -156,7 +157,7 @@ function ItemCard({ title, accent, items, hiIdx, preset, offerPromo }: {
                     {it.mg && <span className={styles.submeta}> · {fmtMG(it.mg)}</span>}
                   </div>
                   <div className={styles.mcPrice}>
-                    {SHOW_CIGARETTES && hasCartonFlash(it) ? <CigarettePriceFlash /> : fmtPrice(it.price)}
+                    {showCigarettes && hasCartonFlash(it) ? <CigarettePriceFlash /> : fmtPrice(it.price)}
                   </div>
                 </div>
               );
@@ -185,11 +186,11 @@ const TICKER_SLIDES = [
   "ALL SALES ARE FINAL",
 ];
 
-function VerticalTicker() {
+function VerticalTicker({ showCigarettes = false }: { showCigarettes?: boolean }) {
   const [activeIdx, setActiveIdx] = useState(0);
   const [exitIdx, setExitIdx] = useState(-1);
   const [showCigaretteFlash, setShowCigaretteFlash] = useState(() => isCigaretteFlashWindow());
-  const slides = SHOW_CIGARETTES && showCigaretteFlash ? [CIGARETTE_FLASH_MESSAGE, ...TICKER_SLIDES] : TICKER_SLIDES;
+  const slides = showCigarettes && showCigaretteFlash ? [CIGARETTE_FLASH_MESSAGE, ...TICKER_SLIDES] : TICKER_SLIDES;
 
   useEffect(() => {
     const update = () => setShowCigaretteFlash(isCigaretteFlashWindow());
@@ -220,6 +221,8 @@ function VerticalTicker() {
 
 /* -- MAIN TV2 PAGE -- */
 export default function TV2Page() {
+  const seeded = useCigaretteState();
+  const [tvCig, setTvCig] = useState({ show: seeded.tv, wording: seeded.wording });
   const theme = getTvTheme(tvHiring?.store);
   const [bgUrl, setBgUrl] = useState("");
   useEffect(() => {
@@ -260,6 +263,7 @@ export default function TV2Page() {
     try {
       const res = await fetch("/api/tv-data?type=items");
       const data: Item[] = res.ok ? await res.json() : [];
+      setTvCig(res.ok ? readCigaretteTvHeader(res.headers) : { show: false, wording: seeded.wording });
       setItems(data);
       setStockUpdated(readStockUpdatedAt(res, data));
       const hi: Record<string,number> = {};
@@ -267,7 +271,7 @@ export default function TV2Page() {
       setHighlights(hi);
       setLastUpdate(formatBoardTime(new Date()) || "");
     } catch (err) { console.warn("[TV2] Load failed:", err); }
-  }, []);
+  }, [seeded.wording]);
 
   const fitToScreen = useCallback(() => {
     if (!wrapRef.current) return;
@@ -293,14 +297,14 @@ export default function TV2Page() {
       setHighlights(prev => {
         const next = {...prev};
         CARD_CONFIG.forEach(c => {
-          const filtered = items.filter(c.filter);
+          const filtered = visibleTvCardItems(items, c.id, c.filter, tvCig.show, daytime);
           next[c.id] = ((prev[c.id]||0) + 1) % Math.max(1, filtered.length);
         });
         return next;
       });
     }, 5000);
     return () => clearInterval(interval);
-  }, [items]);
+  }, [items, tvCig.show, daytime]);
 
   return (
     <div
@@ -314,13 +318,14 @@ export default function TV2Page() {
 
         {/* GRID */}
         <div className={styles.stage}>
-          <HiringRibbon hiring={tvHiring} />
+          <HiringRibbon hiring={tvHiring} showCigarettes={tvCig.show} />
           <div className={styles.grid}>
             {CARD_CONFIG.map(card => {
-              const filtered = items.filter(card.filter).filter(it => !(daytime && isNicotineItem(it))).filter((it) => !isHiddenCigaretteProduct(it));
+              const isCig = card.id === "CIGARETTES";
+              const filtered = visibleTvCardItems(items, card.id, card.filter, tvCig.show, daytime);
               const broken = sheetBroken[card.id] || {};
               const sheet = pickTv2Sheet(fleetTv.cards[card.id], {
-                categoryOff: card.id === "CIGARETTES" && !SHOW_CIGARETTES,
+                categoryOff: isCig && !tvCig.show,
                 noItems: filtered.length === 0,
                 promoBroken: Boolean(broken.promo),
                 offBroken: Boolean(broken.off),
@@ -345,15 +350,17 @@ export default function TV2Page() {
                   </div>
                 );
               }
-              const promo = SHOW_CIGARETTES || card.id !== "CIGARETTES" ? getTv2DaytimePromo(card.id, daytime, promoElapsedMs) : undefined;
-              if (!promo && card.id === "CIGARETTES" && !SHOW_CIGARETTES && filtered.length === 0) return null;
+              const promo = isCig
+                ? (tvCig.show && filtered.length === 0 ? getTv2DaytimePromo("CIGARETTES", true) : undefined)
+                : getTv2DaytimePromo(card.id, daytime, promoElapsedMs);
+              if (!promo && isCig && !tvCig.show && filtered.length === 0) return null;
 
               if (promo) {
                 return (
                   <div
                     key={card.id}
                     className={styles.card}
-                    data-promo-card={card.id === "CIGARETTES" ? "CATEGORY_COLLAGE" : card.id}
+                    data-promo-card={isCig ? "CATEGORY_COLLAGE" : card.id}
                     style={{"--accent":card.accent} as React.CSSProperties}
                   >
                     <div className={styles.cardHeader}>PROMO</div>
@@ -382,9 +389,10 @@ export default function TV2Page() {
               }
 
               return (
-                <ItemCard key={card.id} title={card.id === "CIGARETTES" && !SHOW_CIGARETTES ? "🚬 BACKWOODS" : card.title} accent={card.accent}
+                <ItemCard key={card.id} title={isCig && !tvCig.show ? "🚬 BACKWOODS" : card.title} accent={card.accent}
                   items={filtered} hiIdx={highlights[card.id]||0} preset={card.preset}
-                  offerPromo={SHOW_CIGARETTES && card.id === "CIGARETTES" ? getCigaretteOfferPromo(daytime, promoElapsedMs) : undefined} />
+                  showCigarettes={isCig && tvCig.show}
+                  offerPromo={isCig && tvCig.show ? getCigaretteOfferPromo(daytime, promoElapsedMs) : undefined} />
               );
             })}
           </div>

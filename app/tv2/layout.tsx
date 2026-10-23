@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import CigaretteStateProvider from "../components/CigaretteStateProvider";
+import { getCigaretteSnapshot, toPublicCigaretteState } from "../lib/cigaretteFeed";
 
 export const metadata: Metadata = {
   title: "Jane Finch Cannabis In-Store Accessories Display",
@@ -8,6 +10,7 @@ export const metadata: Metadata = {
 
 export const dynamic = "force-dynamic";
 
-export default function TvTwoLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return children;
+export default async function TvTwoLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const cigarettes = toPublicCigaretteState(await getCigaretteSnapshot());
+  return <CigaretteStateProvider value={cigarettes}>{children}</CigaretteStateProvider>;
 }

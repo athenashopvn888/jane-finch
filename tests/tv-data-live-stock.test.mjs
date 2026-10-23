@@ -6,6 +6,7 @@ import { beforeEach, test } from "node:test";
 const require = createRequire(import.meta.url);
 const {
   DEFAULT_APPS_SCRIPT_URL,
+  getCigaretteDataset,
   getTvData,
   postprocessFlowers,
   postprocessItems,
@@ -237,6 +238,58 @@ test("partial, empty, or invalid live stock falls back to the static snapshot", 
   });
   assert.equal(accepted.headers["x-tv-data-source"], "live");
   assert.equal(accepted.body.length, exactHalf);
+});
+
+test("cigarette dataset reads cig.tvOn on its own 60s window", async () => {
+  const cig = { on: true, tvOn: true, webOn: false, master: true };
+  const flowers = list(staticFlowers.length, (index) => flower(`F${index}`));
+  const items = list(staticItems.length, (index) => item(`I${index}`));
+  const { fetchImpl, calls } = mockFetch({
+    flowers,
+    items,
+    stockDate: "2026-10-23T04:04:51.000Z",
+    cig,
+  });
+
+  const dataset = await getCigaretteDataset({
+    staticFlowers,
+    staticItems,
+    fetchImpl,
+    now: 5_000,
+  });
+  assert.equal(dataset.source, "live");
+  assert.equal(dataset.cig.tvOn, true);
+  assert.equal(dataset.cig.webOn, false);
+  assert.equal(calls.length, 1);
+  assert.equal(calls[0].opts.next.revalidate, 60);
+  assert.equal(calls[0].url, `${DEFAULT_APPS_SCRIPT_URL}?store=JFC01`);
+
+  const again = await getCigaretteDataset({
+    staticFlowers,
+    staticItems,
+    fetchImpl,
+    now: 5_000 + 59_000,
+  });
+  assert.equal(calls.length, 1);
+  assert.equal(again.cig.tvOn, true);
+
+  await getCigaretteDataset({
+    staticFlowers,
+    staticItems,
+    fetchImpl,
+    now: 5_000 + 60_000,
+  });
+  assert.equal(calls.length, 2);
+
+  resetTvStockCache();
+  const failed = await getCigaretteDataset({
+    staticFlowers,
+    staticItems,
+    fetchImpl: mockFetch(null, { throwError: new Error("down") }).fetchImpl,
+    now: 9_000,
+  });
+  assert.equal(failed.source, "static-fallback");
+  assert.equal(failed.cig, null);
 });
 
 test("prebuild uses the shared post-processor", () => {

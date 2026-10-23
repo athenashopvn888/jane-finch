@@ -15,6 +15,22 @@ function readShowCigarettesEnv(raw: string | undefined): boolean | undefined {
 export const SHOW_CIGARETTES: boolean =
   readShowCigarettesEnv(process.env.NEXT_PUBLIC_SHOW_CIGARETTES) ?? false;
 
+function hardOffRaw(raw: string | undefined): string | undefined {
+  if (raw !== undefined) return raw;
+  // SHOW_CIGARETTES is read at runtime. The public var is inlined at build.
+  return process.env.SHOW_CIGARETTES ?? process.env.NEXT_PUBLIC_SHOW_CIGARETTES;
+}
+
+/**
+ * Explicit false / 0 / no / off blocks the feed. An empty or unset value is
+ * not that override, so the TV board can follow tvOn while the website stays
+ * on the static SHOW_CIGARETTES gate.
+ */
+export function cigaretteEnvHardOff(raw: string | undefined = hardOffRaw(undefined)): boolean {
+  if (raw == null) return false;
+  return /^(0|false|no|off)$/i.test(raw.trim());
+}
+
 /** Nicotine vape shop page. Cigarette URLs 302 here while the switch is off. */
 export const VAPE_PAGE_PATH = "/vape-shop-north-york";
 
