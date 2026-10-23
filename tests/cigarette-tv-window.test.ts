@@ -6,6 +6,7 @@ import {
   decideCigaretteGuide,
   decideCigaretteSurface,
   decideWebsiteSurface,
+  publicWebsiteCigaretteFlag,
   readCigaretteTvHeader,
   reconcileSurfaceItems,
   resolveCigWording,
@@ -62,23 +63,46 @@ test("TV follows tvOn and the website follows webOn only", () => {
   assert.equal(resolveSurfaceFlag(cig({ on: false, tvOn: true, webFollowsTv: true }), "tv"), true);
 });
 
-test("only an explicit false flag, no real items, or the env override hides TV cigarettes", () => {
+test("TV hides on a feed error or a missing block, and follows tvOn only after a successful feed", () => {
   const items = [carton, grabba, backwoods];
   const missing = decideCigaretteSurface({ cig: null, items, surface: "tv" });
   assert.equal(missing.reason, "missing");
-  assert.equal(missing.show, true);
+  assert.equal(missing.show, false);
+  assert.equal(decideCigaretteSurface({ cig: cig({ on: true, webOn: true, tvOn: true }), items, surface: "tv" }).show, true);
+  assert.equal(decideCigaretteSurface({ cig: cig({ on: true, webOn: true, tvOn: false }), items, surface: "tv" }).show, false);
   assert.equal(decideCigaretteSurface({ cig: cig(), items, surface: "tv" }).show, false);
   assert.equal(decideCigaretteSurface({ cig: cig({ on: true, webOn: true, tvOn: true }), items: [backwoods, pouch], surface: "tv" }).reason, "no-items");
-  const errored = decideCigaretteSurface({ cig: cig({ on: true, webOn: false, tvOn: false }), items, surface: "tv", errored: true });
+  const errored = decideCigaretteSurface({ cig: cig({ on: true, webOn: true, tvOn: true }), items, surface: "tv", errored: true });
   assert.equal(errored.reason, "error");
-  assert.equal(errored.show, true);
+  assert.equal(errored.show, false);
+  const hidden = reconcileSurfaceItems(items, items, errored.show).map((item) => item.slug);
+  assert.deepEqual(hidden, [backwoods.slug]);
   assert.equal(decideCigaretteSurface({ cig: cig({ on: true, webOn: true, tvOn: true }), items, surface: "tv", envRaw: "false" }).reason, "env");
   assert.equal(decideWebsiteSurface({ cig: cig({ on: true, webOn: true, tvOn: true }), items, envRaw: "off" }).reason, "env");
   assert.equal(decideWebsiteSurface({ cig: cig({ on: true, webOn: true, tvOn: true }), items, envRaw: "off" }).show, false);
+  assert.equal(decideWebsiteSurface({ cig: cig({ on: true, webOn: true, tvOn: true }), items, errored: true }).show, false);
+  assert.equal(decideWebsiteSurface({ cig: null, items }).show, false);
+  assert.equal(decideWebsiteSurface({ cig: null, items }).reason, "missing");
   assert.equal(cigaretteEnvHardOff(undefined), false);
   assert.equal(cigaretteEnvHardOff(""), false);
   assert.equal(cigaretteEnvHardOff("false"), true);
   assert.equal(cigaretteEnvHardOff("true"), false);
+});
+
+test("the website flag stays off whenever the static gate is off, including a feed error or a missing block", () => {
+  const items = [carton];
+  const on = decideWebsiteSurface({ cig: cig({ on: true, webOn: true, tvOn: true }), items });
+  const errored = decideWebsiteSurface({ cig: cig({ on: true, webOn: true, tvOn: true }), items, errored: true });
+  const missing = decideWebsiteSurface({ cig: null, items });
+  assert.equal(on.show, true);
+  assert.equal(publicWebsiteCigaretteFlag(on, SHOW_CIGARETTES), false);
+  assert.equal(publicWebsiteCigaretteFlag(errored, SHOW_CIGARETTES), false);
+  assert.equal(publicWebsiteCigaretteFlag(missing, SHOW_CIGARETTES), false);
+  assert.equal(publicWebsiteCigaretteFlag(on, false), false);
+  assert.equal(publicWebsiteCigaretteFlag(errored, true), false);
+  assert.equal(publicWebsiteCigaretteFlag(missing, true), false);
+  assert.equal(publicWebsiteCigaretteFlag({ show: false, reason: "off" }, true), false);
+  assert.equal(SHOW_CIGARETTES ? on.show : false, false);
 });
 
 test("wording uses the feed and falls back to the current Jane Finch copy", () => {
@@ -132,6 +156,7 @@ test("the TV header is the live flag and the website static gate stays off", () 
   const tv = readFileSync(new URL("../app/tv/page.tsx", import.meta.url), "utf8");
   const route = readFileSync(new URL("../app/api/tv-data/route.ts", import.meta.url), "utf8");
   const home = readFileSync(new URL("../app/HomePage.tsx", import.meta.url), "utf8");
+  const layout = readFileSync(new URL("../app/layout.tsx", import.meta.url), "utf8");
   assert.match(tv2, /readCigaretteTvHeader/);
   assert.match(tv2, /visibleTvCardItems/);
   assert.doesNotMatch(tv2, /SHOW_CIGARETTES/);
@@ -140,4 +165,6 @@ test("the TV header is the live flag and the website static gate stays off", () 
   assert.match(route, /snapshotHeaders/);
   assert.doesNotMatch(route, /SHOW_CIGARETTES/);
   assert.match(home, /SHOW_CIGARETTES/);
+  assert.match(layout, /web: SHOW_CIGARETTES \? cigarettes\.web : false/);
+  assert.match(readFileSync(new URL("../app/lib/tvStock.js", import.meta.url), "utf8"), /CIG_STOCK_CACHE_MS/);
 });

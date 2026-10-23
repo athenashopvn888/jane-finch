@@ -1,6 +1,9 @@
+import CigaretteStateProvider from "./components/CigaretteStateProvider";
 import FleetContentProvider from "./components/fleet/FleetContentProvider";
 import FullNameNap from "./components/FullNameNap";
 import PinnedNavClearance from "./components/PinnedNavClearance";
+import { getCigaretteSnapshot, toPublicCigaretteState } from "./lib/cigaretteFeed";
+import { SHOW_CIGARETTES } from "./lib/siteConfig";
 import type { Metadata } from "next";
 import "./globals.css";
 import StoreHoursBar from "./components/StoreHoursBar";
@@ -176,7 +179,8 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const fleet = await getFleetContent();
+  const [fleet, cigaretteSnapshot] = await Promise.all([getFleetContent(), getCigaretteSnapshot()]);
+  const cigarettes = toPublicCigaretteState(cigaretteSnapshot);
   const jsonLd = fleet.active ? storeJsonLdWithNap(fleet.nap) : storeJsonLd;
   return (
     <html lang="en">
@@ -214,10 +218,12 @@ export default async function RootLayout({
       </head>
       <body>
         <FleetContentProvider value={{ active: fleet.active, version: fleet.version, nap: fleet.nap }}>
-          <StoreHoursBar />
-          {children}
-          <FullNameNap />
-          <PinnedNavClearance />
+          <CigaretteStateProvider value={{ ...cigarettes, web: SHOW_CIGARETTES ? cigarettes.web : false }}>
+            <StoreHoursBar />
+            {children}
+            <FullNameNap />
+            <PinnedNavClearance />
+          </CigaretteStateProvider>
         </FleetContentProvider>
       </body>
     </html>
