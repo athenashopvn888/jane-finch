@@ -1,7 +1,29 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import styles from "./GBPLandingPage.module.css";
+
+const SAME_SITE_LINK = /\[([^\]]+)\]\((\/(?!\/)[^)\s]*)\)/g;
+
+function renderSameSiteLinks(paragraph: string): ReactNode {
+  SAME_SITE_LINK.lastIndex = 0;
+  const nodes: ReactNode[] = [];
+  let last = 0;
+  let match: RegExpExecArray | null;
+  let count = 0;
+  while ((match = SAME_SITE_LINK.exec(paragraph)) !== null) {
+    const href = match[2];
+    if (href.includes("..") || href.includes("\\")) continue;
+    if (match.index > last) nodes.push(paragraph.slice(last, match.index));
+    nodes.push(<Link key={`${href}-${count}`} href={href}>{match[1]}</Link>);
+    last = SAME_SITE_LINK.lastIndex;
+    count += 1;
+  }
+  if (count === 0) return paragraph;
+  if (last < paragraph.length) nodes.push(paragraph.slice(last));
+  return nodes;
+}
 
 export type AreaIntentPageProps = {
   eyebrow: string;
@@ -32,7 +54,7 @@ export function AreaIntentPage({ eyebrow, h1, addressLine, intro, sections = [],
           </div>
         </section>
         <section className={styles.section}>
-          {intro.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          {intro.map((paragraph) => <p key={paragraph}>{renderSameSiteLinks(paragraph)}</p>)}
         </section>
         {sections.map((section) => (
           <section className={styles.section} key={section.heading}>
