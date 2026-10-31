@@ -26,7 +26,10 @@ export async function generateMetadata({ params }: ResourceRouteProps): Promise<
       type: page.kind === "article" || page.kind === "update" ? "article" : "website",
     },
   };
-  if (page.route === "/resources/how-to-read-a-cannabis-label") {
+  if (
+    page.route === "/resources/how-to-read-a-cannabis-label" ||
+    page.route === "/resources/thcv-cbg-cbn-minor-cannabinoids-label"
+  ) {
     metadata.robots = { index: true, follow: true };
   }
   return metadata;

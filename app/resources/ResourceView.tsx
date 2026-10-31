@@ -355,13 +355,15 @@ export default function ResourceView({ page }: { page: ResourcePage }) {
         <LinkPanel links={view.commercialLinks} />
         <CardGrid cards={displayCards} />
 
-        <div className={styles.storeCta}>
-          <p>
-            Use the live menu for current product details and the store page for current visit information before
-            heading to Jane Street in North York.
-          </p>
-          <Link href={STORE_ROUTE}>Open the store page</Link>
-        </div>
+        {view.route === "/resources/thcv-cbg-cbn-minor-cannabinoids-label" ? null : (
+          <div className={styles.storeCta}>
+            <p>
+              Use the live menu for current product details and the store page for current visit information before
+              heading to Jane Street in North York.
+            </p>
+            <Link href={STORE_ROUTE}>Open the store page</Link>
+          </div>
+        )}
       </article>
       <Footer />
     </main>
