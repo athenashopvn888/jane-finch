@@ -1,5 +1,6 @@
 import { SITE_ORIGIN } from "../lib/nap";
 import { howToReadCannabisLabelSeed } from "./howToReadACannabisLabel";
+import { thcvCbgCbnMinorCannabinoidsLabelSeed } from "./thcvCbgCbnMinorCannabinoidsLabel";
 import pinkyContent from "./pinkyResourceContent.json";
 
 export type ResourceAuthor = {
@@ -556,6 +557,7 @@ const seeds: PageSeed[] = [
     body: "Jane Finch Cannabis now has a Resource Centre that groups practical guides by topic.\n\n## What the section covers\n\nThe first set includes menu basics, flower, pre-rolls, edibles, vapes, value, local visits, native smokes, specialty formats, and store updates.\n\n## Where to begin\n\nOpen the Resource Centre and choose the section that matches what you want to browse.",
   },
   howToReadCannabisLabelSeed,
+  thcvCbgCbnMinorCannabinoidsLabelSeed,
 ];
 
 export const RESOURCE_ROUTE_LABELS: Record<string, string> = {
