@@ -50,7 +50,7 @@ export const GBP_SEO_DESCRIPTION =
 export const GBP_H1 = "Cannabis Store in North York at Jane & Finch";
 
 export const WEED_LP_PATH = "/weed-dispensary-north-york";
-export const WEED_SEO_TITLE = "Weed Dispensary North York — Jane Finch at Jane & Finch";
+export const WEED_SEO_TITLE = "Weed Dispensary near me | North York — Jane Finch at Jane & Finch";
 export const WEED_SEO_DESCRIPTION =
   "Weed dispensary in North York at Jane Finch Cannabis, 2728 Jane St. Jane–Finch / Jane & Sheppard walk-in owner for weed-dispensary intent. Open 24 hours. Call +1 (437) 524-9336. Adults 19+.";
 export const WEED_H1 = "Weed Dispensary in North York at Jane Finch";
