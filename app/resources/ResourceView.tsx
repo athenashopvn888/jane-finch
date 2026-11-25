@@ -115,10 +115,51 @@ function renderLines(text: string) {
   ));
 }
 
+function isMarkdownTable(trimmed: string) {
+  const lines = trimmed.split("\n");
+  if (lines.length < 2) return false;
+  if (!lines.every((line) => /^\|.*\|$/.test(line.trim()))) return false;
+  return lines.some((line) => /^\|\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|$/.test(line.trim()));
+}
+
+function tableCells(line: string) {
+  return line.trim().replace(/^\|/, "").replace(/\|$/, "").split("|").map((cell) => cell.trim());
+}
+
 function renderBody(body: string) {
   return body.split(/\n\n+/).map((block, index) => {
     const trimmed = block.trim();
     if (!trimmed) return null;
+    if (isMarkdownTable(trimmed)) {
+      const lines = trimmed.split("\n");
+      const header = tableCells(lines[0]);
+      const rows = lines
+        .slice(1)
+        .filter((line) => !/^\|\s*:?-{3,}/.test(line.trim()))
+        .map(tableCells);
+      return (
+        <table key={index} className={styles.bodyTable}>
+          <thead>
+            <tr>
+              {header.map((cell, cellIndex) => (
+                <th key={cellIndex} scope="col">
+                  {renderInline(cell)}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row, rowIndex) => (
+              <tr key={rowIndex}>
+                {row.map((cell, cellIndex) => (
+                  <td key={cellIndex}>{renderInline(cell)}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      );
+    }
     if (/^###\s/.test(trimmed)) {
       return (
         <h3 key={index} className={styles.bodyHeading}>
@@ -221,7 +262,10 @@ function resourceJsonLd(page: ResourcePage) {
           description: page.metaDescription,
           datePublished: page.datePublished,
           dateModified: page.dateModified,
-          mainEntityOfPage: canonical,
+          mainEntityOfPage:
+            page.route === "/resources/what-is-a-510-battery"
+              ? { "@type": "WebPage", "@id": canonical, url: canonical }
+              : canonical,
           url: canonical,
           image: `${SITE_URL}${page.heroImage}`,
           author,
@@ -355,7 +399,8 @@ export default function ResourceView({ page }: { page: ResourcePage }) {
         <LinkPanel links={view.commercialLinks} />
         <CardGrid cards={displayCards} />
 
-        {view.route === "/resources/thcv-cbg-cbn-minor-cannabinoids-label" ? null : (
+        {view.route === "/resources/thcv-cbg-cbn-minor-cannabinoids-label" ||
+        view.route === "/resources/what-is-a-510-battery" ? null : (
           <div className={styles.storeCta}>
             <p>
               Use the live menu for current product details and the store page for current visit information before

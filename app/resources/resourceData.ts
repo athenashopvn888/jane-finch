@@ -1,6 +1,7 @@
 import { SITE_ORIGIN } from "../lib/nap";
 import { howToReadCannabisLabelSeed } from "./howToReadACannabisLabel";
 import { thcvCbgCbnMinorCannabinoidsLabelSeed } from "./thcvCbgCbnMinorCannabinoidsLabel";
+import { whatIsA510BatterySeed } from "./whatIsA510Battery";
 import pinkyContent from "./pinkyResourceContent.json";
 
 export type ResourceAuthor = {
@@ -558,6 +559,7 @@ const seeds: PageSeed[] = [
   },
   howToReadCannabisLabelSeed,
   thcvCbgCbnMinorCannabinoidsLabelSeed,
+  whatIsA510BatterySeed,
 ];
 
 export const RESOURCE_ROUTE_LABELS: Record<string, string> = {
