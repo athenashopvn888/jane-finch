@@ -1,3 +1,4 @@
+import { getCigaretteSnapshot, toPublicCigaretteState, reconcileSurfaceItems } from "../../lib/cigaretteFeed";
 import CigaretteSeasonalNotice from "../../components/CigaretteSeasonalNotice";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -64,6 +65,7 @@ export default async function ItemsCategoryPage({
   params: Promise<{ category: string }>;
 }) {
   const { category: catSlug } = await params;
+  const { web: showCigarettes } = toPublicCigaretteState(await getCigaretteSnapshot());
   const catInfo = getCategoryFromSlug(catSlug);
   if (!catInfo) notFound();
 
@@ -76,8 +78,8 @@ export default async function ItemsCategoryPage({
     const uniqueAccessories = accessories.filter(a => !existingIds.has(a.sku));
     items = [...items, ...uniqueAccessories];
   }
-  items = items.filter((item) => !isHiddenCigaretteProduct(item));
-  const hideCigaretteMarketing = catSlug === "cigarettes" && !SHOW_CIGARETTES;
+  items = reconcileSurfaceItems(items, [], showCigarettes);
+  const hideCigaretteMarketing = catSlug === "cigarettes" && !showCigarettes;
   const { config } = catInfo;
   const guideGroups = getCategoryGuideGroups(`/items/${catSlug}`);
   const seoKey = config.name.toLowerCase().includes("thc") ? "vape-disposables" : config.name.toLowerCase().includes("nic") ? "vapes" : catSlug;
@@ -100,7 +102,7 @@ export default async function ItemsCategoryPage({
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(categoryJsonLd) }} />
     <main className={styles.main}>
       <Navbar />
-      {SHOW_CIGARETTES && catSlug === "cigarettes" && <CigaretteSeasonalNotice sticky />}
+      {showCigarettes && catSlug === "cigarettes" && <CigaretteSeasonalNotice sticky />}
 
       {/* Hero Banner */}
       <section style={{ width: "100%", overflow: "hidden", marginTop: "92px", marginBottom: "24px" }}>
@@ -132,7 +134,7 @@ export default async function ItemsCategoryPage({
       </section>
 
       {(catSlug === "vapes" || catSlug === "vape-disposables") && <CategoryCoreBanners kind="vapes" />}
-      {SHOW_CIGARETTES && catSlug === "cigarettes" && <CategoryCoreBanners kind="cigarettes" />}
+      {showCigarettes && catSlug === "cigarettes" && <CategoryCoreBanners kind="cigarettes" />}
 
       {guideGroups.length > 0 && (
         <nav className={styles.guideStrip} aria-label={`${hideCigaretteMarketing ? "Backwoods" : config.name} guides`}>
@@ -199,7 +201,7 @@ export default async function ItemsCategoryPage({
             <p className={styles.visitText}>
               2728 Jane St, North York, ON M3L 2G6 · Open 24 Hours
             </p>
-            {SHOW_CIGARETTES && catInfo.key === "CIGARETTES" ? (
+            {showCigarettes && catInfo.key === "CIGARETTES" ? (
               <p className={styles.visitText}>
                 <Link href="/native-cigarettes-jane-finch">Jane Finch Native cigarettes neighbourhood page</Link>
                 {" · "}
