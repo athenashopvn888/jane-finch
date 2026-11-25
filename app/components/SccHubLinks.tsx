@@ -1,3 +1,7 @@
+"use client";
+
+import { useCigaretteState } from "./CigaretteStateProvider";
+
 import Link from "next/link";
 import { FLOWER_TIER_PAGES, hubPagesExcept, siblingTierPages } from "../lib/sccHub";
 import { isCigaretteRedirectPath } from "../lib/siteConfig";
@@ -16,7 +20,8 @@ export default function SccHubLinks({
   includeHub = true,
   includeTiers = true,
 }: SccHubLinksProps) {
-  const hubLinks = (includeHub ? hubPagesExcept(currentPath) : []).filter((page) => !isCigaretteRedirectPath(page.href));
+  const { web: showCigarettes } = useCigaretteState();
+  const hubLinks = (includeHub ? hubPagesExcept(currentPath) : []).filter((page) => !isCigaretteRedirectPath(page.href) && (showCigarettes || !page.href.includes("native-cigarettes")));
   const tierLinks = includeTiers
     ? currentPath.startsWith("/") && FLOWER_TIER_PAGES.some((tier) => tier.href === currentPath)
       ? siblingTierPages(currentPath)

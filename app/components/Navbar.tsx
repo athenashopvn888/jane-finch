@@ -1,4 +1,6 @@
 "use client";
+
+import { useCigaretteState } from "./CigaretteStateProvider";
 import CohortDeliveryActions from "./CohortDeliveryActions";
 
 import type { CSSProperties } from "react";
@@ -7,7 +9,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
 import FlowerBogoStrip from "./FlowerBogoStrip";
-import { isCigaretteRedirectPath, SHOW_CIGARETTES } from "../lib/siteConfig";
+import { isCigaretteRedirectPath } from "../lib/siteConfig";
 
 const FLOWER_LINKS = [
   { href: "/exotic-weed", label: "Exotic Weed" },
@@ -63,6 +65,7 @@ const FALLBACK: Record<string, CSSProperties> = {
 };
 
 export default function Navbar() {
+  const { web: showCigarettes } = useCigaretteState();
   const pathname = usePathname();
   const menuRailRef = useRef<HTMLDivElement>(null);
   const [canAdvanceMenu, setCanAdvanceMenu] = useState(false);
@@ -181,7 +184,7 @@ export default function Navbar() {
                 className={`${styles.menuLink} ${pathname === link.href ? styles.menuLinkActive : ""}`}
                 style={FALLBACK.menuLink}
               >
-                {link.href === "/items/cigarettes" && !SHOW_CIGARETTES ? "Backwoods" : link.label}
+                {link.href === "/items/cigarettes" && !showCigarettes ? "Backwoods" : link.label}
               </Link>
             ))}
           </div>

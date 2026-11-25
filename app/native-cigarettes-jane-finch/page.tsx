@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+import { getCigaretteSnapshot, toPublicCigaretteState } from "../lib/cigaretteFeed";
 import CigaretteSeasonalNotice from "../components/CigaretteSeasonalNotice";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -50,7 +52,10 @@ const AREA_TAGS = [
   "Downsview",
 ] as const;
 
-export default function NativeCigarettesJaneFinchPage() {
+export const dynamic = "force-dynamic";
+
+export default async function NativeCigarettesJaneFinchPage() {
+  if (!toPublicCigaretteState(await getCigaretteSnapshot()).web) redirect("/items/vapes");
   return (
     <>
       <script

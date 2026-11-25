@@ -1,4 +1,6 @@
 "use client";
+
+import { useCigaretteState } from "./components/CigaretteStateProvider";
 import { HOME_TITLE } from "./lib/homeDelivery";
 import CohortDeliveryActions from "./components/CohortDeliveryActions";
 import HomeDeliverySection from "./components/HomeDeliverySection";
@@ -40,7 +42,7 @@ import {
 import Papa from "papaparse";
 import { useLiveFlowers } from "./lib/useLiveMenu";
 import { storeTierRange, tierRangeText } from "./lib/tierPriceRanges";
-import { SHOW_CIGARETTES } from "./lib/siteConfig";
+
 
 const WEEKDAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] as const;
 
@@ -119,6 +121,7 @@ interface ReviewStats {
 }
 
 export default function HomePage({ initialFlowers, contentBanners }: { initialFlowers: Parameters<typeof storeTierRange>[0]; contentBanners?: ResolvedBanner[] }) {
+  const { web: showCigarettes } = useCigaretteState();
     const __liveFlowers = useLiveFlowers();
   const [featuredStrains, setFeaturedStrains] = useState<any[]>([]);
   const [reviews, setReviews] = useState<Review[]>([]);
@@ -329,7 +332,7 @@ export default function HomePage({ initialFlowers, contentBanners }: { initialFl
               <Link href="/exotic-weed" className={styles.homeMenuCta}>STORE MENU</Link>
               <Link href="/delivery" className={`${styles.homeMenuCta} ${styles.homeDeliveryCta}`}>DELIVERY MENU</Link>
             </div>
-            <SccHubLinks currentPath="/" heading={SHOW_CIGARETTES ? "Weed dispensary, 24-hour, delivery, Native cigarettes, and nic-vape" : "Weed dispensary, 24-hour, delivery, and nic-vape"} includeTiers={false} />
+            <SccHubLinks currentPath="/" heading={showCigarettes ? "Weed dispensary, 24-hour, delivery, Native cigarettes, and nic-vape" : "Weed dispensary, 24-hour, delivery, and nic-vape"} includeTiers={false} />
           </div>
 
           {/* Bento Grid */}
@@ -373,7 +376,7 @@ export default function HomePage({ initialFlowers, contentBanners }: { initialFl
             <p className={styles.seoPanelText}>
               If you searched for a dispensary near me, a weed dispensary near Jane Finch, a Jane and Finch dispensary, or a cannabis store North York, this Jane Street storefront is the pin. The counter is a 24 hour weed dispensary in North York — {HOURS_LABEL.toLowerCase()}.
             </p>
-            {SHOW_CIGARETTES ? (
+            {showCigarettes ? (
               <p className={styles.seoPanelText}>
                 Confirm the pin, then open the current menu. Flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes each shop differently. Delivery is a separate 10 a.m.–10 p.m. window — it does not replace walk-in. Call {PHONE_DISPLAY} if one item is the reason you are coming in.
               </p>
@@ -387,7 +390,7 @@ export default function HomePage({ initialFlowers, contentBanners }: { initialFl
               <Link href={OPEN_NOW_PATH}>24-hour North York FAQ</Link>
               <Link href={VISIT_PATH}>2728 Jane St walk-in hub</Link>
               <Link href={DELIVERY_LP_PATH}>North York cannabis delivery</Link>
-              {SHOW_CIGARETTES ? <Link href={NATIVE_CIG_LP_PATH}>Jane Finch Native cigarettes</Link> : null}
+              {showCigarettes ? <Link href={NATIVE_CIG_LP_PATH}>Jane Finch Native cigarettes</Link> : null}
               <Link href={NIC_VAPE_LP_PATH}>North York nicotine vape</Link>
               <Link href="/vape-shop-north-york">Current North York vape shop listings</Link>
               <Link href="/exotic-weed">Exotic Weed</Link>
@@ -413,7 +416,7 @@ export default function HomePage({ initialFlowers, contentBanners }: { initialFl
           </div>
 
           <div className={styles.categoriesGrid}>
-            {EXPLORE_CATEGORIES.filter((cat) => SHOW_CIGARETTES || cat.slug !== "native-cigarettes-jane-finch").map((cat) => (
+            {EXPLORE_CATEGORIES.filter((cat) => showCigarettes || cat.slug !== "native-cigarettes-jane-finch").map((cat) => (
               <Link
                 key={cat.slug}
                 href={`/${cat.slug}`}

@@ -1,6 +1,10 @@
+"use client";
+
+import { useCigaretteState } from "./CigaretteStateProvider";
+
 import Link from "next/link";
 import styles from "./Footer.module.css";
-import { SHOW_CIGARETTES } from "../lib/siteConfig";
+
 import {
   CITY,
   COUNTRY,
@@ -14,6 +18,7 @@ import {
 } from "../lib/nap";
 
 export default function Footer() {
+  const { web: showCigarettes } = useCigaretteState();
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
@@ -21,7 +26,7 @@ export default function Footer() {
           <div className={styles.col}>
             <div className={styles.brand}>{STORE_NAME.toUpperCase()}</div>
             <p className={styles.desc}>
-              {SHOW_CIGARETTES ? (
+              {showCigarettes ? (
                 <>
                   Your local cannabis dispensary at {STREET_ADDRESS}, {CITY}. Visit
                   {" "}{STORE_NAME} for flower, edibles, vapes, pre-rolls, cigarettes, and menu resources.
@@ -72,8 +77,8 @@ export default function Footer() {
               <Link href="/aa-weed">AA Weed</Link>
               <Link href="/budget-weed">Budget Weed</Link>
               <Link href="/items/edibles">Edibles</Link>
-              <Link href="/items/cigarettes">{SHOW_CIGARETTES ? "Cigarettes" : "Backwoods"}</Link>
-              {SHOW_CIGARETTES ? <Link href="/native-cigarettes-jane-finch">Jane Finch Native Cigarettes</Link> : null}
+              <Link href="/items/cigarettes">{showCigarettes ? "Cigarettes" : "Backwoods"}</Link>
+              {showCigarettes ? <Link href="/native-cigarettes-jane-finch">Jane Finch Native Cigarettes</Link> : null}
               <Link href="/items/vapes">Nicotine Vape</Link>
               <Link href="/nicotine-vape-north-york">North York Nicotine Vape</Link>
               <Link href="/info/nicotine-vapes-north-york">Nicotine Vapes North York</Link>
@@ -84,7 +89,7 @@ export default function Footer() {
               <Link href="/delivery">Delivery Menu</Link>
               <Link href="/cannabis-delivery-north-york">North York Cannabis Delivery</Link>
               <Link href="/info/cheap-weed-north-york">Cheap Weed North York</Link>
-              {SHOW_CIGARETTES ? <Link href="/info/native-cigarettes-north-york">Native Cigarettes North York</Link> : null}
+              {showCigarettes ? <Link href="/info/native-cigarettes-north-york">Native Cigarettes North York</Link> : null}
               <Link href="/weed-dispensary-north-york">Jane Finch Cannabis Weed Dispensary in North York</Link>
               <Link href="/visit">Visit Jane Finch Cannabis</Link>
               <Link href="/24-hour-dispensary-north-york">24-Hour North York FAQ</Link>
