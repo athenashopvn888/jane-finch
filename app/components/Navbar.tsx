@@ -70,7 +70,9 @@ export default function Navbar() {
   const menuRailRef = useRef<HTMLDivElement>(null);
   const [canAdvanceMenu, setCanAdvanceMenu] = useState(false);
   const categoryLinks = CATEGORY_LINKS.filter((link) => !isCigaretteRedirectPath(link.href));
-  const supportLinks = SUPPORT_LINKS.filter((link) => !isCigaretteRedirectPath(link.href));
+  const supportLinks = SUPPORT_LINKS.filter((link) =>
+    !isCigaretteRedirectPath(link.href) && (showCigarettes || link.href !== "/native-cigarettes-jane-finch"),
+  );
   const menuLinks = [...FLOWER_LINKS, ...categoryLinks];
   const isStoreMenuActive =
     menuLinks.some((link) => pathname === link.href) ||
