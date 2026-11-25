@@ -28,7 +28,8 @@ export async function generateMetadata({ params }: ResourceRouteProps): Promise<
   };
   if (
     page.route === "/resources/how-to-read-a-cannabis-label" ||
-    page.route === "/resources/thcv-cbg-cbn-minor-cannabinoids-label"
+    page.route === "/resources/thcv-cbg-cbn-minor-cannabinoids-label" ||
+    page.route === "/resources/what-is-a-510-battery"
   ) {
     metadata.robots = { index: true, follow: true };
   }
